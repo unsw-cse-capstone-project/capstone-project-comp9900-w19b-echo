@@ -6,9 +6,11 @@ Installation Guide
 2. Install Angular by below command
    npm install -g @angular/cli
 
-3. Open it by Java IDE Intellij or Eclipse - The root folder is OLP.
+3. Open command/terminal, go to folder OLP/frontend and type "npm install"
 
-4. To start front end, go to OLP/frontend folder in command/terminal and type "ng serve"
-   The URL http://localhost:4200/ would be accessible.
+4. Open it by Java IDE Intellij or Eclipse - The project root folder is OLP.
 
-5. Backend can be started in IDE as spring boot application
+5. To start frontend, go to OLP/frontend folder in command/terminal and type "ng serve"
+   Once started, the URL http://localhost:4200/ would be accessible.
+
+6. Backend can be started in IDE as spring boot application as usual
