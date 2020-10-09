@@ -1,0 +1,22 @@
+2020-10-09 00:53:59.546  INFO 70200 --- [main] c.echo.backend.BackendApplicationTests   : Starting BackendApplicationTests on 192-168-1-105.tpgi.com.au with PID 70200 (started by yang in /Users/yang/Documents/UNSW/comp9900/OLP2/backend)
+2020-10-09 00:53:59.549 DEBUG 70200 --- [main] c.echo.backend.BackendApplicationTests   : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-09 00:53:59.550  INFO 70200 --- [main] c.echo.backend.BackendApplicationTests   : The following profiles are active: dev
+2020-10-09 00:54:00.811  WARN 70200 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.echo.backend]' package. Please check your configuration.
+2020-10-09 00:54:02.038  INFO 70200 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-09 00:54:02.403  INFO 70200 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [resources/index.html]
+2020-10-09 00:54:03.224  INFO 70200 --- [main] c.echo.backend.BackendApplicationTests   : Started BackendApplicationTests in 4.317 seconds (JVM running for 6.053)
+2020-10-09 00:54:03.859  INFO 70200 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-09 01:38:23.663  INFO 73738 --- [main] c.echo.backend.BackendApplicationTests   : Starting BackendApplicationTests on 192-168-1-105.tpgi.com.au with PID 73738 (started by yang in /Users/yang/Documents/UNSW/comp9900/OLP/backend)
+2020-10-09 01:38:23.666 DEBUG 73738 --- [main] c.echo.backend.BackendApplicationTests   : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-09 01:38:23.670  INFO 73738 --- [main] c.echo.backend.BackendApplicationTests   : The following profiles are active: dev
+2020-10-09 01:38:25.749  INFO 73738 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-09 01:38:25.970  INFO 73738 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [resources/index.html]
+2020-10-09 01:38:26.251  INFO 73738 --- [main] c.echo.backend.BackendApplicationTests   : Started BackendApplicationTests in 3.389 seconds (JVM running for 5.349)
+2020-10-09 01:38:26.984  INFO 73738 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-09 01:45:02.760  INFO 74424 --- [main] c.echo.backend.BackendApplicationTests   : Starting BackendApplicationTests on 192-168-1-105.tpgi.com.au with PID 74424 (started by yang in /Users/yang/Documents/UNSW/comp9900/OLP/backend)
+2020-10-09 01:45:02.772 DEBUG 74424 --- [main] c.echo.backend.BackendApplicationTests   : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-10-09 01:45:02.773  INFO 74424 --- [main] c.echo.backend.BackendApplicationTests   : The following profiles are active: dev
+2020-10-09 01:45:05.049  INFO 74424 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-09 01:45:05.326  INFO 74424 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [resources/index.html]
+2020-10-09 01:45:05.604  INFO 74424 --- [main] c.echo.backend.BackendApplicationTests   : Started BackendApplicationTests in 3.772 seconds (JVM running for 6.471)
+2020-10-09 01:45:06.553  INFO 74424 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
