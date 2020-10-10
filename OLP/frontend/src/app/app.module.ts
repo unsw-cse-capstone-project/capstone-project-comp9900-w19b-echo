@@ -9,10 +9,22 @@ import {NbThemeModule, NbLayoutModule, NbActionsModule, NbIconModule, NbTooltipM
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
 import {environment} from "../environments/environment";
+import { AboutUsComponent } from './about-us/about-us.component';
+import { HomeComponent } from './home/home.component';
+import { BuyerInfoComponent } from './buyer-info/buyer-info.component';
+import { SellerInfoComponent } from './seller-info/seller-info.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AboutUsComponent,
+    HomeComponent,
+    BuyerInfoComponent,
+    SellerInfoComponent,
+    ContactUsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

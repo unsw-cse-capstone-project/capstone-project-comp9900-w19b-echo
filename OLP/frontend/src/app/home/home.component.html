@@ -1,0 +1,29 @@
+<nb-layout>
+
+  <nb-layout-header fixed>
+    <div class="left-container" style="width: 80%">
+      <nb-actions size="medium">
+        <nb-action [routerLink]="['/home']">Anytime<nb-icon icon="award-outline" status="success"></nb-icon>Anywhere</nb-action>
+        <nb-action [routerLink]="['/about-us']">About Us</nb-action>
+        <nb-action [routerLink]="['/buyer-info']">For Buyer</nb-action>
+        <nb-action [routerLink]="['/seller-info']">For Seller</nb-action>
+        <nb-action [routerLink]="['/contact-us']">Contact Us</nb-action>
+      </nb-actions>
+    </div>
+    <div class="right-container">
+      <nb-actions size="medium">
+        <nb-action [routerLink]="['/auth/login']">Sign In</nb-action>
+        <nb-action [routerLink]="['/auth/register']">Sign Up</nb-action>
+      </nb-actions>
+    </div>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <p>home works!</p>
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>
