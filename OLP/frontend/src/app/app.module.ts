@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NbThemeModule, NbLayoutModule, NbActionsModule, NbIconModule, NbTooltipModule} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
+import {environment} from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,27 @@ import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
       strategies: [
         NbPasswordAuthStrategy.setup({
           name: 'email',
+          baseEndpoint: environment.baseEndpoint,
+          login: {
+            endpoint: '/auth/sign-in',
+            method: 'post',
+          },
+          register: {
+            endpoint: '/auth/sign-up',
+            method: 'post',
+          },
+          logout: {
+            endpoint: '/auth/sign-out',
+            method: 'post',
+          },
+          requestPass: {
+            endpoint: '/auth/request-pass',
+            method: 'post',
+          },
+          resetPass: {
+            endpoint: '/auth/reset-pass',
+            method: 'post',
+          },
         }),
       ],
       forms: {},
