@@ -1,14 +1,11 @@
 package com.echo.backend.controller;
 
-import io.jsonwebtoken.JwtBuilder;
+import com.echo.backend.dto.LoginRequest;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.echo.backend.dto.User;
 
 import java.util.Date;
@@ -19,10 +16,10 @@ import java.util.stream.Collectors;
 @RequestMapping("/auth")
 public class AuthController {
     @PostMapping("/sign-in")
-    public User login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
-        String token = getJWTToken(username);
+    public User login(@RequestBody LoginRequest loginRequest) {
+        String token = getJWTToken(loginRequest.getEmail());
         User user = new User();
-        user.setUser(username);
+        user.setEmail(loginRequest.getEmail());
         user.setToken(token);
         return user;
     }
@@ -45,6 +42,6 @@ public class AuthController {
                 .signWith(SignatureAlgorithm.HS512,
                         secretKey.getBytes()).compact();
 
-        return "Bearer " + token;
+        return token;
     }
 }

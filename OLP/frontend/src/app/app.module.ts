@@ -16,6 +16,7 @@ import { SellerInfoComponent } from './seller-info/seller-info.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NbAuthJWTToken } from '@nebular/auth';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
       strategies: [
         NbPasswordAuthStrategy.setup({
           name: 'email',
+          token: {
+            class: NbAuthJWTToken,
+            key: 'token',
+          },
           baseEndpoint: environment.baseEndpoint,
           login: {
             endpoint: '/auth/sign-in',

@@ -20,6 +20,7 @@
 
   <nb-layout-column>
     <p>home works!</p>
+    <p *ngIf="user?.sub">Welcome {{user?.sub}}!</p>
   </nb-layout-column>
 
   <nb-layout-footer fixed>
