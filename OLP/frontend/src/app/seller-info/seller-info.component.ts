@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seller-info.component.scss']
 })
 export class SellerInfoComponent implements OnInit {
-
+  selectedItem="2";
   constructor() { }
 
   ngOnInit(): void {

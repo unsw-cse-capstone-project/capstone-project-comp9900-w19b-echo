@@ -19,11 +19,45 @@
   </nb-layout-header>
 
   <nb-layout-column>
-    <p>seller-info works!</p>
+    <nb-card>
+      <nb-card-body>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <label>Name</label>
+              <input type="text" nbInput fullWidth shape="semi-round" nbInput placeholder="text here">
+              <label>Gender</label>
+              <nb-select placeholder="Select Showcase" fullWidth [(selected)]="selectedItem" shape="semi-round">
+                <nb-option value="">Male</nb-option>
+                <nb-option value="0">Female</nb-option>
+                <nb-option value="1">Non-binary Gender</nb-option>
+              </nb-select>
+            </div>
+            <div class="col-sm">
+              <label>Birthday</label>
+              <input [nbDatepicker]="datepicker" nbInput fullWidth shape="semi-round" nbInput placeholder="select date">
+              <nb-datepicker #datepicker></nb-datepicker>
+              <label>Email</label>
+              <input type = "text" nbInput fullWidth shape="semi-round" nbInput placeholder="select date">
+            </div>
+            <div class="col-sm">
+              <label>Tel</label>
+              <input type="text" nbInput fullWidth shape="semi-round" nbInput placeholder="number only">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8">
+              <label>Address</label>
+              <input type="text" nbInput fullWidth fieldSize="giant" shape="semi-round" nbInput placeholder="text here">
+            </div>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
   </nb-layout-column>
 
   <nb-layout-footer fixed>
-    <!-- Insert footer here -->
+    <button left nbButton>Submit</button>
   </nb-layout-footer>
 
 </nb-layout>

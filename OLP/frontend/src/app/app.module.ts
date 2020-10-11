@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NbThemeModule, NbLayoutModule, NbActionsModule, NbIconModule, NbCardModule,NbInputModule, NbTooltipModule,NbDatepickerModule,NbSelectModule} from '@nebular/theme';
+import {NbThemeModule, NbLayoutModule, NbActionsModule, NbIconModule, NbCardModule,NbInputModule, NbTooltipModule,NbDatepickerModule,NbSelectModule,NbButtonModule} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
 import {environment} from "../environments/environment";
@@ -73,6 +73,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NbCardModule,
     NgbModule,
     NbSelectModule,
+    NbButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
