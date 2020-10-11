@@ -1,6 +1,7 @@
 package com.echo.backend.controller;
 
 import com.echo.backend.dto.LoginRequest;
+import com.echo.backend.dto.RegisterRequest;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.security.core.GrantedAuthority;
@@ -20,6 +21,15 @@ public class AuthController {
         String token = getJWTToken(loginRequest.getEmail());
         User user = new User();
         user.setEmail(loginRequest.getEmail());
+        user.setToken(token);
+        return user;
+    }
+
+    @PostMapping("/sign-up")
+    public User register(@RequestBody RegisterRequest registerRequest) {
+        String token = getJWTToken(registerRequest.getEmail());
+        User user = new User();
+        user.setEmail(registerRequest.getEmail());
         user.setToken(token);
         return user;
     }
