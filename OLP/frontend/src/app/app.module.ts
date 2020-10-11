@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NbThemeModule, NbLayoutModule, NbActionsModule, NbIconModule, NbTooltipModule} from '@nebular/theme';
+import {NbThemeModule, NbLayoutModule, NbActionsModule, NbIconModule, NbCardModule,NbInputModule, NbTooltipModule,NbDatepickerModule,NbSelectModule} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
 import {environment} from "../environments/environment";
@@ -15,6 +15,7 @@ import { BuyerInfoComponent } from './buyer-info/buyer-info.component';
 import { SellerInfoComponent } from './seller-info/seller-info.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HeaderComponent } from './header/header.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { HeaderComponent } from './header/header.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     NbThemeModule.forRoot({name: 'default'}),
+    NbDatepickerModule.forRoot(),
     NbLayoutModule,
+    NbInputModule,
     NbEvaIconsModule,
     NbAuthModule.forRoot({
       strategies: [
@@ -66,6 +69,10 @@ import { HeaderComponent } from './header/header.component';
     NbActionsModule,
     NbIconModule,
     NbTooltipModule,
+    NbInputModule,
+    NbCardModule,
+    NgbModule,
+    NbSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
