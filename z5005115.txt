@@ -1,0 +1,32 @@
+Week 1
+
+1. Group was formed and I joined the Echo group;
+2. Discussed with my team and decided to work on the OnlinePropertySales project;
+3. Talked about the technologies and the approach to implement it;
+4. Created my JIRA account;
+
+Week 2
+
+1. Created user stories, Epic and backlogs in JIRA based on the project objective;
+2. Discussed with the team on the project proposal;
+3. Add user stories and JIRA backlogs to project proposal;
+4. Developed UI Interfaces and Flows Diagram;
+
+
+Week 3
+
+1. Completed the project sprints planning and added to project proposal;
+2. Continued developmenting UI Interfaces and Flows Diagram;
+3. Created my GitHub account
+4. Setup Project structure on Git with the followings modules and MVN build;
+   Frontend - Angular
+   Backend - Spring boot
+5. Wrote installation guide for development environment setup;
+6. Discussed on the sprint planning and user stories in current sprint and update status;
+
+Week 4
+
+1. Built skeleton of frontend and layout;
+2. Added spring security and JWT token authentication;
+3. Created sign-in screen and corresponding API interface in the backend;
+4. Created sign-up screen and corresponding API interface in the backend;
