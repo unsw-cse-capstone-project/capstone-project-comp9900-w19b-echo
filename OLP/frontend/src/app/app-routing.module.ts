@@ -8,11 +8,11 @@ import {
   NbRequestPasswordComponent,
   NbResetPasswordComponent,
 } from '@nebular/auth';
-import {AboutUsComponent} from "./about-us/about-us.component";
-import {HomeComponent} from "./home/home.component";
-import {BuyerInfoComponent} from "./buyer-info/buyer-info.component";
-import {SellerInfoComponent} from "./seller-info/seller-info.component";
-import {ContactUsComponent} from "./contact-us/contact-us.component";
+import {AboutUsComponent} from "./Components/about-us/about-us.component";
+import {HomeComponent} from "./Components/home/home.component";
+import {BuyerInfoComponent} from "./Components/buyer-info/buyer-info.component";
+import {SellerInfoComponent} from "./Components/seller-info/seller-info.component";
+import {ContactUsComponent} from "./Components/contact-us/contact-us.component";
 
 const routes: Routes = [
   {
