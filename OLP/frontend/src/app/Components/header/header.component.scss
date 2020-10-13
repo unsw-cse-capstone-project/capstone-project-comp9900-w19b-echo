@@ -1,3 +1,12 @@
 .flex-expand {
   flex: 1 1 auto;
 }
+#search-bar{
+  z-index:-2;
+  margin-top: -35px;
+  position:fixed;
+  padding-left: 0px !important;
+  margin-right: 30px;
+  left:800px;
+
+}

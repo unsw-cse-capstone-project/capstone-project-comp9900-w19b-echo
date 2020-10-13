@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NbAuthJWTToken, NbAuthService} from "@nebular/auth";
+import { NbSearchService } from '@nebular/theme';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,6 @@ import {NbAuthJWTToken, NbAuthService} from "@nebular/auth";
 })
 export class HeaderComponent implements OnInit {
   user = {sub:''};
-
   constructor(private authService: NbAuthService) {
 
     this.authService.onTokenChange()
@@ -22,5 +22,16 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
+}
+export class SearchEventComponent {
 
+  value = '';
+  constructor(private searchService: NbSearchService) {
+
+    this.searchService.onSearchSubmit()
+      .subscribe((data: any) => {
+        this.value = data.term;
+      });
+
+  }
 }
