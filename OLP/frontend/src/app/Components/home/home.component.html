@@ -5,8 +5,345 @@
   </nb-layout-header>
 
   <nb-layout-column>
-    <p>home works!</p>
-    <p *ngIf="user?.sub">Welcome {{user?.sub}}!</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mt-3 mb-4">
+          <section>
+
+            <h5 class="mb-3">Location</h5>
+
+            <div class="text-muted small text-uppercase mb-5">
+
+              <p class="mb-3"><a href="#!" class="card-link-secondary">Kingsford</a></p>
+              <p class="mb-3"><a href="#!" class="card-link-secondary">Central</a></p>
+              <p class="mb-3"><a href="#!" class="card-link-secondary">Darling</a></p>
+              <p class="mb-3"><a href="#!" class="card-link-secondary">Hurstville</a></p>
+              <p class="mb-3"><a href="#!" class="card-link-secondary">Broadway</a></p>
+              <p class="mb-3"><a href="#!" class="card-link-secondary">Ashefield</a></p>
+              <p class="mb-3"><a href="#!" class="card-link-secondary">Burwood</a></p>
+
+            </div>
+
+          </section>
+          <section class="mb-4">
+
+             <h6 class="font-weight-bold mb-3">Price</h6>
+
+             <div class="form-check pl-0 mb-3">
+               <input type="radio" class="form-check-input" id="under25" name="materialExampleRadios">
+               <label class="form-check-label small text-uppercase card-link-secondary" for="under25">Under $10,000</label>
+             </div>
+             <div class="form-check pl-0 mb-3">
+               <input type="radio" class="form-check-input" id="2550" name="materialExampleRadios">
+               <label class="form-check-label small text-uppercase card-link-secondary" for="2550">$10,000 to $50,000</label>
+             </div>
+             <div class="form-check pl-0 mb-3">
+               <input type="radio" class="form-check-input" id="50100" name="materialExampleRadios">
+               <label class="form-check-label small text-uppercase card-link-secondary" for="50100">$50,000 to $100,000</label>
+             </div>
+             <div class="form-check pl-0 mb-3">
+               <input type="radio" class="form-check-input" id="100200" name="materialExampleRadios">
+               <label class="form-check-label small text-uppercase card-link-secondary" for="100200">$100,000 to $500,000</label>
+             </div>
+             <div class="form-check pl-0 mb-3">
+               <input type="radio" class="form-check-input" id="200above" name="materialExampleRadios">
+               <label class="form-check-label small text-uppercase card-link-secondary" for="200above">$500,000 & Above</label>
+             </div>
+             <form>
+               <div class="d-flex align-items-center mt-4 pb-1">
+                 <div class="md-form md-outline my-0">
+                   <input id="from" type="text" class="form-control mb-0">
+                   <label for="form">$ Min</label>
+                 </div>
+                 <p class="px-2 mb-0 text-muted"> - </p>
+                 <div class="md-form md-outline my-0">
+                   <input id="to" type="text" class="form-control mb-0">
+                   <label for="to">$ Max</label>
+                 </div>
+               </div>
+             </form>
+
+           </section>
+        </div>
+        <div class="col-lg-8">
+          <section>
+
+            <!-- Grid row -->
+            <div class="row mb-4">
+
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-4 mb-4">
+
+                <!-- Card -->
+                <div class="">
+
+                  <div class="view zoom z-depth-2 rounded">
+                    <img class="img-fluid w-100" src="https://www.google.com/search?q=house+img&safe=strict&sxsrf=ALeKk01sjlggpSMfxDXY_9bgFsoGbwCMWw:1602602632897&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiL_piF8LHsAhXv4XMBHTbCBuAQ_AUoAXoECA0QAw&biw=1630&bih=867#imgrc=B2sfc7LFbtLFDM" alt="Sample">
+                    <a href="#!">
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+
+                  <div class="text-center pt-4">
+
+                    <h5 class="mb-0">house</h5>
+                    <h5>(3 year)</h5>
+                    <h6 class="mb-3">$ 599,000</h6>
+                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-cart-plus"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
+
+                  </div>
+
+                </div>
+                <!-- Card -->
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-4 mb-4">
+
+                <!-- Card -->
+                <div class="">
+
+                  <div class="view zoom z-depth-2 rounded">
+                    <!-- <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Eco/img(79).jpg" alt="Sample"> -->
+                    <a href="#!">
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+
+                  <div class="text-center pt-4">
+
+                    <h5 class="mb-0">house</h5>
+                    <h5>(1 year)</h5>
+                    <h6 class="mb-3">$ 70,000</h6>
+                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-cart-plus"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
+
+                  </div>
+
+                </div>
+                <!-- Card -->
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-4 mb-4">
+
+                <!-- Card -->
+                <div class="">
+
+                  <div class="view zoom z-depth-2 rounded">
+                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Eco/img(81).jpg" alt="Sample">
+                    <a href="#!">
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+
+                  <div class="text-center pt-4">
+
+                    <h5 class="mb-0">house</h5>
+                    <h5>2 year</h5>
+                    <h6 class="mb-3">$ 600,000</h6>
+                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-cart-plus"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
+
+                  </div>
+
+                </div>
+                <!-- Card -->
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-4 mb-4">
+
+                <!-- Card -->
+                <div class="">
+
+                  <div class="view zoom z-depth-2 rounded">
+                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Eco/img(84).jpg" alt="Sample">
+                    <a href="#!">
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+
+                  <div class="text-center pt-4">
+
+                    <h5 class="mb-0">House</h5>
+                    <h5>(2year )</h5>
+                    <h6 class="mb-3">$ 200,000</h6>
+                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-cart-plus"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
+
+                  </div>
+
+                </div>
+                <!-- Card -->
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-4 mb-4">
+
+                <!-- Card -->
+                <div class="">
+
+                  <div class="view zoom z-depth-2 rounded">
+                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Eco/img(85).jpg" alt="Sample">
+                    <a href="#!">
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+
+                  <div class="text-center pt-4">
+
+                    <h5 class="mb-0">flat</h5>
+                    <h5>(2 years)</h5>
+                    <h6 class="mb-3">$100,000</h6>
+                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-cart-plus"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
+
+                  </div>
+
+                </div>
+                <!-- Card -->
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-4 mb-4">
+
+                <!-- Card -->
+                <div class="">
+
+                  <div class="view zoom z-depth-2 rounded">
+                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Eco/img(86).jpg" alt="Sample">
+                    <a href="#!">
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+
+                  <div class="text-center pt-4">
+
+                    <h5 class="mb-0">pool</h5>
+                    <h5>(2 years)</h5>
+                    <h6 class="mb-3">$100,000</h6>
+                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-cart-plus"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
+
+                  </div>
+
+                </div>
+                <!-- Card -->
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-4 mb-4">
+
+                <!-- Card -->
+                <div class="">
+
+                  <div class="view zoom z-depth-2 rounded">
+                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Eco/img(87).jpg" alt="Sample">
+                    <a href="#!">
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+
+                  <div class="text-center pt-4">
+
+                    <h5 class="mb-0">House</h5>
+                    <h5>(1 year)</h5>
+                    <h6 class="mb-3">$ 200,000</h6>
+                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-cart-plus"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
+
+                  </div>
+
+                </div>
+                <!-- Card -->
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-4 mb-4">
+
+                <!-- Card -->
+                <div class="">
+
+                  <div class="view zoom z-depth-2 rounded">
+                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Eco/img(88).jpg" alt="Sample">
+                    <a href="#!">
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+
+                  <div class="text-center pt-4">
+
+                    <h5 class="mb-0">Apartment</h5>
+                    <h5>(5 years)</h5>
+                    <h6 class="mb-3">$ 100,0000</h6>
+                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-cart-plus"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
+
+                  </div>
+
+                </div>
+                <!-- Card -->
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-4 mb-4">
+
+                <!-- Card -->
+                <div class="">
+
+                  <div class="view zoom z-depth-2 rounded">
+                    <img class="img-fluid w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/Eco/img(89).jpg" alt="Sample">
+                    <a href="#!">
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+
+                  <div class="text-center pt-4">
+
+                    <h5 class="mb-0">Unit</h5>
+                    <h5>3 year</h5>
+                    <h6 class="mb-3">$ 90,000</h6>
+                    <button type="button" class="btn btn-primary btn-sm mr-1"><i class="fas fa-cart-plus"></i></button>
+                    <button type="button" class="btn btn-light btn-sm"><i class="fas fa-info-circle pr-2"></i>Details</button>
+
+                  </div>
+
+                </div>
+                <!-- Card -->
+
+              </div>
+              <!-- Grid column -->
+
+
+
+
+            </div>
+            <!-- Grid row -->
+
+          </section>
+        </div>
+
+      </div>
+
+    </div>
   </nb-layout-column>
 
   <nb-layout-footer fixed>
