@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.echo.backend.dao.UserMapper" >
+    <resultMap id="UserMap" type="com.echo.backend.domain.User" >
+        <result column="uid" property="uid" jdbcType="INTEGER" />
+        <result column="username" property="userName" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="role" property="role" jdbcType="VARCHAR" />
+        <result column="email" property="email" jdbcType="VARCHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="register_time" property="registerTime"/>
+        <result column="verification" property="verification" jdbcType="INTEGER" />
+    </resultMap>
+
+    <insert id="createUser" parameterType="com.echo.backend.domain.User" useGeneratedKeys="true" keyProperty="uid">
+        insert into t_user (username, password, role, email, phone, register_time, verification)
+        values(#{userName},#{password},#{role},#{email},#{phone},#{registerTime},#{verification})
+    </insert>
+
+    <update id="updateUser" parameterType="com.echo.backend.domain.User">
+        update t_user set password=#{password}
+        where uid=#{uid}
+    </update>
+
+    <update id="verifyUser" parameterType="com.echo.backend.domain.User">
+        update t_user set verification=#{verification}
+        where uid=#{uid}
+    </update>
+
+    <update id="updateUserPassword" parameterType="com.echo.backend.domain.User">
+        update t_user set username=#{userName}, role=#{role}, email=#{email}, phone=#{phone}, verification=#{verification}
+        where uid=#{uid}
+    </update>
+
+    <select id="selectUserById" resultMap="UserMap" parameterType="java.lang.Integer" >
+        select * from t_user where uid = #{id}
+    </select>
+
+    <select id="selectUserByName" resultMap="UserMap" parameterType="java.lang.String" >
+        select * from t_user where username = #{userName}
+    </select>
+
+    <select id="selectUserByEmail" resultMap="UserMap" parameterType="java.lang.String" >
+        select * from t_user where email = #{email}
+    </select>
+
+    <select id="getAllUser" resultMap="UserMap">
+        select * from t_user
+    </select>
+</mapper>

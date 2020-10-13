@@ -2,25 +2,12 @@ server:
   servlet:
     context-path: /api
 
-logging:
-  level:
-    com.echo.backend: debug
-  file:
-    name: logs/all.log
-
-spring:
-  profiles:
-    active: dev
-
-mybatis:
-  type-aliases-package: com.echo.backend.domain
-  mapper-locations: classpath:mapper/*.xml
-
 ---
+mybatis:
+  config-location: classpath:conf/mybatis-config.xml
+  mapper-locations: classpath:sqlmap/*.xml
 
 spring:
-  profiles: dev
-
   datasource:
     url: jdbc:mysql://18.162.53.247:3306/onpro
     driver-class-name: com.mysql.cj.jdbc.Driver
