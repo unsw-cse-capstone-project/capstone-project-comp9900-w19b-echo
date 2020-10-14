@@ -5,7 +5,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NbThemeModule, NbLayoutModule, NbActionsModule, NbIconModule, NbCardModule,NbInputModule, NbTooltipModule,NbDatepickerModule,NbSelectModule,NbButtonModule,NbSearchModule} from '@nebular/theme';
+import {
+  NbThemeModule,
+  NbLayoutModule,
+  NbActionsModule,
+  NbIconModule,
+  NbCardModule,
+  NbInputModule,
+  NbTooltipModule,
+  NbDatepickerModule,
+  NbSelectModule,
+  NbButtonModule,
+  NbSearchModule,
+  NbUserModule, NbContextMenuModule, NbMenuModule
+} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
 import {environment} from "../environments/environment";
@@ -48,23 +61,23 @@ import { NbAuthJWTToken } from '@nebular/auth';
           },
           baseEndpoint: environment.baseEndpoint,
           login: {
-            endpoint: '/auth/sign-in',
+            endpoint: '/sign-in',
             method: 'post',
           },
           register: {
-            endpoint: '/auth/sign-up',
+            endpoint: '/sign-up',
             method: 'post',
           },
           logout: {
-            endpoint: '/auth/sign-out',
+            endpoint: '/sign-out',
             method: 'post',
           },
           requestPass: {
-            endpoint: '/auth/request-pass',
+            endpoint: '/request-pass',
             method: 'post',
           },
           resetPass: {
-            endpoint: '/auth/reset-pass',
+            endpoint: '/reset-pass',
             method: 'post',
           },
         }),
@@ -80,6 +93,9 @@ import { NbAuthJWTToken } from '@nebular/auth';
     NbSelectModule,
     NbButtonModule,
     NbSearchModule,
+    NbUserModule,
+    NbContextMenuModule,
+    NbMenuModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

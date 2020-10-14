@@ -36,19 +36,14 @@ public class UserController {
 
     @RequestMapping(value = "/sign-in", method = RequestMethod.POST)
     public SignInResponse login(@RequestBody SignInRequest request) {
-        User user;
-        if (request.getUserName().contains("@")){
-            user = userService.getUserByEmail(request.getUserName());
-        }
-        else {
-            user = userService.getUserByName(request.getUserName());
-        }
+        //Login by email only
+        User user = userService.getUserByEmail(request.getEmail());
         if(null == user){
             throw new UnauthorizedException();
         }
 
         if (user.getPassword().equals(request.getPassword())) {
-            return new SignInResponse(200, "Login success", JWTUtil.sign(request.getUserName(), request.getPassword()));
+            return new SignInResponse(200, "Login success", JWTUtil.sign(user.getEmail(), user.getUserName(), request.getPassword()));
         } else {
             throw new UnauthorizedException();
         }
@@ -56,26 +51,32 @@ public class UserController {
 
     @RequestMapping(value = "/sign-up", method = RequestMethod.POST)
     public SignUpResponse register(@RequestBody SignUpRequest request) {
-
-        User user = request.getUser();
-
-        User temp = userService.getUserByName(user.getUserName());
+        User temp = userService.getUserByName(request.getFullName());
         if (temp != null){
             return new SignUpResponse(401, "Username exist.", null);
         }
 
-        temp = userService.getUserByEmail(user.getEmail());
+        temp = userService.getUserByEmail(request.getEmail());
         if (temp != null){
             return new SignUpResponse(401, "Email exist.", null);
         }
 
+        User user = new User();
         user.setRole("user");
         user.setRegisterTime(new Date());
+        user.setUserName(request.getFullName());
+        user.setEmail(request.getEmail());
+        user.setPassword(request.getPassword());
         userService.addNewUser(user);
-        return new SignUpResponse(200, "Login success", JWTUtil.sign(user.getUserName(), user.getPassword()));
+        return new SignUpResponse(200, "Login success", JWTUtil.sign(user.getEmail(), user.getUserName(), user.getPassword()));
     }
 
-    @RequestMapping(value = "/listAllUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/sign-out", method = RequestMethod.POST)
+    public void logout() {
+
+    }
+
+        @RequestMapping(value = "/listAllUser", method = RequestMethod.POST)
     @RequiresAuthentication
     public List<User> listAllUser(){
         return userService.getAllUser();
