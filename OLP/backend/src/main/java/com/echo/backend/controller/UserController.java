@@ -2,10 +2,7 @@ package com.echo.backend.controller;
 
 
 import com.echo.backend.domain.User;
-import com.echo.backend.dto.SignInRequest;
-import com.echo.backend.dto.SignInResponse;
-import com.echo.backend.dto.SignUpRequest;
-import com.echo.backend.dto.SignUpResponse;
+import com.echo.backend.dto.*;
 import com.echo.backend.exception.UnauthorizedException;
 import com.echo.backend.service.UserService;
 import com.echo.backend.utils.JWTUtil;
@@ -20,6 +17,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 
@@ -73,6 +71,46 @@ public class UserController {
         user.setRegisterTime(new Date());
         userService.addNewUser(user);
         return new SignUpResponse(200, "Login success", JWTUtil.sign(user.getUserName(), user.getPassword()));
+    }
+
+    @RequestMapping(value = "/update-info", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public UpdateInfoResponse update(UpdateInfoRequest request, HttpServletRequest hRequest){
+
+        String userName = JWTUtil.getUsername(hRequest.getHeader("Authorization"));
+        User user = request.getUser();
+        User exist = userService.getUserByName(userName);
+
+        if (null != user.getUserName()){
+            exist.setUserName(user.getUserName());
+        }
+
+        if (null != user.getEmail()){
+            exist.setEmail(user.getEmail());
+        }
+
+        if (null != user.getPhone()){
+            exist.setPhone(user.getPhone());
+        }
+
+        userService.updateUserInfo(exist);
+        return new UpdateInfoResponse(200, "Update success", null);
+    }
+
+    @RequestMapping(value = "/update-password", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public UpdatePasswordResponse update(UpdatePasswordRequest request, HttpServletRequest hRequest){
+
+        String userName = JWTUtil.getUsername(hRequest.getHeader("Authorization"));
+        User user = request.getUser();
+        User exist = userService.getUserByName(userName);
+
+        if (null != user.getPassword() ){
+            exist.setPassword(user.getPassword());
+        }
+
+        userService.updateUserPassword(exist);
+        return new UpdatePasswordResponse(200, "Update password success", null);
     }
 
     @RequestMapping(value = "/listAllUser", method = RequestMethod.POST)

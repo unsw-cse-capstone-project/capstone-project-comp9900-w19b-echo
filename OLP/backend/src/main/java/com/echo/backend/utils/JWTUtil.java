@@ -4,6 +4,7 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.echo.backend.service.UserService;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
@@ -44,6 +45,17 @@ public class JWTUtil {
         } catch (JWTDecodeException e) {
             return null;
         }
+    }
+
+    /**
+     * 根据token获取uid
+     * @param token
+     * @param userService
+     * @return
+     */
+    public static int getUid(String token, UserService userService){
+        String userName = JWTUtil.getUsername(token);
+        return userService.getUserByName(userName).getUid();
     }
 
     /**

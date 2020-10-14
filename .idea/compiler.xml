@@ -12,7 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="backend" target="11" />
-      <module name="backend (1)" target="11" />
+      <module name="backend (1)" target="1.8" />
       <module name="frontend" target="1.8" />
       <module name="olp" target="1.8" />
     </bytecodeTargetLevel>
