@@ -2,7 +2,7 @@ package com.echo.backend.dto;
 
 import com.echo.backend.domain.User;
 
-public class UpdateInfoRequest extends BaseRequest {
+public class UpdateInfoRequest {
 
     private User user;
 

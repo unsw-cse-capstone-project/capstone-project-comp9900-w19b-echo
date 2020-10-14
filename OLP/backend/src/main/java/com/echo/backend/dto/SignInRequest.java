@@ -2,7 +2,7 @@ package com.echo.backend.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class SignInRequest extends BaseRequest {
+public class SignInRequest{
 
     private String email;
     private String password;

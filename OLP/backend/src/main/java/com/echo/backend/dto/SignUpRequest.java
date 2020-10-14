@@ -1,10 +1,11 @@
 package com.echo.backend.dto;
 
-public class SignUpRequest extends BaseRequest {
+public class SignUpRequest{
 
     private String email;
     private String fullName;
     private String password;
+    private String phoneNumber;
 
     public String getEmail() {
         return email;
@@ -28,5 +29,13 @@ public class SignUpRequest extends BaseRequest {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
