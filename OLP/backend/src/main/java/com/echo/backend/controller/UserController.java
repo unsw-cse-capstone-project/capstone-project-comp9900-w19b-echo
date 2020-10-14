@@ -2,10 +2,7 @@ package com.echo.backend.controller;
 
 
 import com.echo.backend.domain.User;
-import com.echo.backend.dto.SignInRequest;
-import com.echo.backend.dto.SignInResponse;
-import com.echo.backend.dto.SignUpRequest;
-import com.echo.backend.dto.SignUpResponse;
+import com.echo.backend.dto.*;
 import com.echo.backend.exception.UnauthorizedException;
 import com.echo.backend.service.UserService;
 import com.echo.backend.utils.JWTUtil;
@@ -13,12 +10,8 @@ import org.apache.shiro.authz.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
 
 import java.util.Date;
 import java.util.List;
@@ -71,12 +64,20 @@ public class UserController {
         return new SignUpResponse(200, "Login success", JWTUtil.sign(user.getEmail(), user.getUserName(), user.getPassword()));
     }
 
+    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    public void updateUser(@RequestBody ProfileRequest request) {
+        User user = userService.getUserByEmail(request.getEmail());
+        user.setUserName(request.getFullName());
+        user.setPhone(request.getPhone());
+        userService.updateUserInfo(user);
+    }
+
     @RequestMapping(value = "/sign-out", method = RequestMethod.POST)
     public void logout() {
 
     }
 
-        @RequestMapping(value = "/listAllUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/listAllUser", method = RequestMethod.POST)
     @RequiresAuthentication
     public List<User> listAllUser(){
         return userService.getAllUser();
