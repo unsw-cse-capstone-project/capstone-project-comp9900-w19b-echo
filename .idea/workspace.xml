@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3be2abb8-c5a7-4fa1-8144-7efb71aeb50c" name="Default Changelist" comment="">
+    <list default="true" id="3be2abb8-c5a7-4fa1-8144-7efb71aeb50c" name="Default Changelist" comment="1. Finish table creating sql&#10;2. Add swagger2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/ExceptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/ExceptionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/MyRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/MyRealm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/FileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/JWTUtil.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/backend/target/" />
     <ignored path="$PROJECT_DIR$/OLP/frontend/target/" />
@@ -40,87 +39,12 @@
     <favorites_list name="capstone-project-comp9900-w19b-echo" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2794#2795#0" expanded="true" />
-                <element signature="e#2841#2842#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/ServletInitializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="5" column="31" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/BackendApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#334#335#0" expanded="true" />
-                <element signature="e#403#404#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/ExceptionController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/FileController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#621#622#0" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="248">
+              <caret line="55" column="52" lean-forward="true" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -128,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/MyRealm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+            <state relative-caret-position="226">
+              <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -140,17 +64,81 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/JWTUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+            <state relative-caret-position="-484">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/JWTFilter.java">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-67">
-              <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+            <state relative-caret-position="308">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignUpRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-63">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding>
+                <element signature="e#677#678#0" expanded="true" />
+                <element signature="e#711#712#0" expanded="true" />
+                <element signature="e#765#766#0" expanded="true" />
+                <element signature="e#811#812#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/UpdateInfoRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+              <folding>
+                <element signature="e#173#174#0" expanded="true" />
+                <element signature="e#200#201#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/UpdatePasswordRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="e#167#168#0" expanded="true" />
+                <element signature="e#194#195#0" expanded="true" />
+                <element signature="e#232#233#0" expanded="true" />
+                <element signature="e#264#265#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/FileController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignInRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="88">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -169,6 +157,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>com.echo.BackendApplication</find>
+      <find>redirect</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,34 +180,44 @@
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/CorsFilter.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/TempController.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/AuthController.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/JWTUtil.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/ShiroConfig.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/User.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_database.sql" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/conf/mybatis-config.xml" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/META-INF/additional-spring-configuration-metadata.json" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/MyRealm.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/Cross.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/exception/UnauthorizedException.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/BaseRequest.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignInRequest.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignInResponse.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/BaseResponse.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/ServletInitializer.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/BackendApplication.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignUpRequest.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignUpResponse.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/BeanConfig.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/TestController.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/BeanConfig.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/UserMapper.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/FileController.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/ExceptionController.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/JWTFilter.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/BackendApplication.java" />
         <option value="$PROJECT_DIR$/OLP/backend/pom.xml" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/FileUploadResponse.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/BaseResponse.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignUpResponse.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/UpdateInfoResponse.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignInResponse.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/UpdatePasswordResponse.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserControllerBak.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/Bak.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_database.sql" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/SwaggerConfig.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignInRequest.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignUpRequest.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/UpdateInfoRequest.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/UpdatePasswordRequest.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/FileController.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/MyRealm.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/JWTUtil.java" />
       </list>
     </option>
   </component>
@@ -261,8 +260,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -273,6 +270,11 @@
             <path>
               <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
               <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
               <item name="OLP" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -314,6 +316,62 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
+              <item name="OLP" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
+              <item name="OLP" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="shiro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
+              <item name="OLP" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
+              <item name="OLP" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
+              <item name="OLP" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
@@ -330,12 +388,47 @@
               <item name="OLP" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
+              <item name="OLP" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="sqlmap" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
+              <item name="OLP" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
+              <item name="OLP" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
+              <item name="OLP" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -353,12 +446,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/OLP/backend/src/main/resources/conf" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3321839" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.echo.backend.dto" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.echo.backend.controller" />
       <recent name="com.echo.backend.exception" />
@@ -418,7 +515,8 @@
       <workItem from="1601191074064" duration="13305000" />
       <workItem from="1602302228561" duration="1677000" />
       <workItem from="1602392420754" duration="14000" />
-      <workItem from="1602566427634" duration="21753000" />
+      <workItem from="1602566427634" duration="33949000" />
+      <workItem from="1602661063703" duration="2832000" />
     </task>
     <task id="LOCAL-00001" summary="Construct basic frame of backend.">
       <created>1600929787117</created>
@@ -455,17 +553,45 @@
       <option name="project" value="LOCAL" />
       <updated>1602603346188</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1. Bug fix, path error cause can't run in jvm">
+      <created>1602607545040</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1602607545040</updated>
+    </task>
+    <task id="LOCAL-00007" summary="1. Some fix, make project able to run in Tomcat8&#10;2. User management function">
+      <created>1602656435148</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1602656435148</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Merge branch 'master' of https://github.com/unsw-cse-capstone-project/capstone-project-comp9900-w19b-echo&#10;&#10;# Conflicts:&#10;#&#9;OLP/backend/src/main/java/com/echo/backend/controller/UserController.java">
+      <created>1602657557356</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1602657557356</updated>
+    </task>
+    <task id="LOCAL-00009" summary="1. Finish table creating sql&#10;2. Add swagger2">
+      <created>1602661569970</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1602661569970</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42955000" />
+    <option name="totallyTimeSpent" value="57983000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
+    <frame x="-6" y="-6" width="1381" height="844" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4960212" visible="true" weight="0.25925925" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4960212" visible="true" weight="0.26303855" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -475,7 +601,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891247" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.47480106" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6100982" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -484,17 +610,18 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.34748012" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.34642357" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" weight="0.25862068" />
+      <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" weight="0.2580645" />
+      <window_info anchor="bottom" id="TypeScript" order="15" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.2494331" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" weight="0.32955405" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Database" order="6" weight="0.32955405" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -558,126 +685,23 @@
     <MESSAGE value="Upload Database documents" />
     <MESSAGE value="Upload File system documents" />
     <MESSAGE value="1. Switch Security to Shiro&#10;2. User crud apis/service/dao&#10;3. table creating sql" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Switch Security to Shiro&#10;2. User crud apis/service/dao&#10;3. table creating sql" />
+    <MESSAGE value="1. Bug fix, path error cause can't run in jvm" />
+    <MESSAGE value="1. Some fix, make project able to run in Tomcat8&#10;2. User management function" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/unsw-cse-capstone-project/capstone-project-comp9900-w19b-echo&#10;&#10;# Conflicts:&#10;#&#9;OLP/backend/src/main/java/com/echo/backend/controller/UserController.java" />
+    <MESSAGE value="1. Finish table creating sql&#10;2. Add swagger2" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Finish table creating sql&#10;2. Add swagger2" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/logs/all.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1593" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/echo/backend/config/security/SecurityConfiguration.java" />
-    <entry file="file://$PROJECT_DIR$/backend/src/main/resources/templates/hello.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/resources/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/echo/backend/controller/TempController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/templates/hello.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Installation Guide.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="68" lean-forward="true" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/echo/backend/BackendApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/java/com/echo/backend/ServletInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="46" column="21" selection-start-line="37" selection-start-column="8" selection-end-line="46" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/JWTAuthorizationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/TempController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt/0.9.1/jjwt-0.9.1.jar!/io/jsonwebtoken/JwsHeader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/jsonwebtoken/jjwt/0.9.1/jjwt-0.9.1.jar!/io/jsonwebtoken/Jwts.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/ShiroConfig.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/JWTToken.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/conf/mybatis-config.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -686,116 +710,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/META-INF/additional-spring-configuration-metadata.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/RegisterRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/LoginRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/AuthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/CorsFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/META-INF/additional-spring-configuration-metadata.json" />
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/RegisterRequest.java" />
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/LoginRequest.java" />
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/User.java" />
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/AuthController.java" />
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/CorsFilter.java" />
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/exception/UnauthorizedException.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/BaseRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/BaseResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_database.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignInResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding>
-            <element signature="e#143#144#0" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignUpResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding>
-            <element signature="e#182#183#0" expanded="true" />
-            <element signature="e#220#221#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-146" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/TestController.java" />
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/Cross.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -816,84 +740,252 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignUpRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="e#173#174#0" expanded="true" />
-            <element signature="e#200#201#0" expanded="true" />
-            <element signature="e#238#239#0" expanded="true" />
-            <element signature="e#270#271#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/OLP/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignInRequest.java">
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/ExceptionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#181#182#0" expanded="true" />
-            <element signature="e#212#213#0" expanded="true" />
-            <element signature="e#260#261#0" expanded="true" />
-            <element signature="e#300#301#0" expanded="true" />
-            <element signature="e#335#336#0" expanded="true" />
-            <element signature="e#366#367#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#454#455#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        <state relative-caret-position="-207">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#773#774#0" expanded="true" />
-            <element signature="e#816#817#0" expanded="true" />
-            <element signature="e#864#865#0" expanded="true" />
-            <element signature="e#915#916#0" expanded="true" />
-            <element signature="e#955#956#0" expanded="true" />
-            <element signature="e#998#999#0" expanded="true" />
-            <element signature="e#1295#1296#0" expanded="true" />
-            <element signature="e#1320#1321#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/JWTFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-67">
-          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+        <state relative-caret-position="286">
+          <caret line="89" column="52" selection-start-line="89" selection-start-column="52" selection-end-line="89" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/ServletInitializer.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.2.9.RELEASE/spring-web-5.2.9.RELEASE.jar!/org/springframework/web/WebApplicationInitializer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/ServletInitializer.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.3.4.RELEASE/spring-boot-2.3.4.RELEASE.jar!/org/springframework/boot/web/servlet/support/SpringBootServletInitializer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2115">
+          <caret line="37" column="76" selection-start-line="37" selection-start-column="76" selection-end-line="37" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#945#946#0" expanded="true" />
+            <element signature="e#988#989#0" expanded="true" />
+            <element signature="e#1295#1296#0" expanded="true" />
+            <element signature="e#1341#1342#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/auth0/java-jwt/3.2.0/java-jwt-3.2.0.jar!/com/auth0/jwt/JWTCreator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="88" column="34" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="15" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/BaseRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/BaseResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignUpResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding>
+            <element signature="e#182#183#0" expanded="true" />
+            <element signature="e#220#221#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/UpdateInfoResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#143#144#0" expanded="true" />
+            <element signature="e#181#182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/FileUploadResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignInResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#143#144#0" expanded="true" />
+            <element signature="e#181#182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/UpdatePasswordResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding>
+            <element signature="e#151#152#0" expanded="true" />
+            <element signature="e#189#190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/Bak.java" />
+    <entry file="file://$PROJECT_DIR$/OLP/backend/logs/all.log.2020-10-09.0.gz">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/frontend/src/app/Components/header/header.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="112" selection-start-line="10" selection-start-column="112" selection-end-line="10" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_database.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/springfox/springfox-core/2.6.1/springfox-core-2.6.1.jar!/springfox/documentation/builders/ApiInfoBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="49" column="37" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/springfox/springfox-core/2.6.1/springfox-core-2.6.1.jar!/springfox/documentation/service/Contact.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="31" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2112">
+          <caret line="96" column="60" selection-start-line="96" selection-start-column="60" selection-end-line="96" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/BackendApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/SwaggerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" column="54" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="83" selection-start-line="11" selection-start-column="83" selection-end-line="11" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-annotations/1.5.10/swagger-annotations-1.5.10.jar!/io/swagger/annotations/ApiImplicitParam.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="31" column="11" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/UpdateInfoRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+          <folding>
+            <element signature="e#173#174#0" expanded="true" />
+            <element signature="e#200#201#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/UpdatePasswordRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#167#168#0" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#232#233#0" expanded="true" />
+            <element signature="e#264#265#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/MyRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -902,15 +994,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/JWTUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        <state relative-caret-position="-484">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/MyRealm.java">
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+        <state relative-caret-position="308">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignInRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/FileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -919,61 +1025,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+        <state relative-caret-position="248">
+          <caret line="55" column="52" lean-forward="true" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignUpRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2794#2795#0" expanded="true" />
-            <element signature="e#2841#2842#0" expanded="true" />
+            <element signature="e#677#678#0" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
+            <element signature="e#765#766#0" expanded="true" />
+            <element signature="e#811#812#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/FileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#621#622#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/ExceptionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/BackendApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#334#335#0" expanded="true" />
-            <element signature="e#403#404#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
         </state>
       </provider>
     </entry>

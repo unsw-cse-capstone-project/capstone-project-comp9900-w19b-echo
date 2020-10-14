@@ -17,7 +17,7 @@
         values(#{userName},#{password},#{role},#{email},#{phone},#{registerTime},#{verification})
     </insert>
 
-    <update id="updateUser" parameterType="com.echo.backend.domain.User">
+    <update id="updateUserPassword" parameterType="com.echo.backend.domain.User">
         update t_user set password=#{password}
         where uid=#{uid}
     </update>
@@ -27,7 +27,7 @@
         where uid=#{uid}
     </update>
 
-    <update id="updateUserPassword" parameterType="com.echo.backend.domain.User">
+    <update id="updateUser" parameterType="com.echo.backend.domain.User">
         update t_user set username=#{userName}, role=#{role}, email=#{email}, phone=#{phone}, verification=#{verification}
         where uid=#{uid}
     </update>

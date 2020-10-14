@@ -41,14 +41,8 @@ public class MyRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        String username = JWTUtil.getUsername(principals.toString());
-        User user;
-        if (username.contains("@")) {
-            user = userService.getUserByEmail(username);
-        }
-        else {
-            user = userService.getUserByName(username);
-        }
+        String email = JWTUtil.getEmail(principals.toString());
+        User user = userService.getUserByEmail(email);
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
         simpleAuthorizationInfo.addRole(user.getRole());
         return simpleAuthorizationInfo;
@@ -61,24 +55,18 @@ public class MyRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken auth) throws AuthenticationException {
         String token = (String) auth.getCredentials();
         // 解密获得username，用于和数据库进行对比
-        String username = JWTUtil.getUsername(token);
-        if (username == null) {
+        String email = JWTUtil.getEmail(token);
+        if (email == null) {
             throw new AuthenticationException("token invalid");
         }
 
-        User user;
-        if (username.contains("@")) {
-            user = userService.getUserByEmail(username);
-        }
-        else {
-            user = userService.getUserByName(username);
-        }
+        User user = userService.getUserByEmail(email);
 
         if (user == null) {
             throw new AuthenticationException("User didn't existed!");
         }
 
-        if (! JWTUtil.verify(token, username, user.getPassword())) {
+        if (! JWTUtil.verify(token, email, user.getPassword())) {
             throw new AuthenticationException("Username or password error");
         }
 
