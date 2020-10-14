@@ -4,10 +4,11 @@
   <nb-action [routerLink]="['/buyer-info']">For Buyer</nb-action>
   <nb-action [routerLink]="['/seller-info']">For Seller</nb-action>
   <nb-action [routerLink]="['/contact-us']">Contact Us</nb-action>
-
   <nb-action style="width: 550px; cursor:auto"> </nb-action>
-  <nb-action [routerLink]="['/auth/login']">Sign In</nb-action>
-  <nb-action [routerLink]="['/auth/register']">Sign Up</nb-action>
+  <nb-action *ngIf="!user?.fullName" [routerLink]="['/auth/login']">Sign In {{user?.fullName}}</nb-action>
+  <nb-action *ngIf="!user?.fullName" [routerLink]="['/auth/register']">Sign Up</nb-action>
+  <nb-action *ngIf="user?.fullName" style="cursor:auto">{{user?.fullName}}</nb-action>
+  <nb-action *ngIf="user?.fullName" [routerLink]="['/auth/logout']"><nb-icon icon="log-out-outline"></nb-icon></nb-action>
 </nb-actions>
 <div class="ng-container" id="search-bar">
   <form class="form-inline my-2 my-lg-0">

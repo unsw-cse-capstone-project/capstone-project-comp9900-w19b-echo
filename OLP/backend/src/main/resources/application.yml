@@ -1,7 +1,3 @@
-server:
-  servlet:
-    context-path: /api
-
 ---
 mybatis:
   config-location: classpath:conf/mybatis-config.xml

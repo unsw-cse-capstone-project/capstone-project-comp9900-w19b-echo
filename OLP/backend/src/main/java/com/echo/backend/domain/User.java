@@ -23,6 +23,9 @@ public class User {
     // 1: verificated
     private int verification = 0;
 
+    public User(){
+    }
+
     public User(int uid, String userName, String password, String role, String email, String phone) {
         this.uid = uid;
         this.userName = userName;
