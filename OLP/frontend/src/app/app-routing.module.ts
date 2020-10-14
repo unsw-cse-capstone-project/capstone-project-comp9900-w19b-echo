@@ -13,6 +13,7 @@ import {HomeComponent} from "./Components/home/home.component";
 import {BuyerInfoComponent} from "./Components/buyer-info/buyer-info.component";
 import {SellerInfoComponent} from "./Components/seller-info/seller-info.component";
 import {ContactUsComponent} from "./Components/contact-us/contact-us.component";
+import {UserAccountComponent} from "./Components/user-account/user-account.component";
 
 const routes: Routes = [
   {
@@ -68,7 +69,11 @@ const routes: Routes = [
   {
     path: 'contact-us',
     component: ContactUsComponent,
-  }
+  },
+  {
+    path: 'user-account',
+    component: UserAccountComponent,
+  },
 ];
 
 @NgModule({

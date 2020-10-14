@@ -76,6 +76,14 @@ public class UserController {
         return new SignUpResponse(200, "Login success", JWTUtil.sign(user.getEmail(), user.getUserName(), user.getPassword()));
     }
 
+    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    public void updateUser(@RequestBody ProfileRequest request) {
+        User user = userService.getUserByEmail(request.getEmail());
+        user.setUserName(request.getFullName());
+        user.setPhone(request.getPhone());
+        userService.updateUserInfo(user);
+    }
+
     @RequestMapping(value = "/sign-out", method = RequestMethod.POST)
     public void logout() {
 
