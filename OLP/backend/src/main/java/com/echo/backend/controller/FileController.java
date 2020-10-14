@@ -32,7 +32,7 @@ public class FileController {
 
     @RequestMapping(value = "/uploadAvatar", method = RequestMethod.POST)
     @RequiresAuthentication
-    public FileUploadResponse test(MultipartFile file, HttpServletRequest request){
+    public FileUploadResponse uploadAvatar(MultipartFile file, HttpServletRequest request){
 
         if (null == file){
             return new FileUploadResponse(500, "File is empty", null);

@@ -21,11 +21,11 @@ public class JWTUtil {
      * @param secret 用户的密码
      * @return 是否正确
      */
-    public static boolean verify(String token, String username, String secret) {
+    public static boolean verify(String token, String email, String secret) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             JWTVerifier verifier = JWT.require(algorithm)
-                    .withClaim("username", username)
+                    .withClaim("email", email)
                     .build();
             DecodedJWT jwt = verifier.verify(token);
             return true;
@@ -38,10 +38,10 @@ public class JWTUtil {
      * 获得token中的信息无需secret解密也能获得
      * @return token中包含的用户名
      */
-    public static String getUsername(String token) {
+    public static String getEmail(String token) {
         try {
             DecodedJWT jwt = JWT.decode(token);
-            return jwt.getClaim("username").asString();
+            return jwt.getClaim("email").asString();
         } catch (JWTDecodeException e) {
             return null;
         }
@@ -54,8 +54,8 @@ public class JWTUtil {
      * @return
      */
     public static int getUid(String token, UserService userService){
-        String userName = JWTUtil.getUsername(token);
-        return userService.getUserByName(userName).getUid();
+        String email = JWTUtil.getEmail(token);
+        return userService.getUserByEmail(email).getUid();
     }
 
     /**
@@ -70,8 +70,8 @@ public class JWTUtil {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             // 附带username信息
             return JWT.create()
-                    .withSubject(email)
-                    .withClaim("fullName", fullName)
+                    .withSubject(fullName)
+                    .withClaim("email", email)
                     .withExpiresAt(date)
                     .sign(algorithm);
         } catch (UnsupportedEncodingException e) {

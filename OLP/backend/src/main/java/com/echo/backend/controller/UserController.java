@@ -92,9 +92,9 @@ public class UserController {
     @RequiresAuthentication
     public UpdateInfoResponse update(@RequestBody UpdateInfoRequest request, HttpServletRequest hRequest){
 
-        String userName = JWTUtil.getUsername(hRequest.getHeader("Authorization"));
+        String email = JWTUtil.getEmail(hRequest.getHeader("Authorization"));
         User user = request.getUser();
-        User exist = userService.getUserByName(userName);
+        User exist = userService.getUserByName(email);
 
         if (null != user.getUserName()){
             exist.setUserName(user.getUserName());
@@ -116,9 +116,9 @@ public class UserController {
     @RequiresAuthentication
     public UpdatePasswordResponse update(@RequestBody UpdatePasswordRequest request, HttpServletRequest hRequest){
 
-        String userName = JWTUtil.getUsername(hRequest.getHeader("Authorization"));
+        String email = JWTUtil.getEmail(hRequest.getHeader("Authorization"));
         User user = request.getUser();
-        User exist = userService.getUserByName(userName);
+        User exist = userService.getUserByName(email);
 
         if (null != user.getPassword() ){
             exist.setPassword(user.getPassword());
