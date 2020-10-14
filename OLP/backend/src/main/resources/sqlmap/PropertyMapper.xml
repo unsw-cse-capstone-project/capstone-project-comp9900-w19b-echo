@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.echo.backend.dao.PropertyMapper" >
+    <resultMap id="PropertyMap" type="com.echo.backend.domain.Property" >
+        <result column="pid" property="pid" jdbcType="INTEGER" />
+        <result column="owner" property="owner" jdbcType="INTEGER" />
+        <result column="state" property="state" jdbcType="VARCHAR" />
+        <result column="city" property="city" jdbcType="VARCHAR" />
+        <result column="district" property="district" jdbcType="VARCHAR" />
+        <result column="code" property="code" jdbcType="VARCHAR" />
+        <result column="street" property="street" jdbcType="VARCHAR" />
+        <result column="house_number" property="houseNumber" jdbcType="VARCHAR" />
+        <result column="longitude" property="longitude" jdbcType="DOUBLE" />
+        <result column="latitude" property="latitude" jdbcType="DOUBLE" />
+        <result column="address" property="address" jdbcType="VARCHAR" />
+        <result column="status" property="status" jdbcType="INTEGER" />
+        <result column="create_time" property="createTime"/>
+        <result column="area" property="area" jdbcType="DOUBLE" />
+        <result column="bedroom" property="bedroom" jdbcType="INTEGER" />
+        <result column="bathroom" property="bathroom" jdbcType="INTEGER" />
+        <result column="carport" property="carport" jdbcType="INTEGER" />
+        <result column="verification" property="verification" jdbcType="INTEGER" />
+        <result column="description" property="description" jdbcType="VARCHAR" />
+        <result column="remark" property="remark" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <insert id="createProperty" parameterType="com.echo.backend.domain.Property" useGeneratedKeys="true" keyProperty="pid">
+        insert into t_property (owner, state, city, district, code, street,house_number, longitude, latitude, address, status, create_time, area, bedroom, bathroom, carport, verification, description)
+        values(#{owner},#{state},#{city},#{district},#{code},#{street},#{houseNumber},#{longitude},#{latitude}, #{address}, 0, #{createTime}, #{area},#{bedroom},#{bathroom},#{carport},0,#{description})
+    </insert>
+
+    <select id="getAllProperty" resultMap="PropertyMap">
+        select * from t_property
+    </select>
+</mapper>
