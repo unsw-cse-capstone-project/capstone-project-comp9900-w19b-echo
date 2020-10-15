@@ -49,8 +49,8 @@ public class AuctionController {
         return new AddAuctionResponse(200, "Add auction success", null);
     }
 
-    @ApiOperation(value="Create auction", notes="Create auction")
-    @RequestMapping(value = "/add-auction", method = RequestMethod.POST)
+    @ApiOperation(value="Place nid", notes="Place new bid")
+    @RequestMapping(value = "/place-bid", method = RequestMethod.POST)
     @RequiresAuthentication
     public PlaceBidResponse placeNewBid(@RequestBody PlaceBidRequest request, HttpServletRequest hRequest) {
 
