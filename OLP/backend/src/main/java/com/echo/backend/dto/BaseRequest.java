@@ -2,7 +2,7 @@ package com.echo.backend.dto;
 
 public abstract class BaseRequest {
 
-    private Integer page = 0;
+    private Integer page = 1;
 
     private Integer dataNum = 10;
 

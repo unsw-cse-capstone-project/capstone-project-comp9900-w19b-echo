@@ -98,7 +98,7 @@ public class UserController {
 
     @RequestMapping(value = "/update-info", method = RequestMethod.POST)
     @RequiresAuthentication
-    public UpdateInfoResponse update(@RequestBody UpdateInfoRequest request, HttpServletRequest hRequest){
+    public UpdateInfoResponse updateInfo(@RequestBody UpdateInfoRequest request, HttpServletRequest hRequest){
 
         String email = JWTUtil.getEmail(hRequest.getHeader("Authorization"));
         User user = request.getUser();
@@ -122,7 +122,7 @@ public class UserController {
 
     @RequestMapping(value = "/update-password", method = RequestMethod.POST)
     @RequiresAuthentication
-    public UpdatePasswordResponse update(@RequestBody UpdatePasswordRequest request, HttpServletRequest hRequest){
+    public UpdatePasswordResponse updatePassword(@RequestBody UpdatePasswordRequest request, HttpServletRequest hRequest){
 
         String email = JWTUtil.getEmail(hRequest.getHeader("Authorization"));
         User user = request.getUser();

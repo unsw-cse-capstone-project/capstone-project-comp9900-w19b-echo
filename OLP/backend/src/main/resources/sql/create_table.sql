@@ -37,6 +37,7 @@ create table t_property(
     remark varchar(5000)
 )
 auto_increment=100000;
+create index tpo_index on t_property(owner);
 
 create table t_auction(
     aid int auto_increment primary key,
@@ -50,6 +51,7 @@ create table t_auction(
     winner int
 )
 auto_increment=1000000;
+create index tap_index on t_auction(pid);
 
 create table user_favorite(
     uid int not null,
@@ -89,6 +91,7 @@ create table auction_register(
     uid int not null,
     pid int not null,
     user_type int not null,
+    base_price double,
     serial int auto_increment  primary key
 );
 create index ar_index on auction_register(aid);

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.echo.backend.dao.AuctionRegisterMapper" >
+    <resultMap id="AuctionRegisterMap" type="com.echo.backend.domain.AuctionRegister" >
+        <result column="aid" property="aid" jdbcType="INTEGER" />
+        <result column="uid" property="uid" jdbcType="INTEGER" />
+        <result column="pid" property="pid" jdbcType="INTEGER" />
+        <result column="base_price" property="basePrice" jdbcType="DOUBLE" />
+        <result column="user_type" property="userType" jdbcType="INTEGER" />
+        <result column="serial" property="serial" jdbcType="INTEGER" />
+    </resultMap>
+
+    <insert id="createAuctionBid" parameterType="com.echo.backend.domain.AuctionRegister" useGeneratedKeys="true" keyProperty="serial">
+        insert into t_auction (uid, pid, base_price, begin_time, end_time, status)
+        values(#{uid},#{pid},#{basePrice},#{beginTime},#{endTime},#{status})
+    </insert>
+
+    <select id="getRegisterBidderByAid" resultMap="AuctionRegisterMap" parameterType="java.lang.Integer">
+        select * from auction_register where aid=#{aid}
+    </select>
+</mapper>

@@ -12,7 +12,7 @@ logging:
     org.springframework.web: info
     com.echo.backend: debug
   file:
-    name: logs/all.log
+    name: ../logs/run.out
 
 spring:
   datasource:

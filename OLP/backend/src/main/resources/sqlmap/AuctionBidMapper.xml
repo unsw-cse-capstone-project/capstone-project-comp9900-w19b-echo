@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.echo.backend.dao.AuctionBidMapper" >
+    <resultMap id="AuctionBidMap" type="com.echo.backend.domain.AuctionBid" >
+        <result column="aid" property="aid" jdbcType="INTEGER" />
+        <result column="uid" property="uid" jdbcType="INTEGER" />
+        <result column="pid" property="pid" jdbcType="INTEGER" />
+        <result column="bid_value" property="bidValue" jdbcType="DOUBLE" />
+        <result column="bid_time" property="bidTime"/>
+        <result column="serial" property="serial" jdbcType="INTEGER" />
+    </resultMap>
+
+    <insert id="createAuctionBid" parameterType="com.echo.backend.domain.AuctionBid" useGeneratedKeys="true" keyProperty="serial">
+        insert into t_auction (uid, pid, base_price, begin_time, end_time, status)
+        values(#{uid},#{pid},#{basePrice},#{beginTime},#{endTime},#{status})
+    </insert>
+
+    <select id="getAuction10mins" resultMap="AuctionMap" >
+        select * from t_auction where
+        begin_time <![CDATA[ >= ]]> date_add(now(), interval 10 minute) AND
+        begin_time <![CDATA[ <= ]]> now() AND
+        status=1
+    </select>
+
+    <update id="startAuction" parameterType="java.lang.Integer">
+        update t_auction set status=2 where aid=#{aid}
+    </update>
+</mapper>

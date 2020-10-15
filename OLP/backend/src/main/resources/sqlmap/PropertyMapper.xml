@@ -32,4 +32,80 @@
     <select id="getAllProperty" resultMap="PropertyMap">
         select * from t_property
     </select>
+
+    <select id="getPropertyByUid" resultMap="PropertyMap" parameterType="java.lang.Integer">
+        select * from t_property where owner=#{uid}
+    </select>
+
+    <select id="searchByStreet" resultMap="PropertyMap" parameterType="com.echo.backend.domain.Property">
+        select * from t_property where street=#{street}
+        <if test="area != 0">
+            AND area &gt;= #{area}
+        </if>
+        <if test="bedroom != 0">
+            AND bedroom &gt;= #{bedroom}
+        </if>
+        <if test="bathroom != 0">
+            AND bathroom &gt;= #{bathroom}
+        </if>
+        <if test="carport != 0">
+            AND carport &gt;= #{carport}
+        </if>
+    </select>
+
+    <select id="searchByDistrict" resultMap="PropertyMap" parameterType="com.echo.backend.domain.Property">
+        select * from t_property where district=#{district}
+        <if test="area != 0">
+            AND area &gt;= #{area}
+        </if>
+        <if test="bedroom != 0">
+            AND bedroom &gt;= #{bedroom}
+        </if>
+        <if test="bathroom != 0">
+            AND bathroom &gt;= #{bathroom}
+        </if>
+        <if test="carport != 0">
+            AND carport &gt;= #{carport}
+        </if>
+    </select>
+
+    <select id="searchByCode" resultMap="PropertyMap" parameterType="com.echo.backend.domain.Property">
+        select * from t_property where code=#{code}
+        <if test="area != 0">
+            AND area &gt;= #{area}
+        </if>
+        <if test="bedroom != 0">
+            AND bedroom &gt;= #{bedroom}
+        </if>
+        <if test="bathroom != 0">
+            AND bathroom &gt;= #{bathroom}
+        </if>
+        <if test="carport != 0">
+            AND carport &gt;= #{carport}
+        </if>
+    </select>
+
+    <select id="searchByCity" resultMap="PropertyMap" parameterType="com.echo.backend.domain.Property">
+        select * from t_property where city=#{city}
+        <if test="area != 0">
+            AND area <![CDATA[ >= ]]> #{area}
+        </if>
+        <if test="bedroom != 0">
+            AND bedroom <![CDATA[ >= ]]> #{bedroom}
+        </if>
+        <if test="bathroom != 0">
+            AND bathroom <![CDATA[ >= ]]> #{bathroom}
+        </if>
+        <if test="carport != 0">
+            AND carport <![CDATA[ >= ]]> #{carport}
+        </if>
+    </select>
+
+    <select id="searchByPosition" resultMap="PropertyMap" parameterType="java.lang.Double">
+        select * from t_property where
+        latitude <![CDATA[ <= ]]> #{northeastLat} AND
+        latitude <![CDATA[ >= ]]> #{southwestLat} AND
+        longitude <![CDATA[ <= ]]> #{northeastLng} AND
+        longitude <![CDATA[ >= ]]> #{southwestLng}
+    </select>
 </mapper>

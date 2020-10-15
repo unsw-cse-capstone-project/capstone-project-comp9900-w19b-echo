@@ -5,6 +5,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.echo.backend.service.UserService;
+import org.apache.commons.lang.time.DateUtils;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
@@ -59,20 +60,20 @@ public class JWTUtil {
     }
 
     /**
-     * 生成签名,5min后过期
+     * 生成签名,2小时后过期
      * @param email 用户名
      * @param secret 用户的密码
      * @return 加密的token
      */
     public static String sign(String email, String fullName, String secret) {
         try {
-            Date date = new Date(2099,1,1);
+            //Date date = new Date(2099,1,1);
             Algorithm algorithm = Algorithm.HMAC256(secret);
             // 附带username信息
             return JWT.create()
                     .withSubject(fullName)
                     .withClaim("email", email)
-                    .withExpiresAt(date)
+                    .withExpiresAt(DateUtils.addHours(new Date(), 2))
                     .sign(algorithm);
         } catch (UnsupportedEncodingException e) {
             return null;

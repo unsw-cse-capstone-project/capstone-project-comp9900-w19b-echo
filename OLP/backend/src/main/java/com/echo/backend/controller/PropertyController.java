@@ -3,20 +3,23 @@ package com.echo.backend.controller;
 import com.echo.backend.domain.Property;
 import com.echo.backend.dto.AddPropertyRequest;
 import com.echo.backend.dto.AddPropertyResponse;
+import com.echo.backend.dto.SearchPropertyRequest;
+import com.echo.backend.service.AuctionService;
 import com.echo.backend.service.PropertyService;
 import com.echo.backend.service.UserService;
 import com.echo.backend.utils.JWTUtil;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -52,8 +55,62 @@ public class PropertyController {
     @RequestMapping(value = "/listAllProperty", method = RequestMethod.POST)
     @RequiresAuthentication
     @ApiIgnore
-    public List<Property> createProperty() {
+    public List<Property> getAllProperty() {
 
         return propertyService.getAllProperty();
+    }
+
+    @RequestMapping(value = "/my-property", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public List<Property> getMyProperty(HttpServletRequest request) {
+
+        int uid = JWTUtil.getUid(request.getHeader("Authorization"), userService);
+        return propertyService.getPropertyByUid(uid);
+    }
+
+    @RequestMapping(value = "/others-property", method = RequestMethod.POST)
+    //@RequiresAuthentication
+    public List<Property> getOthersProperty(SearchPropertyRequest request) {
+
+        int uid = request.getProperty().getOwner();
+        return propertyService.getPropertyByUid(uid);
+    }
+
+    @RequestMapping(value = "/search-property-address", method = RequestMethod.POST)
+    //@RequiresAuthentication
+    public List<Property> searchPropertyFilter(@RequestBody SearchPropertyRequest searchRequest) {
+
+        List<Property> result = propertyService.searchPropertyFilter(searchRequest.getProperty());
+        return AfterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
+    }
+
+    @RequestMapping(value = "/search-property-position", method = RequestMethod.POST)
+    //@RequiresAuthentication
+    public List<Property> searchPropertyPosition(@RequestBody SearchPropertyRequest searchRequest) {
+
+        List<Property> result = propertyService.searchPropertyPosition(searchRequest.getNortheast(), searchRequest.getSouthwest());
+        return AfterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
+    }
+
+    private List<Property> AfterPaging(List<Property> result, Integer page, Integer dataNum) {
+
+        if (CollectionUtils.isEmpty(result))
+            return result;
+        if (result.size() <= dataNum){
+            return result;
+        }
+        else{
+            int index = (page - 1) * dataNum;
+            int end = page * dataNum - 1;
+            end = result.size()-1 < end ? result.size()-1 : end;
+
+            List<Property> ret = new ArrayList<>();
+            for (int i=index; i<=end; i++){
+                ret.add(result.get(i));
+            }
+
+            return ret;
+        }
+
     }
 }
