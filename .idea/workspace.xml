@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3be2abb8-c5a7-4fa1-8144-7efb71aeb50c" name="Default Changelist" comment="1. Shiro fix: login with eamil only">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_62.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/PropertyMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Property.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPropertyRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPropertyResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/PropertyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/GoogleMapUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/backend__1__war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/backend__1__war_exploded.xml" afterDir="false" />
+    <list default="true" id="3be2abb8-c5a7-4fa1-8144-7efb71aeb50c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OLP/backend/logs/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/logs/all.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/database docs/DatabaseDesign.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database docs/DatabaseDesign.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Property.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/backend/target/" />
     <ignored path="$PROJECT_DIR$/OLP/frontend/target/" />
@@ -54,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="39" column="66" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
+            <state relative-caret-position="245">
+              <caret line="40" column="65" lean-forward="true" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPropertyRequest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
-              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding>
                 <element signature="e#174#175#0" expanded="true" />
                 <element signature="e#205#206#0" expanded="true" />
@@ -111,22 +99,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/PropertyMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="14" column="73" lean-forward="true" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
+            <state relative-caret-position="-107">
+              <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -149,12 +125,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Property.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-440">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="220">
+              <caret line="70" column="53" selection-start-line="70" selection-start-column="53" selection-end-line="70" selection-end-column="53" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#639#640#0" expanded="true" />
                 <element signature="e#665#666#0" expanded="true" />
                 <element signature="e#700#701#0" expanded="true" />
@@ -259,6 +236,7 @@
     <findStrings>
       <find>com.echo.BackendApplication</find>
       <find>redirect</find>
+      <find>hidden = false,</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -317,10 +295,10 @@
         <option value="$PROJECT_DIR$/OLP/backend/src/test/java/com/echo/backend/TestJson.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/GoogleMapUtil.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Property.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/PropertyService.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Property.java" />
       </list>
     </option>
   </component>
@@ -590,7 +568,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestJson">
+  <component name="RunManager" selected="Spring Boot.BackendApplication (1)">
     <configuration name="TestJson" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.echo.backend.TestJson" />
       <module name="backend (1)" />
@@ -640,7 +618,7 @@
       <workItem from="1602302228561" duration="1677000" />
       <workItem from="1602392420754" duration="14000" />
       <workItem from="1602566427634" duration="33949000" />
-      <workItem from="1602661063703" duration="14826000" />
+      <workItem from="1602661063703" duration="16829000" />
     </task>
     <task id="LOCAL-00001" summary="Construct basic frame of backend.">
       <created>1600929787117</created>
@@ -712,17 +690,24 @@
       <option name="project" value="LOCAL" />
       <updated>1602664440613</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="1. Add property api&#10;2. Supporting google map api">
+      <created>1602689636201</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1602689636204</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69977000" />
+    <option name="totallyTimeSpent" value="71980000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="844" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4960212" visible="true" weight="0.26303855" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4960212" visible="true" weight="0.26303855" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -732,7 +717,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891247" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29873773" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43057504" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -821,23 +806,14 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/unsw-cse-capstone-project/capstone-project-comp9900-w19b-echo&#10;&#10;# Conflicts:&#10;#&#9;OLP/backend/src/main/java/com/echo/backend/controller/UserController.java" />
     <MESSAGE value="1. Finish table creating sql&#10;2. Add swagger2" />
     <MESSAGE value="1. Shiro fix: login with eamil only" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Shiro fix: login with eamil only" />
+    <MESSAGE value="1. Add property api&#10;2. Supporting google map api" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Add property api&#10;2. Supporting google map api" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/Cross.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/BeanConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1183,29 +1159,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="39" column="66" selection-start-line="39" selection-start-column="66" selection-end-line="39" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPropertyRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-          <folding>
-            <element signature="e#174#175#0" expanded="true" />
-            <element signature="e#205#206#0" expanded="true" />
-            <element signature="e#255#256#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
@@ -1239,11 +1192,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-107">
+          <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPropertyRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#205#206#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-annotations/1.5.10/swagger-annotations-1.5.10.jar!/io/swagger/annotations/ApiModelProperty.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="40" column="65" lean-forward="true" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Property.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-440">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="220">
+          <caret line="70" column="53" selection-start-line="70" selection-start-column="53" selection-end-line="70" selection-end-column="53" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#639#640#0" expanded="true" />
             <element signature="e#665#666#0" expanded="true" />
             <element signature="e#700#701#0" expanded="true" />
@@ -1329,13 +1320,6 @@
             <element signature="e#3727#3728#0" expanded="true" />
             <element signature="e#3765#3766#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="14" column="73" lean-forward="true" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
         </state>
       </provider>
     </entry>

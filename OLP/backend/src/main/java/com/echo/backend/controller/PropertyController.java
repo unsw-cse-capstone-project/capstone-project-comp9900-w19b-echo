@@ -7,6 +7,7 @@ import com.echo.backend.service.PropertyService;
 import com.echo.backend.service.UserService;
 import com.echo.backend.utils.JWTUtil;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.slf4j.Logger;

@@ -1,49 +1,74 @@
 package com.echo.backend.domain;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.Date;
 
+@ApiModel
 public class Property {
 
+    @ApiModelProperty(value = "Generate by Mysql",  required = false)
     private int pid;
 
+    @ApiModelProperty(value = "Uid of owner, fetch by server",  required = false)
     private int owner;
 
+    @ApiModelProperty(value = "State of property: NSW or New South Wales",  required = true)
     private String state;
 
+    @ApiModelProperty(value = "City of property: Sydney ",  required = false)
     private String city;
 
+    @ApiModelProperty(value = "District of property: Kingsford or Little bay",  required = true)
     private String district;
 
+    @ApiModelProperty(value = "Postal code  of property: 2032",  required = true)
     private String code;
 
+    @ApiModelProperty(value = "Street of property: Barker St or Fifth Avenue",  required = true)
     private String street;
 
+    @ApiModelProperty(value = "House number of property: 32 or 44b",  required = true)
     private String houseNumber;
 
+    @ApiModelProperty(value = "Longitude of property, fetch by sever",  required = false)
     private double longitude;
 
+    @ApiModelProperty(value = "Latitude of property, fetch by sever",  required = false)
     private double latitude;
 
+    @ApiModelProperty(value = "Address of property, fetch by sever",  required = false)
     private String address;
 
+    @ApiModelProperty(value = "Status of property",  required = false)
     private int status;
 
+    @ApiModelProperty(value = "Create time of property, generate by sever",  required = false)
     private Date createTime;
 
+    @ApiModelProperty(value = "Area of property: 104.22",  required = true)
     private double area;
 
+    @ApiModelProperty(value = "Number of bedroom: 6",  required = true)
     private int bedroom;
 
+    @ApiModelProperty(value = "Number of bathroom: 3",  required = true)
     private int bathroom;
 
+    @ApiModelProperty(value = "Number of bedroom: 2",  required = true)
     private int carport;
 
+    @ApiModelProperty(value = "Type of property: 0-house, 1-apartment, 2-store",  required = true)
     private int propertyType;
 
+    @ApiModelProperty(value = "Whether verified",  required = false)
     private int verification;
 
+    @ApiModelProperty(value = "Description by owner",  required = true)
     private String description;
 
+    @ApiModelProperty(value = "Description by officer", required = false)
     private String remark;
 
     public int getPid() {
