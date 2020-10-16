@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NbAuthJWTToken, NbAuthService} from "@nebular/auth";
 import { NbSearchService } from '@nebular/theme';
-import {User} from "../../Models/user.model";
+import {User} from "../../model/user.model";
 
 @Component({
   selector: 'app-header',
@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit {
       .subscribe((token: NbAuthJWTToken) => {
         if (token.isValid()) {
           let payload = token.getPayload();
-          this.user.email = payload.sub;
-          this.user.fullName = payload.fullName;
+          this.user.email = payload.email;
+          this.user.fullName = payload.sub;
           this.user.phone = payload.phoneNumber;
         }
       });

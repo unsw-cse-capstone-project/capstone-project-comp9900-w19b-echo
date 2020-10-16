@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../../Models/user.model";
+import {User} from "../../model/user.model";
 import {NbAuthJWTToken, NbAuthService} from "@nebular/auth";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
@@ -17,14 +17,17 @@ export class ProfileComponent implements OnInit {
       .subscribe((token: NbAuthJWTToken) => {
         if (token.isValid()) {
           let payload = token.getPayload();
-          this.user.email = payload.sub;
-          this.user.fullName = payload.fullName;
+          this.user.email = payload.email;
+          this.user.fullName = payload.sub;
           this.user.phone = payload.phoneNumber;
         }
       });
   }
 
   ngOnInit(): void {
+  }
+
+  getProfile() {
   }
 
   saveProfile() {

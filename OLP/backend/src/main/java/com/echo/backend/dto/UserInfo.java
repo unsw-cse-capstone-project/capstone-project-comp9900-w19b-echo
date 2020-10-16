@@ -1,6 +1,6 @@
 package com.echo.backend.dto;
 
-public class ProfileRequest extends BaseRequest {
+public class UserInfo extends BaseRequest {
 
     private String email;
     private String fullName;

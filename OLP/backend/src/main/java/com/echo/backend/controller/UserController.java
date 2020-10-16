@@ -7,8 +7,6 @@ import com.echo.backend.exception.UnauthorizedException;
 import com.echo.backend.service.UserService;
 import com.echo.backend.utils.JWTUtil;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.authz.annotation.RequiresRoles;
@@ -76,8 +74,22 @@ public class UserController {
         return new SignUpResponse(200, "Login success", JWTUtil.sign(user.getEmail(), user.getUserName(), user.getPassword()));
     }
 
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public UserInfo updateUser(@RequestParam String email) {
+        User user = userService.getUserByEmail(email);
+        return getUserInfo(user);
+    }
+
+    private UserInfo getUserInfo(User user) {
+        UserInfo userInfo = new UserInfo();
+        userInfo.setEmail(user.getEmail());
+        userInfo.setFullName(user.getUserName());
+        userInfo.setPhone(user.getPhone());
+        return userInfo;
+    }
+
     @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public void updateUser(@RequestBody ProfileRequest request) {
+    public void updateUser(@RequestBody UserInfo request) {
         User user = userService.getUserByEmail(request.getEmail());
         user.setUserName(request.getFullName());
         user.setPhone(request.getPhone());
