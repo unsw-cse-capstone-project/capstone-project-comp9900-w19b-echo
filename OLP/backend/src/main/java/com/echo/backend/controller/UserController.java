@@ -89,11 +89,12 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public void updateUser(@RequestBody UserInfo request) {
+    public UserInfo updateUser(@RequestBody UserInfo request) {
         User user = userService.getUserByEmail(request.getEmail());
         user.setUserName(request.getFullName());
         user.setPhone(request.getPhone());
         userService.updateUserInfo(user);
+        return getUserInfo(user);
     }
 
     @RequestMapping(value = "/sign-out", method = RequestMethod.POST)
