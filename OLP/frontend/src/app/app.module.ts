@@ -35,6 +35,12 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { AddressComponent } from './component/address/address.component';
 import { PaymentComponent } from './component/payment/payment.component';
 import {FormsModule} from "@angular/forms";
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { MyPropertiesComponent } from './component/my-properties/my-properties.component';
+import { ActiveAuctionsComponent } from './component/active-auctions/active-auctions.component';
+import { CompletedAuctionsComponent } from './component/completed-auctions/completed-auctions.component';
+import { InterestedPropertiesComponent } from './component/interested-properties/interested-properties.component';
+import { MessagesComponent } from './component/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +54,13 @@ import {FormsModule} from "@angular/forms";
     UserAccountComponent,
     ProfileComponent,
     AddressComponent,
-    PaymentComponent
+    PaymentComponent,
+    DashboardComponent,
+    MyPropertiesComponent,
+    ActiveAuctionsComponent,
+    CompletedAuctionsComponent,
+    InterestedPropertiesComponent,
+    MessagesComponent
   ],
     imports: [
         BrowserModule,
