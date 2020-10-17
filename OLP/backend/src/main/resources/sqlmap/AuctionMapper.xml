@@ -25,7 +25,24 @@
         status=1
     </select>
 
+    <select id="getAuctionByPid" resultMap="AuctionMap" parameterType="java.lang.Integer">
+        select * from t_auction where pid=#{pid}
+    </select>
+
     <update id="startAuction" parameterType="java.lang.Integer">
         update t_auction set status=2 where aid=#{aid}
     </update>
+
+    <update id="startAuctionFail" parameterType="java.lang.Integer">
+        update t_auction set status=3 where aid=#{aid}
+    </update>
+
+    <update id="startAuctionSuccess" parameterType="java.lang.Integer">
+        update t_auction set status=4 where aid=#{aid}
+    </update>
+
+    <update id="updateWinnerPrice" parameterType="com.echo.backend.domain.Auction">
+        update t_auction set winner=#{winner},current_price=#{current_price},status=#{status} where aid=#{aid}
+    </update>
+
 </mapper>

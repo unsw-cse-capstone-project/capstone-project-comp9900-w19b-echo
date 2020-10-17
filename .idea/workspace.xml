@@ -2,43 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3be2abb8-c5a7-4fa1-8144-7efb71aeb50c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ant_ant_1_6_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_jobs_2_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/AuctionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionBidMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionRegisterMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Auction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/AuctionBid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/AuctionRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddAuctionRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddAuctionResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/PlaceBidRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/PlaceBidResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchPropertyRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionCheckTimer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionBidMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionRigisterMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/backend__1__war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/backend__1__war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/RegisterAuctionRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/RegisterAuctionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchAuctionRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchAuctionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchBidRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/logs/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/logs/all.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/BackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/BackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/BeanConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/BeanConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/PropertyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/PropertyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/BaseRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/BaseRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/PropertyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/JWTUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/AuctionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/AuctionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionBidMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionBidMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionRegisterMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionRegisterMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/PlaceBidRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/PlaceBidRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionCheckTimer.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionCheckTimer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionBidMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionBidMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionRigisterMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionRigisterMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/backend/target/" />
     <ignored path="$PROJECT_DIR$/OLP/frontend/target/" />
@@ -73,34 +52,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionCheckTimer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/AuctionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="56" column="30" lean-forward="true" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+            <state relative-caret-position="517">
+              <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,74 +64,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/PlaceBidResponse.java">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchBidRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+            <state relative-caret-position="176">
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding>
-                <element signature="e#139#140#0" expanded="true" />
-                <element signature="e#177#178#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/PlaceBidRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-              <folding>
-                <element signature="e#193#194#0" expanded="true" />
+                <element signature="e#166#167#0" expanded="true" />
+                <element signature="e#201#202#0" expanded="true" />
                 <element signature="e#231#232#0" expanded="true" />
-                <element signature="e#261#262#0" expanded="true" />
-                <element signature="e#292#293#0" expanded="true" />
-                <element signature="e#318#319#0" expanded="true" />
-                <element signature="e#353#354#0" expanded="true" />
-                <element signature="e#383#384#0" expanded="true" />
-                <element signature="e#410#411#0" expanded="true" />
-                <element signature="e#436#437#0" expanded="true" />
-                <element signature="e#471#472#0" expanded="true" />
-                <element signature="e#501#502#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionBidMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionRigisterMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="103" column="44" selection-start-line="103" selection-start-column="34" selection-end-line="103" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionRegisterMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#258#259#0" expanded="true" />
+                <element signature="e#284#285#0" expanded="true" />
+                <element signature="e#319#320#0" expanded="true" />
+                <element signature="e#349#350#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -185,8 +84,92 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
+            <state relative-caret-position="445">
               <caret line="101" column="20" selection-start-line="101" selection-start-column="16" selection-end-line="101" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="89" column="41" lean-forward="true" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1345#1346#0" expanded="true" />
+                <element signature="e#1381#1382#0" expanded="true" />
+                <element signature="e#1846#1847#0" expanded="true" />
+                <element signature="e#1899#1900#0" expanded="true" />
+                <element signature="e#2910#2911#0" expanded="true" />
+                <element signature="e#2949#2950#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionBidMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionBidMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionCheckTimer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="110" column="42" selection-start-line="110" selection-start-column="42" selection-end-line="110" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="44" column="92" selection-start-line="44" selection-start-column="92" selection-end-line="44" selection-end-column="92" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Auction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -218,11 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/FileUploadResponse.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/BaseResponse.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignUpResponse.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/UpdateInfoResponse.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignInResponse.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/UpdatePasswordResponse.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserControllerBak.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/Bak.java" />
@@ -255,20 +233,25 @@
         <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/OLP/backend/pom.xml" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/BeanConfiguration.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionMapper.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionMapper.xml" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/AuctionRegister.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/AuctionBid.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionBidMapper.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionBidMapper.xml" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionRegisterMapper.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionRigisterMapper.xml" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionCheckTimer.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/PlaceBidResponse.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/PlaceBidRequest.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchAuctionResponse.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchAuctionRequest.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/RegisterAuctionRequest.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/RegisterAuctionResponse.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionRegisterMapper.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionRigisterMapper.xml" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchBidRequest.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/AuctionController.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionService.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionBidMapper.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionBidMapper.xml" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionMapper.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionCheckTimer.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionMapper.xml" />
       </list>
     </option>
   </component>
@@ -600,7 +583,7 @@
       <workItem from="1602302228561" duration="1677000" />
       <workItem from="1602392420754" duration="14000" />
       <workItem from="1602566427634" duration="33949000" />
-      <workItem from="1602661063703" duration="31496000" />
+      <workItem from="1602661063703" duration="35550000" />
     </task>
     <task id="LOCAL-00001" summary="Construct basic frame of backend.">
       <created>1600929787117</created>
@@ -686,11 +669,25 @@
       <option name="project" value="LOCAL" />
       <updated>1602735607583</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="1. Schedule: checking auction that will start in 10mins&#10;2. Schedule: checking auction that should start&#10;3. Biding">
+      <created>1602764858055</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1602764858055</updated>
+    </task>
+    <task id="LOCAL-00014" summary="1. fix">
+      <created>1602765030828</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1602765030828</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86647000" />
+    <option name="totallyTimeSpent" value="90701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="844" extended-state="6" />
@@ -719,7 +716,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.2580645" />
-      <window_info anchor="bottom" id="TypeScript" order="15" />
+      <window_info anchor="bottom" id="TypeScript" order="15" weight="0.32959327" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.2494331" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -797,59 +794,15 @@
     <MESSAGE value="1. Shiro fix: login with eamil only" />
     <MESSAGE value="1. Add property api&#10;2. Supporting google map api" />
     <MESSAGE value="1. Add swagger2 annotation for add-property" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Add swagger2 annotation for add-property" />
+    <MESSAGE value="1. Schedule: checking auction that will start in 10mins&#10;2. Schedule: checking auction that should start&#10;3. Biding" />
+    <MESSAGE value="1. fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. fix" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/UpdatePasswordRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#167#168#0" expanded="true" />
-            <element signature="e#194#195#0" expanded="true" />
-            <element signature="e#232#233#0" expanded="true" />
-            <element signature="e#264#265#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/MyRealm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SignUpRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-63">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding>
-            <element signature="e#677#678#0" expanded="true" />
-            <element signature="e#711#712#0" expanded="true" />
-            <element signature="e#765#766#0" expanded="true" />
-            <element signature="e#811#812#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/frontend/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_database.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -989,27 +942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchPropertyRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="48" selection-start-line="4" selection-start-column="48" selection-end-line="4" selection-end-column="48" />
-          <folding>
-            <element signature="e#200#201#0" expanded="true" />
-            <element signature="e#231#232#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
@@ -1072,28 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddAuctionRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding>
-            <element signature="e#197#198#0" expanded="true" />
-            <element signature="e#244#245#0" expanded="true" />
-            <element signature="e#282#283#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="67" column="38" lean-forward="true" selection-start-line="67" selection-start-column="38" selection-end-line="67" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/BackendApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -1108,71 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="619">
           <caret line="112" column="21" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Auction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2071">
-          <caret line="102" column="5" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#375#376#0" expanded="true" />
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#466#467#0" expanded="true" />
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#519#520#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#584#585#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-            <element signature="e#637#638#0" expanded="true" />
-            <element signature="e#672#673#0" expanded="true" />
-            <element signature="e#702#703#0" expanded="true" />
-            <element signature="e#738#739#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
-            <element signature="e#820#821#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#901#902#0" expanded="true" />
-            <element signature="e#936#937#0" expanded="true" />
-            <element signature="e#992#993#0" expanded="true" />
-            <element signature="e#1040#1041#0" expanded="true" />
-            <element signature="e#1074#1075#0" expanded="true" />
-            <element signature="e#1106#1107#0" expanded="true" />
-            <element signature="e#1154#1155#0" expanded="true" />
-            <element signature="e#1196#1197#0" expanded="true" />
-            <element signature="e#1228#1229#0" expanded="true" />
-            <element signature="e#1258#1259#0" expanded="true" />
-            <element signature="e#1302#1303#0" expanded="true" />
-            <element signature="e#1340#1341#0" expanded="true" />
-            <element signature="e#1370#1371#0" expanded="true" />
-            <element signature="e#1399#1400#0" expanded="true" />
-            <element signature="e#1440#1441#0" expanded="true" />
-            <element signature="e#1476#1477#0" expanded="true" />
-            <element signature="e#1506#1507#0" expanded="true" />
-            <element signature="e#1535#1536#0" expanded="true" />
-            <element signature="e#1576#1577#0" expanded="true" />
-            <element signature="e#1612#1613#0" expanded="true" />
-            <element signature="e#1755#1756#0" expanded="true" />
-            <element signature="e#1799#1800#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1200,38 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/AuctionRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#381#382#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#442#443#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
-            <element signature="e#622#623#0" expanded="true" />
-            <element signature="e#653#654#0" expanded="true" />
-            <element signature="e#698#699#0" expanded="true" />
-            <element signature="e#738#739#0" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#856#857#0" expanded="true" />
-            <element signature="e#898#899#0" expanded="true" />
-            <element signature="e#928#929#0" expanded="true" />
-            <element signature="e#957#958#0" expanded="true" />
-            <element signature="e#998#999#0" expanded="true" />
-            <element signature="e#1034#1035#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1267,58 +1080,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionBidMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionBidMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionRegisterMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
           <caret line="103" column="44" selection-start-line="103" selection-start-column="34" selection-end-line="103" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="101" column="20" selection-start-line="101" selection-start-column="16" selection-end-line="101" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionRigisterMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionCheckTimer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1335,12 +1100,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/PlaceBidRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+        <state relative-caret-position="264">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
           <folding>
-            <element signature="e#193#194#0" expanded="true" />
-            <element signature="e#231#232#0" expanded="true" />
-            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#222#223#0" expanded="true" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
             <element signature="e#292#293#0" expanded="true" />
             <element signature="e#318#319#0" expanded="true" />
             <element signature="e#353#354#0" expanded="true" />
@@ -1353,10 +1122,136 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchPropertyRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchAuctionRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding>
+            <element signature="e#189#190#0" expanded="true" />
+            <element signature="e#224#225#0" expanded="true" />
+            <element signature="e#254#255#0" expanded="true" />
+            <element signature="e#281#282#0" expanded="true" />
+            <element signature="e#307#308#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchAuctionResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#149#150#0" expanded="true" />
+            <element signature="e#187#188#0" expanded="true" />
+            <element signature="e#373#374#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#468#469#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddAuctionRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#167#168#0" expanded="true" />
+            <element signature="e#197#198#0" expanded="true" />
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/AuctionRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding>
+            <element signature="e#239#240#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/RegisterAuctionRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <folding>
+            <element signature="e#217#218#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#380#381#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/RegisterAuctionResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding>
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#192#193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionRegisterMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1342">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionRigisterMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="60" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchBidRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding>
+            <element signature="e#166#167#0" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
+            <element signature="e#231#232#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
+            <element signature="e#319#320#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/AuctionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="56" column="30" lean-forward="true" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+        <state relative-caret-position="517">
+          <caret line="80" column="37" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1365,11 +1260,78 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+        <state relative-caret-position="473">
+          <caret line="89" column="41" lean-forward="true" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1345#1346#0" expanded="true" />
+            <element signature="e#1381#1382#0" expanded="true" />
+            <element signature="e#1846#1847#0" expanded="true" />
+            <element signature="e#1899#1900#0" expanded="true" />
+            <element signature="e#2910#2911#0" expanded="true" />
+            <element signature="e#2949#2950#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionBidMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="101" column="20" selection-start-line="101" selection-start-column="16" selection-end-line="101" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionBidMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionCheckTimer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="110" column="42" selection-start-line="110" selection-start-column="42" selection-end-line="110" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/AuctionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="32" lean-forward="true" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Auction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/AuctionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="44" column="92" selection-start-line="44" selection-start-column="92" selection-end-line="44" selection-end-column="92" />
         </state>
       </provider>
     </entry>

@@ -2,17 +2,27 @@ package com.echo.backend.dto;
 
 public class PlaceBidRequest {
 
-    private double uid;
+    private double newPrice;
 
     private int aid;
 
     private int pid;
 
-    public double getUid() {
+    private int uid;
+
+    public double getNewPrice() {
+        return newPrice;
+    }
+
+    public void setNewPrice(double newPrice) {
+        this.newPrice = newPrice;
+    }
+
+    public int getUid() {
         return uid;
     }
 
-    public void setUid(double uid) {
+    public void setUid(int uid) {
         this.uid = uid;
     }
 

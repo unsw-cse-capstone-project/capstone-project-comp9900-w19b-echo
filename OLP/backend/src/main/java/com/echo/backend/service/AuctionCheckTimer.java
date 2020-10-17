@@ -63,6 +63,9 @@ public class AuctionCheckTimer {
     @Scheduled(cron = "0/30 * * * * ?")
     public void checkOnAuction() {
 
+        if (CollectionUtils.isEmpty(onAuctionMap))
+            return;
+
         for (Iterator<Map.Entry<Integer, Auction>> it = onAuctionMap.entrySet().iterator(); it.hasNext();){
             Map.Entry<Integer, Auction> entry = it.next();
             if (entry.getValue().getBeginTime().after(new Date())){
@@ -79,7 +82,7 @@ public class AuctionCheckTimer {
                     }
                 }
 
-                entry.getValue().setBasePrice(max);
+                entry.getValue().setCurrentPrice(max);
                 entry.getValue().setWinner(winner);
 
 
@@ -89,8 +92,27 @@ public class AuctionCheckTimer {
         }
     }
 
-    @Async("taskExecutor")
-    public void auctionStart() throws InterruptedException {
-        //
+    // 每10秒检查一次，将结束的竞拍结束
+    @Scheduled(cron = "0/30 * * * * ?")
+    public void checkEndAuction() {
+
+        if (CollectionUtils.isEmpty(auctioningMap))
+            return;
+
+        for (Iterator<Map.Entry<Integer, Auction>> it = auctioningMap.entrySet().iterator(); it.hasNext();){
+            Map.Entry<Integer, Auction> entry = it.next();
+            if (entry.getValue().getEndTime().after(new Date())){
+
+                Auction auction = entry.getValue();
+                if (auction.getWinner() == auction.getUid())
+                    auction.setStatus(3);
+                else
+                    auction.setStatus(4);
+                auctionMapper.updateWinnerPrice(auction);
+
+                it.remove();
+            }
+        }
     }
+
 }

@@ -10,19 +10,12 @@
         <result column="serial" property="serial" jdbcType="INTEGER" />
     </resultMap>
 
-    <insert id="createAuctionBid" parameterType="com.echo.backend.domain.AuctionBid" useGeneratedKeys="true" keyProperty="serial">
-        insert into t_auction (uid, pid, base_price, begin_time, end_time, status)
-        values(#{uid},#{pid},#{basePrice},#{beginTime},#{endTime},#{status})
+    <insert id="newBid" parameterType="com.echo.backend.domain.AuctionBid" useGeneratedKeys="true" keyProperty="serial">
+        insert into auction_bid (uid, aid, pid, bid_value, bid_time)
+        values(#{uid},#{aid},#{pid},#{bidPrice},#{bidTime})
     </insert>
 
-    <select id="getAuction10mins" resultMap="AuctionMap" >
-        select * from t_auction where
-        begin_time <![CDATA[ >= ]]> date_add(now(), interval 10 minute) AND
-        begin_time <![CDATA[ <= ]]> now() AND
-        status=1
+    <select id="viewHistoryByAid" resultMap="AuctionBidMap" >
+        select * from auction_bid where aid=#{aid} order by serial desc
     </select>
-
-    <update id="startAuction" parameterType="java.lang.Integer">
-        update t_auction set status=2 where aid=#{aid}
-    </update>
 </mapper>

@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface AuctionRegisterMapper {
     List<AuctionRegister> getRegisterBidderByAid(int aid);
+
+    void register(AuctionRegister register);
 }

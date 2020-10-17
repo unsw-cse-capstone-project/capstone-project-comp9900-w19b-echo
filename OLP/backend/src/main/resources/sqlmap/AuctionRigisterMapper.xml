@@ -10,9 +10,9 @@
         <result column="serial" property="serial" jdbcType="INTEGER" />
     </resultMap>
 
-    <insert id="createAuctionBid" parameterType="com.echo.backend.domain.AuctionRegister" useGeneratedKeys="true" keyProperty="serial">
-        insert into t_auction (uid, pid, base_price, begin_time, end_time, status)
-        values(#{uid},#{pid},#{basePrice},#{beginTime},#{endTime},#{status})
+    <insert id="register" parameterType="com.echo.backend.domain.AuctionRegister" useGeneratedKeys="true" keyProperty="serial">
+        insert into auction_register (aid, uid, pid, base_price, user_type)
+        values(#{aid},#{uid},#{pid},#{basePrice},#{userType})
     </insert>
 
     <select id="getRegisterBidderByAid" resultMap="AuctionRegisterMap" parameterType="java.lang.Integer">

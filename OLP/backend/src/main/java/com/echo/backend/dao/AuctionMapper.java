@@ -13,4 +13,10 @@ public interface AuctionMapper {
     List<Auction> getAuction10mins();
 
     void startAuction(Integer aid);
+
+    void endAuctionSuccess(Integer aid);
+
+    void endAuctionFail(Integer aid);
+
+    void updateWinnerPrice(Auction auction);
 }
