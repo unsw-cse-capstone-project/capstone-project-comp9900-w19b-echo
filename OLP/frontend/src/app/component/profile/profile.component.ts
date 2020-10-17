@@ -44,7 +44,17 @@ export class ProfileComponent implements OnInit {
       }
     );
   }
+
   showToast(status: NbComponentStatus) {
     this.toastrService.show(status, `User Profile - Updated`, { status });
+  }
+
+  numberOnly(event): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+
   }
 }

@@ -14,6 +14,13 @@ import {BuyerInfoComponent} from "./component/buyer-info/buyer-info.component";
 import {SellerInfoComponent} from "./component/seller-info/seller-info.component";
 import {ContactUsComponent} from "./component/contact-us/contact-us.component";
 import {UserAccountComponent} from "./component/user-account/user-account.component";
+import {DASH} from "@angular/cdk/keycodes";
+import {DashboardComponent} from "./component/dashboard/dashboard.component";
+import {MyPropertiesComponent} from "./component/my-properties/my-properties.component";
+import {ActiveAuctionsComponent} from "./component/active-auctions/active-auctions.component";
+import {CompletedAuctionsComponent} from "./component/completed-auctions/completed-auctions.component";
+import {InterestedPropertiesComponent} from "./component/interested-properties/interested-properties.component";
+import {MessagesComponent} from "./component/messages/messages.component";
 
 const routes: Routes = [
   {
@@ -73,6 +80,30 @@ const routes: Routes = [
   {
     path: 'user-account',
     component: UserAccountComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+  },
+  {
+    path: 'my-properties',
+    component: MyPropertiesComponent,
+  },
+  {
+    path: 'active-auctions',
+    component: ActiveAuctionsComponent,
+  },
+  {
+    path: 'completed-auctions',
+    component: CompletedAuctionsComponent,
+  },
+  {
+    path: 'interested-properties',
+    component: InterestedPropertiesComponent,
+  },
+  {
+    path: 'messages',
+    component: MessagesComponent,
   },
 ];
 
