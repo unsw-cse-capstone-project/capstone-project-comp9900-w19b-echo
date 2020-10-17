@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NbAuthJWTToken, NbAuthService} from "@nebular/auth";
 import { NbSearchService } from '@nebular/theme';
-import {User} from "../../Models/user.model";
+import {User} from "../../model/user.model";
+import {UserService} from "../../service/user.service";
 
 @Component({
   selector: 'app-header',
@@ -12,20 +13,15 @@ export class HeaderComponent implements OnInit {
   user: User = new User();
   items = [{ title: 'Profile' }, { title: 'Log out' }];
 
-  constructor(private authService: NbAuthService) {
-    this.authService.onTokenChange()
-      .subscribe((token: NbAuthJWTToken) => {
-        if (token.isValid()) {
-          let payload = token.getPayload();
-          this.user.email = payload.sub;
-          this.user.fullName = payload.fullName;
-          this.user.phone = payload.phoneNumber;
-        }
-      });
+  constructor(public userService: UserService, private authService: NbAuthService) {
+    this.user = userService.user;
   }
 
   ngOnInit(): void {
   }
+
+
+
 }
 export class SearchEventComponent {
 

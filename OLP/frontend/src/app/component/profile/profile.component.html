@@ -1,0 +1,20 @@
+<nb-card [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success">
+  <nb-card-body>
+<form>
+  <div class="form-group col-lg-4">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email"  placeholder="Email Address" readonly>
+  </div>
+  <div class="form-group col-lg-4">
+    <label for="fullName">Full Name</label>
+    <input type="input" class="form-control" id="fullName" name="fullName" [(ngModel)]="user.fullName" placeholder="Full Name" required>
+  </div>
+  <div class="form-group col-lg-4">
+    <label for="mobile">Mobile</label>
+    <input type="number" class="form-control" id="mobile" name="mobile" min="1" max="9999999999" [(ngModel)]="user.phone" placeholder="Mobile Number" required>
+  </div>
+  <div class="form-group col-lg-4">
+    <button type="submit" class="btn btn-primary" (click)="saveProfile()">Save</button>
+  </div>
+</form></nb-card-body>
+</nb-card>

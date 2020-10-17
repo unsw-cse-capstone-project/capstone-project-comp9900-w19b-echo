@@ -17,23 +17,23 @@ import {
   NbSelectModule,
   NbButtonModule,
   NbSearchModule,
-  NbUserModule, NbContextMenuModule, NbMenuModule, NbTabsetModule
+  NbUserModule, NbContextMenuModule, NbMenuModule, NbTabsetModule, NbToastrModule, NbSpinnerModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
 import {environment} from "../environments/environment";
-import { AboutUsComponent } from './Components/about-us/about-us.component';
-import { HomeComponent } from './Components/home/home.component';
-import { BuyerInfoComponent } from './Components/buyer-info/buyer-info.component';
-import { SellerInfoComponent } from './Components/seller-info/seller-info.component';
-import { ContactUsComponent } from './Components/contact-us/contact-us.component';
-import { HeaderComponent } from './Components/header/header.component';
+import { AboutUsComponent } from './component/about-us/about-us.component';
+import { HomeComponent } from './component/home/home.component';
+import { BuyerInfoComponent } from './component/buyer-info/buyer-info.component';
+import { SellerInfoComponent } from './component/seller-info/seller-info.component';
+import { ContactUsComponent } from './component/contact-us/contact-us.component';
+import { HeaderComponent } from './component/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NbAuthJWTToken } from '@nebular/auth';
-import { UserAccountComponent } from './Components/user-account/user-account.component';
-import { ProfileComponent } from './Components/profile/profile.component';
-import { AddressComponent } from './Components/address/address.component';
-import { PaymentComponent } from './Components/payment/payment.component';
+import { UserAccountComponent } from './component/user-account/user-account.component';
+import { ProfileComponent } from './component/profile/profile.component';
+import { AddressComponent } from './component/address/address.component';
+import { PaymentComponent } from './component/payment/payment.component';
 import {FormsModule} from "@angular/forms";
 
 @NgModule({
@@ -106,8 +106,10 @@ import {FormsModule} from "@angular/forms";
         NbUserModule,
         NbContextMenuModule,
         NbMenuModule.forRoot(),
+        NbToastrModule.forRoot(),
         NbTabsetModule,
         FormsModule,
+        NbSpinnerModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

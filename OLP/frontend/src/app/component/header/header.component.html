@@ -1,0 +1,12 @@
+<nb-actions size="medium">
+  <nb-action [routerLink]="['/home']">Anytime<nb-icon icon="award-outline" status="success"></nb-icon>Anywhere</nb-action>
+  <nb-action [routerLink]="['/about-us']">About Us</nb-action>
+  <nb-action [routerLink]="['/buyer-info']">For Buyer</nb-action>
+  <nb-action [routerLink]="['/seller-info']">For Seller</nb-action>
+  <nb-action [routerLink]="['/contact-us']">Contact Us</nb-action>
+  <nb-action style="width: 550px; cursor:auto"> </nb-action>
+  <nb-action *ngIf="!userService.authenticated"  [routerLink]="['/auth/login']">Sign In</nb-action>
+  <nb-action *ngIf="!userService.authenticated" [routerLink]="['/auth/register']">Sign Up</nb-action>
+  <nb-action *ngIf="userService.authenticated" [routerLink]="['/user-account']">{{user?.fullName}}</nb-action>
+  <nb-action *ngIf="userService.authenticated" [routerLink]="['/auth/logout']"><nb-icon icon="log-out-outline"></nb-icon></nb-action>
+</nb-actions>
