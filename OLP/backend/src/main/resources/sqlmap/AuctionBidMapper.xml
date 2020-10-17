@@ -12,7 +12,7 @@
 
     <insert id="newBid" parameterType="com.echo.backend.domain.AuctionBid" useGeneratedKeys="true" keyProperty="serial">
         insert into auction_bid (uid, aid, pid, bid_value, bid_time)
-        values(#{uid},#{aid},#{pid},#{bidPrice},#{bidTime})
+        values(#{uid},#{aid},#{pid},#{bidValue},#{bidTime})
     </insert>
 
     <select id="viewHistoryByAid" resultMap="AuctionBidMap" >

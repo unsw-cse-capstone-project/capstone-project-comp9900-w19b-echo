@@ -51,14 +51,13 @@ public class AuctionService {
 
     public boolean placeNewBid(double newPrice, int aid, int uid) {
 
-        Auction auction = auctioningMap.get(aid);
-
-        if (new Date().after(auction.getEndTime())){
-            return false;
-        }
-
         if (auctioningMap.containsKey(aid))
         {
+            Auction auction = auctioningMap.get(aid);
+
+            if (new Date().after(auction.getEndTime())){
+                return false;
+            }
 
             if (newPrice > auction.getCurrentPrice()) {
                 auction.setCurrentPrice(newPrice);

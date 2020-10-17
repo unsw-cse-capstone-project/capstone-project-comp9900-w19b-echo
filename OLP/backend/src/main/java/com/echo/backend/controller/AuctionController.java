@@ -11,16 +11,13 @@ import org.apache.commons.lang.time.DateUtils;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 
-@Controller
+@RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 @Api(tags = "Auction management apis")
 public class AuctionController {
@@ -71,7 +68,7 @@ public class AuctionController {
         if (result)
             return new PlaceBidResponse(200, "place new bid success", null);
         else
-            return new PlaceBidResponse(200, "place new bid fail", null);
+            return new PlaceBidResponse(500, "place new bid fail", null);
     }
 
     @ApiOperation(value="view bid history", notes="view bid history")

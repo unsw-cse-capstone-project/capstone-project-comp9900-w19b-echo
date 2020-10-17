@@ -40,7 +40,7 @@ public class AuctionCheckTimer {
     }
 
     // 每5分钟检查一次，是否有即将开始竞拍的property
-    @Scheduled(cron = "* 0/5 * * * ?")
+    @Scheduled(cron = "0 0/5 * * * ?")
     public void checkAuction10mins() {
 
         logger.info("---checking auction---");
@@ -52,7 +52,7 @@ public class AuctionCheckTimer {
         // add auction to cache1
         for (Auction auction:result){
             if (!onAuctionMap.containsKey(auction.getAid())){
-                logger.debug("Found auction: " + auction.toString());
+                logger.debug("Found auction: " + auction.toString() + ", start at" + auction.getBeginTime());
                 onAuctionMap.put(auction.getAid(), auction);
 
             }
@@ -60,7 +60,7 @@ public class AuctionCheckTimer {
     }
 
     // 每10秒检查一次，将开始的竞拍开始
-    @Scheduled(cron = "0/30 * * * * ?")
+    @Scheduled(cron = "0/10 * * * * ?")
     public void checkOnAuction() {
 
         if (CollectionUtils.isEmpty(onAuctionMap))
@@ -68,7 +68,7 @@ public class AuctionCheckTimer {
 
         for (Iterator<Map.Entry<Integer, Auction>> it = onAuctionMap.entrySet().iterator(); it.hasNext();){
             Map.Entry<Integer, Auction> entry = it.next();
-            if (entry.getValue().getBeginTime().after(new Date())){
+            if (entry.getValue().getBeginTime().before(new Date())){
 
                 auctionMapper.startAuction(entry.getKey());
                 List<AuctionRegister> registers = auctionRegisterMapper.getRegisterBidderByAid(entry.getValue().getAid());
@@ -85,15 +85,15 @@ public class AuctionCheckTimer {
                 entry.getValue().setCurrentPrice(max);
                 entry.getValue().setWinner(winner);
 
-
                 auctioningMap.put(entry.getKey(), entry.getValue());
+                logger.debug("Found auction will start at : "+ entry.getValue().getBeginTime() + " - " + entry.getValue().toString());
                 it.remove();
             }
         }
     }
 
     // 每10秒检查一次，将结束的竞拍结束
-    @Scheduled(cron = "0/30 * * * * ?")
+    @Scheduled(cron = "0/10 * * * * ?")
     public void checkEndAuction() {
 
         if (CollectionUtils.isEmpty(auctioningMap))
@@ -101,7 +101,7 @@ public class AuctionCheckTimer {
 
         for (Iterator<Map.Entry<Integer, Auction>> it = auctioningMap.entrySet().iterator(); it.hasNext();){
             Map.Entry<Integer, Auction> entry = it.next();
-            if (entry.getValue().getEndTime().after(new Date())){
+            if (entry.getValue().getEndTime().before(new Date())){
 
                 Auction auction = entry.getValue();
                 if (auction.getWinner() == auction.getUid())
@@ -110,6 +110,7 @@ public class AuctionCheckTimer {
                     auction.setStatus(4);
                 auctionMapper.updateWinnerPrice(auction);
 
+                logger.debug("Found auction will end on " + entry.getValue().getEndTime() + " - " + entry.getValue().toString());
                 it.remove();
             }
         }

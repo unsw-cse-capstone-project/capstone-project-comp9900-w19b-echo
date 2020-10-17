@@ -20,8 +20,8 @@
 
     <select id="getAuction10mins" resultMap="AuctionMap" >
         select * from t_auction where
-        begin_time <![CDATA[ >= ]]> date_add(now(), interval 10 minute) AND
-        begin_time <![CDATA[ <= ]]> now() AND
+        begin_time <![CDATA[ <= ]]> date_add(now(), interval 10 minute) AND
+        begin_time <![CDATA[ >= ]]> now() AND
         status=1
     </select>
 
@@ -42,7 +42,7 @@
     </update>
 
     <update id="updateWinnerPrice" parameterType="com.echo.backend.domain.Auction">
-        update t_auction set winner=#{winner},current_price=#{current_price},status=#{status} where aid=#{aid}
+        update t_auction set winner=#{winner},current_price=#{currentPrice},status=#{status} where aid=#{aid}
     </update>
 
 </mapper>
