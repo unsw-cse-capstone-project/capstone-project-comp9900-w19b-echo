@@ -7,11 +7,11 @@
   </div>
   <div class="form-group col-lg-4">
     <label for="fullName">Full Name</label>
-    <input type="email" class="form-control" id="fullName" name="fullName" [(ngModel)]="user.fullName" placeholder="Full Name" required>
+    <input type="input" class="form-control" id="fullName" name="fullName" [(ngModel)]="user.fullName" placeholder="Full Name" required>
   </div>
   <div class="form-group col-lg-4">
     <label for="mobile">Mobile</label>
-    <input type="email" class="form-control" id="mobile" name="mobile" [(ngModel)]="user.phone" placeholder="Mobile Number" required>
+    <input type="number" class="form-control" id="mobile" name="mobile" min="1" max="9999999999" [(ngModel)]="user.phone" placeholder="Mobile Number" required>
   </div>
   <div class="form-group col-lg-4">
     <button type="submit" class="btn btn-primary" (click)="saveProfile()">Save</button>
