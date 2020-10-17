@@ -1,3 +1,5 @@
+<nb-card [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success">
+  <nb-card-body>
 <form>
   <div class="form-group col-lg-4">
     <label for="email">Email address</label>
@@ -14,4 +16,5 @@
   <div class="form-group col-lg-4">
     <button type="submit" class="btn btn-primary" (click)="saveProfile()">Save</button>
   </div>
-</form>
+</form></nb-card-body>
+</nb-card>

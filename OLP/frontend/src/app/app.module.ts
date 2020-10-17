@@ -17,7 +17,7 @@ import {
   NbSelectModule,
   NbButtonModule,
   NbSearchModule,
-  NbUserModule, NbContextMenuModule, NbMenuModule, NbTabsetModule
+  NbUserModule, NbContextMenuModule, NbMenuModule, NbTabsetModule, NbToastrModule, NbSpinnerModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
@@ -106,8 +106,10 @@ import {FormsModule} from "@angular/forms";
         NbUserModule,
         NbContextMenuModule,
         NbMenuModule.forRoot(),
+        NbToastrModule.forRoot(),
         NbTabsetModule,
         FormsModule,
+        NbSpinnerModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

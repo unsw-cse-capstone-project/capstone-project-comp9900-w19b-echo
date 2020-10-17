@@ -4,6 +4,8 @@ import {NbAuthJWTToken, NbAuthService} from "@nebular/auth";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 import {UserService} from "../../service/user.service";
+import {NbToastrService} from "@nebular/theme";
+import {NbComponentStatus} from "@nebular/theme/components/component-status";
 
 @Component({
   selector: 'app-profile',
@@ -12,8 +14,9 @@ import {UserService} from "../../service/user.service";
 })
 export class ProfileComponent implements OnInit {
   user: User = new User();
+  isLoading: boolean = false;
 
-  constructor(private authService: NbAuthService, private http: HttpClient, private userService: UserService) {
+  constructor(private http: HttpClient, private userService: UserService, private toastrService: NbToastrService) {
   }
 
   ngOnInit(): void {
@@ -32,10 +35,16 @@ export class ProfileComponent implements OnInit {
   }
 
   saveProfile() {
+    this.isLoading = true;
     this.http.post(environment.baseEndpoint + '/user', this.user)
       .subscribe((u: User) => {
         this.user = u;
+        this.showToast('success');
+        this.isLoading = false;
       }
     );
+  }
+  showToast(status: NbComponentStatus) {
+    this.toastrService.show(status, `User Profile - Updated`, { status });
   }
 }
