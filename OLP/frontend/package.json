@@ -27,6 +27,8 @@
     "@nebular/eva-icons": "^6.2.1",
     "@nebular/theme": "^6.2.1",
     "@ng-bootstrap/ng-bootstrap": "^7.0.0",
+    "ag-grid-angular": "^24.1.0",
+    "ag-grid-community": "^24.1.0",
     "ansi-colors": "^4.1.1",
     "bootstrap": "^4.5.2",
     "eva-icons": "^1.1.3",

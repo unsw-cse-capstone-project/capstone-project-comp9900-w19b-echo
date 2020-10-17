@@ -41,6 +41,7 @@ import { ActiveAuctionsComponent } from './component/active-auctions/active-auct
 import { CompletedAuctionsComponent } from './component/completed-auctions/completed-auctions.component';
 import { InterestedPropertiesComponent } from './component/interested-properties/interested-properties.component';
 import { MessagesComponent } from './component/messages/messages.component';
+import {AgGridModule} from "ag-grid-angular";
 
 @NgModule({
   declarations: [
@@ -122,6 +123,7 @@ import { MessagesComponent } from './component/messages/messages.component';
         NbTabsetModule,
         FormsModule,
         NbSpinnerModule,
+        AgGridModule.withComponents([])
     ],
   providers: [],
   bootstrap: [AppComponent]
