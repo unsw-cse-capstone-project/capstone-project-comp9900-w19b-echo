@@ -7,6 +7,7 @@ import com.echo.backend.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -59,6 +60,7 @@ public class UserService {
     }
 
     public void addPayment(PaymentDetail paymentDetail) {
+        paymentDetail.setAddTime(new Date());
         paymentDetailMapper.addPaymentDetail(paymentDetail);
     }
 
