@@ -105,3 +105,12 @@ create table auction_bid(
     serial int auto_increment primary key
 );
 create index ab_index on auction_bid(aid);
+
+create table payment_detail(
+    uid int not null,
+    card_number varchar(30) not null,
+    bill_address varchar(200) not null,
+    add_time datetime not null,
+    serial int auto_increment primary key
+);
+create index ab_index on auction_bid(uid);

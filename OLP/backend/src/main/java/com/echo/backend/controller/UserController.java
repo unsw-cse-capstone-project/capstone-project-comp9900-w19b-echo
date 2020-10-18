@@ -1,11 +1,13 @@
 package com.echo.backend.controller;
 
 
+import com.echo.backend.domain.PaymentDetail;
 import com.echo.backend.domain.User;
 import com.echo.backend.dto.*;
 import com.echo.backend.exception.UnauthorizedException;
 import com.echo.backend.service.UserService;
 import com.echo.backend.utils.JWTUtil;
+import com.echo.backend.utils.PagingUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
@@ -147,6 +149,21 @@ public class UserController {
 
         userService.updateUserPassword(exist);
         return new UpdatePasswordResponse(200, "Update password success", null);
+    }
+
+    @RequestMapping(value = "/add-payment", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public AddPaymentDetailResponse addPayment(@RequestBody AddPaymentDetailRequest request, HttpServletRequest hRequest){
+
+        userService.addPayment(request.getPaymentDetail());
+        return new AddPaymentDetailResponse(200, "Add payment success", null);
+    }
+
+    @RequestMapping(value = "/view-payment", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public List<PaymentDetail> addPayment(@RequestBody SearchPaymentDetailRequest request, HttpServletRequest hRequest){
+
+        return PagingUtil.afterPaging(userService.getPaymentByUid(request.getUid()), request.getPage(), request.getDataNum());
     }
 
     @GetMapping("/require_auth")

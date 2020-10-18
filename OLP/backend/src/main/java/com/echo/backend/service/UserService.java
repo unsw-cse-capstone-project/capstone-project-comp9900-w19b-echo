@@ -1,6 +1,8 @@
 package com.echo.backend.service;
 
+import com.echo.backend.dao.PaymentDetailMapper;
 import com.echo.backend.dao.UserMapper;
+import com.echo.backend.domain.PaymentDetail;
 import com.echo.backend.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,9 +14,12 @@ public class UserService {
 
     private final UserMapper userMapper;
 
+    private final PaymentDetailMapper paymentDetailMapper;
+
     @Autowired
-    public UserService(UserMapper userMapper) {
+    public UserService(UserMapper userMapper, PaymentDetailMapper paymentDetailMapper) {
         this.userMapper = userMapper;
+        this.paymentDetailMapper = paymentDetailMapper;
     }
 
     public User getUserByEmail(String email){
@@ -51,5 +56,13 @@ public class UserService {
 
     public List<User> getAllUser() {
         return userMapper.getAllUser();
+    }
+
+    public void addPayment(PaymentDetail paymentDetail) {
+        paymentDetailMapper.addPaymentDetail(paymentDetail);
+    }
+
+    public List<PaymentDetail> getPaymentByUid(int uid) {
+        return paymentDetailMapper.getPaymentDetailByUid(uid);
     }
 }

@@ -8,6 +8,7 @@ import com.echo.backend.service.AuctionService;
 import com.echo.backend.service.PropertyService;
 import com.echo.backend.service.UserService;
 import com.echo.backend.utils.JWTUtil;
+import com.echo.backend.utils.PagingUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
@@ -81,7 +82,7 @@ public class PropertyController {
     public List<Property> searchPropertyFilter(@RequestBody SearchPropertyRequest searchRequest) {
 
         List<Property> result = propertyService.searchPropertyFilter(searchRequest.getProperty());
-        return AfterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
+        return PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
     }
 
     @RequestMapping(value = "/search-property-position", method = RequestMethod.POST)
@@ -89,28 +90,7 @@ public class PropertyController {
     public List<Property> searchPropertyPosition(@RequestBody SearchPropertyRequest searchRequest) {
 
         List<Property> result = propertyService.searchPropertyPosition(searchRequest.getNortheast(), searchRequest.getSouthwest());
-        return AfterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
+        return PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
     }
 
-    private List<Property> AfterPaging(List<Property> result, Integer page, Integer dataNum) {
-
-        if (CollectionUtils.isEmpty(result))
-            return result;
-        if (result.size() <= dataNum){
-            return result;
-        }
-        else{
-            int index = (page - 1) * dataNum;
-            int end = page * dataNum - 1;
-            end = result.size()-1 < end ? result.size()-1 : end;
-
-            List<Property> ret = new ArrayList<>();
-            for (int i=index; i<=end; i++){
-                ret.add(result.get(i));
-            }
-
-            return ret;
-        }
-
-    }
 }
