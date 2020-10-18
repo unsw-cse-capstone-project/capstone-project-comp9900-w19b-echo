@@ -42,6 +42,7 @@ import { CompletedAuctionsComponent } from './component/completed-auctions/compl
 import { InterestedPropertiesComponent } from './component/interested-properties/interested-properties.component';
 import { MessagesComponent } from './component/messages/messages.component';
 import {AgGridModule} from "ag-grid-angular";
+import { BtnCellRenderer } from './component/btn-cell-renderer/btn-cell-renderer.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {AgGridModule} from "ag-grid-angular";
     ActiveAuctionsComponent,
     CompletedAuctionsComponent,
     InterestedPropertiesComponent,
-    MessagesComponent
+    MessagesComponent,
+    BtnCellRenderer
   ],
     imports: [
         BrowserModule,
@@ -123,7 +125,7 @@ import {AgGridModule} from "ag-grid-angular";
         NbTabsetModule,
         FormsModule,
         NbSpinnerModule,
-        AgGridModule.withComponents([])
+      AgGridModule.withComponents([BtnCellRenderer]),
     ],
   providers: [],
   bootstrap: [AppComponent]
