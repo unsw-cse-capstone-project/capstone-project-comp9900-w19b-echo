@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {AgGridAngular} from "ag-grid-angular";
 import {BtnCellRenderer} from "../btn-cell-renderer/btn-cell-renderer.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-my-properties',
@@ -14,18 +15,19 @@ export class MyPropertiesComponent implements OnInit {
 
     columnDefs = [
       { field: 'property', sortable: true, filter: true, minWidth: 300},
-      { field: 'status' , sortable: true, filter: true, editable:true},
+      { field: 'status' , sortable: true, filter: true, editable:true, maxWidth:100},
       { field: 'bidStartDate', sortable: true, filter: true, editable:true},
       { field: 'bidEndDate', sortable: true, filter: true, editable:true},
       {
         field: 'property',
-        headerName: 'Action',
+        headerName: 'Actions',
         cellRenderer: 'btnCellRenderer',
         cellRendererParams: {
           clicked: function (field: any) {
             alert(`${field} was clicked`);
           }
-        }
+        },
+        minWidth: 470
       },
     ];
     frameworkComponents: {
@@ -39,13 +41,14 @@ export class MyPropertiesComponent implements OnInit {
     ];
 
 
-  constructor() {
-    this.frameworkComponents = {
-      btnCellRenderer: BtnCellRenderer,
-    }
+  constructor(private router: Router) {
+
   }
 
   ngOnInit(): void {
+    this.frameworkComponents = {
+      btnCellRenderer: BtnCellRenderer,
+    }
   }
 
   onGridReady(params) {
@@ -67,5 +70,9 @@ export class MyPropertiesComponent implements OnInit {
     const selectedData = selectedNodes.map(node => node.data );
     const selectedDataStringPresentation = selectedData.map(node => node.property + ' ' + node.status).join(', ');
     alert(`Selected nodes: ${selectedDataStringPresentation}`);
+  }
+
+  addProperty() {
+    this.router.navigate(['/new-property', {}]);
   }
 }

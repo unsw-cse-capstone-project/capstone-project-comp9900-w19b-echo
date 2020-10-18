@@ -15,7 +15,8 @@
   <nb-action [routerLink]="['/completed-auctions']">Completed Auctions</nb-action>
   <nb-action [routerLink]="['/interested-properties']">Interested Properties</nb-action>
   <nb-action [routerLink]="['/messages']">Messages</nb-action>
-  <nb-action style="width: 300px; cursor:auto"> </nb-action>
-  <nb-action *ngIf="userService.authenticated" [routerLink]="['/user-account']">{{user?.fullName}}</nb-action>
-  <nb-action *ngIf="userService.authenticated" [routerLink]="['/auth/logout']"><nb-icon icon="log-out-outline"></nb-icon></nb-action>
+  <nb-action [routerLink]="['/user-account']">Account Details</nb-action>
+  <nb-action style="width: 100px; cursor:auto"> </nb-action>
+  <nb-action [routerLink]="['/user-account']">{{user?.fullName}}</nb-action>
+  <nb-action [routerLink]="['/auth/logout']"><nb-icon icon="log-out-outline"></nb-icon></nb-action>
 </nb-actions>

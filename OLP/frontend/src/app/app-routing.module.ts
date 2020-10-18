@@ -21,6 +21,7 @@ import {ActiveAuctionsComponent} from "./component/active-auctions/active-auctio
 import {CompletedAuctionsComponent} from "./component/completed-auctions/completed-auctions.component";
 import {InterestedPropertiesComponent} from "./component/interested-properties/interested-properties.component";
 import {MessagesComponent} from "./component/messages/messages.component";
+import {NewPropertyComponent} from "./component/new-property/new-property.component";
 
 const routes: Routes = [
   {
@@ -104,6 +105,10 @@ const routes: Routes = [
   {
     path: 'messages',
     component: MessagesComponent,
+  },
+  {
+    path: 'new-property',
+    component: NewPropertyComponent,
   },
 ];
 
