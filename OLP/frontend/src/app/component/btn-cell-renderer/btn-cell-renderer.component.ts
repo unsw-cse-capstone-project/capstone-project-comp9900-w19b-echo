@@ -7,12 +7,15 @@ import { IAfterGuiAttachedParams } from 'ag-grid-community';
   templateUrl: './btn-cell-renderer.component.html',
   styleUrls: ['./btn-cell-renderer.component.scss']
 })
-export class BtnCellRenderer implements ICellRendererAngularComp, OnDestroy {
+export class BtnCellRenderer implements OnInit, ICellRendererAngularComp, OnDestroy {
 
   private params: any;
 
   agInit(params: any): void {
     this.params = params;
+  }
+
+  ngOnInit(): void {
   }
 
   btnClickedHandler() {
