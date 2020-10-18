@@ -43,6 +43,11 @@ import { InterestedPropertiesComponent } from './component/interested-properties
 import { MessagesComponent } from './component/messages/messages.component';
 import {AgGridModule} from "ag-grid-angular";
 import { BtnCellRenderer } from './component/btn-cell-renderer/btn-cell-renderer.component';
+import { MyPropertyCardComponent } from './component/my-property-card/my-property-card.component';
+import { CardItemComponent } from './component/card-item/card-item.component';
+import { AuctionCardComponent } from './component/auction-card/auction-card.component';
+import { InterestedPropertyCardComponent } from './component/interested-property-card/interested-property-card.component';
+import { MessageCardComponent } from './component/message-card/message-card.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +68,12 @@ import { BtnCellRenderer } from './component/btn-cell-renderer/btn-cell-renderer
     CompletedAuctionsComponent,
     InterestedPropertiesComponent,
     MessagesComponent,
-    BtnCellRenderer
+    BtnCellRenderer,
+    MyPropertyCardComponent,
+    CardItemComponent,
+    AuctionCardComponent,
+    InterestedPropertyCardComponent,
+    MessageCardComponent
   ],
     imports: [
         BrowserModule,
