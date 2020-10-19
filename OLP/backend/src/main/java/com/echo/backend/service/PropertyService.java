@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class PropertyService {
 
-    Logger logger = LoggerFactory.getLogger(PropertyService.class);
+    private Logger logger = LoggerFactory.getLogger(PropertyService.class);
 
     private final PropertyMapper propertyMapper;
 
@@ -27,15 +27,21 @@ public class PropertyService {
     public void addNewProperty(Property property){
 
         property.setCreateTime(new Date());
-        String addr = property.getHouseNumber().trim().replaceAll(" ", "+") + "+" +
-                property.getStreet().trim().replaceAll(" ", "+") + ",+" +
-                property.getDistrict().trim().replaceAll(" ", "+") + ",+" +
+        String addr = property.getStreetNumber().trim().replaceAll(" ", "+") + "+" +
+                property.getStreetName().trim().replaceAll(" ", "+") + ",+" +
+                property.getSuburb().trim().replaceAll(" ", "+") + ",+" +
                 property.getState().trim().replaceAll(" ", "+") + "+" +
-                property.getCode().trim();
-        String location = GoogleMapUtil.getLocation(addr);
-        property.setAddress(location.split(":")[0]);
-        property.setLongitude(Double.valueOf(location.split(":")[1].split(",")[0]));
-        property.setLatitude(Double.valueOf(location.split(":")[1].split(",")[1]));
+                property.getPostcode().trim();
+        try {
+            String location = GoogleMapUtil.getLocation(addr);
+            property.setAddress(location.split(":")[0]);
+            property.setLongitude(Double.valueOf(location.split(":")[1].split(",")[0]));
+            property.setLatitude(Double.valueOf(location.split(":")[1].split(",")[1]));
+        }
+        catch (NullPointerException e){
+            logger.error("--- google map search error, check network connection---\n"+addr);
+            property.setAddress("empty");
+        }
         propertyMapper.createProperty(property);
 
     }
@@ -53,19 +59,19 @@ public class PropertyService {
 
         List<Property> result = new ArrayList<>();
 
-        if (null != property.getStreet()){
+        if (null != property.getStreetName()){
             return propertyMapper.searchByStreet(property);
         }
 
-        if (null != property.getDistrict()){
+        if (null != property.getSuburb()){
             result.addAll(propertyMapper.searchByDistrict(property));
         }
 
-        if (null != property.getCode()){
+        if (null != property.getPostcode()){
             result.addAll(propertyMapper.searchByCode(property));
         }
 
-        if (null != property.getDistrict() || null != property.getCode()){
+        if (null != property.getSuburb() || null != property.getPostcode()){
             return result;
         }
 
