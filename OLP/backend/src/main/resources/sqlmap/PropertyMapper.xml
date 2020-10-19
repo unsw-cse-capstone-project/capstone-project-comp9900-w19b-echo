@@ -6,14 +6,15 @@
         <result column="owner" property="owner" jdbcType="INTEGER" />
         <result column="state" property="state" jdbcType="VARCHAR" />
         <result column="city" property="city" jdbcType="VARCHAR" />
-        <result column="district" property="district" jdbcType="VARCHAR" />
-        <result column="code" property="code" jdbcType="VARCHAR" />
-        <result column="street" property="street" jdbcType="VARCHAR" />
-        <result column="house_number" property="houseNumber" jdbcType="VARCHAR" />
+        <result column="district" property="suburb" jdbcType="VARCHAR" />
+        <result column="code" property="postcode" jdbcType="VARCHAR" />
+        <result column="street" property="streetName" jdbcType="VARCHAR" />
+        <result column="house_number" property="streetNumber" jdbcType="VARCHAR" />
         <result column="longitude" property="longitude" jdbcType="DOUBLE" />
         <result column="latitude" property="latitude" jdbcType="DOUBLE" />
         <result column="address" property="address" jdbcType="VARCHAR" />
         <result column="status" property="status" jdbcType="INTEGER" />
+        <result column="property_type" property="propertyType" jdbcType="INTEGER" />
         <result column="create_time" property="createTime"/>
         <result column="area" property="area" jdbcType="DOUBLE" />
         <result column="bedroom" property="bedroom" jdbcType="INTEGER" />
@@ -25,8 +26,8 @@
     </resultMap>
 
     <insert id="createProperty" parameterType="com.echo.backend.domain.Property" useGeneratedKeys="true" keyProperty="pid">
-        insert into t_property (owner, state, city, district, code, street,house_number, longitude, latitude, address, status, create_time, area, bedroom, bathroom, carport, verification, description)
-        values(#{owner},#{state},#{city},#{district},#{code},#{street},#{houseNumber},#{longitude},#{latitude}, #{address}, 0, #{createTime}, #{area},#{bedroom},#{bathroom},#{carport},0,#{description})
+        insert into t_property (owner, state, city, district, code, street,house_number, longitude, latitude, address, status, create_time, area, bedroom, bathroom, carport, verification, description, property_type)
+        values(#{owner},#{state},#{city},#{suburb},#{postcode},#{streetName},#{streetNumber},#{longitude},#{latitude}, #{address}, 0, #{createTime}, #{area},#{bedroom},#{bathroom},#{carport},0,#{description},#{propertyType})
     </insert>
 
     <select id="getAllProperty" resultMap="PropertyMap">
@@ -38,7 +39,7 @@
     </select>
 
     <select id="searchByStreet" resultMap="PropertyMap" parameterType="com.echo.backend.domain.Property">
-        select * from t_property where street=#{street}
+        select * from t_property where street=#{streetName}
         <if test="area != 0">
             AND area &gt;= #{area}
         </if>
@@ -54,7 +55,7 @@
     </select>
 
     <select id="searchByDistrict" resultMap="PropertyMap" parameterType="com.echo.backend.domain.Property">
-        select * from t_property where district=#{district}
+        select * from t_property where district=#{suburb}
         <if test="area != 0">
             AND area &gt;= #{area}
         </if>
@@ -70,7 +71,7 @@
     </select>
 
     <select id="searchByCode" resultMap="PropertyMap" parameterType="com.echo.backend.domain.Property">
-        select * from t_property where code=#{code}
+        select * from t_property where code=#{postcode}
         <if test="area != 0">
             AND area &gt;= #{area}
         </if>

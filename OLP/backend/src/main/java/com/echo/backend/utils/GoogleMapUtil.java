@@ -2,6 +2,8 @@ package com.echo.backend.utils;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,7 +20,10 @@ public class GoogleMapUtil {
     public static String getLocation(String addr) {
         // 返回输入地址address的经纬度信息, 格式是 经度,纬度
         String queryUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+addr+"&key=" + apiKey + "&language=en";
+
+        System.out.println(queryUrl);
         String queryResult = getResponse(queryUrl);
+
         JSONObject object = JSONObject.parseObject(queryResult);
         JSONArray array = JSONObject.parseArray(object.get("results").toString());
         JSONObject address = array.getJSONObject(0);

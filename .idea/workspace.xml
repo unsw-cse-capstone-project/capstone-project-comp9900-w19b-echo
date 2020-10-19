@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3be2abb8-c5a7-4fa1-8144-7efb71aeb50c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/PaymentDetailMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/PaymentDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPaymentDetailRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPaymentDetailResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchPaymentDetailRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/PagingUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PaymentDetailMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/JWTFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/JWTFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/logs/all.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/logs/all.log.2020-10-09.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/PropertyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/GoogleMapUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/GoogleMapUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/test/java/com/echo/backend/BackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/test/java/com/echo/backend/BackendApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/database docs/DatabaseDesign.docx" beforeDir="false" afterPath="$PROJECT_DIR$/docs/database docs/DatabaseDesign.docx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/backend/target/" />
@@ -50,19 +45,23 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/PropertyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="161" column="34" selection-start-line="161" selection-start-column="34" selection-end-line="161" selection-end-column="34" />
+            <state relative-caret-position="240">
+              <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+              <folding>
+                <element signature="e#1808#1809#0" expanded="true" />
+                <element signature="e#1922#1923#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionCheckTimer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="85" column="5" lean-forward="true" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
+            <state relative-caret-position="686">
+              <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,55 +70,95 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/PagingUtil.java">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Property.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state relative-caret-position="110">
+              <caret line="44" column="23" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchPaymentDetailRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-              <folding>
-                <element signature="e#135#136#0" expanded="true" />
-                <element signature="e#161#162#0" expanded="true" />
-                <element signature="e#196#197#0" expanded="true" />
-                <element signature="e#226#227#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="65" column="62" selection-start-line="65" selection-start-column="62" selection-end-line="65" selection-end-column="62" />
-              <folding>
-                <element signature="e#1656#1657#0" expanded="true" />
-                <element signature="e#1684#1685#0" expanded="true" />
-                <element signature="e#1782#1783#0" expanded="true" />
-                <element signature="e#1847#1848#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPaymentDetailResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-              <folding>
-                <element signature="e#155#156#0" expanded="true" />
-                <element signature="e#193#194#0" expanded="true" />
+                <element signature="e#2528#2529#0" expanded="true" />
+                <element signature="e#2554#2555#0" expanded="true" />
+                <element signature="e#2589#2590#0" expanded="true" />
+                <element signature="e#2619#2620#0" expanded="true" />
+                <element signature="e#2648#2649#0" expanded="true" />
+                <element signature="e#2676#2677#0" expanded="true" />
+                <element signature="e#2715#2716#0" expanded="true" />
+                <element signature="e#2749#2750#0" expanded="true" />
+                <element signature="e#2781#2782#0" expanded="true" />
+                <element signature="e#2809#2810#0" expanded="true" />
+                <element signature="e#2851#2852#0" expanded="true" />
+                <element signature="e#2885#2886#0" expanded="true" />
+                <element signature="e#2916#2917#0" expanded="true" />
+                <element signature="e#2943#2944#0" expanded="true" />
+                <element signature="e#2983#2984#0" expanded="true" />
+                <element signature="e#3015#3016#0" expanded="true" />
+                <element signature="e#3048#3049#0" expanded="true" />
+                <element signature="e#3077#3078#0" expanded="true" />
+                <element signature="e#3121#3122#0" expanded="true" />
+                <element signature="e#3157#3158#0" expanded="true" />
+                <element signature="e#3192#3193#0" expanded="true" />
+                <element signature="e#3223#3224#0" expanded="true" />
+                <element signature="e#3271#3272#0" expanded="true" />
+                <element signature="e#3311#3312#0" expanded="true" />
+                <element signature="e#3348#3349#0" expanded="true" />
+                <element signature="e#3381#3382#0" expanded="true" />
+                <element signature="e#3433#3434#0" expanded="true" />
+                <element signature="e#3477#3478#0" expanded="true" />
+                <element signature="e#3516#3517#0" expanded="true" />
+                <element signature="e#3551#3552#0" expanded="true" />
+                <element signature="e#3607#3608#0" expanded="true" />
+                <element signature="e#3655#3656#0" expanded="true" />
+                <element signature="e#3691#3692#0" expanded="true" />
+                <element signature="e#3723#3724#0" expanded="true" />
+                <element signature="e#3773#3774#0" expanded="true" />
+                <element signature="e#3815#3816#0" expanded="true" />
+                <element signature="e#3850#3851#0" expanded="true" />
+                <element signature="e#3881#3882#0" expanded="true" />
+                <element signature="e#3929#3930#0" expanded="true" />
+                <element signature="e#3969#3970#0" expanded="true" />
+                <element signature="e#4003#4004#0" expanded="true" />
+                <element signature="e#4033#4034#0" expanded="true" />
+                <element signature="e#4079#4080#0" expanded="true" />
+                <element signature="e#4117#4118#0" expanded="true" />
+                <element signature="e#4147#4148#0" expanded="true" />
+                <element signature="e#4176#4177#0" expanded="true" />
+                <element signature="e#4217#4218#0" expanded="true" />
+                <element signature="e#4253#4254#0" expanded="true" />
+                <element signature="e#4288#4289#0" expanded="true" />
+                <element signature="e#4321#4322#0" expanded="true" />
+                <element signature="e#4371#4372#0" expanded="true" />
+                <element signature="e#4415#4416#0" expanded="true" />
+                <element signature="e#4446#4447#0" expanded="true" />
+                <element signature="e#4473#4474#0" expanded="true" />
+                <element signature="e#4513#4514#0" expanded="true" />
+                <element signature="e#4545#4546#0" expanded="true" />
+                <element signature="e#4576#4577#0" expanded="true" />
+                <element signature="e#4606#4607#0" expanded="true" />
+                <element signature="e#4649#4650#0" expanded="true" />
+                <element signature="e#4687#4688#0" expanded="true" />
+                <element signature="e#4719#4720#0" expanded="true" />
+                <element signature="e#4750#4751#0" expanded="true" />
+                <element signature="e#4795#4796#0" expanded="true" />
+                <element signature="e#4835#4836#0" expanded="true" />
+                <element signature="e#4866#4867#0" expanded="true" />
+                <element signature="e#4896#4897#0" expanded="true" />
+                <element signature="e#4939#4940#0" expanded="true" />
+                <element signature="e#4977#4978#0" expanded="true" />
+                <element signature="e#5013#5014#0" expanded="true" />
+                <element signature="e#5048#5049#0" expanded="true" />
+                <element signature="e#5101#5102#0" expanded="true" />
+                <element signature="e#5149#5150#0" expanded="true" />
+                <element signature="e#5185#5186#0" expanded="true" />
+                <element signature="e#5220#5221#0" expanded="true" />
+                <element signature="e#5273#5274#0" expanded="true" />
+                <element signature="e#5321#5322#0" expanded="true" />
+                <element signature="e#5359#5360#0" expanded="true" />
+                <element signature="e#5393#5394#0" expanded="true" />
+                <element signature="e#5447#5448#0" expanded="true" />
+                <element signature="e#5493#5494#0" expanded="true" />
+                <element signature="e#5526#5527#0" expanded="true" />
+                <element signature="e#5555#5556#0" expanded="true" />
+                <element signature="e#5599#5600#0" expanded="true" />
+                <element signature="e#5635#5636#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,13 +167,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPaymentDetailRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-              <folding>
-                <element signature="e#244#245#0" expanded="true" />
-                <element signature="e#309#310#0" expanded="true" />
-                <element signature="e#359#360#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="88">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -142,51 +176,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PaymentDetailMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="305">
               <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/PaymentDetailMapper.java">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="45" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="123">
+              <caret line="29" column="91" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/PaymentDetail.java">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/GoogleMapUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding>
-                <element signature="e#251#252#0" expanded="true" />
-                <element signature="e#277#278#0" expanded="true" />
-                <element signature="e#312#313#0" expanded="true" />
-                <element signature="e#342#343#0" expanded="true" />
-                <element signature="e#379#380#0" expanded="true" />
-                <element signature="e#412#413#0" expanded="true" />
-                <element signature="e#464#465#0" expanded="true" />
-                <element signature="e#508#509#0" expanded="true" />
-                <element signature="e#546#547#0" expanded="true" />
-                <element signature="e#580#581#0" expanded="true" />
-                <element signature="e#634#635#0" expanded="true" />
-                <element signature="e#680#681#0" expanded="true" />
-                <element signature="e#712#713#0" expanded="true" />
-                <element signature="e#742#743#0" expanded="true" />
-                <element signature="e#786#787#0" expanded="true" />
-                <element signature="e#824#825#0" expanded="true" />
-                <element signature="e#854#855#0" expanded="true" />
-                <element signature="e#883#884#0" expanded="true" />
-                <element signature="e#924#925#0" expanded="true" />
-                <element signature="e#960#961#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="136">
+              <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/test/java/com/echo/backend/BackendApplicationTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="159">
+              <caret line="19" column="13" selection-start-line="16" selection-start-column="9" selection-end-line="19" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -207,6 +243,7 @@
       <find>com.echo.BackendApplication</find>
       <find>redirect</find>
       <find>hidden = false,</find>
+      <find>type</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -218,21 +255,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/MyRealm.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/UserMapper.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPropertyResponse.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPropertyRequest.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/test/java/com/echo/backend/TestJson.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/GoogleMapUtil.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Property.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchPropertyRequest.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/PropertyService.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/PropertyMapper.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/JWTUtil.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/BaseRequest.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddAuctionResponse.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddAuctionRequest.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/BackendApplication.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Auction.java" />
         <option value="$PROJECT_DIR$/OLP/backend/pom.xml" />
@@ -265,10 +295,17 @@
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPaymentDetailRequest.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPaymentDetailResponse.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchPaymentDetailRequest.java" />
-        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/PagingUtil.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java" />
         <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/trans/ApiProperty.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPropertyRequest.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Property.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/GoogleMapUtil.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/test/java/com/echo/backend/BackendApplicationTests.java" />
+        <option value="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/PropertyService.java" />
       </list>
     </option>
   </component>
@@ -372,29 +409,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
-              <item name="OLP" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
-              <item name="OLP" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
@@ -422,9 +437,7 @@
               <item name="OLP" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
@@ -432,9 +445,24 @@
               <item name="OLP" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sqlmap" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
+              <item name="OLP" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="capstone-project-comp9900-w19b-echo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="capstone-project-comp9900-w19b-echo" type="462c0819:PsiDirectoryNode" />
+              <item name="OLP" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -467,11 +495,9 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\cxy_n\IdeaProjects\capstone-project-comp9900-w19b-echo\OLP\backend\src\main\resources\sqlmap" />
-      <recent name="C:\Users\cxy_n\IdeaProjects\capstone-project-comp9900-w19b-echo\OLP\backend\src\main\resources\conf" />
-      <recent name="C:\Users\cxy_n\IdeaProjects\capstone-project-comp9900-w19b-echo\OLP\backend\src\main\java\com\echo\backend\config" />
-      <recent name="C:\Users\cxy_n\IdeaProjects\capstone-project-comp9900-w19b-echo\OLP\backend\src\main\java\com\echo\backend" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.echo.backend.domain.trans" />
+      <recent name="com.echo.backend.dto" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.echo.backend.domain" />
@@ -480,8 +506,11 @@
       <recent name="com.echo.backend.controller" />
       <recent name="com.echo.backend.exception" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.echo.backend.dto" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cxy_n\IdeaProjects\capstone-project-comp9900-w19b-echo\OLP\backend\src\main\resources\sqlmap" />
+      <recent name="C:\Users\cxy_n\IdeaProjects\capstone-project-comp9900-w19b-echo\OLP\backend\src\main\resources\conf" />
+      <recent name="C:\Users\cxy_n\IdeaProjects\capstone-project-comp9900-w19b-echo\OLP\backend\src\main\java\com\echo\backend\config" />
+      <recent name="C:\Users\cxy_n\IdeaProjects\capstone-project-comp9900-w19b-echo\OLP\backend\src\main\java\com\echo\backend" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -496,7 +525,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication (1)">
+  <component name="RunManager" selected="JUnit.BackendApplicationTests.testGoogld">
     <configuration name="TestJson" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.echo.backend.TestJson" />
       <module name="backend (1)" />
@@ -523,6 +552,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BackendApplicationTests.testGoogld" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.echo.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.echo.backend" />
+      <option name="MAIN_CLASS_NAME" value="com.echo.backend.BackendApplicationTests" />
+      <option name="METHOD_NAME" value="testGoogld" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BackendApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="backend (1)" />
       <extension name="coverage">
@@ -538,6 +583,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BackendApplicationTests.testGoogld" />
         <item itemvalue="Spring Boot.BackendApplication (1)" />
         <item itemvalue="Application.TestTime" />
         <item itemvalue="Application.TestJson" />
@@ -560,7 +606,8 @@
       <workItem from="1602302228561" duration="1677000" />
       <workItem from="1602392420754" duration="14000" />
       <workItem from="1602566427634" duration="33949000" />
-      <workItem from="1602661063703" duration="47794000" />
+      <workItem from="1602661063703" duration="49181000" />
+      <workItem from="1603126091076" duration="2900000" />
     </task>
     <task id="LOCAL-00001" summary="Construct basic frame of backend.">
       <created>1600929787117</created>
@@ -674,11 +721,39 @@
       <option name="project" value="LOCAL" />
       <updated>1602952731606</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="1. Move paging method to Utils&#10;2. Add payment add/view function">
+      <created>1603021519135</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1603021519135</updated>
+    </task>
+    <task id="LOCAL-00018" summary="1. Fix, auto set current time">
+      <created>1603022170471</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1603022170471</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="BackendApplicationTests_testGoogld - 2020.10.20 at 01h 25m 59s.xml">
+      <configuration name="BackendApplicationTests.testGoogld" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BackendApplicationTests_testGoogld - 2020.10.20 at 01h 29m 45s.xml">
+      <configuration name="BackendApplicationTests.testGoogld" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BackendApplicationTests_testGoogld - 2020.10.20 at 01h 34m 52s.xml">
+      <configuration name="BackendApplicationTests.testGoogld" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BackendApplicationTests_testGoogld - 2020.10.20 at 01h 35m 11s.xml">
+      <configuration name="BackendApplicationTests.testGoogld" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102945000" />
+    <option name="totallyTimeSpent" value="107232000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -693,7 +768,7 @@
     <frame x="-6" y="-6" width="1381" height="844" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4960212" visible="true" weight="0.26303855" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4960212" visible="true" weight="0.26681784" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -703,8 +778,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891247" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.1823282" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.40112203" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997195" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32959327" />
@@ -798,92 +873,27 @@
     <MESSAGE value="1. fix" />
     <MESSAGE value="1. auction and bid function" />
     <MESSAGE value="1. auction and bid function - debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. auction and bid function - debug" />
+    <MESSAGE value="1. Move paging method to Utils&#10;2. Add payment add/view function" />
+    <MESSAGE value="1. Fix, auto set current time" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Fix, auto set current time" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/GoogleMapUtil.java</url>
+          <line>23</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/OLP/backend/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="112" column="21" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="34" column="85" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="103" column="44" selection-start-line="103" selection-start-column="34" selection-end-line="103" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/PlaceBidResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-          <folding>
-            <element signature="e#139#140#0" expanded="true" />
-            <element signature="e#177#178#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/PlaceBidRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding>
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#270#271#0" expanded="true" />
-            <element signature="e#310#311#0" expanded="true" />
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#363#364#0" expanded="true" />
-            <element signature="e#398#399#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#292#293#0" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#383#384#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#501#502#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchPropertyRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchAuctionRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#254#255#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-            <element signature="e#307#308#0" expanded="true" />
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#372#373#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchAuctionResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -1161,28 +1171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionCheckTimer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/logs/run.out">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1813" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/logs/spring.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4173" />
@@ -1191,24 +1179,62 @@
     <entry file="file://$PROJECT_DIR$/Installation Guide.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/PaymentDetailMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2882">
+          <caret line="155" column="71" selection-start-line="155" selection-start-column="71" selection-end-line="155" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/config/shiro/JWTFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
+        <state relative-caret-position="1166">
           <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql">
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/PagingUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="104" column="41" lean-forward="true" selection-start-line="104" selection-start-column="41" selection-end-line="104" selection-end-column="41" />
+        <state relative-caret-position="132">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchPaymentDetailRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+          <folding>
+            <element signature="e#1847#1848#0" expanded="true" />
+            <element signature="e#1916#1917#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/PaymentDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="286">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="e#251#252#0" expanded="true" />
             <element signature="e#277#278#0" expanded="true" />
@@ -1234,96 +1260,205 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dao/PaymentDetailMapper.java">
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPaymentDetailResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="45" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="45" />
+        <state relative-caret-position="66">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/trans/ApiProperty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPropertyRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="16" lean-forward="true" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/domain/Property.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="44" column="23" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
+          <folding>
+            <element signature="e#2528#2529#0" expanded="true" />
+            <element signature="e#2554#2555#0" expanded="true" />
+            <element signature="e#2589#2590#0" expanded="true" />
+            <element signature="e#2619#2620#0" expanded="true" />
+            <element signature="e#2648#2649#0" expanded="true" />
+            <element signature="e#2676#2677#0" expanded="true" />
+            <element signature="e#2715#2716#0" expanded="true" />
+            <element signature="e#2749#2750#0" expanded="true" />
+            <element signature="e#2781#2782#0" expanded="true" />
+            <element signature="e#2809#2810#0" expanded="true" />
+            <element signature="e#2851#2852#0" expanded="true" />
+            <element signature="e#2885#2886#0" expanded="true" />
+            <element signature="e#2916#2917#0" expanded="true" />
+            <element signature="e#2943#2944#0" expanded="true" />
+            <element signature="e#2983#2984#0" expanded="true" />
+            <element signature="e#3015#3016#0" expanded="true" />
+            <element signature="e#3048#3049#0" expanded="true" />
+            <element signature="e#3077#3078#0" expanded="true" />
+            <element signature="e#3121#3122#0" expanded="true" />
+            <element signature="e#3157#3158#0" expanded="true" />
+            <element signature="e#3192#3193#0" expanded="true" />
+            <element signature="e#3223#3224#0" expanded="true" />
+            <element signature="e#3271#3272#0" expanded="true" />
+            <element signature="e#3311#3312#0" expanded="true" />
+            <element signature="e#3348#3349#0" expanded="true" />
+            <element signature="e#3381#3382#0" expanded="true" />
+            <element signature="e#3433#3434#0" expanded="true" />
+            <element signature="e#3477#3478#0" expanded="true" />
+            <element signature="e#3516#3517#0" expanded="true" />
+            <element signature="e#3551#3552#0" expanded="true" />
+            <element signature="e#3607#3608#0" expanded="true" />
+            <element signature="e#3655#3656#0" expanded="true" />
+            <element signature="e#3691#3692#0" expanded="true" />
+            <element signature="e#3723#3724#0" expanded="true" />
+            <element signature="e#3773#3774#0" expanded="true" />
+            <element signature="e#3815#3816#0" expanded="true" />
+            <element signature="e#3850#3851#0" expanded="true" />
+            <element signature="e#3881#3882#0" expanded="true" />
+            <element signature="e#3929#3930#0" expanded="true" />
+            <element signature="e#3969#3970#0" expanded="true" />
+            <element signature="e#4003#4004#0" expanded="true" />
+            <element signature="e#4033#4034#0" expanded="true" />
+            <element signature="e#4079#4080#0" expanded="true" />
+            <element signature="e#4117#4118#0" expanded="true" />
+            <element signature="e#4147#4148#0" expanded="true" />
+            <element signature="e#4176#4177#0" expanded="true" />
+            <element signature="e#4217#4218#0" expanded="true" />
+            <element signature="e#4253#4254#0" expanded="true" />
+            <element signature="e#4288#4289#0" expanded="true" />
+            <element signature="e#4321#4322#0" expanded="true" />
+            <element signature="e#4371#4372#0" expanded="true" />
+            <element signature="e#4415#4416#0" expanded="true" />
+            <element signature="e#4446#4447#0" expanded="true" />
+            <element signature="e#4473#4474#0" expanded="true" />
+            <element signature="e#4513#4514#0" expanded="true" />
+            <element signature="e#4545#4546#0" expanded="true" />
+            <element signature="e#4576#4577#0" expanded="true" />
+            <element signature="e#4606#4607#0" expanded="true" />
+            <element signature="e#4649#4650#0" expanded="true" />
+            <element signature="e#4687#4688#0" expanded="true" />
+            <element signature="e#4719#4720#0" expanded="true" />
+            <element signature="e#4750#4751#0" expanded="true" />
+            <element signature="e#4795#4796#0" expanded="true" />
+            <element signature="e#4835#4836#0" expanded="true" />
+            <element signature="e#4866#4867#0" expanded="true" />
+            <element signature="e#4896#4897#0" expanded="true" />
+            <element signature="e#4939#4940#0" expanded="true" />
+            <element signature="e#4977#4978#0" expanded="true" />
+            <element signature="e#5013#5014#0" expanded="true" />
+            <element signature="e#5048#5049#0" expanded="true" />
+            <element signature="e#5101#5102#0" expanded="true" />
+            <element signature="e#5149#5150#0" expanded="true" />
+            <element signature="e#5185#5186#0" expanded="true" />
+            <element signature="e#5220#5221#0" expanded="true" />
+            <element signature="e#5273#5274#0" expanded="true" />
+            <element signature="e#5321#5322#0" expanded="true" />
+            <element signature="e#5359#5360#0" expanded="true" />
+            <element signature="e#5393#5394#0" expanded="true" />
+            <element signature="e#5447#5448#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
+            <element signature="e#5526#5527#0" expanded="true" />
+            <element signature="e#5555#5556#0" expanded="true" />
+            <element signature="e#5599#5600#0" expanded="true" />
+            <element signature="e#5635#5636#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/logs/run.out">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1011" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PropertyMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="29" column="91" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/PaymentDetailMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="305">
           <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPaymentDetailRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
-          <folding>
-            <element signature="e#244#245#0" expanded="true" />
-            <element signature="e#309#310#0" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/AddPaymentDetailResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-          <folding>
-            <element signature="e#155#156#0" expanded="true" />
-            <element signature="e#193#194#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/dto/SearchPaymentDetailRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-          <folding>
-            <element signature="e#135#136#0" expanded="true" />
-            <element signature="e#161#162#0" expanded="true" />
-            <element signature="e#196#197#0" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-          </folding>
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/sql/create_table.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="65" column="62" selection-start-line="65" selection-start-column="62" selection-end-line="65" selection-end-column="62" />
-          <folding>
-            <element signature="e#1656#1657#0" expanded="true" />
-            <element signature="e#1684#1685#0" expanded="true" />
-            <element signature="e#1782#1783#0" expanded="true" />
-            <element signature="e#1847#1848#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="159">
+          <caret line="19" column="13" selection-start-line="16" selection-start-column="9" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/PagingUtil.java">
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/AuctionCheckTimer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        <state relative-caret-position="686">
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/PropertyController.java">
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="85" column="5" lean-forward="true" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="528">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/test/java/com/echo/backend/BackendApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="161" column="34" selection-start-line="161" selection-start-column="34" selection-end-line="161" selection-end-column="34" />
+        <state relative-caret-position="220">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/utils/GoogleMapUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/PropertyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+          <folding>
+            <element signature="e#1808#1809#0" expanded="true" />
+            <element signature="e#1922#1923#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -21,16 +21,16 @@ public class Property {
     private String city;
 
     @ApiModelProperty(value = "District of property: Kingsford or Little bay",  required = true)
-    private String district;
+    private String suburb;
 
     @ApiModelProperty(value = "Postal code  of property: 2032",  required = true)
-    private String code;
+    private String postcode;
 
     @ApiModelProperty(value = "Street of property: Barker St or Fifth Avenue",  required = true)
-    private String street;
+    private String streetName;
 
     @ApiModelProperty(value = "House number of property: 32 or 44b",  required = true)
-    private String houseNumber;
+    private String streetNumber;
 
     @ApiModelProperty(value = "Longitude of property, fetch by sever",  required = false)
     private double longitude;
@@ -103,36 +103,36 @@ public class Property {
         this.city = city;
     }
 
-    public String getDistrict() {
-        return district;
+    public String getSuburb() {
+        return suburb;
     }
 
-    public void setDistrict(String district) {
-        this.district = district;
+    public void setSuburb(String suburb) {
+        this.suburb = suburb;
     }
 
-    public String getCode() {
-        return code;
+    public String getPostcode() {
+        return postcode;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
     }
 
-    public String getStreet() {
-        return street;
+    public String getStreetName() {
+        return streetName;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
     }
 
-    public String getHouseNumber() {
-        return houseNumber;
+    public String getStreetNumber() {
+        return streetNumber;
     }
 
-    public void setHouseNumber(String houseNumber) {
-        this.houseNumber = houseNumber;
+    public void setStreetNumber(String streetNumber) {
+        this.streetNumber = streetNumber;
     }
 
     public double getLongitude() {
@@ -149,6 +149,14 @@ public class Property {
 
     public void setLatitude(double latitude) {
         this.latitude = latitude;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getStatus() {
@@ -229,13 +237,5 @@ public class Property {
 
     public void setRemark(String remark) {
         this.remark = remark;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 }
