@@ -5,7 +5,9 @@
   </nb-layout-header>
 
   <nb-layout-column>
-    <form>
+    <nb-card [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success">
+      <nb-card-body>
+        <form>
       <div class="form-group col-sm-6 row">
         <label for="streetAddress" class="col-sm-3 col-form-label">Street address</label>
         <div class="col-sm-9">
@@ -80,7 +82,8 @@
         </div>
       </div>
     </form>
-
+      </nb-card-body>
+    </nb-card>
   </nb-layout-column>
 
   <nb-layout-footer fixed>
