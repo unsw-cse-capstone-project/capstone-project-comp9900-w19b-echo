@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,6 +50,7 @@ import { InterestedPropertyCardComponent } from './component/interested-property
 import { MessageCardComponent } from './component/message-card/message-card.component';
 import { SearchBarComponent } from './component/search-bar/search-bar.component';
 import { NewPropertyComponent } from './component/new-property/new-property.component';
+import {AuthInterceptor} from "./service/auth-interceptor";
 
 @NgModule({
   declarations: [
@@ -141,7 +142,9 @@ import { NewPropertyComponent } from './component/new-property/new-property.comp
         NbSpinnerModule,
       AgGridModule.withComponents([BtnCellRenderer]),
     ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

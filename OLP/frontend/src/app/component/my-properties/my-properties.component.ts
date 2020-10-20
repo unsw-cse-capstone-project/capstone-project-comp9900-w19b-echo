@@ -48,7 +48,7 @@ export class MyPropertiesComponent implements OnInit {
   ngOnInit(): void {
     // @ts-ignore
     this.frameworkComponents = {
-      btnCellRenderer: BtnCellRenderer,
+      btnCellRenderer: new BtnCellRenderer(),
     }
   }
 

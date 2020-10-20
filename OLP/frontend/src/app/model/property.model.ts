@@ -8,4 +8,6 @@ export class Property {
   noOfBathroom: number;
   noOfParking: number;
   description: string;
+  owner: number;
+  propertyType: number;
 }

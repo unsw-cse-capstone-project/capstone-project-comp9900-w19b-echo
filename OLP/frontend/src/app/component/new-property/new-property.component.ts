@@ -26,9 +26,9 @@ export class NewPropertyComponent implements OnInit {
 
   save() {
     this.isLoading = true;
-    let addPropertyRequest = new AddPropertyRequest();
-    addPropertyRequest.property = this.property;
-    this.http.post(environment.baseEndpoint + '/add-property', addPropertyRequest)
+    this.property.owner = this.userService.user.uid;
+    this.property.propertyType = 0;
+    this.http.post(environment.baseEndpoint + '/add-property', {property: this.property})
       .subscribe((p: Property) => {
           this.property = p;
           this.showToast('success');
