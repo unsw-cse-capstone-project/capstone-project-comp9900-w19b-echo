@@ -8,7 +8,7 @@ import {User} from "../model/user.model";
 export class UserService {
   user: User = new User();
   authenticated: boolean = false;
-  token: string;
+  token: string = null;
 
   constructor(private authService: NbAuthService) {
     this.authService.onTokenChange()
