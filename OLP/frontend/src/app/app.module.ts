@@ -42,7 +42,6 @@ import { CompletedAuctionsComponent } from './component/completed-auctions/compl
 import { InterestedPropertiesComponent } from './component/interested-properties/interested-properties.component';
 import { MessagesComponent } from './component/messages/messages.component';
 import {AgGridModule} from "ag-grid-angular";
-import { BtnCellRenderer } from './component/btn-cell-renderer/btn-cell-renderer.component';
 import { MyPropertyCardComponent } from './component/my-property-card/my-property-card.component';
 import { CardItemComponent } from './component/card-item/card-item.component';
 import { AuctionCardComponent } from './component/auction-card/auction-card.component';
@@ -51,6 +50,8 @@ import { MessageCardComponent } from './component/message-card/message-card.comp
 import { SearchBarComponent } from './component/search-bar/search-bar.component';
 import { NewPropertyComponent } from './component/new-property/new-property.component';
 import {AuthInterceptor} from "./service/auth-interceptor";
+import {MatTableModule} from "@angular/material/table";
+import { PropertyListComponent } from './component/property-list/property-list.component';
 
 @NgModule({
   declarations: [
@@ -71,77 +72,78 @@ import {AuthInterceptor} from "./service/auth-interceptor";
     CompletedAuctionsComponent,
     InterestedPropertiesComponent,
     MessagesComponent,
-    BtnCellRenderer,
     MyPropertyCardComponent,
     CardItemComponent,
     AuctionCardComponent,
     InterestedPropertyCardComponent,
     MessageCardComponent,
     SearchBarComponent,
-    NewPropertyComponent
+    NewPropertyComponent,
+    PropertyListComponent
   ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        NbThemeModule.forRoot({name: 'default'}),
-        NbDatepickerModule.forRoot(),
-        NbLayoutModule,
-        NbInputModule,
-        NbEvaIconsModule,
-        NbAuthModule.forRoot({
-            strategies: [
-                NbPasswordAuthStrategy.setup({
-                    name: 'email',
-                    token: {
-                        class: NbAuthJWTToken,
-                        key: 'token',
-                    },
-                    baseEndpoint: environment.baseEndpoint,
-                    login: {
-                        endpoint: '/sign-in',
-                        method: 'post',
-                    },
-                    register: {
-                        endpoint: '/sign-up',
-                        method: 'post',
-                        defaultErrors: ['Something went wrong, please try again.'],
-                    },
-                    logout: {
-                        endpoint: '/sign-out',
-                        method: 'post',
-                    },
-                    requestPass: {
-                        endpoint: '/request-pass',
-                        method: 'post',
-                    },
-                    resetPass: {
-                        endpoint: '/reset-pass',
-                        method: 'post',
-                    },
-                }),
-            ],
-            forms: {},
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot({name: 'default'}),
+    NbDatepickerModule.forRoot(),
+    NbLayoutModule,
+    NbInputModule,
+    NbEvaIconsModule,
+    NbAuthModule.forRoot({
+      strategies: [
+        NbPasswordAuthStrategy.setup({
+          name: 'email',
+          token: {
+            class: NbAuthJWTToken,
+            key: 'token',
+          },
+          baseEndpoint: environment.baseEndpoint,
+          login: {
+            endpoint: '/sign-in',
+            method: 'post',
+          },
+          register: {
+            endpoint: '/sign-up',
+            method: 'post',
+            defaultErrors: ['Something went wrong, please try again.'],
+          },
+          logout: {
+            endpoint: '/sign-out',
+            method: 'post',
+          },
+          requestPass: {
+            endpoint: '/request-pass',
+            method: 'post',
+          },
+          resetPass: {
+            endpoint: '/reset-pass',
+            method: 'post',
+          },
         }),
-        NbActionsModule,
-        NbIconModule,
-        NbTooltipModule,
-        NbInputModule,
-        NbCardModule,
-        NgbModule,
-        NbSelectModule,
-        NbButtonModule,
-        NbSearchModule,
-        NbUserModule,
-        NbContextMenuModule,
-        NbMenuModule.forRoot(),
-        NbToastrModule.forRoot(),
-        NbTabsetModule,
-        FormsModule,
-        NbSpinnerModule,
-      AgGridModule.withComponents([BtnCellRenderer]),
-    ],
+      ],
+      forms: {},
+    }),
+    NbActionsModule,
+    NbIconModule,
+    NbTooltipModule,
+    NbInputModule,
+    NbCardModule,
+    NgbModule,
+    NbSelectModule,
+    NbButtonModule,
+    NbSearchModule,
+    NbUserModule,
+    NbContextMenuModule,
+    NbMenuModule.forRoot(),
+    NbToastrModule.forRoot(),
+    NbTabsetModule,
+    FormsModule,
+    NbSpinnerModule,
+    AgGridModule.withComponents([]),
+    MatTableModule,
+  ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
   ],
