@@ -6,6 +6,7 @@ public class UserInfo extends BaseRequest {
     private String fullName;
     private String password;
     private String phone;
+    private int uid;
 
     public String getEmail() {
         return email;
@@ -37,5 +38,13 @@ public class UserInfo extends BaseRequest {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
     }
 }

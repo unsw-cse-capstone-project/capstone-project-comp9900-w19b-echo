@@ -1,5 +1,6 @@
 export class Property {
-  streetAddress: string;
+  streetName: string
+  streetNumber: number;
   suburb: string;
   postcode: string;
   state: string;
@@ -8,4 +9,13 @@ export class Property {
   noOfBathroom: number;
   noOfParking: number;
   description: string;
+  owner: number;
+  propertyType: number;
+  status: string;
+  bidStartDate: Date;
+  bidEndDate: Date;
+
+  address () {
+    return this.streetNumber + ' ' + this.streetName + ', ' + this.suburb + ' ' + this.state + ' ' + this.postcode;
+  }
 }

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BtnCellRenderer } from './btn-cell-renderer.component';
+import { PropertyListComponent } from './property-list.component';
 
-describe('BtnCellRendererComponent', () => {
-  let component: BtnCellRenderer;
-  let fixture: ComponentFixture<BtnCellRenderer>;
+describe('PropertyListComponent', () => {
+  let component: PropertyListComponent;
+  let fixture: ComponentFixture<PropertyListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BtnCellRenderer ]
+      declarations: [ PropertyListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BtnCellRenderer);
+    fixture = TestBed.createComponent(PropertyListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
