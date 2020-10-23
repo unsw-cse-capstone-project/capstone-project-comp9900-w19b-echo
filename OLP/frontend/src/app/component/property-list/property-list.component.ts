@@ -17,4 +17,11 @@ export class PropertyListComponent implements OnInit {
   address (p: Property) {
     return p.streetNumber + ' ' + p.streetName + ', ' + p.suburb + ' ' + p.state + ' ' + p.postcode;
   }
+
+  status(status: number) {
+    if(status == 0){
+      return 'Active';
+    }
+    return 'Inactive';
+  }
 }

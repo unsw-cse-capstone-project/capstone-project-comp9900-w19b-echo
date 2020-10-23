@@ -22,12 +22,13 @@ export class NewPropertyComponent implements OnInit {
 
   ngOnInit(): void {
     this.property = new Property();
+    this.property.propertyType = 0;
   }
 
   save() {
     this.isLoading = true;
     this.property.owner = this.userService.user.uid;
-    this.property.propertyType = 0;
+    this.property.city = this.property.suburb;
     this.http.post(environment.baseEndpoint + '/add-property', {property: this.property})
       .subscribe((p: Property) => {
           this.property = p;
@@ -44,5 +45,9 @@ export class NewPropertyComponent implements OnInit {
 
   cancel() {
     this.router.navigate(['/my-properties', {}]);
+  }
+
+  onPropertyTypeChange(propertyType: number) {
+    this.property.propertyType = propertyType;
   }
 }

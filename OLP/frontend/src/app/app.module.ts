@@ -103,6 +103,10 @@ import { PropertyListComponent } from './component/property-list/property-list.c
           login: {
             endpoint: '/sign-in',
             method: 'post',
+            redirect: {
+              success: '/dashboard',
+              failure: null,
+            },
           },
           register: {
             endpoint: '/sign-up',

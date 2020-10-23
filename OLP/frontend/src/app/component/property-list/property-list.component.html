@@ -4,8 +4,9 @@
     <th class="col-sm-1">#</th>
     <th class="col-sm-3">Property</th>
     <th class="col-sm-1">Status</th>
-    <th class="col-sm-2">Bid Start Date</th>
-    <th class="col-sm-2">Bid End Date</th>
+    <th class="col-sm-2">Auction Status</th>
+    <th class="col-sm-1">Bid Start Date</th>
+    <th class="col-sm-1">Bid End Date</th>
     <th class="col-sm-3">Action</th>
   </tr>
   </thead>
@@ -13,15 +14,17 @@
   <tr *ngFor="let p of properties; index as i;"  class="row">
     <th class="col-sm-1">{{i+1}}</th>
     <td class="col-sm-3">{{address(p)}}</td>
-    <td class="col-sm-1">{{p.status}}</td>
-    <td class="col-sm-2">{{p.bidStartDate}}</td>
-    <td class="col-sm-2">{{p.bidEndDate}}</td>
+    <td class="col-sm-1">{{status(p.status)}}</td>
+    <td class="col-sm-2">{{status(p.status)}}</td>
+    <td class="col-sm-1">{{p.bidStartDate}}</td>
+    <td class="col-sm-1">{{p.bidEndDate}}</td>
     <td class="col-sm-3">
-      <button type="button" class="btn btn-outline-primary btn-sm">Advise</button>
-      <button type="button" class="btn btn-outline-primary btn-sm ml-3">Pace Bid</button>
-      <button type="button" class="btn btn-outline-primary btn-sm ml-3">Update Bid</button>
-<!--      <button type="button" class="btn btn-outline-primary btn-sm ml-3">Quit Bid</button>
-      <button type="button" class="btn btn-outline-primary btn-sm ml-3">Delete</button>-->
+      <button *ngIf="p.status == 0" type="button" class="btn btn-outline-primary btn-sm">Advise</button>
+      <button *ngIf="p.status == 0" type="button" class="btn btn-outline-primary btn-sm ml-3">Edit</button>
+      <button *ngIf="p.status == 1" type="button" class="btn btn-outline-primary btn-sm ml-3">Pace Bid</button>
+      <button *ngIf="p.status == 2" type="button" class="btn btn-outline-primary btn-sm ml-3">Update Bid</button>
+      <button *ngIf="p.status == 2" type="button" class="btn btn-outline-primary btn-sm ml-3">Quit Bid</button>
+      <button type="button" class="btn btn-outline-primary btn-sm ml-3">Delete</button>
     </td>
   </tr>
   </tbody>

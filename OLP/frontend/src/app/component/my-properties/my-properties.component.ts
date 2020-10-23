@@ -1,6 +1,11 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {AgGridAngular} from "ag-grid-angular";
 import {Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
+import {UserService} from "../../service/user.service";
+import {NbToastrService} from "@nebular/theme";
+import {environment} from "../../../environments/environment";
+import {Property} from "../../model/property.model";
 
 @Component({
   selector: 'app-my-properties',
@@ -8,18 +13,20 @@ import {Router} from "@angular/router";
   styleUrls: ['./my-properties.component.scss']
 })
 export class MyPropertiesComponent implements OnInit {
-  properties = [
-    {streetNumber: 1, streetName: 'George Street', suburb: 'Sydney', postcode: '2000', state: 'NSW',  country: 'Australia', noOfBedroom: 4, noOfBathroom: 2, noOfParking: 2, description: 'Great property', owner: '100001', propertyType: 1, status: 'Active', bidStartDate: '', bidEndDate: ''},
-    {streetNumber: 1, streetName: 'George Street', suburb: 'Sydney', postcode: '2000', state: 'NSW',  country: 'Australia', noOfBedroom: 4, noOfBathroom: 2, noOfParking: 2, description: 'Great property', owner: '100001', propertyType: 1, status: 'Inactive', bidStartDate: '1/9/2020 2:00PM', bidEndDate: '1/9/2020 3:00PM' },
-    {streetNumber: 1, streetName: 'George Street', suburb: 'Sydney', postcode: '2000', state: 'NSW',  country: 'Australia', noOfBedroom: 4, noOfBathroom: 2, noOfParking: 2, description: 'Great property', owner: '100001', propertyType: 1, status: 'Sold', bidStartDate: '15/9/2020 9:00AM', bidEndDate: '5/9/2020 10:00AM' },
-    {streetNumber: 1, streetName: 'George Street', suburb: 'Sydney', postcode: '2000', state: 'NSW',  country: 'Australia', noOfBedroom: 4, noOfBathroom: 2, noOfParking: 2, description: 'Great property', owner: '100001', propertyType: 1, status: 'Passed In', bidStartDate: '15/10/2020 10:00AM', bidEndDate: '15/10/2020 12:00AM'  },
-  ];
+  properties: Property[] = [];
+  isLoading: boolean = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private http: HttpClient, private userService: UserService, private toastrService: NbToastrService) {
   }
 
   ngOnInit(): void {
-
+    this.isLoading = true;
+    this.http.post(environment.baseEndpoint + '/my-property', {})
+      .subscribe( (data : Property[])=> {
+          this.properties = data;
+          this.isLoading = false;
+        }
+      );
   }
 
   addProperty() {
