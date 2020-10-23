@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Property} from "../../model/property.model";
+import {Router} from "@angular/router";
+import {UserService} from "../../service/user.service";
 
 @Component({
   selector: 'app-property-list',
@@ -9,7 +11,7 @@ import {Property} from "../../model/property.model";
 export class PropertyListComponent implements OnInit {
   @Input() properties: Property[];
 
-  constructor() { }
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
   }
@@ -23,5 +25,10 @@ export class PropertyListComponent implements OnInit {
       return 'Active';
     }
     return 'Inactive';
+  }
+
+  edit(p: Property) {
+    this.userService.currentProperty = p;
+    this.router.navigate(['/new-property', {pid: p.pid}]);
   }
 }
