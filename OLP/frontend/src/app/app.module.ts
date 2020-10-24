@@ -106,6 +106,10 @@ import { AllPropertyListComponent } from './component/all-property-list/all-prop
           login: {
             endpoint: '/sign-in',
             method: 'post',
+            redirect: {
+              success: '/dashboard',
+              failure: null,
+            },
           },
           register: {
             endpoint: '/sign-up',

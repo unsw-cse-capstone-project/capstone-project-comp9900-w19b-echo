@@ -5,15 +5,17 @@ export class Property {
   postcode: string;
   state: string;
   country: string;
-  noOfBedroom: number;
-  noOfBathroom: number;
-  noOfParking: number;
+  bedroom: number;
+  bathroom: number;
+  carport: number;
   description: string;
   owner: number;
   propertyType: number;
-  status: string;
+  status: number;
   bidStartDate: Date;
   bidEndDate: Date;
+  city: string;
+  pid: number;
 
   address () {
     return this.streetNumber + ' ' + this.streetName + ', ' + this.suburb + ' ' + this.state + ' ' + this.postcode;

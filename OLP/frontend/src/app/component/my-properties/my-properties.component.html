@@ -5,7 +5,7 @@
   </nb-layout-header>
 
   <nb-layout-column>
-    <nb-card  nbSpinnerSize="giant" nbSpinnerStatus="success" size="large">
+    <nb-card [nbSpinner]="isLoading" nbSpinnerStatus="success" size="large">
       <nb-card-body>
         <div class="text-lg-right">
           <button class="btn btn-outline-primary btn-sm" (click)="addProperty()">Add Property</button>

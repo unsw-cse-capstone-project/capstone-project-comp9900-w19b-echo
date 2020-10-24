@@ -56,9 +56,9 @@ public class PropertyController {
     @RequestMapping(value = "/listAllProperty", method = RequestMethod.POST)
     @RequiresAuthentication
     @ApiIgnore
-    public List<Property> getAllProperty() {
+    public List<Property> getAllProperty(@RequestBody SearchPropertyRequest searchRequest) {
 
-        return propertyService.getAllProperty();
+        return PagingUtil.afterPaging(propertyService.getAllProperty(), searchRequest.getPage(), searchRequest.getDataNum());
     }
 
     @RequestMapping(value = "/my-property", method = RequestMethod.POST)

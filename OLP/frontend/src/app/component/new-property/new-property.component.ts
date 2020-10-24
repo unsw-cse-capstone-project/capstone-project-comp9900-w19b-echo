@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Property} from "../../model/property.model";
 import {environment} from "../../../environments/environment";
 import {User} from "../../model/user.model";
@@ -18,16 +18,28 @@ export class NewPropertyComponent implements OnInit {
   property: Property;
   isLoading: boolean = false;
 
-  constructor(private router: Router, private http: HttpClient, private userService: UserService, private toastrService: NbToastrService) { }
+  constructor(private route: ActivatedRoute, private router: Router,
+              private http: HttpClient, private userService: UserService,
+              private toastrService: NbToastrService) { }
 
   ngOnInit(): void {
-    this.property = new Property();
+    const pid = this.route.snapshot.paramMap.get('pid');
+    if(pid){
+      this.property = this.userService.currentProperty;
+    }else {
+      this.property = new Property();
+      this.property.propertyType = 0;
+    }
+  }
+
+  getProperty(pid) {
+
   }
 
   save() {
     this.isLoading = true;
     this.property.owner = this.userService.user.uid;
-    this.property.propertyType = 0;
+    this.property.city = this.property.suburb;
     this.http.post(environment.baseEndpoint + '/add-property', {property: this.property})
       .subscribe((p: Property) => {
           this.property = p;
@@ -44,5 +56,9 @@ export class NewPropertyComponent implements OnInit {
 
   cancel() {
     this.router.navigate(['/my-properties', {}]);
+  }
+
+  onPropertyTypeChange(propertyType: number) {
+    this.property.propertyType = propertyType;
   }
 }
