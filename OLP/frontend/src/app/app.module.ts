@@ -17,7 +17,7 @@ import {
   NbSelectModule,
   NbButtonModule,
   NbSearchModule,
-  NbUserModule, NbContextMenuModule, NbMenuModule, NbTabsetModule, NbToastrModule, NbSpinnerModule
+  NbUserModule, NbContextMenuModule, NbMenuModule, NbTabsetModule, NbToastrModule, NbSpinnerModule, NbDialogModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
@@ -52,6 +52,7 @@ import { NewPropertyComponent } from './component/new-property/new-property.comp
 import {AuthInterceptor} from "./service/auth-interceptor";
 import {MatTableModule} from "@angular/material/table";
 import { PropertyListComponent } from './component/property-list/property-list.component';
+import { ConfirmationDialogComponent } from './component/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { PropertyListComponent } from './component/property-list/property-list.c
     MessageCardComponent,
     SearchBarComponent,
     NewPropertyComponent,
-    PropertyListComponent
+    PropertyListComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -147,6 +149,7 @@ import { PropertyListComponent } from './component/property-list/property-list.c
     NbSpinnerModule,
     AgGridModule.withComponents([]),
     MatTableModule,
+    NbDialogModule.forRoot(),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
