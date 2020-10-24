@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit}from '@angular/core';
 import {Property} from "../../model/property.model";
 import {HttpClient} from "@angular/common/http";
 import {UserService} from "../../service/user.service";
 import {Router} from "@angular/router";
 import {environment} from "../../../environments/environment";
 import {NbToastrService} from "@nebular/theme";
+
 
 @Component({
   selector: 'app-all-property-list',
@@ -37,6 +38,7 @@ export class AllPropertyListComponent implements OnInit {
     this.isLoading = true;
     this.http.post(environment.baseEndpoint + '/listAllProperty', {})
       .subscribe( (data : Property[])=> {
+        console.log(data)
           this.properties = data;
           this.isLoading = false;
         }

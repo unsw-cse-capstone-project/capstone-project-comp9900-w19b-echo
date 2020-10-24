@@ -1,14 +1,33 @@
-<div className="container-fluid">
-   <div className="row d-flex justify-content-center"  *ngFor="let p of properties; index as i;">
-     <div className="card m-2 card-same" style={width:18em}>
-        <!-- < img className="card-img-top" src={URL.createObjectURL(this.dataURLtoFile(item.img))} alt="..."/> -->
-       <div className="card-body">
-         <h5 className="card-title card-same-title">{{p.bidStartDate}}</h5>
-         <h6 className="card-subtitle mb-2">{{address(p)}}</h6>
-         <p className="card-text card-same-text">{{status(p.status)}}</p >
+<div class="col" id="main" >
+  <!-- <div class="col-md-4" > -->
+    <div class="container-fluid" >
+     <div class="row d-flex justify-content-center"  >
+       <div class="card m-2 card-same" [style.width.px]="300" *ngFor="let p of properties; index as i;">
+          <!-- < img className="card-img-top" src={URL.createObjectURL(this.dataURLtoFile(item.img))} alt="..."/> -->
+         <div class="card-body">
+           <!-- <p>{{p.area}}</p> -->
+           <h5 class="card-title card-same-title">{{p.area}}</h5>
+           <h6 class="card-subtitle mb-2">{{p.address}}</h6>
+           <p className="card-text card-same-text">{{p.status}}</p >
+
+         </div>
+         <div class="card-footer">
+           <div class="row">
+             <div class="col-md-3">
+               <button type="button" class="btn btn-danger">  Bid  </button>
+             </div>
+             <div class="col-md-6">
+               <a href="#" class="card-link">Details</a>
+             </div>
+           </div>
+
+
+        </div>
+
+
        </div>
      </div>
    </div>
-   <div className="row d-flex justify-content-center">
-   </div>
- </div>
+  <!-- </div> -->
+
+</div>

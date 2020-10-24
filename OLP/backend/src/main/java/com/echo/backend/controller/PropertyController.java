@@ -54,7 +54,7 @@ public class PropertyController {
     }
 
     @RequestMapping(value = "/listAllProperty", method = RequestMethod.POST)
-    @RequiresAuthentication
+//    @RequiresAuthentication
     @ApiIgnore
     public List<Property> getAllProperty(@RequestBody SearchPropertyRequest searchRequest) {
 
