@@ -1,0 +1,24 @@
+.card-same-text {
+    height: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-height: 20px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.img-view {
+    width: 100%;
+}
+
+.sticky-sidebar {
+    height: 85%;
+    position: relative;
+}
