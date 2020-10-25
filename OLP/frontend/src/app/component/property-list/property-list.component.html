@@ -19,15 +19,13 @@
     <td>{{p.bidStartDate}}</td>
     <td>{{p.bidEndDate}}</td>
     <td>
-      <ng-container *ngIf="p.status == 0">
+      <ng-container *ngIf="p.status == 0 || p.status == 2">
         <button type="button" class="btn btn-outline-primary btn-sm">Sell</button>
         <button type="button" class="btn btn-outline-primary btn-sm ml-3" (click)="edit(p)">Update</button>
         <button type="button" class="btn btn-outline-primary btn-sm ml-3" (click)="delete(p)">Delete</button>
       </ng-container>
-      <ng-container *ngIf="p.status != 0">
-        <button type="button" class="btn btn-outline-primary btn-sm">Pace</button>
-        <button type="button" class="btn btn-outline-primary btn-sm ml-3">Update</button>
-        <button type="button" class="btn btn-outline-primary btn-sm ml-3">Quit</button>
+      <ng-container *ngIf="p.status == 1 || p.status == 3">
+        <button type="button" class="btn btn-outline-primary btn-sm" (click)="delete(p)">Delete</button>
       </ng-container>
     </td>
   </tr>
