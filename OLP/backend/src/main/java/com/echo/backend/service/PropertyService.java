@@ -3,6 +3,7 @@ package com.echo.backend.service;
 import com.echo.backend.dao.PropertyMapper;
 import com.echo.backend.domain.Property;
 import com.echo.backend.utils.GoogleMapUtil;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,5 +99,56 @@ public class PropertyService {
         double southwestLat = Double.valueOf(southwest.split(",")[0]);
         double southwestLng = Double.valueOf(southwest.split(",")[0]);
         return propertyMapper.searchByPosition(northeastLat, northeastLng, southwestLat, southwestLng);
+    }
+
+    public void updateProperty(Property property) {
+
+        Property exist = propertyMapper.getPropertyByPid(property.getPid()).get(0);
+
+        if (StringUtils.isNotEmpty(property.getCity())) {
+            exist.setCity(property.getCity());
+        }
+
+        if (StringUtils.isNotEmpty(property.getDescription())) {
+            exist.setDescription(property.getDescription());
+        }
+
+        if (StringUtils.isNotEmpty(property.getPostcode())) {
+            exist.setPostcode(property.getPostcode());
+        }
+
+        if (StringUtils.isNotEmpty(property.getState())) {
+            exist.setState(property.getState());
+        }
+
+        if (StringUtils.isNotEmpty(property.getStreetName())) {
+            exist.setStreetName(property.getStreetName());
+        }
+
+        if (StringUtils.isNotEmpty(property.getStreetNumber())) {
+            exist.setStreetNumber(property.getStreetNumber());
+        }
+
+        if (StringUtils.isNotEmpty(property.getSuburb())) {
+            exist.setSuburb(property.getSuburb());
+        }
+
+        if (property.getArea()>0) {
+            exist.setArea(property.getArea());
+        }
+
+        if (property.getBathroom()>0) {
+            exist.setBathroom(property.getBathroom());
+        }
+
+        if (property.getBedroom()>0) {
+            exist.setBedroom(property.getBedroom());
+        }
+
+        if (property.getCarport()>0) {
+            exist.setCarport(property.getCarport());
+        }
+
+        propertyMapper.updateProperty(exist);
     }
 }
