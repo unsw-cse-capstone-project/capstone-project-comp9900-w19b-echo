@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {NbAuthJWTToken, NbAuthService} from "@nebular/auth";
 import {User} from "../model/user.model";
 import {Property} from "../model/property.model";
+import {Auction} from "../model/auction.model";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class UserService {
   authenticated: boolean = false;
   token: string = null;
   currentProperty : Property;
+  currentAuction: Auction;
 
   constructor(private authService: NbAuthService) {
     this.authService.onTokenChange()

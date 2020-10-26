@@ -25,7 +25,7 @@ export class SellPropertyComponent implements OnInit {
 
   ngOnInit(): void {
     this.property = this.userService.currentProperty;
-    this.auction = new Auction();
+    this.auction = this.userService.currentAuction ? this.userService.currentAuction : new Auction();
     const email = this.userService.user?.email;
     if(email) {
       this.http.get(environment.baseEndpoint + '/user?email=' + this.userService.user.email)

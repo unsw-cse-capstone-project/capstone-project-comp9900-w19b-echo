@@ -6,6 +6,7 @@ import {UserService} from "../../service/user.service";
 import {NbToastrService} from "@nebular/theme";
 import {environment} from "../../../environments/environment";
 import {Property} from "../../model/property.model";
+import {PropertyAuction} from "../../model/property-auction.model";
 
 @Component({
   selector: 'app-my-properties',
@@ -13,7 +14,7 @@ import {Property} from "../../model/property.model";
   styleUrls: ['./my-properties.component.scss']
 })
 export class MyPropertiesComponent implements OnInit {
-  properties: Property[] = [];
+  properties: PropertyAuction[] = [];
   isLoading: boolean = false;
 
   constructor(private router: Router, private http: HttpClient, private userService: UserService, private toastrService: NbToastrService) {
@@ -22,7 +23,7 @@ export class MyPropertiesComponent implements OnInit {
   ngOnInit(): void {
     this.isLoading = true;
     this.http.post(environment.baseEndpoint + '/my-property', {})
-      .subscribe( (data : Property[])=> {
+      .subscribe( (data : PropertyAuction[])=> {
           this.properties = data;
           this.isLoading = false;
         }

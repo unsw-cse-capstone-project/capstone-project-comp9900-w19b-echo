@@ -4,6 +4,8 @@ import {Router} from "@angular/router";
 import {UserService} from "../../service/user.service";
 import {NbDialogService} from "@nebular/theme";
 import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-dialog.component";
+import {PropertyAuction} from "../../model/property-auction.model";
+import {Auction} from "../../model/auction.model";
 
 @Component({
   selector: 'app-property-list',
@@ -11,7 +13,7 @@ import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-d
   styleUrls: ['./property-list.component.scss']
 })
 export class PropertyListComponent implements OnInit {
-  @Input() properties: Property[];
+  @Input() properties: PropertyAuction[];
 
   constructor(private router: Router, private userService: UserService, private dialogService: NbDialogService) { }
 
@@ -48,13 +50,14 @@ export class PropertyListComponent implements OnInit {
     })
       .onClose.subscribe(data => {
         if(data == true) {
-          this.properties = this.properties.filter(p1 => p1.pid != p.pid);
+          this.properties = this.properties.filter(p1 => p1.property.pid != p.pid);
         }
       });
   }
 
-  sellProperty(p: Property) {
+  sellProperty(p: Property, auction: Auction) {
     this.userService.currentProperty = p;
+    this.userService.currentAuction = auction;
     this.router.navigate(['/sell-property']);
   }
 }
