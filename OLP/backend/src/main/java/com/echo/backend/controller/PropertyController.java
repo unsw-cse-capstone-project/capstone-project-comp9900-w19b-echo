@@ -1,9 +1,7 @@
 package com.echo.backend.controller;
 
 import com.echo.backend.domain.Property;
-import com.echo.backend.dto.AddPropertyRequest;
-import com.echo.backend.dto.AddPropertyResponse;
-import com.echo.backend.dto.SearchPropertyRequest;
+import com.echo.backend.dto.*;
 import com.echo.backend.service.AuctionService;
 import com.echo.backend.service.PropertyService;
 import com.echo.backend.service.UserService;
@@ -20,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,8 +53,8 @@ public class PropertyController {
     }
 
     @RequestMapping(value = "/listAllProperty", method = RequestMethod.POST)
-    @RequiresAuthentication
-    @ApiIgnore
+    //@RequiresAuthentication
+    //@ApiIgnore
     public List<Property> getAllProperty(@RequestBody SearchPropertyRequest searchRequest) {
 
         return PagingUtil.afterPaging(propertyService.getAllProperty(), searchRequest.getPage(), searchRequest.getDataNum());
@@ -71,10 +70,19 @@ public class PropertyController {
 
     @RequestMapping(value = "/others-property", method = RequestMethod.POST)
     //@RequiresAuthentication
-    public List<Property> getOthersProperty(SearchPropertyRequest request) {
+    public List<Property> getOthersProperty(@RequestBody SearchPropertyRequest request) {
 
-        int uid = request.getProperty().getOwner();
+        int uid = request.getUid();
         return propertyService.getPropertyByUid(uid);
+    }
+
+    @RequestMapping(value = "/update-property", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public UpdatePropertyResponse updateProperty(@RequestBody UpdatePropertyRequest request) {
+
+        propertyService.updateProperty(request.getProperty());
+
+        return new UpdatePropertyResponse(200, "Update property success", null);
     }
 
     @RequestMapping(value = "/search-property-address", method = RequestMethod.POST)

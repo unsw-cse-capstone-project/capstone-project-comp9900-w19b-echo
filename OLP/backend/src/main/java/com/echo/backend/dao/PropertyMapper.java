@@ -10,7 +10,7 @@ public interface PropertyMapper {
 
     void createProperty(Property property);
 
-    void updateUser(Property property);
+    void updateProperty(Property property);
 
     List<Property> selectPropertyByOwner(int uid);
 
@@ -27,4 +27,6 @@ public interface PropertyMapper {
     List<Property> searchByCity(Property property);
 
     List<Property> searchByPosition(double northeastLat, double northeastLng, double southwestLat, double southwestLng);
+
+    List<Property> getPropertyByPid(int pid);
 }
