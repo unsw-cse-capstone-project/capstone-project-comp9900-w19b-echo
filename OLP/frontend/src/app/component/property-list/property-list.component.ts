@@ -52,4 +52,9 @@ export class PropertyListComponent implements OnInit {
         }
       });
   }
+
+  sellProperty(p: Property) {
+    this.userService.currentProperty = p;
+    this.router.navigate(['/sell-property']);
+  }
 }

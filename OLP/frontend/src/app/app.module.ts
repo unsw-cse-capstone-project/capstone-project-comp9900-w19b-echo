@@ -17,7 +17,14 @@ import {
   NbSelectModule,
   NbButtonModule,
   NbSearchModule,
-  NbUserModule, NbContextMenuModule, NbMenuModule, NbTabsetModule, NbToastrModule, NbSpinnerModule, NbDialogModule
+  NbUserModule,
+  NbContextMenuModule,
+  NbMenuModule,
+  NbTabsetModule,
+  NbToastrModule,
+  NbSpinnerModule,
+  NbDialogModule,
+  NbTimepickerModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
@@ -53,6 +60,7 @@ import {AuthInterceptor} from "./service/auth-interceptor";
 import {MatTableModule} from "@angular/material/table";
 import { PropertyListComponent } from './component/property-list/property-list.component';
 import { ConfirmationDialogComponent } from './component/confirmation-dialog/confirmation-dialog.component';
+import { SellPropertyComponent } from './component/sell-property/sell-property.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +89,8 @@ import { ConfirmationDialogComponent } from './component/confirmation-dialog/con
     SearchBarComponent,
     NewPropertyComponent,
     PropertyListComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    SellPropertyComponent
   ],
   imports: [
     BrowserModule,
@@ -90,6 +99,7 @@ import { ConfirmationDialogComponent } from './component/confirmation-dialog/con
     BrowserAnimationsModule,
     NbThemeModule.forRoot({name: 'default'}),
     NbDatepickerModule.forRoot(),
+    NbTimepickerModule.forRoot(),
     NbLayoutModule,
     NbInputModule,
     NbEvaIconsModule,
