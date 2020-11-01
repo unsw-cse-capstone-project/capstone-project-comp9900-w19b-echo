@@ -59,7 +59,7 @@ export class PlaceBidComponent implements OnInit {
   }
 
   cancel() {
-    this.router.navigate(['/interested-properties', {}]);
+    this.router.navigate(['/active-auctions', {}]);
   }
 
   address (p: Property) {
