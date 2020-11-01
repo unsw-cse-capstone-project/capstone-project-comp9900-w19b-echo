@@ -62,6 +62,7 @@ import { PropertyListComponent } from './component/property-list/property-list.c
 import { ConfirmationDialogComponent } from './component/confirmation-dialog/confirmation-dialog.component';
 import { SellPropertyComponent } from './component/sell-property/sell-property.component';
 import { JoinBidComponent } from './component/join-bid/join-bid.component';
+import { PlaceBidComponent } from './component/place-bid/place-bid.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { JoinBidComponent } from './component/join-bid/join-bid.component';
     PropertyListComponent,
     ConfirmationDialogComponent,
     SellPropertyComponent,
-    JoinBidComponent
+    JoinBidComponent,
+    PlaceBidComponent
   ],
   imports: [
     BrowserModule,

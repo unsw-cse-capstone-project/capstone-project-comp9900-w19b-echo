@@ -24,6 +24,7 @@ import {MessagesComponent} from "./component/messages/messages.component";
 import {NewPropertyComponent} from "./component/new-property/new-property.component";
 import {SellPropertyComponent} from "./component/sell-property/sell-property.component";
 import {JoinBidComponent} from "./component/join-bid/join-bid.component";
+import {PlaceBidComponent} from "./component/place-bid/place-bid.component";
 
 const routes: Routes = [
   {
@@ -119,6 +120,10 @@ const routes: Routes = [
   {
     path: 'join-bid',
     component: JoinBidComponent,
+  },
+  {
+    path: 'place-bid',
+    component: PlaceBidComponent,
   },
 ];
 
