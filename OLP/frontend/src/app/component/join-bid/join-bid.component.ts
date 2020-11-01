@@ -1,23 +1,25 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {Property} from "../../model/property.model";
+import {Auction} from "../../model/auction.model";
+import {User} from "../../model/user.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {UserService} from "../../service/user.service";
 import {NbComponentStatus, NbToastrService} from "@nebular/theme";
 import {environment} from "../../../environments/environment";
-import {Property} from "../../model/property.model";
-import {Auction} from "../../model/auction.model";
-import {User} from "../../model/user.model";
+import {AuctionRegister} from "../../model/auction-register.model";
 
 @Component({
-  selector: 'app-sell-property',
-  templateUrl: './sell-property.component.html',
-  styleUrls: ['./sell-property.component.scss']
+  selector: 'app-join-bid',
+  templateUrl: './join-bid.component.html',
+  styleUrls: ['./join-bid.component.scss']
 })
-export class SellPropertyComponent implements OnInit {
+export class JoinBidComponent implements OnInit {
   property: Property;
   isLoading: boolean = false;
   auction: Auction;
   user: User;
+  auctionRegister: AuctionRegister;
 
   constructor(private route: ActivatedRoute, private router: Router,
               private http: HttpClient, private userService: UserService,
@@ -26,6 +28,11 @@ export class SellPropertyComponent implements OnInit {
   ngOnInit(): void {
     this.property = this.userService.currentProperty;
     this.auction = this.userService.currentAuction ? this.userService.currentAuction : new Auction();
+    this.auctionRegister = new AuctionRegister();
+    this.auctionRegister.pid = this.auction.pid;
+    this.auctionRegister.uid = this.auction.uid;
+    this.auctionRegister.aid = this.auction.aid;
+    this.auctionRegister.userType = 1;
     const email = this.userService.user?.email;
     if(email) {
       this.http.get(environment.baseEndpoint + '/user?email=' + this.userService.user.email)
@@ -36,28 +43,26 @@ export class SellPropertyComponent implements OnInit {
     }
   }
 
-  save() {
+  join() {
     this.isLoading = true;
-    this.auction.pid = this.property.pid;
-    this.auction.uid = this.user.uid;
-    this.http.post(environment.baseEndpoint + '/add-auction', {auction: this.auction})
+    this.http.post(environment.baseEndpoint + '/register-auction', {auctionRegister: this.auctionRegister})
       .subscribe((p: Property) => {
           this.property = p;
           setTimeout(() => {
             this.showToast('success');
           }, 1000);
           this.isLoading = false;
-          this.router.navigate(['/my-properties', {}]);
+          this.router.navigate(['/interested-properties', {}]);
         }
       );
   }
 
   showToast(status: NbComponentStatus) {
-    this.toastrService.show(status, `Properties - Published for auction`, { status });
+    this.toastrService.show(status, `Auction - Initial bid has been placed successfully.`, { status });
   }
 
   cancel() {
-    this.router.navigate(['/my-properties', {}]);
+    this.router.navigate(['/interested-properties', {}]);
   }
 
   address (p: Property) {

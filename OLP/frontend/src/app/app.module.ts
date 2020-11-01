@@ -61,6 +61,7 @@ import {MatTableModule} from "@angular/material/table";
 import { PropertyListComponent } from './component/property-list/property-list.component';
 import { ConfirmationDialogComponent } from './component/confirmation-dialog/confirmation-dialog.component';
 import { SellPropertyComponent } from './component/sell-property/sell-property.component';
+import { JoinBidComponent } from './component/join-bid/join-bid.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { SellPropertyComponent } from './component/sell-property/sell-property.c
     NewPropertyComponent,
     PropertyListComponent,
     ConfirmationDialogComponent,
-    SellPropertyComponent
+    SellPropertyComponent,
+    JoinBidComponent
   ],
   imports: [
     BrowserModule,
