@@ -1,21 +1,21 @@
 package com.echo.backend.controller;
 
+import com.echo.backend.domain.Property;
 import com.echo.backend.dto.FileUploadResponse;
+import com.echo.backend.dto.UpdatePropertyRequest;
 import com.echo.backend.service.UserService;
 import com.echo.backend.utils.JWTUtil;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -60,21 +60,26 @@ public class FileController {
 
     @RequestMapping(value = "/uploadPropertyPic", method = RequestMethod.POST)
     @RequiresAuthentication
-    public FileUploadResponse uploadPropertyPic(MultipartFile file, HttpServletRequest request){
+    public FileUploadResponse uploadPropertyPic(MultipartFile file, HttpServletRequest request, @RequestBody UpdatePropertyRequest propertyRequest){
 
         if (null == file){
             return new FileUploadResponse(500, "File is empty", null);
         }
 
         int uid = JWTUtil.getUid(request.getHeader("Authorization"), userService);
+        Property property = propertyRequest.getProperty();
+        int pid = property.getPid();
 
-        String fileDir = "/home/ubuntu/tomcat/apache-tomcat/webapps/resources/property/"+uid;
+        String fileDir = "/home/ubuntu/tomcat/apache-tomcat/webapps/resources/property/"+pid;
         File path = new File(fileDir);
         if(!path.exists()){
             path.mkdirs();
         }
 
-        File upFile = new File(fileDir + "/propertyPic");
+        Random ra =new Random();
+
+
+        File upFile = new File(fileDir + "/property_" + ra.nextInt(1000));
 
         try {
             file.transferTo(upFile);
