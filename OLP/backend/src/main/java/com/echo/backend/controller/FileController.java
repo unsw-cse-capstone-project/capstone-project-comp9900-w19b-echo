@@ -57,4 +57,33 @@ public class FileController {
 
         return new FileUploadResponse(200, "Upload success", null);
     }
+
+    @RequestMapping(value = "/uploadPropertyPic", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public FileUploadResponse uploadPropertyPic(MultipartFile file, HttpServletRequest request){
+
+        if (null == file){
+            return new FileUploadResponse(500, "File is empty", null);
+        }
+
+        int uid = JWTUtil.getUid(request.getHeader("Authorization"), userService);
+
+        String fileDir = "/home/ubuntu/tomcat/apache-tomcat/webapps/resources/property/"+uid;
+        File path = new File(fileDir);
+        if(!path.exists()){
+            path.mkdirs();
+        }
+
+        File upFile = new File(fileDir + "/propertyPic");
+
+        try {
+            file.transferTo(upFile);
+        }catch(IOException e){
+            logger.error(e.getMessage());
+            return new FileUploadResponse(500, e.getMessage(), null);
+        }
+
+        return new FileUploadResponse(200, "Upload success", null);
+    }
+
 }

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/OLP/backend/.mvn/.mvn.iml" filepath="$PROJECT_DIR$/OLP/backend/.mvn/.mvn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OLP/backend/backend.iml" filepath="$PROJECT_DIR$/OLP/backend/backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/OLP/backend/backend (1).iml" filepath="$PROJECT_DIR$/OLP/backend/backend (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/capstone-project-comp9900-w19b-echo.iml" filepath="$PROJECT_DIR$/.idea/capstone-project-comp9900-w19b-echo.iml" />
       <module fileurl="file://$PROJECT_DIR$/OLP/frontend/frontend.iml" filepath="$PROJECT_DIR$/OLP/frontend/frontend.iml" />
