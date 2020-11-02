@@ -10,13 +10,13 @@
 
         <nb-tabset>
           <nb-tab tabTitle="Profile">
-            <app-profile></app-profile>
+            <app-profile [user]="this.user"></app-profile>
           </nb-tab>
           <nb-tab tabTitle="Address">
             <app-address></app-address>
           </nb-tab>
           <nb-tab tabTitle="Payment">
-            <app-payment></app-payment>
+            <app-payment [user]="this.user"></app-payment>
           </nb-tab>
         </nb-tabset>
 

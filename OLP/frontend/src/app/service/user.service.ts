@@ -13,6 +13,7 @@ export class UserService {
   token: string = null;
   currentProperty : Property;
   currentAuction: Auction;
+  currentUser: User;
 
   constructor(private authService: NbAuthService) {
     this.authService.onTokenChange()

@@ -83,4 +83,6 @@ public class PaymentDetail {
     public void setSerial(int serial) {
         this.serial = serial;
     }
+
+
 }
