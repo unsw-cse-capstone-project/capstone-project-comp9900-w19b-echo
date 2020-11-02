@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {User} from "../../model/user.model";
 import {NbAuthJWTToken, NbAuthService} from "@nebular/auth";
 import {HttpClient} from "@angular/common/http";
@@ -13,22 +13,24 @@ import {NbComponentStatus} from "@nebular/theme/components/component-status";
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  user: User = new User();
+  @Input() user: User;
   isLoading: boolean = false;
 
   constructor(private http: HttpClient, private userService: UserService, private toastrService: NbToastrService) {
   }
 
   ngOnInit(): void {
-    this.getProfile();
+    //this.getProfile();
   }
 
   getProfile() {
     const email = this.userService.user?.email;
     if(email) {
+      this.isLoading = true;
       this.http.get(environment.baseEndpoint + '/user?email=' + this.userService.user.email)
         .subscribe((u: User) => {
             this.user = u;
+            this.isLoading = false;
           }
         );
     }

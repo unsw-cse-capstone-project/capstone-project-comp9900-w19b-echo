@@ -1,33 +1,33 @@
-<form>
+<form [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success">
   <div class="form-group col-lg-4">
     <label for="nameOnCard">Name on Card</label>
-    <input type="email" class="form-control" id="nameOnCard" name="nameOnCard" placeholder="Name On Card" required>
+    <input type="email" class="form-control" id="nameOnCard" name="nameOnCard" [(ngModel)]="this.paymentDetail.nameOnCard" placeholder="Name On Card" required>
   </div>
   <div class="form-group col-lg-4">
     <label for="Card Number">Card Number</label>
-    <input type="email" class="form-control" id="Card Number" name="Card Number" placeholder="Card Number" required>
+    <input type="email" class="form-control" id="Card Number" name="Card Number" [(ngModel)]="this.paymentDetail.cardNumber" placeholder="Card Number" required>
   </div>
   <div class="form-group col-lg-2">
     <label for="expiredMonth">Expired Month</label>
-    <select class="form-control" id="expiredMonth">
+    <select class="form-control" id="expiredMonth" name="expiredMonth"  [(ngModel)]="this.paymentDetail.expireMonth">
       <option></option>
-      <option>01</option>
-      <option>02</option>
-      <option>03</option>
-      <option>04</option>
-      <option>05</option>
-      <option>06</option>
-      <option>07</option>
-      <option>08</option>
-      <option>09</option>
-      <option>10</option>
-      <option>11</option>
-      <option>12</option>
+      <option value="1">01</option>
+      <option value="2">02</option>
+      <option value="3">03</option>
+      <option value="4">04</option>
+      <option value="5">05</option>
+      <option value="6">06</option>
+      <option value="7">07</option>
+      <option value="8">08</option>
+      <option value="9">09</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
     </select>
   </div>
   <div class="form-group col-lg-2">
     <label for="expiredYear">Expired Year</label>
-    <select class="form-control" id="expiredYear">
+    <select class="form-control" id="expiredYear" name="expiredYear" [(ngModel)]="this.paymentDetail.expireYear">
       <option></option>
       <option>2020</option>
       <option>2021</option>
@@ -42,9 +42,9 @@
   </div>
   <div class="form-group col-lg-4">
     <label for="cvv">CVV</label>
-    <input type="email" class="form-control" id="cvv" name="cvv" placeholder="CVV" required>
+    <input type="email" class="form-control" id="cvv" name="cvv"  [(ngModel)]="this.paymentDetail.cvv" placeholder="CVV" required>
   </div>
   <div class="form-group col-lg-4">
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary" (click)="this.save()">Save</button>
   </div>
 </form>

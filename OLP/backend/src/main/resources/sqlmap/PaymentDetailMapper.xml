@@ -14,7 +14,7 @@
 
     <insert id="addPaymentDetail" parameterType="com.echo.backend.domain.PaymentDetail" useGeneratedKeys="true" keyProperty="serial">
         insert into user_payment (uid, name_on_card, card_number, expire_month, expire_year, cvv, add_time)
-        values(#{uid},#{name_on_card},#{cardNumber},#{expire_month},#{expire_year},#{cvv},#{addTime})
+        values(#{uid},#{nameOnCard},#{cardNumber},#{expireMonth},#{expireYear},#{cvv},#{addTime})
     </insert>
 
     <select id="getPaymentDetailByUid" resultMap="PaymentDetailMap" parameterType="java.lang.Integer">
@@ -23,7 +23,7 @@
 
     <update id="updatePaymentDetail" parameterType="com.echo.backend.domain.PaymentDetail">
         update user_payment set name_on_card=#{nameOnCard}, card_number=#{cardNumber}, expire_month=#{expireMonth},
-        expireYear=#{expireYear}, cvv=#{cvv}
+        expire_year=#{expireYear}, cvv=#{cvv}
         where serial=#{serial}
     </update>
 
