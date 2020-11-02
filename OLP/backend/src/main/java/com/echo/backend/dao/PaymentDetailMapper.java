@@ -10,4 +10,7 @@ public interface PaymentDetailMapper {
 
     List<PaymentDetail> getPaymentDetailByUid(int uid);
 
+    void updatePaymentDetail(PaymentDetail paymentDetail);
+
+    void deletePaymentDetail(int serial);
 }

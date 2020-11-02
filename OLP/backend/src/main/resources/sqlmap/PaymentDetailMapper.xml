@@ -3,18 +3,31 @@
 <mapper namespace="com.echo.backend.dao.PaymentDetailMapper" >
     <resultMap id="PaymentDetailMap" type="com.echo.backend.domain.PaymentDetail" >
         <result column="uid" property="uid" jdbcType="INTEGER" />
+        <result column="name_on_card" property="nameOnCard" jdbcType="VARCHAR" />
         <result column="card_number" property="cardNumber" jdbcType="VARCHAR" />
-        <result column="bill_address" property="billAddress" jdbcType="VARCHAR" />
+        <result column="expire_month" property="expireMonth" jdbcType="INTEGER" />
+        <result column="expire_year" property="expireYear" jdbcType="INTEGER" />
+        <result column="cvv" property="cvv" jdbcType="INTEGER" />
         <result column="add_time" property="addTime" />
         <result column="serial" property="serial" jdbcType="INTEGER" />
     </resultMap>
 
     <insert id="addPaymentDetail" parameterType="com.echo.backend.domain.PaymentDetail" useGeneratedKeys="true" keyProperty="serial">
-        insert into payment_detail (uid, card_number, bill_address, add_time)
-        values(#{uid},#{cardNumber},#{billAddress},#{addTime})
+        insert into user_payment (uid, name_on_card, card_number, expire_month, expire_year, cvv, add_time)
+        values(#{uid},#{name_on_card},#{cardNumber},#{expire_month},#{expire_year},#{cvv},#{addTime})
     </insert>
 
     <select id="getPaymentDetailByUid" resultMap="PaymentDetailMap" parameterType="java.lang.Integer">
-        select * from payment_detail where uid=#{uid}
+        select * from user_payment where uid=#{uid}
     </select>
+
+    <update id="updatePaymentDetail" parameterType="com.echo.backend.domain.PaymentDetail">
+        update user_payment set name_on_card=#{nameOnCard}, card_number=#{cardNumber}, expire_month=#{expireMonth},
+        expireYear=#{expireYear}, cvv=#{cvv}
+        where serial=#{serial}
+    </update>
+
+    <delete id="deletePaymentDetail" parameterType="java.lang.Integer">
+        delete from user_payment where serial=#{serial}
+    </delete>
 </mapper>
