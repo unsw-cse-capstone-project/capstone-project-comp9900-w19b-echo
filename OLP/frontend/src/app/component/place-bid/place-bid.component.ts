@@ -9,6 +9,7 @@ import {UserService} from "../../service/user.service";
 import {NbComponentStatus, NbToastrService} from "@nebular/theme";
 import {environment} from "../../../environments/environment";
 import {Bid} from "../../model/bid.model";
+import {Timer} from "../../model/timer.model";
 
 @Component({
   selector: 'app-place-bid',
@@ -21,6 +22,7 @@ export class PlaceBidComponent implements OnInit {
   auction: Auction;
   user: User;
   bid: Bid;
+  time: Timer = new Timer(0,0,0,0,0);
 
   constructor(private route: ActivatedRoute, private router: Router,
               private http: HttpClient, private userService: UserService,
@@ -41,6 +43,13 @@ export class PlaceBidComponent implements OnInit {
           }
         );
     }
+    this.time = this.getTimeRemaining(this.auction.endTime);
+    const timeinterval = setInterval(() => {
+      this.time = this.getTimeRemaining(this.auction.endTime);
+      if (this.time.total <= 0) {
+        clearInterval(timeinterval);
+      }
+    },1000);
   }
 
   place() {
@@ -72,5 +81,19 @@ export class PlaceBidComponent implements OnInit {
   onSelect($event: any) {
     this.auction.beginTime = new Date($event.year,$event.month-1, $event.day, $event.hour, $event.minute, $event.second);
     console.log(this.auction.beginTime);
+  }
+
+  getTimeRemaining(endTime){
+    let current = new Date()
+    const total = Date.parse(endTime) - current.getTime();
+    const seconds = Math.floor( (total/1000) % 60 );
+    const minutes = Math.floor( (total/1000/60) % 60 );
+    const hours = Math.floor( (total/(1000*60*60)) % 24 );
+    const days = Math.floor( total/(1000*60*60*24) );
+    return new Timer(total, days, hours, minutes, seconds);
+  }
+
+  format(num: number) {
+    return num < 10 ? '0' + num : num;
   }
 }
