@@ -114,6 +114,10 @@
         longitude <![CDATA[ >= ]]> #{southwestLng}
     </select>
 
+    <select id="searchAddress" resultMap="PropertyMap" parameterType="java.lang.String">
+        select * from t_property where address like "%"#{keyword}"%"
+    </select>
+
     <update id="updateProperty" parameterType="com.echo.backend.domain.Property">
         update t_property set city=#{city}, description=#{description}, code=#{postcode}, state=#{state},
         street=#{streetName}, house_number=#{streetNumber}, district=#{suburb}, area=#{area}, bedroom=#{bedroom},

@@ -151,4 +151,8 @@ public class PropertyService {
 
         propertyMapper.updateProperty(exist);
     }
+
+    public List<Property> searchPropertyVague(String keyword) {
+        return propertyMapper.searchAddress(keyword);
+    }
 }

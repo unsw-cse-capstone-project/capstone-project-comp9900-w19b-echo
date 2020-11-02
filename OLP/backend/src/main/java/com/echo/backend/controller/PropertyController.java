@@ -112,4 +112,12 @@ public class PropertyController {
         return PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
     }
 
+    @RequestMapping(value = "/search-property-like", method = RequestMethod.POST)
+    //@RequiresAuthentication
+    public List<Property> searchPropertyVague(@RequestBody SearchPropertyRequest searchRequest) {
+
+        List<Property> result = propertyService.searchPropertyVague(searchRequest.getKeyword());
+        return PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
+    }
+
 }
