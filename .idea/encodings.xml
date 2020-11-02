@@ -3,7 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/OLP" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/OLP/backend" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OLP/backend/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/OLP/frontend" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/backend" charset="UTF-8" />
   </component>
 </project>

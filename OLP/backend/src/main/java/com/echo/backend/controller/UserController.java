@@ -167,6 +167,22 @@ public class UserController {
         return PagingUtil.afterPaging(userService.getPaymentByUid(request.getUid()), request.getPage(), request.getDataNum());
     }
 
+    @RequestMapping(value = "/update-payment", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public UpdatePaymentResponse updatePayment(@RequestBody AddPaymentDetailRequest request, HttpServletRequest hRequest){
+
+        userService.updatePaymentBySerial(request.getPaymentDetail());
+        return new UpdatePaymentResponse(200, "update payment success", null);
+    }
+
+    @RequestMapping(value = "/delete-payment", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public UpdatePaymentResponse deletePayment(@RequestBody AddPaymentDetailRequest request, HttpServletRequest hRequest){
+
+        userService.deletePaymentBySerial(request.getPaymentDetail());
+        return new UpdatePaymentResponse(200, "update payment success", null);
+    }
+
     @GetMapping("/require_auth")
     @RequiresAuthentication
     @ApiIgnore

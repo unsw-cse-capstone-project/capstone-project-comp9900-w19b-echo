@@ -29,4 +29,6 @@ public interface PropertyMapper {
     List<Property> searchByPosition(double northeastLat, double northeastLng, double southwestLat, double southwestLng);
 
     List<Property> getPropertyByPid(int pid);
+
+    List<Property> searchAddress(String keyword);
 }

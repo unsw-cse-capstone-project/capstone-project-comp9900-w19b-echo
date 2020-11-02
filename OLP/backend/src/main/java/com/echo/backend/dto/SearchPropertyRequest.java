@@ -10,10 +10,20 @@ public class SearchPropertyRequest extends BaseRequest{
 
     private String southwest;
 
+    private String keyword;
+
     private int uid;
 
     public int getUid() {
         return uid;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 
     public void setUid(int uid) {

@@ -106,11 +106,14 @@ create table auction_bid(
 );
 create index ab_index on auction_bid(aid);
 
-create table payment_detail(
+create table user_payment(
     uid int not null,
+    name_on_card varchar(30) not null,
     card_number varchar(30) not null,
-    bill_address varchar(200) not null,
+    expire_month int not null,
+    expire_year int not null,
+    cvv int not null,
     add_time datetime not null,
     serial int auto_increment primary key
 );
-create index ab_index on auction_bid(uid);
+create index up_index on user_payment(uid);

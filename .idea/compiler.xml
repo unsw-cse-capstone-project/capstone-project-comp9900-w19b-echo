@@ -7,11 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="frontend" />
+        <module name="backend" />
         <module name="backend (1)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="backend" target="11" />
+      <module name="backend" target="1.8" />
       <module name="backend (1)" target="1.8" />
       <module name="frontend" target="1.8" />
       <module name="olp" target="1.8" />

@@ -67,4 +67,12 @@ public class UserService {
     public List<PaymentDetail> getPaymentByUid(int uid) {
         return paymentDetailMapper.getPaymentDetailByUid(uid);
     }
+
+    public void updatePaymentBySerial(PaymentDetail paymentDetail) {
+        paymentDetailMapper.updatePaymentDetail(paymentDetail);
+    }
+
+    public void deletePaymentBySerial(PaymentDetail paymentDetail) {
+        paymentDetailMapper.deletePaymentDetail(paymentDetail.getSerial());
+    }
 }
