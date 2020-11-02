@@ -19,4 +19,8 @@ public interface AuctionMapper {
     void endAuctionFail(Integer aid);
 
     void updateWinnerPrice(Auction auction);
+
+    void updateAuction(Auction auction);
+
+    void cancelAuction(int aid);
 }
