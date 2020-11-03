@@ -43,6 +43,22 @@ export class PropertyListComponent implements OnInit {
     return '';
   }
 
+  statusOfAuction(status: number) {
+    if(status == 1){
+      return 'Not started';
+    }
+    if(status == 2){
+      return 'Started';
+    }
+    if(status == 3) {
+      return 'Failed';
+    }
+    if(status == 4) {
+      return 'Success';
+    }
+    return '';
+  }
+
   edit(p: Property) {
     this.userService.currentProperty = p;
     this.router.navigate(['/new-property', {pid: p.pid}]);
@@ -67,19 +83,5 @@ export class PropertyListComponent implements OnInit {
     this.router.navigate(['/sell-property']);
   }
 
-  statusOfAuction(status: number) {
-    if(status == 1){
-      return 'Not started';
-    }
-    if(status == 2){
-      return 'Started';
-    }
-    if(status == 3) {
-      return 'Failed';
-    }
-    if(status == 4) {
-      return 'Success';
-    }
-    return '';
-  }
+
 }
