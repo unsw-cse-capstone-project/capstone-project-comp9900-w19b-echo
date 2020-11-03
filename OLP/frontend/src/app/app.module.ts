@@ -17,6 +17,8 @@ import {
   NbSelectModule,
   NbButtonModule,
   NbSearchModule,
+  NbListModule,
+  NbUserModule, NbContextMenuModule, NbMenuModule, NbTabsetModule, NbToastrModule, NbSpinnerModule,
   NbUserModule,
   NbContextMenuModule,
   NbMenuModule,
@@ -59,6 +61,7 @@ import { NewPropertyComponent } from './component/new-property/new-property.comp
 import {AuthInterceptor} from "./service/auth-interceptor";
 import {MatTableModule} from "@angular/material/table";
 import { PropertyListComponent } from './component/property-list/property-list.component';
+import { AllPropertyListComponent } from './component/all-property-list/all-property-list.component';
 import { ConfirmationDialogComponent } from './component/confirmation-dialog/confirmation-dialog.component';
 import { SellPropertyComponent } from './component/sell-property/sell-property.component';
 import { JoinBidComponent } from './component/join-bid/join-bid.component';
@@ -91,6 +94,7 @@ import { PlaceBidComponent } from './component/place-bid/place-bid.component';
     SearchBarComponent,
     NewPropertyComponent,
     PropertyListComponent,
+    AllPropertyListComponent
     ConfirmationDialogComponent,
     SellPropertyComponent,
     JoinBidComponent,
@@ -163,6 +167,7 @@ import { PlaceBidComponent } from './component/place-bid/place-bid.component';
     NbSpinnerModule,
     AgGridModule.withComponents([]),
     MatTableModule,
+    NbListModule,
     NbDialogModule.forRoot(),
   ],
   providers: [
