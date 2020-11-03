@@ -25,7 +25,7 @@ import {NewPropertyComponent} from "./component/new-property/new-property.compon
 import {SellPropertyComponent} from "./component/sell-property/sell-property.component";
 import {JoinBidComponent} from "./component/join-bid/join-bid.component";
 import {PlaceBidComponent} from "./component/place-bid/place-bid.component";
-
+import {PropertyDetailComponent} from "./component/property-detail/property-detail.component";
 const routes: Routes = [
   {
     path: 'auth',
@@ -124,6 +124,10 @@ const routes: Routes = [
   {
     path: 'place-bid',
     component: PlaceBidComponent,
+  },
+  {
+    path: 'detail',
+    component: PropertyDetailComponent,
   },
 ];
 

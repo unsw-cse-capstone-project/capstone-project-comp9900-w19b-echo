@@ -1,11 +1,11 @@
 import {Component, Input, OnInit}from '@angular/core';
 import {Property} from "../../model/property.model";
+import {Auction} from "../../model/auction.model";
 import {HttpClient} from "@angular/common/http";
 import {UserService} from "../../service/user.service";
 import {Router} from "@angular/router";
 import {environment} from "../../../environments/environment";
 import {NbToastrService} from "@nebular/theme";
-
 
 @Component({
   selector: 'app-all-property-list',
@@ -16,34 +16,40 @@ export class AllPropertyListComponent implements OnInit {
 
   properties: Property[] = [];
   isLoading: boolean = false;
-  constructor(private router: Router, private http: HttpClient, private toastrService: NbToastrService) {}
-
-  loadNext() {
-
-    // if (this.loading) { return }
-    //
-    // this.loading = true;
-    // this.placeholders = new Array(this.pageSize);
-    // this.newsService.load(this.pageToLoadNext, this.pageSize)
-    //   .subscribe(news => {
-    //     this.placeholders = [];
-    //     this.news.push(...news);
-    //     this.loading = false;
-    //     this.pageToLoadNext++;
-    //   });
-  }
+  auction: Auction = null;
+  constructor(private router: Router, private http: HttpClient, private toastrService: NbToastrService, private userService: UserService) {}
 
 
   ngOnInit(): void {
     this.isLoading = true;
     this.http.post(environment.baseEndpoint + '/listAllProperty', {})
-      .subscribe( (data : Property[])=> {
-        console.log(data)
-          this.properties = data;
+      .subscribe( (p : Property[])=> {
+        console.log(p)
+          this.properties = p;
           this.isLoading = false;
         }
       );
 
   }
+
+  joinBid(p: Property): void {
+    this.userService.currentProperty = p;
+    this.http.post(environment.baseEndpoint + '/view-auction', {"pid": p.pid})
+      .subscribe( (data : Auction)=> {
+          console.log(data)
+          this.auction=data;
+          this.isLoading = false;
+          this.userService.currentAuction = this.auction[0];
+          this.router.navigate(['/join-bid']);
+        }
+      );
+  }
+
+  detail(p: Property): void {
+    this.userService.currentProperty = p;
+    this.router.navigate(['/detail']);
+  }
+
+
 
 }

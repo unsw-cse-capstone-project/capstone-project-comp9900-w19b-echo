@@ -1,0 +1,29 @@
+<nb-layout>
+
+  <nb-layout-header fixed>
+    <app-header></app-header>
+  </nb-layout-header>
+  <nb-layout-column>
+    <div class="container">
+      <h1 class="text-monospace"></h1>
+          <div class="card">
+            <div class="card-body">
+              <img class="card-img-top" src="http://18.162.53.247/resources/property/property_1.jpg" alt="..."/>
+              <h5>Address</h5>
+              <p class="card-text">{{this.property.address}}</p>
+              <h5>Description</h5>
+              <p class="card-text">{{this.property.description}}</p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-danger">hi</button>
+              <button class="btn btn-danger">bye</button>
+            </div>
+          </div>
+
+    </div>
+  </nb-layout-column>
+  <nb-layout-footer fixed>
+    <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>
