@@ -40,18 +40,23 @@ export class NewPropertyComponent implements OnInit {
     this.isLoading = true;
     this.property.owner = this.userService.user.uid;
     this.property.city = this.property.suburb;
-    this.http.post(environment.baseEndpoint + '/add-property', {property: this.property})
+    let uri = this.property.pid ? '/update-property' : '/add-property';
+    let title = this.property.pid ? 'Property - Updated' : 'New property - Added';
+
+    this.http.post(environment.baseEndpoint + uri, {property: this.property})
       .subscribe((p: Property) => {
           this.property = p;
-          this.showToast('success');
+          setTimeout(() => {
+            this.showToast('success', title);
+          }, 1000);
           this.isLoading = false;
           this.router.navigate(['/my-properties', {}]);
         }
       );
   }
 
-  showToast(status: NbComponentStatus) {
-    this.toastrService.show(status, `New property - Added`, { status });
+  showToast(status: NbComponentStatus, title: string) {
+    this.toastrService.show(status, title, { status });
   }
 
   cancel() {

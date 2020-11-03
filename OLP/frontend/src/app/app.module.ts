@@ -18,7 +18,6 @@ import {
   NbButtonModule,
   NbSearchModule,
   NbListModule,
-  NbUserModule, NbContextMenuModule, NbMenuModule, NbTabsetModule, NbToastrModule, NbSpinnerModule,
   NbUserModule,
   NbContextMenuModule,
   NbMenuModule,
@@ -94,7 +93,7 @@ import { PlaceBidComponent } from './component/place-bid/place-bid.component';
     SearchBarComponent,
     NewPropertyComponent,
     PropertyListComponent,
-    AllPropertyListComponent
+    AllPropertyListComponent,
     ConfirmationDialogComponent,
     SellPropertyComponent,
     JoinBidComponent,

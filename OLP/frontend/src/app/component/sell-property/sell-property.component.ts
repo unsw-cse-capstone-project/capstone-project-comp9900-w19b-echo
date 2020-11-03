@@ -40,7 +40,8 @@ export class SellPropertyComponent implements OnInit {
     this.isLoading = true;
     this.auction.pid = this.property.pid;
     this.auction.uid = this.user.uid;
-    this.http.post(environment.baseEndpoint + '/add-auction', {auction: this.auction})
+    let uri = this.auction.aid ? '/update-auction' : '/add-auction';
+    this.http.post(environment.baseEndpoint + uri, {auction: this.auction})
       .subscribe((p: Property) => {
           this.property = p;
           setTimeout(() => {
@@ -53,7 +54,8 @@ export class SellPropertyComponent implements OnInit {
   }
 
   showToast(status: NbComponentStatus) {
-    this.toastrService.show(status, `Properties - Published for auction`, { status });
+    let title = this.auction.aid ? `Auction - auction is updated.` : 'Auction - property is published for auction.';
+    this.toastrService.show(status, title, { status });
   }
 
   cancel() {
