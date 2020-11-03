@@ -1,0 +1,74 @@
+<nb-layout>
+
+  <nb-layout-header fixed>
+    <app-header></app-header>
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <nb-card [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success">
+      <nb-card-body>
+        <form>
+          <div class="form-group col-sm-8 row">
+            <div class="col-sm-12">
+              <h5>Auction Details</h5>
+            </div>
+          </div>
+          <div class="form-group col-sm-8 row">
+            <label for="currentProperty" class="col-sm-3 col-form-label font-weight-bold">Current Property</label>
+            <div class="col-sm-9 vertical-center">
+              <span class="form-control border-0" id="currentProperty">{{address(property)}}</span>
+            </div>
+          </div>
+          <div class="form-group col-sm-8 row" *ngIf="this.auction">
+            <label  class="col-sm-3 col-form-label font-weight-bold">Bid Start Date</label>
+            <div class="col-sm-9 ">
+              <input nbInput placeholder="Pick Date Time" name="beginTime" [nbDatepicker]="startDateTimePicker" [(ngModel)]="this.auction.beginTime">
+              <nb-date-timepicker
+                format="dd/MM/yyyy hh:mm a"
+                twelveHoursFormat
+                withSeconds
+                #startDateTimePicker></nb-date-timepicker>
+            </div>
+          </div>
+          <div class="form-group col-sm-8 row" *ngIf="this.auction">
+            <label  class="col-sm-3 col-form-label font-weight-bold">Bid End Date</label>
+            <div class="col-sm-9 ">
+              <input nbInput placeholder="Pick Date Time" name="endTime" [nbDatepicker]="endDateTimePicker" [(ngModel)]="this.auction.endTime">
+              <nb-date-timepicker
+                format="dd/MM/yyyy hh:mm a"
+                twelveHoursFormat
+                withSeconds
+                #endDateTimePicker></nb-date-timepicker>
+            </div>
+          </div>
+          <div class="form-group col-sm-8 row" *ngIf="this.auction">
+            <label for="reservePrice" class="col-sm-3 col-form-label font-weight-bold">Reserve Price</label>
+            <div class="col-sm-6 input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">$</span>
+              </div>
+              <input id="reservePrice" type="number" name="basePrice" [(ngModel)]="this.auction.basePrice" class="form-control" aria-label="Amount (to the nearest dollar)">
+              <div class="input-group-append">
+                <span class="input-group-text">.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-sm-8 row">
+            <div class="col-sm-12 text-sm-center">
+              <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+              <button type="submit" class="btn btn-primary ml-3" (click)="cancel()">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+
+
+
+  </nb-layout-column>
+
+  <nb-layout-footer fixed>
+    <!-- Insert footer here -->
+  </nb-layout-footer>
+
+</nb-layout>

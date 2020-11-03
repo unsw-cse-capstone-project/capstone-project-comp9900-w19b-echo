@@ -1,9 +1,8 @@
 package com.echo.backend.controller;
 
+import com.echo.backend.domain.Auction;
 import com.echo.backend.domain.Property;
-import com.echo.backend.dto.AddPropertyRequest;
-import com.echo.backend.dto.AddPropertyResponse;
-import com.echo.backend.dto.SearchPropertyRequest;
+import com.echo.backend.dto.*;
 import com.echo.backend.service.AuctionService;
 import com.echo.backend.service.PropertyService;
 import com.echo.backend.service.UserService;
@@ -15,9 +14,7 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
-import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -33,10 +30,13 @@ public class PropertyController {
 
     private final UserService userService;
 
+    private final AuctionService auctionService;
+
     @Autowired
-    public PropertyController(PropertyService propertyService, UserService userService) {
+    public PropertyController(PropertyService propertyService, UserService userService, AuctionService auctionService) {
         this.propertyService = propertyService;
         this.userService = userService;
+        this.auctionService = auctionService;
     }
 
     @ApiOperation(value="Create property", notes="Create property")
@@ -54,8 +54,8 @@ public class PropertyController {
     }
 
     @RequestMapping(value = "/listAllProperty", method = RequestMethod.POST)
-//    @RequiresAuthentication
-    @ApiIgnore
+    //@RequiresAuthentication
+    //@ApiIgnore
     public List<Property> getAllProperty(@RequestBody SearchPropertyRequest searchRequest) {
 
         return PagingUtil.afterPaging(propertyService.getAllProperty(), searchRequest.getPage(), searchRequest.getDataNum());
@@ -63,18 +63,37 @@ public class PropertyController {
 
     @RequestMapping(value = "/my-property", method = RequestMethod.POST)
     @RequiresAuthentication
-    public List<Property> getMyProperty(HttpServletRequest request) {
-
+    public List<PropertyAuction> getMyProperty(HttpServletRequest request) {
+        List<PropertyAuction> propertyAuctions = new ArrayList<>();
         int uid = JWTUtil.getUid(request.getHeader("Authorization"), userService);
-        return propertyService.getPropertyByUid(uid);
+        List<Property> properties = propertyService.getPropertyByUid(uid);
+        for(Property p : properties){
+            PropertyAuction propertyAuction = new PropertyAuction();
+            propertyAuction.setProperty(p);
+            List<Auction> auctions = auctionService.getAuctionByPid(p.getPid());
+            if(auctions != null && auctions.size() > 0) {
+                propertyAuction.setAuction(auctions.get(0));
+            }
+            propertyAuctions.add(propertyAuction);
+        }
+        return propertyAuctions;
     }
 
     @RequestMapping(value = "/others-property", method = RequestMethod.POST)
     //@RequiresAuthentication
-    public List<Property> getOthersProperty(SearchPropertyRequest request) {
+    public List<Property> getOthersProperty(@RequestBody SearchPropertyRequest request) {
 
-        int uid = request.getProperty().getOwner();
+        int uid = request.getUid();
         return propertyService.getPropertyByUid(uid);
+    }
+
+    @RequestMapping(value = "/update-property", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public UpdatePropertyResponse updateProperty(@RequestBody UpdatePropertyRequest request) {
+
+        propertyService.updateProperty(request.getProperty());
+
+        return new UpdatePropertyResponse(200, "Update property success", null);
     }
 
     @RequestMapping(value = "/search-property-address", method = RequestMethod.POST)

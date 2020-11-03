@@ -5,9 +5,31 @@
   </nb-layout-header>
 
   <nb-layout-column>
-    <nb-card  nbSpinnerSize="giant" nbSpinnerStatus="success" size="large">
+    <nb-card  [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success" size="large">
       <nb-card-body>
-        <app-property-list [properties]="properties"></app-property-list>
+        <table class="table table-hover" *ngIf="properties">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Property</th>
+            <th scope="col">Status</th>
+            <th scope="col">Auction Status</th>
+            <th scope="col">Bid Start Date</th>
+            <th scope="col">Bid End Date</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let p of properties; index as i;" >
+            <th scope="row">{{i+1}}</th>
+            <td>{{address(p.property)}}</td>
+            <td>{{status(p.property.status)}}</td>
+            <td>{{status(p.property.status)}}</td>
+            <td>{{p.auction?.beginTime | date:'dd/MM/yyyy hh:mm a'}}</td>
+            <td>{{p.auction?.endTime | date:'dd/MM/yyyy hh:mm a'}}</td>
+          </tr>
+          </tbody>
+        </table>
+
       </nb-card-body>
     </nb-card>
   </nb-layout-column>

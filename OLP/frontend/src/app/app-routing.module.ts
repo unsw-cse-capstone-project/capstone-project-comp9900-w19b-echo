@@ -22,6 +22,9 @@ import {CompletedAuctionsComponent} from "./component/completed-auctions/complet
 import {InterestedPropertiesComponent} from "./component/interested-properties/interested-properties.component";
 import {MessagesComponent} from "./component/messages/messages.component";
 import {NewPropertyComponent} from "./component/new-property/new-property.component";
+import {SellPropertyComponent} from "./component/sell-property/sell-property.component";
+import {JoinBidComponent} from "./component/join-bid/join-bid.component";
+import {PlaceBidComponent} from "./component/place-bid/place-bid.component";
 
 const routes: Routes = [
   {
@@ -109,6 +112,18 @@ const routes: Routes = [
   {
     path: 'new-property',
     component: NewPropertyComponent,
+  },
+  {
+    path: 'sell-property',
+    component: SellPropertyComponent,
+  },
+  {
+    path: 'join-bid',
+    component: JoinBidComponent,
+  },
+  {
+    path: 'place-bid',
+    component: PlaceBidComponent,
   },
 ];
 

@@ -18,7 +18,15 @@ import {
   NbButtonModule,
   NbSearchModule,
   NbListModule,
-  NbUserModule, NbContextMenuModule, NbMenuModule, NbTabsetModule, NbToastrModule, NbSpinnerModule
+  NbUserModule, NbContextMenuModule, NbMenuModule, NbTabsetModule, NbToastrModule, NbSpinnerModule,
+  NbUserModule,
+  NbContextMenuModule,
+  NbMenuModule,
+  NbTabsetModule,
+  NbToastrModule,
+  NbSpinnerModule,
+  NbDialogModule,
+  NbTimepickerModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
@@ -54,6 +62,10 @@ import {AuthInterceptor} from "./service/auth-interceptor";
 import {MatTableModule} from "@angular/material/table";
 import { PropertyListComponent } from './component/property-list/property-list.component';
 import { AllPropertyListComponent } from './component/all-property-list/all-property-list.component';
+import { ConfirmationDialogComponent } from './component/confirmation-dialog/confirmation-dialog.component';
+import { SellPropertyComponent } from './component/sell-property/sell-property.component';
+import { JoinBidComponent } from './component/join-bid/join-bid.component';
+import { PlaceBidComponent } from './component/place-bid/place-bid.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +94,11 @@ import { AllPropertyListComponent } from './component/all-property-list/all-prop
     SearchBarComponent,
     NewPropertyComponent,
     PropertyListComponent,
-    AllPropertyListComponent,
+    AllPropertyListComponent
+    ConfirmationDialogComponent,
+    SellPropertyComponent,
+    JoinBidComponent,
+    PlaceBidComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +107,7 @@ import { AllPropertyListComponent } from './component/all-property-list/all-prop
     BrowserAnimationsModule,
     NbThemeModule.forRoot({name: 'default'}),
     NbDatepickerModule.forRoot(),
+    NbTimepickerModule.forRoot(),
     NbLayoutModule,
     NbInputModule,
     NbEvaIconsModule,
@@ -151,6 +168,7 @@ import { AllPropertyListComponent } from './component/all-property-list/all-prop
     AgGridModule.withComponents([]),
     MatTableModule,
     NbListModule,
+    NbDialogModule.forRoot(),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

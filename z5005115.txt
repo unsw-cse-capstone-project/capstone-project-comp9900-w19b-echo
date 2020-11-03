@@ -16,7 +16,7 @@ Week 2
 Week 3
 
 1. Completed the project sprints planning and added to project proposal;
-2. Continued developmenting UI Interfaces and Flows Diagram;
+2. Continued developing UI Interfaces and Flows Diagram;
 3. Created my GitHub account
 4. Setup Project structure on Git with the followings modules and MVN build;
    Frontend - Angular
@@ -30,3 +30,18 @@ Week 4
 2. Added spring security and JWT token authentication;
 3. Created sign-in screen and corresponding API interface in the backend;
 4. Created sign-up screen and corresponding API interface in the backend;
+
+Week 5
+
+1. Implemented User account management which includes the followings;
+   Register, Login, Logout, Forget your password
+2. Created user profile page so that user can update this account, address and payment detail;
+3. Created Dashboard, My Properties, Active Auctions, Completed Auctions, Interested Properties screen layout;
+4. Implemented add new property;
+
+Week 6
+
+1. Implemented Account Details;
+2. Implemented My Properties functions;
+3. Implemented Dashboard cards;
+
