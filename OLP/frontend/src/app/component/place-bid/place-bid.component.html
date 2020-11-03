@@ -15,7 +15,7 @@
             <div class="col-sm-8 vertical-center">
                 <div class="card bg-info">
                   <div class="card-body bg-light text-center">
-                    <span class="badge h5">Current Bid: {{this.auction.basePrice | currency}}</span>
+                    <span class="badge h5 text-primary">Current Bid: {{this.auction.basePrice | currency}}</span>
                   </div>
                 </div>
               </div>
@@ -25,9 +25,8 @@
               <div class="card bg-light" *ngIf="this.time">
                 <div class="card-body bg-light text-center">
                   <p class="card-title mt-2">
-                    <a><span class="badge h1">{{format(this.time.hours)}}</span></a> :
-                    <a><span class="badge h1">{{format(this.time.minutes)}}</span></a> :
-                    <a><span class="badge h1">{{format(this.time.seconds)}}</span></a>
+                    <span class="badge h2 text-danger">{{format(this.time.days)}} : {{format(this.time.hours)}} : {{format(this.time.minutes)}} : {{format(this.time.seconds)}} Left</span><br/>
+                    <span class="badge text-info">Day Hour Min Sec</span>
                   </p>
                 </div>
               </div>
