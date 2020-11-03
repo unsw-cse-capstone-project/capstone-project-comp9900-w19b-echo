@@ -155,4 +155,8 @@ public class PropertyService {
     public List<Property> searchPropertyVague(String keyword) {
         return propertyMapper.searchAddress(keyword);
     }
+
+    public List<Property> getPropertyByPid(int pid) {
+        return propertyMapper.getPropertyByPid(pid);
+    }
 }

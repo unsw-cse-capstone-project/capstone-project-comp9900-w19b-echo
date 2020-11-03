@@ -87,6 +87,13 @@ public class PropertyController {
         return propertyService.getPropertyByUid(uid);
     }
 
+    @RequestMapping(value = "/view-property-pid", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public List<Property> viewPropertyByPid(@RequestBody SearchPropertyRequest request) {
+
+        return propertyService.getPropertyByPid(request.getPid());
+    }
+
     @RequestMapping(value = "/update-property", method = RequestMethod.POST)
     @RequiresAuthentication
     public UpdatePropertyResponse updateProperty(@RequestBody UpdatePropertyRequest request) {

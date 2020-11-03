@@ -25,7 +25,7 @@ export class PaymentComponent implements OnInit {
   }
 
   getPaymentDetail() {
-    const uid = this.userService.currentUser?.uid;
+    const uid = this.userService.user?.uid;
     if(uid) {
       this.isLoading = true;
       this.http.post(environment.baseEndpoint + '/view-payment', {uid: uid})
@@ -56,4 +56,11 @@ export class PaymentComponent implements OnInit {
     this.toastrService.show(status, `Payment Details - Updated`, { status });
   }
 
+  numberOnly(event): boolean {
+    const charCode = (event.which) ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
+  }
 }

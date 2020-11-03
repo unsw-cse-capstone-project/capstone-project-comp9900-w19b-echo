@@ -7,6 +7,7 @@
     <th scope="col">Auction Status</th>
     <th scope="col">Bid Start Date</th>
     <th scope="col">Bid End Date</th>
+    <th scope="col">Reserve Price</th>
     <th class="text-sm-right">Action</th>
   </tr>
   </thead>
@@ -18,6 +19,7 @@
     <td>{{status(p.property.status)}}</td>
     <td>{{p.auction?.beginTime | date:'dd/MM/yyyy hh:mm a'}}</td>
     <td>{{p.auction?.endTime | date:'dd/MM/yyyy hh:mm a'}}</td>
+    <td>{{p.auction?.basePrice | currency}}</td>
     <td class="text-sm-right">
       <ng-container *ngIf="p.property.status == 0 || p.property.status == 2">
         <button type="button" class="btn btn-outline-primary btn-sm" (click)="sellProperty(p.property, p.auction)">Auction</button>
