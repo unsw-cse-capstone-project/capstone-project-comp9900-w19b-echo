@@ -45,4 +45,11 @@
         update t_auction set winner=#{winner},current_price=#{currentPrice},status=#{status} where aid=#{aid}
     </update>
 
+    <update id="updateAuction" parameterType="com.echo.backend.domain.Auction">
+        update t_auction set base_price=#{basePrice},begin_time=#{beginTime},end_time=#{endTime} where aid=#{aid}
+    </update>
+
+    <delete id="cancelAuction" parameterType="java.lang.Integer">
+        delete from t_auction where aid=#{aid}
+    </delete>
 </mapper>

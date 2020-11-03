@@ -6,9 +6,15 @@ public class PaymentDetail {
 
     private int uid;
 
+    private String nameOnCard;
+
     private String cardNumber;
 
-    private String billAddress;
+    private int expireMonth;
+
+    private int expireYear;
+
+    private int cvv;
 
     private Date addTime;
 
@@ -22,6 +28,14 @@ public class PaymentDetail {
         this.uid = uid;
     }
 
+    public String getNameOnCard() {
+        return nameOnCard;
+    }
+
+    public void setNameOnCard(String nameOnCard) {
+        this.nameOnCard = nameOnCard;
+    }
+
     public String getCardNumber() {
         return cardNumber;
     }
@@ -30,12 +44,28 @@ public class PaymentDetail {
         this.cardNumber = cardNumber;
     }
 
-    public String getBillAddress() {
-        return billAddress;
+    public int getExpireMonth() {
+        return expireMonth;
     }
 
-    public void setBillAddress(String billAddress) {
-        this.billAddress = billAddress;
+    public void setExpireMonth(int expireMonth) {
+        this.expireMonth = expireMonth;
+    }
+
+    public int getExpireYear() {
+        return expireYear;
+    }
+
+    public void setExpireYear(int expireYear) {
+        this.expireYear = expireYear;
+    }
+
+    public int getCvv() {
+        return cvv;
+    }
+
+    public void setCvv(int cvv) {
+        this.cvv = cvv;
     }
 
     public Date getAddTime() {
@@ -53,4 +83,6 @@ public class PaymentDetail {
     public void setSerial(int serial) {
         this.serial = serial;
     }
+
+
 }

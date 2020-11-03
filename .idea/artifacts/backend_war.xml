@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="war" name="backend:war">
-    <output-path>$PROJECT_DIR$/backend/target</output-path>
+    <output-path>$PROJECT_DIR$/OLP/backend/target</output-path>
     <properties id="maven-jee-properties">
       <options>
         <module>backend</module>

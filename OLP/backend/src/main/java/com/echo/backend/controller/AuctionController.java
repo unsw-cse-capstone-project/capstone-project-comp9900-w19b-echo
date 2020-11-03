@@ -46,6 +46,41 @@ public class AuctionController {
         return new AddAuctionResponse(200, "Add auction success", null);
     }
 
+    @ApiOperation(value="Audit auction", notes="Audit auction")
+    @RequestMapping(value = "/update-auction", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public AddAuctionResponse updateAuction(@RequestBody AddAuctionRequest request) {
+
+        Auction auction = request.getAuction();
+
+        Date oneDay = DateUtils.addDays(new Date(), 1);
+        if (auction.getBeginTime()!= null && oneDay.after(auction.getBeginTime())){
+            return new AddAuctionResponse(501, "Begin time must one day after current time", null);
+        }
+
+        auctionService.updateAuction(auction);
+
+        return new AddAuctionResponse(200, "Update auction success", null);
+    }
+
+    @ApiOperation(value="Cancel auction", notes="Audit auction")
+    @RequestMapping(value = "/cancel-auction", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public AddAuctionResponse cancelAuction(@RequestBody AddAuctionRequest request) {
+
+        auctionService.cancelAuction(request.getAuction().getAid());
+
+        return new AddAuctionResponse(200, "Cancel auction success", null);
+    }
+
+    @ApiOperation(value="view auction", notes="Audit auction")
+    @RequestMapping(value = "/view-auction", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public List<Auction> viewAuction(@RequestBody SearchAuctionRequest request) {
+
+        return auctionService.getAuctionByPid(request.getPid());
+    }
+
     @ApiOperation(value="register auction", notes="register auction")
     @RequestMapping(value = "/register-auction", method = RequestMethod.POST)
     @RequiresAuthentication

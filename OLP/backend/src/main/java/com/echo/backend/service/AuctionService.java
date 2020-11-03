@@ -88,4 +88,12 @@ public class AuctionService {
     public List<AuctionBid> bidHistoryByAid(int aid) {
         return auctionBidMapper.viewHistoryByAid(aid);
     }
+
+    public void updateAuction(Auction auction) {
+        auctionMapper.updateAuction(auction);
+    }
+
+    public void cancelAuction(int aid) {
+        auctionMapper.cancelAuction(aid);
+    }
 }
