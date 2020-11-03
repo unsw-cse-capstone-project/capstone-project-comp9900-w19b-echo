@@ -45,7 +45,7 @@ public class UserController {
         }
 
         if (user.getPassword().equals(request.getPassword())) {
-            return new SignInResponse(200, "Login success", JWTUtil.sign(user.getEmail(), user.getUserName(), request.getPassword()));
+            return new SignInResponse(200, "Login success", JWTUtil.sign(user.getEmail(), user.getUserName(), request.getPassword(), user.getUid()));
         } else {
             throw new UnauthorizedException();
         }
@@ -73,7 +73,7 @@ public class UserController {
         user.setPhone(request.getPhoneNumber());
 
         userService.addNewUser(user);
-        return new SignUpResponse(200, "Login success", JWTUtil.sign(user.getEmail(), user.getUserName(), user.getPassword()));
+        return new SignUpResponse(200, "Login success", JWTUtil.sign(user.getEmail(), user.getUserName(), user.getPassword(), user.getUid()));
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)

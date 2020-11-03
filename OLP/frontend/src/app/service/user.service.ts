@@ -22,6 +22,7 @@ export class UserService {
           let payload = token.getPayload();
           this.user.email = payload.email;
           this.user.fullName = payload.sub;
+          this.user.uid = payload.uid;
           this.token = token.getValue();
         }
       });

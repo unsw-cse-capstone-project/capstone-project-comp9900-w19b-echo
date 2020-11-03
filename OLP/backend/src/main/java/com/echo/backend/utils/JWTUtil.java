@@ -63,9 +63,10 @@ public class JWTUtil {
      * 生成签名,2小时后过期
      * @param email 用户名
      * @param secret 用户的密码
+     * @param uid
      * @return 加密的token
      */
-    public static String sign(String email, String fullName, String secret) {
+    public static String sign(String email, String fullName, String secret, int uid) {
         try {
             //Date date = new Date(2099,1,1);
             Algorithm algorithm = Algorithm.HMAC256(secret);
@@ -73,6 +74,7 @@ public class JWTUtil {
             return JWT.create()
                     .withSubject(fullName)
                     .withClaim("email", email)
+                    .withClaim("uid", uid)
                     .withExpiresAt(DateUtils.addHours(new Date(), 2))
                     .sign(algorithm);
         } catch (UnsupportedEncodingException e) {

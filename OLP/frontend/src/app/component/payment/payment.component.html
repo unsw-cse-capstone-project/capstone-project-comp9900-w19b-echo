@@ -5,7 +5,7 @@
   </div>
   <div class="form-group col-lg-4">
     <label for="Card Number">Card Number</label>
-    <input type="email" class="form-control" id="Card Number" name="Card Number" [(ngModel)]="this.paymentDetail.cardNumber" placeholder="Card Number" required>
+    <input type="email" class="form-control" id="Card Number" name="Card Number"  (keypress)="numberOnly($event)" maxlength="16"  [(ngModel)]="this.paymentDetail.cardNumber" placeholder="Card Number" required>
   </div>
   <div class="form-group col-lg-2">
     <label for="expiredMonth">Expired Month</label>
@@ -42,7 +42,7 @@
   </div>
   <div class="form-group col-lg-4">
     <label for="cvv">CVV</label>
-    <input type="email" class="form-control" id="cvv" name="cvv"  [(ngModel)]="this.paymentDetail.cvv" placeholder="CVV" required>
+    <input type="email" class="form-control" id="cvv" name="cvv"  (keypress)="numberOnly($event)" maxlength="4" [(ngModel)]="this.paymentDetail.cvv" placeholder="CVV" required>
   </div>
   <div class="form-group col-lg-4">
     <button type="submit" class="btn btn-primary" (click)="this.save()">Save</button>
