@@ -26,15 +26,21 @@ export class PropertyListComponent implements OnInit {
 
   status(status: number) {
     if(status == 0){
-      return 'Active';
+      return 'Not Verified';
     }
-    if(status == 1) {
+    if(status == 1){
+      return 'Verified';
+    }
+    if(status == 2){
+      return 'On Auction';
+    }
+    if(status == 3) {
       return 'Sold';
     }
-    if(status == 2) {
+    if(status == 4) {
       return 'Passed In';
     }
-    return 'Inactive';
+    return '';
   }
 
   edit(p: Property) {
@@ -59,5 +65,21 @@ export class PropertyListComponent implements OnInit {
     this.userService.currentProperty = p;
     this.userService.currentAuction = auction;
     this.router.navigate(['/sell-property']);
+  }
+
+  statusOfAuction(status: number) {
+    if(status == 1){
+      return 'Not started';
+    }
+    if(status == 2){
+      return 'Started';
+    }
+    if(status == 3) {
+      return 'Failed';
+    }
+    if(status == 4) {
+      return 'Success';
+    }
+    return '';
   }
 }

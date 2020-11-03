@@ -16,18 +16,18 @@
     <th scope="row">{{i+1}}</th>
     <td>{{address(p.property)}}</td>
     <td>{{status(p.property.status)}}</td>
-    <td>{{status(p.property.status)}}</td>
+    <td>{{statusOfAuction(p.auction?.status)}}</td>
     <td>{{p.auction?.beginTime | date:'dd/MM/yyyy hh:mm a'}}</td>
     <td>{{p.auction?.endTime | date:'dd/MM/yyyy hh:mm a'}}</td>
     <td>{{p.auction?.basePrice | currency}}</td>
     <td class="text-sm-right">
-      <ng-container *ngIf="p.property.status == 0 || p.property.status == 2">
-        <button type="button" class="btn btn-outline-primary btn-sm" (click)="sellProperty(p.property, p.auction)">Auction</button>
-        <button type="button" class="btn btn-outline-success btn-sm ml-3" (click)="edit(p.property)">Update</button>
-        <button type="button" class="btn btn-outline-success btn-sm ml-3" (click)="delete(p.property)">Delete</button>
+      <ng-container *ngIf="p.property.status == 1 || p.property.status == 2">
+        <a><nb-icon icon="shopping-cart-outline" status="primary" (click)="sellProperty(p.property, p.auction)" nbTooltip="Sell Property"></nb-icon></a>
+        <nb-icon class="ml-3" icon="edit-outline" status="primary" (click)="edit(p.property)" nbTooltip="Edit Property"></nb-icon>
+        <nb-icon class="ml-3" icon="trash-outline" status="primary" (click)="delete(p.property)" nbTooltip="Delete Property"></nb-icon>
       </ng-container>
-      <ng-container *ngIf="p.property.status == 1 || p.property.status == 3">
-        <button type="button" class="btn btn-outline-success btn-sm" (click)="delete(p.property)">Delete</button>
+      <ng-container *ngIf="p.property.status == 0">
+        <nb-icon icon="trash-outline" status="primary" (click)="delete(p.property)" nbTooltip="Delete Property"></nb-icon>
       </ng-container>
     </td>
   </tr>
