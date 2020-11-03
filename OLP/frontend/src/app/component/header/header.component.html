@@ -9,6 +9,7 @@
   <nb-action [routerLink]="['/auth/register']">Sign Up</nb-action>
 </nb-actions>
 <nb-actions *ngIf="userService.authenticated" size="medium">
+  <nb-action [routerLink]="['/home']">Anytime<nb-icon icon="award-outline" status="success"></nb-icon>Anywhere</nb-action>
   <nb-action [routerLink]="['/dashboard']" [class.text-primary]="this.isPage('/dashboard')">Dashboard</nb-action>
   <nb-action [routerLink]="['/my-properties']" [class.text-primary]="this.isPage('/my-properties')">My Properties</nb-action>
   <nb-action [routerLink]="['/interested-properties']" [class.text-primary]="this.isPage('/interested-properties')">Interested Properties</nb-action>
