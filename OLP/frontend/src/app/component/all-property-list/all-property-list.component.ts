@@ -13,23 +13,13 @@ import {NbToastrService} from "@nebular/theme";
   styleUrls: ['./all-property-list.component.scss']
 })
 export class AllPropertyListComponent implements OnInit {
-
-  properties: Property[] = [];
+  @Input() properties: Property[] = [];
   isLoading: boolean = false;
   auction: Auction = null;
   constructor(private router: Router, private http: HttpClient, private toastrService: NbToastrService, private userService: UserService) {}
 
 
   ngOnInit(): void {
-    this.isLoading = true;
-    this.http.post(environment.baseEndpoint + '/listAllProperty', {})
-      .subscribe( (p : Property[])=> {
-        console.log(p)
-          this.properties = p;
-          this.isLoading = false;
-        }
-      );
-
   }
 
   joinBid(p: Property): void {

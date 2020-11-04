@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NbAuthJWTToken, NbAuthService } from '@nebular/auth';
+import {environment} from "../../../environments/environment";
+import {Property} from "../../model/property.model";
+import {Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
+import {NbToastrService} from "@nebular/theme";
+import {UserService} from "../../service/user.service";
 
 @Component({
   selector: 'app-home',
@@ -7,20 +13,35 @@ import { NbAuthJWTToken, NbAuthService } from '@nebular/auth';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  user = {sub:''};
+  isLoading: boolean = false;
+  properties: Property[] = [];
 
-  constructor(private authService: NbAuthService) {
+  constructor(private router: Router, private http: HttpClient, private toastrService: NbToastrService, private userService: UserService) {
 
-    this.authService.onTokenChange()
-      .subscribe((token: NbAuthJWTToken) => {
-        if (token.isValid()) {
-          this.user = token.getPayload(); // here we receive a payload from the token and assigns it to our `user` variable
-        }
-
-      });
   }
 
   ngOnInit(): void {
+    this.getRecommendProperties();
   }
 
+  getRecommendProperties() {
+    this.isLoading = true;
+    this.http.post(environment.baseEndpoint + '/listAllProperty', {})
+      .subscribe( (p : Property[])=> {
+          this.properties = p;
+          this.isLoading = false;
+        }
+      );
+  }
+
+  searchProperty($event: any) {
+    this.isLoading = true;
+    let uri = $event ? '/search-property-like' : '/listAllProperty';
+    this.http.post(environment.baseEndpoint + '/search-property-like', {keyword: $event})
+      .subscribe( (p : Property[])=> {
+          this.properties = p;
+          this.isLoading = false;
+        }
+      );
+  }
 }
