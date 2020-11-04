@@ -2,8 +2,6 @@
 
 @import '~@nebular/theme/styles/globals';
 @import '~@nebular/auth/styles/globals';
-@import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
-@import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
 
 @include nb-install() {
   @include nb-theme-global();

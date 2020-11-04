@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -95,5 +96,20 @@ public class AuctionService {
 
     public void cancelAuction(int aid) {
         auctionMapper.cancelAuction(aid);
+    }
+
+    public List<Auction> getActiveAuction(int uid) {
+        List<AuctionRegister> registers = auctionRegisterMapper.getRegisterBidderByUid(uid);
+
+        List<Auction> ret = new ArrayList<>();
+        for (AuctionRegister re:registers){
+            ret.add(auctioningMap.get(re.getAid()));
+        }
+
+        return ret;
+    }
+
+    public List<Auction> getCompleteAuction(int uid) {
+        return auctionMapper.getCompleteAuction(uid);
     }
 }

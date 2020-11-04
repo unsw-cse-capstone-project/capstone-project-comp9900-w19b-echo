@@ -8,31 +8,31 @@
     <nb-card [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success">
       <nb-card-body>
         <form>
-          <div class="form-group col-sm-12 row">
-            <div class="col-sm-12">
-              <h5>Pace Bid for {{address(property)}}</h5>
-            </div>
+          <div class="form-group col-sm-8 row">
+            <h5>Place Bid for {{address(property)}}</h5>
           </div>
-          <div class="form-group col-sm-12 row" *ngIf="this.auction">
-            <label  class="col-sm-2 col-form-label font-weight-bold">Current Bid</label>
-            <div class="col-sm-4">
-              <span class="form-control border-0">{{this.auction.basePrice | currency}}</span>
-            </div>
-            <div class="col-sm-2">
-            </div>
-            <div class="col-sm-4">
+          <div class="form-group col-sm-8 row" *ngIf="this.auction">
+            <div class="col-sm-8 vertical-center">
+                <div class="card bg-info">
+                  <div class="card-body bg-light text-center">
+                    <span class="badge h4 text-primary">Current Bid: {{this.auction.basePrice | currency}}</span>
+                  </div>
+                </div>
+              </div>
+           </div>
+          <div class="form-group col-sm-8 row" *ngIf="this.auction">
+            <div class="col-sm-8">
               <div class="card bg-light" *ngIf="this.time">
                 <div class="card-body bg-light text-center">
                   <p class="card-title mt-2">
-                    <a><span class="badge h1">{{format(this.time.hours)}}</span></a> :
-                    <a><span class="badge h1">{{format(this.time.minutes)}}</span></a> :
-                    <a><span class="badge h1">{{format(this.time.seconds)}}</span></a>
+                    <span class="badge h2 text-danger">{{format(this.time.days)}} : {{format(this.time.hours)}} : {{format(this.time.minutes)}} : {{format(this.time.seconds)}} Left</span><br/>
+                    <span class="badge text-info">Day Hour Min Sec</span>
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="form-group col-sm-12 row" *ngIf="this.auction">
+          <div class="form-group col-sm-8 row" *ngIf="this.auction">
             <label for="reservePrice" class="col-sm-2 col-form-label font-weight-bold">New Bid</label>
             <div class="col-sm-4 input-group mb-3">
               <div class="input-group-prepend">
@@ -44,7 +44,7 @@
               </div>
             </div>
           </div>
-          <div class="form-group col-sm-12 row">
+          <div class="form-group col-sm-8 row">
             <div class="col-sm-12 text-sm-center">
               <button type="submit" class="btn btn-primary" (click)="place()">Place Bid</button>
               <button type="submit" class="btn btn-primary ml-3" (click)="cancel()">Cancel</button>

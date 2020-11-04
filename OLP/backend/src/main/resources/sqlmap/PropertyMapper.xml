@@ -121,7 +121,11 @@
     <update id="updateProperty" parameterType="com.echo.backend.domain.Property">
         update t_property set city=#{city}, description=#{description}, code=#{postcode}, state=#{state},
         street=#{streetName}, house_number=#{streetNumber}, district=#{suburb}, area=#{area}, bedroom=#{bedroom},
-        bathroom=#{bathroom}, carport=#{carport}
+        bathroom=#{bathroom}, carport=#{carport}, status=#{status}
         where pid=#{pid}
     </update>
+
+    <delete id="deleteProperty" parameterType="java.lang.Integer">
+        delete from t_property where pid=#{pid}
+    </delete>
 </mapper>

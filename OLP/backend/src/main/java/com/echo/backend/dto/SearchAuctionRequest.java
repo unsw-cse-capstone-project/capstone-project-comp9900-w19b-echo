@@ -6,6 +6,16 @@ public class SearchAuctionRequest extends BaseRequest{
 
     private int pid;
 
+    private int uid;
+
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
+    }
+
     public int getAid() {
         return aid;
     }

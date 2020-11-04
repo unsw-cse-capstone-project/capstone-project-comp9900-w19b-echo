@@ -73,13 +73,30 @@ public class AuctionController {
         return new AddAuctionResponse(200, "Cancel auction success", null);
     }
 
-    @ApiOperation(value="view auction", notes="Audit auction")
+    @ApiOperation(value="view auction", notes="view auction")
     @RequestMapping(value = "/view-auction", method = RequestMethod.POST)
     @RequiresAuthentication
     public List<Auction> viewAuction(@RequestBody SearchAuctionRequest request) {
 
         return auctionService.getAuctionByPid(request.getPid());
     }
+
+    @ApiOperation(value="view active auction", notes="view active auction")
+    @RequestMapping(value = "/view-active-auction", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public List<Auction> viewActiveAuction(@RequestBody SearchAuctionRequest request) {
+
+        return auctionService.getActiveAuction(request.getUid());
+    }
+
+    @ApiOperation(value="view complete auction", notes="view complete auction")
+    @RequestMapping(value = "/view-complete-auction", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public List<Auction> viewCompleteAuction(@RequestBody SearchAuctionRequest request) {
+
+        return auctionService.getCompleteAuction(request.getUid());
+    }
+
 
     @ApiOperation(value="register auction", notes="register auction")
     @RequestMapping(value = "/register-auction", method = RequestMethod.POST)

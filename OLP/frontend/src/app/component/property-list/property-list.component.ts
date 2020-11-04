@@ -6,6 +6,7 @@ import {NbDialogService} from "@nebular/theme";
 import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-dialog.component";
 import {PropertyAuction} from "../../model/property-auction.model";
 import {Auction} from "../../model/auction.model";
+import {CommonService} from "../../service/common.service";
 
 @Component({
   selector: 'app-property-list',
@@ -15,26 +16,13 @@ import {Auction} from "../../model/auction.model";
 export class PropertyListComponent implements OnInit {
   @Input() properties: PropertyAuction[];
 
-  constructor(private router: Router, private userService: UserService, private dialogService: NbDialogService) { }
+  constructor(private router: Router, private userService: UserService, private dialogService: NbDialogService, private commonService: CommonService) { }
 
   ngOnInit(): void {
   }
 
   address (p: Property) {
     return p.streetNumber + ' ' + p.streetName + ', ' + p.suburb + ' ' + p.state + ' ' + p.postcode;
-  }
-
-  status(status: number) {
-    if(status == 0){
-      return 'Active';
-    }
-    if(status == 1) {
-      return 'Sold';
-    }
-    if(status == 2) {
-      return 'Passed In';
-    }
-    return 'Inactive';
   }
 
   edit(p: Property) {
@@ -60,4 +48,6 @@ export class PropertyListComponent implements OnInit {
     this.userService.currentAuction = auction;
     this.router.navigate(['/sell-property']);
   }
+
+
 }

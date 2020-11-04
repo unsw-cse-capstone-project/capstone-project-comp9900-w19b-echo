@@ -103,6 +103,15 @@ public class PropertyController {
         return new UpdatePropertyResponse(200, "Update property success", null);
     }
 
+    @RequestMapping(value = "/remove-property", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public UpdatePropertyResponse removeProperty(@RequestBody UpdatePropertyRequest request) {
+
+        propertyService.removeProperty(request.getProperty().getPid());
+
+        return new UpdatePropertyResponse(200, "Remove property success", null);
+    }
+
     @RequestMapping(value = "/search-property-address", method = RequestMethod.POST)
     //@RequiresAuthentication
     public List<Property> searchPropertyFilter(@RequestBody SearchPropertyRequest searchRequest) {

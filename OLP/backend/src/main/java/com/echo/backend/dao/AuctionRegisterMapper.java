@@ -8,4 +8,6 @@ public interface AuctionRegisterMapper {
     List<AuctionRegister> getRegisterBidderByAid(int aid);
 
     void register(AuctionRegister register);
+
+    List<AuctionRegister> getRegisterBidderByUid(int uid);
 }

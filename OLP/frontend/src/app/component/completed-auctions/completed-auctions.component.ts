@@ -9,6 +9,7 @@ import {environment} from "../../../environments/environment";
 import {Property} from "../../model/property.model";
 import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-dialog.component";
 import {Auction} from "../../model/auction.model";
+import {CommonService} from "../../service/common.service";
 
 @Component({
   selector: 'app-completed-auctions',
@@ -19,15 +20,15 @@ export class CompletedAuctionsComponent implements OnInit {
   properties: PropertyAuction[] = [];
   isLoading: boolean = false;
 
-  constructor(private router: Router, private http: HttpClient, private userService: UserService, private toastrService: NbToastrService, private dialogService: NbDialogService) {
+  constructor(private router: Router, private http: HttpClient, private userService: UserService, private toastrService: NbToastrService, private dialogService: NbDialogService, private commonService: CommonService) {
   }
 
   ngOnInit(): void {
     this.isLoading = true;
     this.http.post(environment.baseEndpoint + '/my-property', {})
       .subscribe( (data : PropertyAuction[])=> {
-          this.properties = data.filter(p => p.auction != null);
-          this.isLoading = false;
+        this.properties = data.filter(p => p.auction != null && (p.auction.status == 3 || p.auction.status == 4));
+        this.isLoading = false;
         }
       );
   }
@@ -36,22 +37,8 @@ export class CompletedAuctionsComponent implements OnInit {
     this.router.navigate(['/new-property', {}]);
   }
 
-
   address (p: Property) {
     return p.streetNumber + ' ' + p.streetName + ', ' + p.suburb + ' ' + p.state + ' ' + p.postcode;
-  }
-
-  status(status: number) {
-    if(status == 0){
-      return 'Active';
-    }
-    if(status == 1) {
-      return 'Sold';
-    }
-    if(status == 2) {
-      return 'Passed In';
-    }
-    return 'Inactive';
   }
 
   edit(p: Property) {

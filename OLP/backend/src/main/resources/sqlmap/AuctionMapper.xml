@@ -25,6 +25,10 @@
         status=1
     </select>
 
+    <select id="getCompleteAuction" resultMap="AuctionMap" parameterType="java.lang.Integer">
+        select * from t_auction where (uid=#{uid} or winner=#{uid}) and status>2
+    </select>
+
     <select id="getAuctionByPid" resultMap="AuctionMap" parameterType="java.lang.Integer">
         select * from t_auction where pid=#{pid}
     </select>

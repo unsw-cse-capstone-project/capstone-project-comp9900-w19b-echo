@@ -18,4 +18,8 @@
     <select id="getRegisterBidderByAid" resultMap="AuctionRegisterMap" parameterType="java.lang.Integer">
         select * from auction_register where aid=#{aid}
     </select>
+
+    <select id="getRegisterBidderByUid" resultMap="AuctionRegisterMap" parameterType="java.lang.Integer">
+        select * from auction_register where uid=#{uid}
+    </select>
 </mapper>

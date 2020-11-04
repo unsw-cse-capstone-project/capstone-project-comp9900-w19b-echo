@@ -3,22 +3,27 @@
     <div class="container-fluid" >
      <div class="row d-flex justify-content-center"  >
        <div class="card m-2 card-same" [style.width.px]="300" *ngFor="let p of properties; index as i;">
-          <!-- < img className="card-img-top" src={URL.createObjectURL(this.dataURLtoFile(item.img))} alt="..."/> -->
-        <img src="..." class="card-img-top" alt="...">
-         <div class="card-body">
+        <img class="card-img-top" src="http://18.166.59.40/resources/property/property_{{i+1}}.jpg" alt="..."/>
+        <!-- <img src="..." class="card-img-top" alt="..."> -->
+         <div class="card-body"  (click)="detail(p)">
            <!-- <p>{{p.area}}</p> -->
-           <h5 class="card-title card-same-title">{{p.area}}</h5>
-           <h6 class="card-subtitle mb-2">{{p.address}}</h6>
-           <p className="card-text card-same-text">{{p.status}}</p >
-
+           <h5 class="card-title card-same-title"> {{p.area}}</h5>
+           <h6 class="card-subtitle mb-2"><i class="map marker alternate icon"></i>{{p.address}}</h6>
+           <p class="card-text card-same-text">{{p.status}}</p >
+            <div class="info">
+              <p style="display:inline"><i class="bath icon"></i>{{p.bedroom}} </p>
+              <p style="display:inline"><i class="bath icon"></i> {{p.bathroom}} </p>
+              <p style="display:inline"><svg t="1604465584210" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2410" width="20" height="20"><path d="M213.333333 469.333333l64-192h469.333334L810.666667 469.333333m-64 213.333334a64 64 0 0 1-64-64 64 64 0 0 1 64-64 64 64 0 0 1 64 64 64 64 0 0 1-64 64m-469.333334 0A64 64 0 0 1 213.333333 618.666667 64 64 0 0 1 277.333333 554.666667 64 64 0 0 1 341.333333 618.666667 64 64 0 0 1 277.333333 682.666667M807.253333 256c-8.533333-24.746667-32.426667-42.666667-60.586666-42.666667h-469.333334c-28.16 0-52.053333 17.92-60.586666 42.666667L128 512v341.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h42.666666a42.666667 42.666667 0 0 0 42.666667-42.666667v-42.666666h512v42.666666a42.666667 42.666667 0 0 0 42.666667 42.666667h42.666666a42.666667 42.666667 0 0 0 42.666667-42.666667v-341.333333l-88.746667-256z" fill="" p-id="2411"></path></svg>{{p.carport}}</p>
+             </div>
          </div>
          <div class="card-footer">
            <div class="row">
              <div class="col-md-3">
-               <button type="button" class="btn btn-danger">  Bid  </button>
+               <!-- <button type="button" class="btn btn-light" (click)="joinBid(p)">  Bid  </button> -->
+               <button type="button" class="btn btn-light" (click)="open()">  Bid  </button>
              </div>
              <div class="col-md-6">
-               <a href="#" class="card-link">Details</a>
+               <button type="button" class="btn btn-link" (click)="detail(p)">Details</button>
              </div>
            </div>
 

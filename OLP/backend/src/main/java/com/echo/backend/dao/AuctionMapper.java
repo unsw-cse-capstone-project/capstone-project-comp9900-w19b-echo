@@ -23,4 +23,6 @@ public interface AuctionMapper {
     void updateAuction(Auction auction);
 
     void cancelAuction(int aid);
+
+    List<Auction> getCompleteAuction(int uid);
 }

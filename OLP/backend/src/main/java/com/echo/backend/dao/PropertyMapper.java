@@ -31,4 +31,6 @@ public interface PropertyMapper {
     List<Property> getPropertyByPid(int pid);
 
     List<Property> searchAddress(String keyword);
+
+    void deleteProperty(int pid);
 }

@@ -23,12 +23,12 @@
           <tr *ngFor="let p of properties; index as i;" >
             <th scope="row">{{i+1}}</th>
             <td>{{address(p.property)}}</td>
-            <td>{{status(p.property.status)}}</td>
-            <td>{{status(p.property.status)}}</td>
+            <td>{{commonService.getPropertyStatus(p.property.status)}}</td>
+            <td>{{commonService.getAuctionStatus(p.auction?.status)}}</td>
             <td>{{p.auction?.beginTime | date:'dd/MM/yyyy hh:mm a'}}</td>
             <td>{{p.auction?.endTime | date:'dd/MM/yyyy hh:mm a'}}</td>
             <td class="text-sm-right">
-              <ng-container *ngIf="p.auction.status == 1">
+              <ng-container *ngIf="p.auction.status == 2">
                 <button type="button" class="btn btn-outline-primary btn-sm mr-3" (click)="placeBid(p.property, p.auction)">Place Bid</button>
               </ng-container>
               <button type="button" class="btn btn-outline-success btn-sm" (click)="delete(p.property)">Quit Bid</button>

@@ -149,6 +149,10 @@ public class PropertyService {
             exist.setCarport(property.getCarport());
         }
 
+        if(property.getStatus() > 0) {
+            exist.setStatus(property.getStatus());
+        }
+
         propertyMapper.updateProperty(exist);
     }
 
@@ -158,5 +162,10 @@ public class PropertyService {
 
     public List<Property> getPropertyByPid(int pid) {
         return propertyMapper.getPropertyByPid(pid);
+    }
+
+    public void removeProperty(int pid) {
+        // TODO delete related pic
+        propertyMapper.deleteProperty(pid);
     }
 }
