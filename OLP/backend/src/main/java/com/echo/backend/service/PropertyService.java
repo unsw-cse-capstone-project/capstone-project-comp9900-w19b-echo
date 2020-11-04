@@ -149,6 +149,10 @@ public class PropertyService {
             exist.setCarport(property.getCarport());
         }
 
+        if(property.getStatus() > 0) {
+            exist.setStatus(property.getStatus());
+        }
+
         propertyMapper.updateProperty(exist);
     }
 
