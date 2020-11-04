@@ -9,8 +9,13 @@
           <div class="card">
             <div class="card-body">
               <img class="card-img-top" src="http://18.162.53.247/resources/property/property_1.jpg" alt="..."/>
+              <div class="info">
+                <p style="display:inline"><i class="bath icon"></i>{{this.property.bedroom}} </p>
+                <p style="display:inline"><i class="bath icon"></i> {{this.property.bathroom}} </p>
+                <p style="display:inline"><svg t="1604465584210" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2410" width="20" height="20"><path d="M213.333333 469.333333l64-192h469.333334L810.666667 469.333333m-64 213.333334a64 64 0 0 1-64-64 64 64 0 0 1 64-64 64 64 0 0 1 64 64 64 64 0 0 1-64 64m-469.333334 0A64 64 0 0 1 213.333333 618.666667 64 64 0 0 1 277.333333 554.666667 64 64 0 0 1 341.333333 618.666667 64 64 0 0 1 277.333333 682.666667M807.253333 256c-8.533333-24.746667-32.426667-42.666667-60.586666-42.666667h-469.333334c-28.16 0-52.053333 17.92-60.586666 42.666667L128 512v341.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h42.666666a42.666667 42.666667 0 0 0 42.666667-42.666667v-42.666666h512v42.666666a42.666667 42.666667 0 0 0 42.666667 42.666667h42.666666a42.666667 42.666667 0 0 0 42.666667-42.666667v-341.333333l-88.746667-256z" fill="" p-id="2411"></path></svg>{{this.property.carport}}</p>
+               </div>
               <h5>Address</h5>
-              <p class="card-text">{{this.property.address}}</p>
+              <p class="card-text"><i class="map marker alternate icon"></i>{{this.property.address}}</p>
               <h5>Description</h5>
               <p class="card-text">{{this.property.description}}</p>
             </div>
