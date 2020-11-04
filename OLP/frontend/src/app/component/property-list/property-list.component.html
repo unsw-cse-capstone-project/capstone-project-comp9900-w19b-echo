@@ -21,8 +21,8 @@
     <td>{{p.auction?.endTime | date:'dd/MM/yyyy hh:mm a'}}</td>
     <td>{{p.auction?.basePrice | currency}}</td>
     <td class="text-sm-right">
-      <ng-container *ngIf="p.property.status == 1 || p.property.status == 2">
-        <a><nb-icon icon="shopping-cart-outline" status="primary" (click)="sellProperty(p.property, p.auction)" nbTooltip="Sell Property"></nb-icon></a>
+      <ng-container *ngIf="p.property.status == 1 || p.property.status == 2 || p.property.status == 5">
+        <nb-icon  *ngIf="p.property.status == 1" icon="shopping-cart-outline" status="primary" (click)="sellProperty(p.property, p.auction)" nbTooltip="Sell Property"></nb-icon>
         <nb-icon class="ml-3" icon="edit-outline" status="primary" (click)="edit(p.property)" nbTooltip="Edit Property"></nb-icon>
         <nb-icon class="ml-3" icon="trash-outline" status="primary" (click)="delete(p.property)" nbTooltip="Delete Property"></nb-icon>
       </ng-container>

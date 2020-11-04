@@ -24,6 +24,9 @@ export class CommonService {
     if(status == 4) {
       return 'Passed In';
     }
+    if(status == 5) {
+      return 'Not Listed';
+    }
     return '';
   }
 

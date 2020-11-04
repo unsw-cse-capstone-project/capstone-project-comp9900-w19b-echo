@@ -49,7 +49,7 @@ export class ActiveAuctionsComponent implements OnInit {
   delete(p: Property){
     this.dialogService.open(ConfirmationDialogComponent,{
       context: {
-        title: 'Are you sure to quite the bid?',
+        title: 'Are you sure to quit the bid?',
       },
     })
       .onClose.subscribe(data => {
