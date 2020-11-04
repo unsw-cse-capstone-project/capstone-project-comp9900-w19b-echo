@@ -45,6 +45,7 @@
     "@angular-devkit/build-angular": "^0.1001.6",
     "@angular/cli": "~10.1.4",
     "@angular/compiler-cli": "~10.1.4",
+    "@fortawesome/fontawesome": "^1.1.8",
     "@schematics/angular": "~10.1.4",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",

@@ -5,9 +5,9 @@
   </nb-layout-header>
 
   <nb-layout-column>
+    <app-search-bar (search)="searchProperty($event)"></app-search-bar>
     <nb-card  [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success" size="large">
       <nb-card-body>
-        <app-search-bar (search)="searchProperty($event)"></app-search-bar>
         <app-all-property-list [properties]="properties"></app-all-property-list>
       </nb-card-body>
     </nb-card>
