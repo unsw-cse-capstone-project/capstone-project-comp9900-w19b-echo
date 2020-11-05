@@ -38,6 +38,9 @@ public class FileController {
             return new FileUploadResponse(500, "File is empty", null);
         }
 
+        String fileName = file.getOriginalFilename();  // 文件名
+        String suffixName = fileName.substring(fileName.lastIndexOf("."));  // 后缀名
+
         int uid = JWTUtil.getUid(request.getHeader("Authorization"), userService);
 
         String fileDir = "/home/ubuntu/tomcat/apache-tomcat/webapps/resources/user/"+uid;
@@ -46,7 +49,8 @@ public class FileController {
             path.mkdirs();
         }
 
-        File upFile = new File(fileDir + "/avatar");
+        String retFilePath = "/resources/user/" + uid + "/avatar" + suffixName;
+        File upFile = new File(fileDir + "/avatar" + suffixName);
 
         try {
             file.transferTo(upFile);
@@ -55,7 +59,7 @@ public class FileController {
             return new FileUploadResponse(500, e.getMessage(), null);
         }
 
-        return new FileUploadResponse(200, "Upload success", null);
+        return new FileUploadResponse(200, "Upload success", retFilePath);
     }
 
     @RequestMapping(value = "/uploadPropertyPic", method = RequestMethod.POST)
@@ -66,9 +70,12 @@ public class FileController {
             return new FileUploadResponse(500, "File is empty", null);
         }
 
-        int uid = JWTUtil.getUid(request.getHeader("Authorization"), userService);
+        String fileName = file.getOriginalFilename();  // 文件名
+        String suffixName = fileName.substring(fileName.lastIndexOf("."));  // 后缀名
+
         Property property = propertyRequest.getProperty();
         int pid = property.getPid();
+
 
         String fileDir = "/home/ubuntu/tomcat/apache-tomcat/webapps/resources/property/"+pid;
         File path = new File(fileDir);
@@ -77,9 +84,11 @@ public class FileController {
         }
 
         Random ra =new Random();
+        int ran = ra.nextInt(1000);
 
+        File upFile = new File(fileDir + "/property_" + ran + suffixName);
 
-        File upFile = new File(fileDir + "/property_" + ra.nextInt(1000));
+        String retFilePath = "/resources/property/" + pid + "/property_" + ran + suffixName;
 
         try {
             file.transferTo(upFile);
@@ -88,7 +97,7 @@ public class FileController {
             return new FileUploadResponse(500, e.getMessage(), null);
         }
 
-        return new FileUploadResponse(200, "Upload success", null);
+        return new FileUploadResponse(200, "Upload success", retFilePath);
     }
 
 }
