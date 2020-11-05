@@ -10,14 +10,15 @@ public class FileUtil {
 
     static public List<Property> generatePropertyPic(List<Property> properties) {
 
-        String prefix = "/resources/property/";
+        String pathPrefic = "/home/ubuntu/tomcat/apache-tomcat/webapps/resources/property/";
+        String retPrefix = "/resources/property/";
         for (Property pro : properties) {
             try {
-                File file = new File(prefix + pro.getPid());
+                File file = new File(pathPrefic + pro.getPid());
                 File[] files = file.listFiles();
                 List<String> picUrl = new ArrayList<>();
                 for (File f : files) {
-                    picUrl.add(prefix + f.getName());
+                    picUrl.add(retPrefix + pro.getPid() + "/" + f.getName());
                 }
                 pro.setPicUrl(picUrl);
             } catch (Exception ignored) {
