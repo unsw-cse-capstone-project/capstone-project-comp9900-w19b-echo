@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
+import java.util.List;
 
 @ApiModel
 public class Property {
@@ -70,6 +71,16 @@ public class Property {
 
     @ApiModelProperty(value = "Description by officer", required = false)
     private String remark;
+
+    private List<String> picUrl;
+
+    public List<String> getPicUrl() {
+        return picUrl;
+    }
+
+    public void setPicUrl(List<String> picUrl) {
+        this.picUrl = picUrl;
+    }
 
     public int getPid() {
         return pid;

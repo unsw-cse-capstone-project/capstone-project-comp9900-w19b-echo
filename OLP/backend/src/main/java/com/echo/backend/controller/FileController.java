@@ -84,7 +84,7 @@ public class FileController {
         }
 
         Random ra =new Random();
-        int ran = ra.nextInt(1000);
+        int ran = ra.nextInt(10000);
 
         File upFile = new File(fileDir + "/property_" + ran + suffixName);
 

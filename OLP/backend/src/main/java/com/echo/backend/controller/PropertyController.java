@@ -6,6 +6,7 @@ import com.echo.backend.dto.*;
 import com.echo.backend.service.AuctionService;
 import com.echo.backend.service.PropertyService;
 import com.echo.backend.service.UserService;
+import com.echo.backend.utils.FileUtil;
 import com.echo.backend.utils.JWTUtil;
 import com.echo.backend.utils.PagingUtil;
 import io.swagger.annotations.Api;
@@ -58,7 +59,7 @@ public class PropertyController {
     //@ApiIgnore
     public List<Property> getAllProperty(@RequestBody SearchPropertyRequest searchRequest) {
 
-        return PagingUtil.afterPaging(propertyService.getAllProperty(), searchRequest.getPage(), searchRequest.getDataNum());
+        return PagingUtil.afterPaging(FileUtil.generatePropertyPic(propertyService.getAllProperty()), searchRequest.getPage(), searchRequest.getDataNum());
     }
 
     @RequestMapping(value = "/my-property", method = RequestMethod.POST)
@@ -66,7 +67,7 @@ public class PropertyController {
     public List<PropertyAuction> getMyProperty(HttpServletRequest request) {
         List<PropertyAuction> propertyAuctions = new ArrayList<>();
         int uid = JWTUtil.getUid(request.getHeader("Authorization"), userService);
-        List<Property> properties = propertyService.getPropertyByUid(uid);
+        List<Property> properties = FileUtil.generatePropertyPic(propertyService.getPropertyByUid(uid));
         for(Property p : properties){
             PropertyAuction propertyAuction = new PropertyAuction();
             propertyAuction.setProperty(p);
@@ -84,14 +85,14 @@ public class PropertyController {
     public List<Property> getOthersProperty(@RequestBody SearchPropertyRequest request) {
 
         int uid = request.getUid();
-        return propertyService.getPropertyByUid(uid);
+        return FileUtil.generatePropertyPic(propertyService.getPropertyByUid(uid));
     }
 
     @RequestMapping(value = "/view-property-pid", method = RequestMethod.POST)
     @RequiresAuthentication
     public List<Property> viewPropertyByPid(@RequestBody SearchPropertyRequest request) {
 
-        return propertyService.getPropertyByPid(request.getPid());
+        return FileUtil.generatePropertyPic(propertyService.getPropertyByPid(request.getPid()));
     }
 
     @RequestMapping(value = "/update-property", method = RequestMethod.POST)
@@ -116,7 +117,7 @@ public class PropertyController {
     //@RequiresAuthentication
     public List<Property> searchPropertyFilter(@RequestBody SearchPropertyRequest searchRequest) {
 
-        List<Property> result = propertyService.searchPropertyFilter(searchRequest.getProperty());
+        List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyFilter(searchRequest.getProperty()));
         return PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
     }
 
@@ -124,7 +125,7 @@ public class PropertyController {
     //@RequiresAuthentication
     public List<Property> searchPropertyPosition(@RequestBody SearchPropertyRequest searchRequest) {
 
-        List<Property> result = propertyService.searchPropertyPosition(searchRequest.getNortheast(), searchRequest.getSouthwest());
+        List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyPosition(searchRequest.getNortheast(), searchRequest.getSouthwest()));
         return PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
     }
 
@@ -132,7 +133,7 @@ public class PropertyController {
     //@RequiresAuthentication
     public List<Property> searchPropertyVague(@RequestBody SearchPropertyRequest searchRequest) {
 
-        List<Property> result = propertyService.searchPropertyVague(searchRequest.getKeyword());
+        List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyVague(searchRequest.getKeyword()));
         return PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
     }
 
