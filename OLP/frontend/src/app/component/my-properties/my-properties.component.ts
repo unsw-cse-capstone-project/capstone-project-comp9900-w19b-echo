@@ -7,6 +7,7 @@ import {NbToastrService} from "@nebular/theme";
 import {environment} from "../../../environments/environment";
 import {Property} from "../../model/property.model";
 import {PropertyAuction} from "../../model/property-auction.model";
+import {NbComponentStatus} from "@nebular/theme/components/component-status";
 
 @Component({
   selector: 'app-my-properties',
@@ -32,5 +33,23 @@ export class MyPropertiesComponent implements OnInit {
 
   addProperty() {
     this.router.navigate(['/new-property', {}]);
+  }
+
+  deleteProperty($event) {
+    let prop = $event;
+    this.isLoading = true;
+    this.http.post(environment.baseEndpoint + '/remove-property', {property: prop})
+      .subscribe((data: any) => {
+          if(data) {
+            this.showToast('success', 'Property - Property is removed.');
+            this.properties = this.properties.filter(p1 => p1.property.pid != prop.pid);
+            this.isLoading = false;
+          }
+         }
+      );
+  }
+
+  showToast(status: NbComponentStatus, title: string) {
+    this.toastrService.show(status, title, { status });
   }
 }

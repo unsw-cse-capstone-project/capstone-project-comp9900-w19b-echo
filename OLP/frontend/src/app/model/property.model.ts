@@ -16,8 +16,5 @@ export class Property {
   bidEndDate: Date;
   city: string;
   pid: number;
-
-  address () {
-    return this.streetNumber + ' ' + this.streetName + ', ' + this.suburb + ' ' + this.state + ' ' + this.postcode;
-  }
+  address: string;
 }

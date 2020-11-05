@@ -112,6 +112,19 @@ public class AuctionService {
         return ret;
     }
 
+    public List<Auction> getActiveAuctionByUid(int uid) {
+        List<AuctionRegister> registers = auctionRegisterMapper.getRegisterBidderByUid(uid);
+
+        List<Auction> ret = new ArrayList<>();
+        for (AuctionRegister re:registers){
+            Auction auction = auctionMapper.getAuctionByPid(re.getPid()).get(0);
+            if(auction.getStatus() == 1 || auction.getStatus() == 2)
+                ret.add(auction);
+        }
+
+        return ret;
+    }
+
     public List<Auction> getCompleteAuction(int uid) {
         return auctionMapper.getCompleteAuction(uid);
     }
