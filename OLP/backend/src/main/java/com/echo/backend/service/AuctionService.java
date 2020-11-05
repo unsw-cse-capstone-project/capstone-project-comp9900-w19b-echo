@@ -44,7 +44,10 @@ public class AuctionService {
 
     public void addAuction(Auction auction) {
 
-        auction.setEndTime(DateUtils.addHours(auction.getBeginTime(), 12));
+        if (null == auction.getEndTime())
+        {
+            auction.setEndTime(DateUtils.addHours(auction.getBeginTime(), 12));
+        }
         auction.setStatus(1);
 
         auctionMapper.createAuction(auction);

@@ -16,6 +16,8 @@ logging:
     name: ../logs/run.out
 
 spring:
+  jackson:
+    time-zone: GMT+11
   datasource:
     url: jdbc:mysql://18.163.195.2:3306/onpro?characterEncoding=utf8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
