@@ -33,4 +33,6 @@ public interface PropertyMapper {
     List<Property> searchAddress(String keyword);
 
     void deleteProperty(int pid);
+
+    List<Property> getMyFavorite(int uid);
 }

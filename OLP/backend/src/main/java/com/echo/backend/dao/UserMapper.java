@@ -14,7 +14,6 @@ public interface UserMapper {
 
     void verifyUser(User user);
 
-    List<User> selectUserById(int id);
     List<User> selectUserByName(String userName);
     List<User> selectUserByEmail(String email);
 

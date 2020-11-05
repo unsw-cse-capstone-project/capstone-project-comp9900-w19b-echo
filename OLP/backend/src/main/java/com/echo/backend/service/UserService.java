@@ -1,9 +1,13 @@
 package com.echo.backend.service;
 
 import com.echo.backend.dao.PaymentDetailMapper;
+import com.echo.backend.dao.PropertyMapper;
+import com.echo.backend.dao.UserFavoriteMapper;
 import com.echo.backend.dao.UserMapper;
 import com.echo.backend.domain.PaymentDetail;
+import com.echo.backend.domain.Property;
 import com.echo.backend.domain.User;
+import com.echo.backend.domain.UserFavorite;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,10 +21,16 @@ public class UserService {
 
     private final PaymentDetailMapper paymentDetailMapper;
 
+    private final UserFavoriteMapper userFavoriteMapper;
+
+    private final PropertyMapper propertyMapper;
+
     @Autowired
-    public UserService(UserMapper userMapper, PaymentDetailMapper paymentDetailMapper) {
+    public UserService(UserMapper userMapper, PaymentDetailMapper paymentDetailMapper, UserFavoriteMapper userFavoriteMapper, PropertyMapper propertyMapper) {
         this.userMapper = userMapper;
         this.paymentDetailMapper = paymentDetailMapper;
+        this.userFavoriteMapper = userFavoriteMapper;
+        this.propertyMapper = propertyMapper;
     }
 
     public User getUserByEmail(String email){
@@ -78,5 +88,25 @@ public class UserService {
 
     public void updateUserAddressBySerial(PaymentDetail paymentDetail) {
         paymentDetailMapper.updateUserAddress(paymentDetail);
+    }
+
+    public void addFavorite(int uid, int pid) {
+        UserFavorite favorite = new UserFavorite();
+        favorite.setUid(uid);
+        favorite.setPid(pid);
+        favorite.setAddTime(new Date());
+        userFavoriteMapper.addFavorite(favorite);
+    }
+
+    public void cancelFavorite(int uid, int pid) {
+        UserFavorite favorite = new UserFavorite();
+        favorite.setUid(uid);
+        favorite.setPid(pid);
+        userFavoriteMapper.removeFavorite(favorite);
+    }
+
+    public List<Property> getMyFavorite(int uid) {
+
+        return propertyMapper.getMyFavorite(uid);
     }
 }

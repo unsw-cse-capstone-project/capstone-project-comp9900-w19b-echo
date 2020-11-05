@@ -2,7 +2,9 @@ package com.echo.backend.controller;
 
 
 import com.echo.backend.domain.PaymentDetail;
+import com.echo.backend.domain.Property;
 import com.echo.backend.domain.User;
+import com.echo.backend.domain.UserFavorite;
 import com.echo.backend.dto.*;
 import com.echo.backend.exception.UnauthorizedException;
 import com.echo.backend.service.UserService;
@@ -189,6 +191,31 @@ public class UserController {
 
         userService.deletePaymentBySerial(request.getPaymentDetail());
         return new UpdatePaymentResponse(200, "update payment success", null);
+    }
+
+    @RequestMapping(value = "/add-favorite", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public AddUserFavoriteResponse addFavorite(@RequestBody AddUserFavoriteRequest request, HttpServletRequest hRequest){
+
+        userService.addFavorite(request.getUid(), request.getPid());
+
+        return new AddUserFavoriteResponse(200, "Add favorite success", null);
+    }
+
+    @RequestMapping(value = "/cancel-favorite", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public CancelUserFavoriteResponse cancelFavorite(@RequestBody AddUserFavoriteRequest request, HttpServletRequest hRequest){
+
+        userService.cancelFavorite(request.getUid(), request.getPid());
+
+        return new CancelUserFavoriteResponse(200, "Cancel favorite success", null);
+    }
+
+    @RequestMapping(value = "/view-favorite", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public List<Property> viewMyFavorite(@RequestBody SearchFavoriteRequest request, HttpServletRequest hRequest){
+
+        return PagingUtil.afterPaging(userService.getMyFavorite(request.getUid()), request.getPage(), request.getDataNum());
     }
 
     @GetMapping("/require_auth")

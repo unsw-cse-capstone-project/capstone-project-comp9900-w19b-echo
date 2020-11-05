@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.echo.backend.dao.UserFavoriteMapper" >
+    <resultMap id="UserFavoriteMap" type="com.echo.backend.domain.UserFavorite" >
+        <result column="uid" property="uid" jdbcType="INTEGER" />
+        <result column="pid" property="uid" jdbcType="INTEGER" />
+        <result column="add_time" property="addTime"/>
+        <result column="serial" property="serial" jdbcType="INTEGER" />
+    </resultMap>
+
+    <insert id="addFavorite" parameterType="com.echo.backend.domain.UserFavorite" useGeneratedKeys="true" keyProperty="serial">
+        insert into user_favorite (uid, pid, add_time)
+        values(#{uid},#{pid},#{addTime})
+    </insert>
+
+    <delete id="removeFavorite" parameterType="com.echo.backend.domain.UserFavorite">
+        delete user_favorite where uid=#{uid} and pid=#{pid}
+    </delete>
+
+    <select id="viewMyFavorite" resultMap="UserFavoriteMap" parameterType="java.lang.Integer" >
+        select * from user_favorite where uid = #{uid}
+    </select>
+
+</mapper>

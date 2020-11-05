@@ -32,10 +32,6 @@
         where uid=#{uid}
     </update>
 
-    <select id="selectUserById" resultMap="UserMap" parameterType="java.lang.Integer" >
-        select * from t_user where uid = #{id}
-    </select>
-
     <select id="selectUserByName" resultMap="UserMap" parameterType="java.lang.String" >
         select * from t_user where username = #{userName}
     </select>

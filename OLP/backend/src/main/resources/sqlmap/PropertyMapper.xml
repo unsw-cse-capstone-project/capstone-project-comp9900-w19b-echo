@@ -128,4 +128,8 @@
     <delete id="deleteProperty" parameterType="java.lang.Integer">
         delete from t_property where pid=#{pid}
     </delete>
+
+    <select id="getMyFavorite" resultMap="PropertyMap" parameterType="java.lang.Integer">
+        select b.* from user_favorite a join t_property b on a.pid=b.pid where a.uid=#{uid};
+    </select>
 </mapper>

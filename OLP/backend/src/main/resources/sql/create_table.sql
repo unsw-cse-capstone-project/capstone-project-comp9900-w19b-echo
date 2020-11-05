@@ -56,6 +56,7 @@ create index tap_index on t_auction(pid);
 create table user_favorite(
     uid int not null,
     pid int not null,
+    add_time datetime,
     serial int auto_increment primary key
 );
 create index uf_index on user_favorite(uid);
