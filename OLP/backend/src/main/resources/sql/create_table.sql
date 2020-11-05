@@ -114,6 +114,11 @@ create table user_payment(
     expire_year int not null,
     cvv int not null,
     add_time datetime not null,
+    street_address varchar(100) not null,
+    suburb varchar(30) not null,
+    postcode varchar(15) not null,
+    state varchar(20) not null,
+    country varchar(30) not null,
     serial int auto_increment primary key
 );
 create index up_index on user_payment(uid);

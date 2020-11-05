@@ -175,6 +175,14 @@ public class UserController {
         return new UpdatePaymentResponse(200, "update payment success", null);
     }
 
+    @RequestMapping(value = "/update-user-address", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public UpdatePaymentResponse updateUserAddress(@RequestBody AddPaymentDetailRequest request, HttpServletRequest hRequest){
+
+        userService.updateUserAddressBySerial(request.getPaymentDetail());
+        return new UpdatePaymentResponse(200, "update payment success", null);
+    }
+
     @RequestMapping(value = "/delete-payment", method = RequestMethod.POST)
     @RequiresAuthentication
     public UpdatePaymentResponse deletePayment(@RequestBody AddPaymentDetailRequest request, HttpServletRequest hRequest){

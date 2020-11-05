@@ -75,4 +75,8 @@ public class UserService {
     public void deletePaymentBySerial(PaymentDetail paymentDetail) {
         paymentDetailMapper.deletePaymentDetail(paymentDetail.getSerial());
     }
+
+    public void updateUserAddressBySerial(PaymentDetail paymentDetail) {
+        paymentDetailMapper.updateUserAddress(paymentDetail);
+    }
 }

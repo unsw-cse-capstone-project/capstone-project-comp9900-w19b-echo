@@ -9,12 +9,19 @@
         <result column="expire_year" property="expireYear" jdbcType="INTEGER" />
         <result column="cvv" property="cvv" jdbcType="INTEGER" />
         <result column="add_time" property="addTime" />
+        <result column="street_address" property="streetAddress" jdbcType="VARCHAR" />
+        <result column="suburb" property="suburb" jdbcType="VARCHAR" />
+        <result column="postcode" property="postcode" jdbcType="VARCHAR" />
+        <result column="state" property="state" jdbcType="VARCHAR" />
+        <result column="country" property="country" jdbcType="VARCHAR" />
         <result column="serial" property="serial" jdbcType="INTEGER" />
     </resultMap>
 
     <insert id="addPaymentDetail" parameterType="com.echo.backend.domain.PaymentDetail" useGeneratedKeys="true" keyProperty="serial">
-        insert into user_payment (uid, name_on_card, card_number, expire_month, expire_year, cvv, add_time)
-        values(#{uid},#{nameOnCard},#{cardNumber},#{expireMonth},#{expireYear},#{cvv},#{addTime})
+        insert into user_payment (uid, name_on_card, card_number, expire_month, expire_year, cvv, add_time,
+        street_address, suburb, postcode, state, country)
+        values(#{uid},#{nameOnCard},#{cardNumber},#{expireMonth},#{expireYear},#{cvv},#{addTime},
+        #{streetAddress},#{suburb},#{postcode},#{state},#{country})
     </insert>
 
     <select id="getPaymentDetailByUid" resultMap="PaymentDetailMap" parameterType="java.lang.Integer">
@@ -24,6 +31,12 @@
     <update id="updatePaymentDetail" parameterType="com.echo.backend.domain.PaymentDetail">
         update user_payment set name_on_card=#{nameOnCard}, card_number=#{cardNumber}, expire_month=#{expireMonth},
         expire_year=#{expireYear}, cvv=#{cvv}
+        where serial=#{serial}
+    </update>
+
+    <update id="updateUserAddress" parameterType="com.echo.backend.domain.PaymentDetail">
+        update user_payment set street_address=#{streetAddress}, suburb=#{suburb}, postcode=#{postcode},
+        state=#{state}, country=#{country}
         where serial=#{serial}
     </update>
 

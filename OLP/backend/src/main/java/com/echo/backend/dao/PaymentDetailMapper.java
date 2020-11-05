@@ -13,4 +13,6 @@ public interface PaymentDetailMapper {
     void updatePaymentDetail(PaymentDetail paymentDetail);
 
     void deletePaymentDetail(int serial);
+
+    void updateUserAddress(PaymentDetail paymentDetail);
 }
