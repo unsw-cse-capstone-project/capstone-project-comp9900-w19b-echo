@@ -10,7 +10,7 @@
         <div class="text-lg-right">
           <button class="btn btn-outline-primary btn-sm" (click)="addProperty()">Add Property</button>
         </div>
-        <app-property-list [properties]="properties"></app-property-list>
+        <app-property-list [properties]="properties" (delete)="deleteProperty($event)"></app-property-list>
       </nb-card-body>
     </nb-card>
   </nb-layout-column>

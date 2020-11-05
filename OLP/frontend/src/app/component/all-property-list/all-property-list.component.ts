@@ -83,6 +83,8 @@ export class AllPropertyListComponent implements OnInit {
     this.router.navigate(['/detail']);
   }
 
-
+  address (p: Property) {
+    return p.streetNumber + ' ' + p.streetName + ', ' + p.suburb + ' ' + p.state + ' ' + p.postcode;
+  }
 
 }

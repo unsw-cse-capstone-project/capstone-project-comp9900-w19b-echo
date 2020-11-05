@@ -25,9 +25,9 @@ export class ActiveAuctionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading = true;
-    this.http.post(environment.baseEndpoint + '/my-property', {})
+    this.http.post(environment.baseEndpoint + '/my-active-auction', {uid: this.userService.user?.uid})
       .subscribe( (data : PropertyAuction[])=> {
-          this.properties = data.filter(p => p.auction != null && (p.auction.status == 1 || p.auction.status == 2));
+          this.properties = data;
           this.isLoading = false;
         }
       );

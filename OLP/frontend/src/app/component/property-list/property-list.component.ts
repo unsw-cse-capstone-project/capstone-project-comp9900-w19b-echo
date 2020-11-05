@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Property} from "../../model/property.model";
 import {Router} from "@angular/router";
 import {UserService} from "../../service/user.service";
@@ -7,6 +7,9 @@ import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-d
 import {PropertyAuction} from "../../model/property-auction.model";
 import {Auction} from "../../model/auction.model";
 import {CommonService} from "../../service/common.service";
+import {environment} from "../../../environments/environment";
+import {HttpClient} from "@angular/common/http";
+import {NbComponentStatus} from "@nebular/theme/components/component-status";
 
 @Component({
   selector: 'app-property-list',
@@ -15,8 +18,9 @@ import {CommonService} from "../../service/common.service";
 })
 export class PropertyListComponent implements OnInit {
   @Input() properties: PropertyAuction[];
+  @Output() delete: EventEmitter<any> = new EventEmitter();
 
-  constructor(private router: Router, private userService: UserService, private dialogService: NbDialogService, private commonService: CommonService) { }
+  constructor(private router: Router, private http: HttpClient, private userService: UserService, private dialogService: NbDialogService, private commonService: CommonService) { }
 
   ngOnInit(): void {
   }
@@ -30,7 +34,7 @@ export class PropertyListComponent implements OnInit {
     this.router.navigate(['/new-property', {pid: p.pid}]);
   }
 
-  delete(p: Property){
+  deleteProperty(p: Property){
     this.dialogService.open(ConfirmationDialogComponent,{
       context: {
         title: 'Are you sure to delete this property?',
@@ -38,7 +42,7 @@ export class PropertyListComponent implements OnInit {
     })
       .onClose.subscribe(data => {
         if(data == true) {
-          this.properties = this.properties.filter(p1 => p1.property.pid != p.pid);
+          this.delete.emit(p);
         }
       });
   }

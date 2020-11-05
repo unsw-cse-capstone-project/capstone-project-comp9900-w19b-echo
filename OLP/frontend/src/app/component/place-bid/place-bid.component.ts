@@ -56,7 +56,6 @@ export class PlaceBidComponent implements OnInit {
     this.isLoading = true;
     this.http.post(environment.baseEndpoint + '/place-bid', this.bid)
       .subscribe((p: Property) => {
-          this.property = p;
           this.showToast('success');
           this.isLoading = false;
         }

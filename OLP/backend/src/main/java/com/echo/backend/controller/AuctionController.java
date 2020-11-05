@@ -3,17 +3,19 @@ package com.echo.backend.controller;
 import com.echo.backend.domain.Auction;
 import com.echo.backend.domain.AuctionBid;
 import com.echo.backend.domain.AuctionRegister;
+import com.echo.backend.domain.Property;
 import com.echo.backend.dto.*;
 import com.echo.backend.service.AuctionService;
+import com.echo.backend.service.PropertyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.time.DateUtils;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -24,9 +26,12 @@ public class AuctionController {
 
     private final AuctionService auctionService;
 
+    private final PropertyService propertyService;
+
     @Autowired
-    public AuctionController(AuctionService auctionService) {
+    public AuctionController(AuctionService auctionService, PropertyService propertyService) {
         this.auctionService = auctionService;
+        this.propertyService = propertyService;
     }
 
     @ApiOperation(value="Create auction", notes="Create auction")
@@ -87,6 +92,24 @@ public class AuctionController {
     public List<Auction> viewActiveAuction(@RequestBody SearchAuctionRequest request) {
 
         return auctionService.getActiveAuction(request.getUid());
+    }
+
+    @ApiOperation(value="view active auction", notes="view active auction")
+    @RequestMapping(value = "/my-active-auction", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public List<PropertyAuction> viewMyActiveAuction(@RequestBody SearchAuctionRequest request) {
+        List<PropertyAuction> propertyAuctions = new ArrayList<>();
+        List<Auction> auctions = auctionService.getActiveAuctionByUid(request.getUid());
+        for (Auction auction: auctions) {
+            PropertyAuction propertyAuction = new PropertyAuction();
+            propertyAuction.setAuction(auction);
+            List<Property> properties = propertyService.getPropertyByPid(auction.getPid());
+            if(properties != null && properties.size() > 0) {
+                propertyAuction.setProperty(properties.get(0));
+            }
+            propertyAuctions.add(propertyAuction);
+        }
+        return propertyAuctions;
     }
 
     @ApiOperation(value="view complete auction", notes="view complete auction")
