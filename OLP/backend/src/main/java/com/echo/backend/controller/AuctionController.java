@@ -98,9 +98,21 @@ public class AuctionController {
     @RequestMapping(value = "/my-active-auction", method = RequestMethod.POST)
     @RequiresAuthentication
     public List<PropertyAuction> viewMyActiveAuction(@RequestBody SearchAuctionRequest request) {
-        List<PropertyAuction> propertyAuctions = new ArrayList<>();
         List<Auction> auctions = auctionService.getActiveAuctionByUid(request.getUid());
-        for (Auction auction: auctions) {
+        return getPropertyAuctions(auctions);
+    }
+
+    @ApiOperation(value="view complete auction", notes="view complete auction")
+    @RequestMapping(value = "/view-complete-auction", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public List<PropertyAuction> viewCompleteAuction(@RequestBody SearchAuctionRequest request) {
+        List<Auction> completeAuction = auctionService.getCompleteAuction(request.getUid());
+        return getPropertyAuctions(completeAuction);
+    }
+
+    private List<PropertyAuction> getPropertyAuctions(List<Auction> completeAuction) {
+        List<PropertyAuction> propertyAuctions = new ArrayList<>();
+        for (Auction auction : completeAuction) {
             PropertyAuction propertyAuction = new PropertyAuction();
             propertyAuction.setAuction(auction);
             List<Property> properties = propertyService.getPropertyByPid(auction.getPid());
@@ -110,14 +122,6 @@ public class AuctionController {
             propertyAuctions.add(propertyAuction);
         }
         return propertyAuctions;
-    }
-
-    @ApiOperation(value="view complete auction", notes="view complete auction")
-    @RequestMapping(value = "/view-complete-auction", method = RequestMethod.POST)
-    @RequiresAuthentication
-    public List<Auction> viewCompleteAuction(@RequestBody SearchAuctionRequest request) {
-
-        return auctionService.getCompleteAuction(request.getUid());
     }
 
 

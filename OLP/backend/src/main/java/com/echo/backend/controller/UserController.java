@@ -1,12 +1,10 @@
 package com.echo.backend.controller;
 
 
-import com.echo.backend.domain.PaymentDetail;
-import com.echo.backend.domain.Property;
-import com.echo.backend.domain.User;
-import com.echo.backend.domain.UserFavorite;
+import com.echo.backend.domain.*;
 import com.echo.backend.dto.*;
 import com.echo.backend.exception.UnauthorizedException;
+import com.echo.backend.service.AuctionService;
 import com.echo.backend.service.UserService;
 import com.echo.backend.utils.JWTUtil;
 import com.echo.backend.utils.PagingUtil;
@@ -22,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -32,9 +31,12 @@ public class UserController {
     private Logger logger = LoggerFactory.getLogger(UserController.class);
     private UserService userService;
 
+    private AuctionService auctionService;
+
     @Autowired
-    public void setService(UserService userService) {
+    public void setService(UserService userService, AuctionService auctionService) {
         this.userService = userService;
+        this.auctionService = auctionService;
     }
 
     @ApiOperation(value="User login", notes="Login with email")
@@ -213,9 +215,19 @@ public class UserController {
 
     @RequestMapping(value = "/view-favorite", method = RequestMethod.POST)
     @RequiresAuthentication
-    public List<Property> viewMyFavorite(@RequestBody SearchFavoriteRequest request, HttpServletRequest hRequest){
-
-        return PagingUtil.afterPaging(userService.getMyFavorite(request.getUid()), request.getPage(), request.getDataNum());
+    public List<PropertyAuction> viewMyFavorite(@RequestBody SearchFavoriteRequest request, HttpServletRequest hRequest){
+        List<Property> properties = PagingUtil.afterPaging(userService.getMyFavorite(request.getUid()), request.getPage(), request.getDataNum());
+        List<PropertyAuction> propertyAuctions = new ArrayList<>();
+        for(Property p : properties){
+            PropertyAuction propertyAuction = new PropertyAuction();
+            propertyAuction.setProperty(p);
+            List<Auction> auctions = auctionService.getAuctionByPid(p.getPid());
+            if(auctions != null && auctions.size() > 0) {
+                propertyAuction.setAuction(auctions.get(0));
+            }
+            propertyAuctions.add(propertyAuction);
+        }
+        return propertyAuctions;
     }
 
     @GetMapping("/require_auth")
