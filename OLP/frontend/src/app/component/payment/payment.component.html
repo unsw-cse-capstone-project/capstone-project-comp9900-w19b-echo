@@ -45,6 +45,6 @@
     <input type="email" class="form-control" id="cvv" name="cvv"  (keypress)="numberOnly($event)" maxlength="4" [(ngModel)]="this.paymentDetail.cvv" placeholder="CVV" required>
   </div>
   <div class="form-group col-lg-4">
-    <button type="submit" class="btn btn-primary" (click)="this.save()">Save</button>
+    <button type="submit" class="btn btn-primary" (click)="this.savePayment()">Save</button>
   </div>
 </form>

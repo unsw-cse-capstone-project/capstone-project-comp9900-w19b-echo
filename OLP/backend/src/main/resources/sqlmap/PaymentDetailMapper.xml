@@ -30,7 +30,7 @@
 
     <update id="updatePaymentDetail" parameterType="com.echo.backend.domain.PaymentDetail">
         update user_payment set name_on_card=#{nameOnCard}, card_number=#{cardNumber}, expire_month=#{expireMonth},
-        expire_year=#{expireYear}, cvv=#{cvv}
+        expire_year=#{expireYear}, cvv=#{cvv}, street_address=#{streetAddress}, suburb=#{suburb}, postcode=#{postcode}, state=#{state}, country=#{country}
         where serial=#{serial}
     </update>
 

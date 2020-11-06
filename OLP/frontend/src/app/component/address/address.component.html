@@ -1,19 +1,19 @@
-<form>
+<form [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success">
   <div class="form-group col-lg-4">
     <label for="streetAddress">Street address</label>
-    <input type="input" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street Address" required>
+    <input type="input" class="form-control" id="streetAddress" name="streetAddress" [(ngModel)]="this.paymentDetail.streetAddress" placeholder="Street Address" required>
   </div>
   <div class="form-group col-lg-4">
     <label for="suburb">Suburb</label>
-    <input type="input" class="form-control" id="suburb" name="suburb" placeholder="Suburb" required>
+    <input type="input" class="form-control" id="suburb" name="suburb"  [(ngModel)]="this.paymentDetail.suburb" placeholder="Suburb" required>
   </div>
   <div class="form-group col-lg-4">
     <label for="postcode">Postcode</label>
-    <input type="number" class="form-control" id="postcode" name="postcode" placeholder="Postcode" required>
+    <input type="number" class="form-control" id="postcode" name="postcode" [(ngModel)]="this.paymentDetail.postcode" placeholder="Postcode" required>
   </div>
   <div class="form-group col-lg-4">
     <label for="state">State</label>
-    <select class="form-control" id="state">
+    <select class="form-control" id="state" name="state" [(ngModel)]="this.paymentDetail.state">
       <option>Choose</option>
       <option>ACT</option>
       <option>NSW</option>
@@ -27,12 +27,12 @@
   </div>
   <div class="form-group col-lg-4">
     <label for="country">Country</label>
-    <select class="form-control" id="country">
+    <select class="form-control" id="country" name="country" [(ngModel)]="this.paymentDetail.country">
       <option>Choose</option>
       <option>Australia</option>
     </select>
   </div>
   <div class="form-group col-lg-4">
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary" (click)="this.saveAddress()">Save</button>
   </div>
 </form>
