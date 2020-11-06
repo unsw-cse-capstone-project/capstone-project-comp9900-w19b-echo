@@ -45,3 +45,17 @@ Week 6
 2. Implemented My Properties functions;
 3. Implemented Dashboard cards;
 
+Week 7
+
+1. Implemented Active Auctions;
+2. Implemented Completed Auctions;
+3. Implemented Interested Properties;
+
+Week 8
+
+1. Implemented Participate in Bid;
+2. Implemented Join in Bid;
+3. Implemented property add, update, delete;
+4. Implemented setting up auctions;
+5. Integrated backend API for dashboard
+

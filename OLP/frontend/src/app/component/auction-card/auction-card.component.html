@@ -1,14 +1,14 @@
-<nb-card status="info">
+<nb-card status="info" [nbSpinner]="isLoading" nbSpinnerStatus="success" >
   <nb-card-header class="text-center">Auctions</nb-card-header>
   <nb-card-body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col"><app-card-item [heading]="'Active'" [value]="'3'" [styleClass]="'text-info'"></app-card-item></div>
-        <div class="col"><app-card-item [heading]="'Inactive'" [value]="'2'" [styleClass]="'text-danger'"></app-card-item></div>
+        <div class="col"><app-card-item [heading]="'Started'" [value]="getCount(this.activeProperties, [2])" [styleClass]="'text-info'"></app-card-item></div>
+        <div class="col"><app-card-item [heading]="'Not Started'" [value]="getCount(this.activeProperties, [1])" [styleClass]="'text-danger'"></app-card-item></div>
       </div>
       <div class="row">
-        <div class="col"><app-card-item [heading]="'Sold'" [value]="'3'" [styleClass]="'text-success'"></app-card-item></div>
-        <div class="col"><app-card-item [heading]="'Passed'" [value]="'1'" [styleClass]="'text-warning'"></app-card-item></div>
+        <div class="col"><app-card-item [heading]="'Success'" [value]="getCount(this.completedProperties, [4])" [styleClass]="'text-success'"></app-card-item></div>
+        <div class="col"><app-card-item [heading]="'Failed'" [value]="getCount(this.completedProperties, [3])" [styleClass]="'text-warning'"></app-card-item></div>
       </div>
     </div>
   </nb-card-body>

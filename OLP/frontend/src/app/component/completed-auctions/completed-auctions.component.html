@@ -22,7 +22,7 @@
           <tbody>
           <tr *ngFor="let p of properties; index as i;" >
             <th scope="row">{{i+1}}</th>
-            <td>{{address(p.property)}}</td>
+            <td>{{p.property?.address}}</td>
             <td>{{commonService.getPropertyStatus(p.property.status)}}</td>
             <td>{{commonService.getAuctionStatus(p.auction?.status)}}</td>
             <td>{{p.auction?.beginTime | date:'dd/MM/yyyy hh:mm a'}}</td>
