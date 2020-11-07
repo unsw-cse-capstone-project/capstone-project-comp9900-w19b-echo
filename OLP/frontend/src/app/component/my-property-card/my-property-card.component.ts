@@ -28,7 +28,7 @@ export class MyPropertyCardComponent implements OnInit {
       );
   }
 
-  getCount(status) {
-    return this.properties.filter(p => p.property.status == status).length;
+  getCount(status : number[]) {
+    return this.properties.filter(p => status.includes(p.property.status)).length;
   }
 }

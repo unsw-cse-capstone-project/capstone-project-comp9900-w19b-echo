@@ -25,9 +25,9 @@ export class InterestedPropertiesComponent implements OnInit {
 
   ngOnInit(): void {
     this.isLoading = true;
-    this.http.post(environment.baseEndpoint + '/my-property', {})
+    this.http.post(environment.baseEndpoint + '/view-favorite', {uid: this.userService.user?.uid})
       .subscribe( (data : PropertyAuction[])=> {
-          this.properties = data.filter(p => p.property.status == 1);
+          this.properties = data;
           this.isLoading = false;
         }
       );

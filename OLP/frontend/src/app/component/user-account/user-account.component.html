@@ -8,18 +8,17 @@
     <nb-card>
       <nb-card-body>
 
-        <nb-tabset>
+        <nb-tabset [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success">
           <nb-tab tabTitle="Profile">
             <app-profile [user]="this.user"></app-profile>
           </nb-tab>
           <nb-tab tabTitle="Address">
-            <app-address></app-address>
+            <app-address [user]="this.user" [paymentDetail]="this.paymentDetail" (save)="save('Address')"></app-address>
           </nb-tab>
           <nb-tab tabTitle="Payment">
-            <app-payment [user]="this.user"></app-payment>
+            <app-payment [user]="this.user" [paymentDetail]="this.paymentDetail" (save)="save('Payment')"></app-payment>
           </nb-tab>
         </nb-tabset>
-
       </nb-card-body>
     </nb-card>
   </nb-layout-column>

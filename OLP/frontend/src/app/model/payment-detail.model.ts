@@ -7,4 +7,9 @@ export class PaymentDetail {
   cvv: number;
   addTime: Date;
   serial: number;
+  streetAddress: string;
+  suburb: string;
+  postcode: string;
+  state: string;
+  country: string;
 }
