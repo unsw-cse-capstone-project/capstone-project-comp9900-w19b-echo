@@ -133,9 +133,9 @@ public class FileController {
         return new FileUploadResponse(200, "Upload success", retFilePath);
     }
 
-    @RequestMapping(value = "/uploadPropertyPic", method = RequestMethod.POST)
+    @RequestMapping(value = "/uploadUserCert", method = RequestMethod.POST)
     @RequiresAuthentication
-    public FileUploadResponse uploadPropertyPic(MultipartFile file, HttpServletRequest request, @RequestBody UpdatePropertyRequest propertyRequest){
+    public FileUploadResponse uploadUserCertification(@RequestPart MultipartFile file, HttpServletRequest request){
 
         if (null == file){
             return new FileUploadResponse(500, "File is empty", null);
@@ -144,9 +144,37 @@ public class FileController {
         String fileName = file.getOriginalFilename();  // 文件名
         String suffixName = fileName.substring(fileName.lastIndexOf("."));  // 后缀名
 
-        Property property = propertyRequest.getProperty();
-        int pid = property.getPid();
+        int uid = JWTUtil.getUid(request.getHeader("Authorization"), userService);
 
+        String fileDir = "/home/ubuntu/tomcat/apache-tomcat/webapps/resources/user/"+uid;
+        File path = new File(fileDir);
+        if(!path.exists()){
+            path.mkdirs();
+        }
+
+        String retFilePath = "/resources/user/" + uid + "/cert" + suffixName;
+        File upFile = new File(fileDir + "/cert" + suffixName);
+
+        try {
+            file.transferTo(upFile);
+        }catch(IOException e){
+            logger.error(e.getMessage());
+            return new FileUploadResponse(500, e.getMessage(), null);
+        }
+
+        return new FileUploadResponse(200, "Upload success", retFilePath);
+    }
+
+    @RequestMapping(value = "/uploadPropertyPic", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public FileUploadResponse uploadPropertyPic(Integer pid, @RequestPart MultipartFile file){
+
+        if (null == file){
+            return new FileUploadResponse(500, "File is empty", null);
+        }
+
+        String fileName = file.getOriginalFilename();  // 文件名
+        String suffixName = fileName.substring(fileName.lastIndexOf("."));  // 后缀名
 
         String fileDir = "/home/ubuntu/tomcat/apache-tomcat/webapps/resources/property/"+pid;
         File path = new File(fileDir);
@@ -171,4 +199,37 @@ public class FileController {
         return new FileUploadResponse(200, "Upload success", retFilePath);
     }
 
+    @RequestMapping(value = "/uploadPropertyCert", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public FileUploadResponse uploadPropertyCert(Integer pid, @RequestPart MultipartFile file){
+
+        if (null == file){
+            return new FileUploadResponse(500, "File is empty", null);
+        }
+
+        String fileName = file.getOriginalFilename();  // 文件名
+        String suffixName = fileName.substring(fileName.lastIndexOf("."));  // 后缀名
+
+        String fileDir = "/home/ubuntu/tomcat/apache-tomcat/webapps/resources/property/cert/"+pid;
+        File path = new File(fileDir);
+        if(!path.exists()){
+            path.mkdirs();
+        }
+
+        Random ra =new Random();
+        int ran = ra.nextInt(10000);
+
+        File upFile = new File(fileDir + "/cert_file" + suffixName);
+
+        String retFilePath = "/resources/property/cert/" + pid + "/cert_file" + suffixName;
+
+        try {
+            file.transferTo(upFile);
+        }catch(IOException e){
+            logger.error(e.getMessage());
+            return new FileUploadResponse(500, e.getMessage(), null);
+        }
+
+        return new FileUploadResponse(200, "Upload success", retFilePath);
+    }
 }
