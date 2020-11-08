@@ -29,9 +29,9 @@
             <td>{{p.auction?.endTime | date:'dd/MM/yyyy hh:mm a'}}</td>
             <td class="text-sm-right">
               <ng-container *ngIf="p.auction.status == 2">
-                <button type="button" class="btn btn-outline-primary btn-sm mr-3" (click)="placeBid(p.property, p.auction)">Place Bid</button>
+                <button type="button" class="btn btn-outline-primary btn-sm mr-3 cursor-pointer" (click)="placeBid(p.property, p.auction)">Place Bid</button>
               </ng-container>
-              <button type="button" class="btn btn-outline-success btn-sm" (click)="delete(p.property)">Quit Bid</button>
+              <button type="button" class="btn btn-outline-success btn-sm cursor-pointer" (click)="delete(p.property)">Quit Bid</button>
             </td>
           </tr>
           </tbody>

@@ -29,9 +29,9 @@
             <td>{{p.auction?.endTime | date:'dd/MM/yyyy hh:mm a'}}</td>
             <td class="text-sm-right">
               <ng-container *ngIf="p.auction?.status == 1 || p.auction?.status == 2">
-                <button type="button" class="btn btn-outline-primary btn-sm mr-3" (click)="joinBid(p.property, p.auction)">Join Bid</button>
+                <button type="button" class="btn btn-outline-primary btn-sm mr-3 cursor-pointer" (click)="joinBid(p.property, p.auction)">Join Bid</button>
               </ng-container>
-              <button type="button" class="btn btn-outline-success btn-sm" (click)="delete(p.property)">Delete</button>
+              <button type="button" class="btn btn-outline-success btn-sm cursor-pointer" (click)="delete(p.property)">Delete</button>
             </td>
           </tr>
           </tbody>
