@@ -1,20 +1,40 @@
 <nb-card [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success">
   <nb-card-body>
-<form>
-  <div class="form-group col-lg-4">
-    <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email"  placeholder="Email Address" readonly>
-  </div>
-  <div class="form-group col-lg-4">
-    <label for="fullName">Full Name</label>
-    <input type="input" class="form-control" id="fullName" name="fullName" [(ngModel)]="user.fullName" placeholder="Full Name" required>
-  </div>
-  <div class="form-group col-lg-4">
-    <label for="mobile">Mobile</label>
-    <input type="input" class="form-control" id="mobile" name="mobile" (keypress)="numberOnly($event)" maxlength="10" [(ngModel)]="user.phone" placeholder="Mobile Number" required>
-  </div>
-  <div class="form-group col-lg-4">
-    <button type="submit" class="btn btn-primary" (click)="saveProfile()">Save</button>
-  </div>
-</form></nb-card-body>
+       <div class ="row">
+        <div class ="col-sm-6">
+          <form id="info" name="info">
+            <div class="form-group col-lg-8">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email"  placeholder="Email Address" readonly>
+            </div>
+            <div class="form-group col-lg-8">
+              <label for="fullName">Full Name</label>
+              <input type="input" class="form-control" id="fullName" name="fullName" [(ngModel)]="user.fullName" placeholder="Full Name" required>
+            </div>
+            <div class="form-group col-lg-8">
+              <label for="mobile">Mobile</label>
+              <input type="input" class="form-control" id="mobile" name="mobile" (keypress)="numberOnly($event)" maxlength="10" [(ngModel)]="user.phone" placeholder="Mobile Number" required>
+            </div>
+            <div class="form-group col-lg-8">
+              <button type="submit" class="btn btn-primary" (click)="saveProfile()">Save</button>
+            </div>
+          </form>
+        </div>
+        <div class ="col-sm-6">
+             <div class="form-group col-lg-12">
+               <div class ="row">
+                 <div class ="col-sm-4"><h6>ID Document(s):</h6></div>
+                 <div class ="col-sm-8"><nb-icon icon="plus-outline" status="danger" class="cursor-pointer" (click)="upload()" style="font-size: 1.8rem;"></nb-icon></div>
+               </div>
+            </div>
+          <div class="form-group col-lg-12">
+            <div class ="row" *ngIf="files && files.length > 0">
+              <ul>
+                <li *ngFor="let file of files"><a href="javascript:void(0)" title = "Download document" (click)="download(file)">{{file.fileName}}</a><nb-icon icon="close-outline" class="cursor-pointer" status="danger" (click)="delete(file)"></nb-icon></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+   </nb-card-body>
 </nb-card>

@@ -1,0 +1,20 @@
+<nb-card>
+  <nb-card-header><h5>Upload File</h5></nb-card-header>
+  <nb-card-body>
+    <div class="row">
+       <div class="form-group col-lg-12">
+          <input type="file"
+                 id="file"
+                 (change)="handleFileInput($event.target.files)">
+        </div>
+    </div>
+  </nb-card-body>
+  <nb-card-footer>
+    <div class="row">
+       <div class="form-group col-lg-12">
+        <button type="submit" class="btn btn-primary" (click)="upload()">Upload</button>
+        <button class="btn btn-primary ml-4" (click)="cancel()">Cancel</button> &nbsp;
+      </div>
+    </div>
+  </nb-card-footer>
+</nb-card>

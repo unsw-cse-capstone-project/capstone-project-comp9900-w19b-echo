@@ -66,6 +66,7 @@ import { SellPropertyComponent } from './component/sell-property/sell-property.c
 import { JoinBidComponent } from './component/join-bid/join-bid.component';
 import { PlaceBidComponent } from './component/place-bid/place-bid.component';
 import { PropertyDetailComponent } from './component/property-detail/property-detail.component';
+import { UploadComponent } from './component/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { PropertyDetailComponent } from './component/property-detail/property-de
     JoinBidComponent,
     PlaceBidComponent,
     PropertyDetailComponent,
-    NgbdModalContent
+    NgbdModalContent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,

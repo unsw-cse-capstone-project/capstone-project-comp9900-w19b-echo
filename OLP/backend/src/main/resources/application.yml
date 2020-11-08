@@ -25,3 +25,12 @@ spring:
     password: root9900
     hikari:
       max-lifetime: 500000
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+server:
+  file:
+    upload:
+      path: /Users/yang/Downloads #/home/ubuntu/tomcat/apache-tomcat/webapps/resources
