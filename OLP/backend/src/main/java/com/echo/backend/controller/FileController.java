@@ -44,7 +44,7 @@ public class FileController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = "/upload-document", method = RequestMethod.POST)
+    @RequestMapping(value = "/upload-user-document", method = RequestMethod.POST)
     @RequiresAuthentication
     public FileUploadResponse uploadSupportingDocument(MultipartFile file, HttpServletRequest request){
         if (file == null){
@@ -71,19 +71,25 @@ public class FileController {
         return new FileUploadResponse(200, "Upload success", file.getOriginalFilename());
     }
 
-    @RequestMapping(value = "/documents", method = RequestMethod.GET)
+    @RequestMapping(value = "/user-document", method = RequestMethod.GET)
     @RequiresAuthentication
     public List<FileDto> getSupportingDocument(HttpServletRequest request) throws IOException {
         int uid = JWTUtil.getUid(request.getHeader("Authorization"), userService);
-        String fileDir = uploadPath + "/user/"+uid;
-        List<FileDto> fileDtos = Files.walk(Paths.get(fileDir)).filter(Files::isRegularFile).map(f -> new FileDto(f.getFileName().toString(), String.valueOf(uid))).collect(Collectors.toList());
+        String relativeFolderPath = "/user/" + uid;
+        String fileDir = uploadPath + relativeFolderPath;
+        List<FileDto> fileDtos = getFileDtoList(fileDir, relativeFolderPath);
+        return fileDtos;
+    }
+
+    private List<FileDto> getFileDtoList(String fileDir, String folderName) throws IOException {
+        List<FileDto> fileDtos = Files.walk(Paths.get(fileDir)).filter(Files::isRegularFile).map(f -> new FileDto(f.getFileName().toString(), folderName)).collect(Collectors.toList());
         return fileDtos;
     }
 
     @RequestMapping(value = "/document", method = RequestMethod.POST)
     @RequiresAuthentication
     public ResponseEntity<Resource> getSupportingDocument(@RequestBody FileDto fileDto) throws IOException {
-        String fileDir = uploadPath + "/user/" + fileDto.getFolder() + "/" + fileDto.getFileName();
+        String fileDir = uploadPath + fileDto.getFolder() + "/" + fileDto.getFileName();
         ByteArrayResource resource = new ByteArrayResource(Files.readAllBytes(Paths.get(fileDir)));
         HttpHeaders headers = new HttpHeaders();
         headers.add(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + fileDto.getFileName());
@@ -97,7 +103,7 @@ public class FileController {
     @RequestMapping(value = "/delete-document", method = RequestMethod.POST)
     @RequiresAuthentication
     public void deleteSupportingDocument(@RequestBody FileDto fileDto) throws IOException {
-        String fileDir = uploadPath + "/user/" + fileDto.getFolder() + "/" + fileDto.getFileName();
+        String fileDir = uploadPath + fileDto.getFolder() + "/" + fileDto.getFileName();
         Files.delete(Paths.get(fileDir));
     }
 
@@ -133,9 +139,9 @@ public class FileController {
         return new FileUploadResponse(200, "Upload success", retFilePath);
     }
 
-    @RequestMapping(value = "/uploadUserCert", method = RequestMethod.POST)
+    @RequestMapping(value = "/upload-property-photo/{pid}", method = RequestMethod.POST)
     @RequiresAuthentication
-    public FileUploadResponse uploadUserCertification(@RequestPart MultipartFile file, HttpServletRequest request){
+    public FileUploadResponse uploadPropertyPhoto(@PathVariable("pid") Integer pid, @RequestPart MultipartFile file) throws IOException {
 
         if (null == file){
             return new FileUploadResponse(500, "File is empty", null);
@@ -144,16 +150,17 @@ public class FileController {
         String fileName = file.getOriginalFilename();  // 文件名
         String suffixName = fileName.substring(fileName.lastIndexOf("."));  // 后缀名
 
-        int uid = JWTUtil.getUid(request.getHeader("Authorization"), userService);
-
-        String fileDir = "/home/ubuntu/tomcat/apache-tomcat/webapps/resources/user/"+uid;
+        String fileDir = uploadPath + "/property/"+pid + "/photo";
         File path = new File(fileDir);
         if(!path.exists()){
             path.mkdirs();
         }
 
-        String retFilePath = "/resources/user/" + uid + "/cert" + suffixName;
-        File upFile = new File(fileDir + "/cert" + suffixName);
+        List<String> list = Files.walk(Paths.get(fileDir)).filter(Files::isRegularFile).map(f -> getNum(f)).collect(Collectors.toList());
+        int fileSeq = list.stream().mapToInt(v -> Integer.parseInt(v)).max().orElse(0) + 1;
+        File upFile = new File(fileDir + "/property_" + fileSeq + suffixName);
+
+        String retFilePath = "/resources/property/" + pid + "/photo/property_" + fileSeq + suffixName;
 
         try {
             file.transferTo(upFile);
@@ -165,9 +172,15 @@ public class FileController {
         return new FileUploadResponse(200, "Upload success", retFilePath);
     }
 
-    @RequestMapping(value = "/uploadPropertyPic", method = RequestMethod.POST)
+    private String getNum(java.nio.file.Path f) {
+        String fileName = f.getFileName().toString();
+        String nameOnly = fileName.substring(fileName.indexOf("_") + 1, fileName.indexOf("."));
+        return nameOnly;
+    }
+
+    @RequestMapping(value = "/upload-property-document/{pid}", method = RequestMethod.POST)
     @RequiresAuthentication
-    public FileUploadResponse uploadPropertyPic(Integer pid, @RequestPart MultipartFile file){
+    public FileUploadResponse uploadPropertyDocument(@PathVariable("pid") Integer pid, @RequestPart MultipartFile file){
 
         if (null == file){
             return new FileUploadResponse(500, "File is empty", null);
@@ -176,18 +189,15 @@ public class FileController {
         String fileName = file.getOriginalFilename();  // 文件名
         String suffixName = fileName.substring(fileName.lastIndexOf("."));  // 后缀名
 
-        String fileDir = "/home/ubuntu/tomcat/apache-tomcat/webapps/resources/property/"+pid;
+        String fileDir = uploadPath + "/property/"+pid + "/document";
         File path = new File(fileDir);
         if(!path.exists()){
             path.mkdirs();
         }
 
-        Random ra =new Random();
-        int ran = ra.nextInt(10000);
+        File upFile = new File(fileDir + "/" + fileName);
 
-        File upFile = new File(fileDir + "/property_" + ran + suffixName);
-
-        String retFilePath = "/resources/property/" + pid + "/property_" + ran + suffixName;
+        String retFilePath = "/resources/property/document/" + pid + "/cert_file" + suffixName;
 
         try {
             file.transferTo(upFile);
@@ -199,37 +209,21 @@ public class FileController {
         return new FileUploadResponse(200, "Upload success", retFilePath);
     }
 
-    @RequestMapping(value = "/uploadPropertyCert", method = RequestMethod.POST)
+    @RequestMapping(value = "/property-document/{pid}", method = RequestMethod.GET)
     @RequiresAuthentication
-    public FileUploadResponse uploadPropertyCert(Integer pid, @RequestPart MultipartFile file){
+    public List<FileDto> getPropertyDocument(@PathVariable("pid") Integer pid) throws IOException {
+        String relativeFolderPath = "/property/" + pid + "/document";
+        String fileDir = uploadPath + relativeFolderPath;
+        List<FileDto> fileDtos = getFileDtoList(fileDir, relativeFolderPath);
+        return fileDtos;
+    }
 
-        if (null == file){
-            return new FileUploadResponse(500, "File is empty", null);
-        }
-
-        String fileName = file.getOriginalFilename();  // 文件名
-        String suffixName = fileName.substring(fileName.lastIndexOf("."));  // 后缀名
-
-        String fileDir = "/home/ubuntu/tomcat/apache-tomcat/webapps/resources/property/cert/"+pid;
-        File path = new File(fileDir);
-        if(!path.exists()){
-            path.mkdirs();
-        }
-
-        Random ra =new Random();
-        int ran = ra.nextInt(10000);
-
-        File upFile = new File(fileDir + "/cert_file" + suffixName);
-
-        String retFilePath = "/resources/property/cert/" + pid + "/cert_file" + suffixName;
-
-        try {
-            file.transferTo(upFile);
-        }catch(IOException e){
-            logger.error(e.getMessage());
-            return new FileUploadResponse(500, e.getMessage(), null);
-        }
-
-        return new FileUploadResponse(200, "Upload success", retFilePath);
+    @RequestMapping(value = "/property-photo/{pid}", method = RequestMethod.GET)
+    @RequiresAuthentication
+    public List<FileDto> getPropertyPhoto(@PathVariable("pid") Integer pid) throws IOException {
+        String relativeFolderPath = "/property/" + pid + "/photo";
+        String fileDir = uploadPath + relativeFolderPath;
+        List<FileDto> fileDtos = getFileDtoList(fileDir, relativeFolderPath);
+        return fileDtos;
     }
 }
