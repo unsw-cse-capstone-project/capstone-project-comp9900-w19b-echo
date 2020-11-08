@@ -70,6 +70,7 @@ export class ProfileComponent implements OnInit {
   upload(){
     this.dialogService.open(UploadComponent,{
       context: {
+        uploadType: 'user-document',
       },
     }).onClose.subscribe(data => {
       if(data) {
@@ -80,7 +81,7 @@ export class ProfileComponent implements OnInit {
   }
 
   getDocuments() {
-    this.http.get(environment.baseEndpoint + '/documents')
+    this.http.get(environment.baseEndpoint + '/user-document')
       .subscribe((files: FileDto[]) => {
           this.files = files;
         }

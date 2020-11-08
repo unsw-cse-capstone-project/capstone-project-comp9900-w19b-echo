@@ -12,6 +12,8 @@ import {UserService} from "../../service/user.service";
 export class UploadComponent implements OnInit {
   isLoading: boolean = false;
   fileToUpload: File = null;
+  uploadType: string;
+  pid: number = 0;
 
   constructor(protected dialogRef: NbDialogRef<UploadComponent>, private http: HttpClient, private userService: UserService) { }
 
@@ -19,9 +21,12 @@ export class UploadComponent implements OnInit {
   }
 
   upload() {
-    const endpoint = environment.baseEndpoint + '/upload-document';
+    let endpoint = environment.baseEndpoint + '/upload-'+ this.uploadType;
     const formData: FormData = new FormData();
     formData.append('file', this.fileToUpload, this.fileToUpload.name);
+    if(this.pid && this.pid > 0) {
+      endpoint = endpoint + '/' + this.pid;
+    }
     this.http.post(endpoint, formData, {}).subscribe( data =>
       {
         if(data) {

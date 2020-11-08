@@ -7,111 +7,145 @@
   <nb-layout-column>
     <nb-card [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success">
       <nb-card-body>
-        <form>
-          <div class="form-group col-sm-8 row">
-            <label for="streetNumber" class="col-sm-2 col-form-label">Property Type</label>
-            <div class="col-sm-10">
-              <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-outline-primary" [class.active]="property.propertyType == 0">
-                  <input type="radio" name="propertyType" id="house" autocomplete="off"
-                         [checked]="property.propertyType == 0" (change)="onPropertyTypeChange(0)">House
-                </label>
-                <label class="btn btn-outline-primary" [class.active]="property.propertyType == 1">
-                  <input type="radio" name="propertyType" id="Unit" autocomplete="off"
-                         [checked]="property.propertyType == 1" (change)="onPropertyTypeChange(1)"> Unit
-                </label>
-                <label class="btn btn-outline-primary" [class.active]="property.propertyType == 2">
-                  <input type="radio" name="propertyType" id="Store" autocomplete="off"
-                         [checked]="property.propertyType == 2" (change)="onPropertyTypeChange(2)"> Store
-                </label>
+        <div class ="row">
+          <div class ="col-sm-8">
+            <form>
+              <div class="form-group col-sm-12 row">
+                <label for="streetNumber" class="col-sm-2 col-form-label">Property Type</label>
+                <div class="col-sm-10">
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-primary" [class.active]="property.propertyType == 0">
+                      <input type="radio" name="propertyType" id="house" autocomplete="off"
+                             [checked]="property.propertyType == 0" (change)="onPropertyTypeChange(0)">House
+                    </label>
+                    <label class="btn btn-outline-primary" [class.active]="property.propertyType == 1">
+                      <input type="radio" name="propertyType" id="Unit" autocomplete="off"
+                             [checked]="property.propertyType == 1" (change)="onPropertyTypeChange(1)"> Unit
+                    </label>
+                    <label class="btn btn-outline-primary" [class.active]="property.propertyType == 2">
+                      <input type="radio" name="propertyType" id="Store" autocomplete="off"
+                             [checked]="property.propertyType == 2" (change)="onPropertyTypeChange(2)"> Store
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-sm-12 row" *ngIf="property?.status == 1 || property?.status == 5">
+                <label for="status" class="col-sm-2 col-form-label">Property Status</label>
+                <div class="col-sm-4">
+                  <select class="form-control" [(ngModel)]="property.status" id="status" name="status">
+                    <option>Choose</option>
+                    <option value="1">Verified</option>
+                    <option value="5">Not Listed</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group col-sm-12 row">
+                <label for="streetNumber" class="col-sm-2 col-form-label">Street Number</label>
+                <div class="col-sm-4">
+                  <input type="input" class="form-control" [(ngModel)]="property.streetNumber" id="streetNumber"
+                         name="streetNumber" placeholder="Street Number" required>
+                </div>
+                <label for="streetName" class="col-sm-2 col-form-label">Street Name</label>
+                <div class="col-sm-4">
+                  <input type="input" class="form-control" [(ngModel)]="property.streetName" id="streetName"
+                         name="streetName" placeholder="Street Name" required>
+                </div>
+              </div>
+              <div class="form-group col-sm-12 row">
+                <label for="suburb" class="col-sm-2 col-form-label">Suburb</label>
+                <div class="col-sm-4">
+                  <input type="input" class="form-control" [(ngModel)]="property.suburb" id="suburb" name="suburb"
+                         placeholder="Suburb" required>
+                </div>
+                <label for="postcode" class="col-sm-2 col-form-label">Postcode</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" [(ngModel)]="property.postcode" id="postcode" name="postcode"
+                         placeholder="Postcode" required>
+                </div>
+              </div>
+              <div class="form-group col-sm-12 row">
+                <label for="state" class="col-sm-2 col-form-label">State</label>
+                <div class="col-sm-4">
+                  <select class="form-control" [(ngModel)]="property.state" id="state" name="state">
+                    <option>Choose</option>
+                    <option>ACT</option>
+                    <option>NSW</option>
+                    <option>NT</option>
+                    <option>QLD</option>
+                    <option>SA</option>
+                    <option>VIC</option>
+                    <option>TAS</option>
+                    <option>WA</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group col-sm-12 row">
+                <label for="bedroom" class="col-sm-2 col-form-label">No. of Bedroom</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" [(ngModel)]="property.bedroom" id="bedroom" name="bedroom"
+                         placeholder="No. of Bedroom" required>
+                </div>
+              </div>
+              <div class="form-group col-sm-12 row">
+                <label for="bathroom" class="col-sm-2 col-form-label">No. of Bathroom</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" [(ngModel)]="property.bathroom" id="bathroom"
+                         name="bathroom" placeholder="No. of Bathroom" required>
+                </div>
+              </div>
+              <div class="form-group col-sm-12 row">
+                <label for="noOfParking" class="col-sm-2 col-form-label">No. of Parking</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" [(ngModel)]="property.carport" id="noOfParking"
+                         name="noOfParking" placeholder="No. of Parking" required>
+                </div>
+              </div>
+              <div class="form-group col-sm-12 row">
+                <label for="desc" class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-10">
+              <textarea class="form-control" [(ngModel)]="property.description" id="desc" name="desc"
+                        rows="3"></textarea>
+                </div>
+              </div>
+              <div class="form-group col-sm-12 row">
+                <div class="col-sm-12 text-sm-right">
+                  <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+                  <button type="submit" class="btn btn-primary ml-3" (click)="cancel()">Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class ="col-sm-4">
+            <div class="form-group col-lg-12" *ngIf="property.pid">
+              <div class ="row">
+                <div class ="col-sm-4"><h6>Document(s):</h6></div>
+                <div class ="col-sm-8"><nb-icon icon="plus-outline" status="danger" class="cursor-pointer" (click)="upload()" style="font-size: 1.8rem;"></nb-icon></div>
+              </div>
+            </div>
+            <div class="form-group col-lg-12" *ngIf="property.pid">
+              <div class ="row" *ngIf="documents && documents.length > 0">
+                <ul>
+                  <li *ngFor="let file of documents"><a href="javascript:void(0)" title = "Download document" (click)="download(file)">{{file.fileName}}</a><nb-icon icon="close-outline" class="cursor-pointer" status="danger" (click)="delete(file)"></nb-icon></li>
+                </ul>
+              </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="form-group col-lg-12" *ngIf="property.pid">
+              <div class ="row">
+                <div class ="col-sm-4"><h6>Photo(s):</h6></div>
+                <div class ="col-sm-8"><nb-icon icon="plus-outline" status="danger" class="cursor-pointer" (click)="uploadPhoto()" style="font-size: 1.8rem;"></nb-icon></div>
+              </div>
+            </div>
+            <div class="form-group col-lg-12" *ngIf="property.pid">
+              <div class ="row" *ngIf="photos && photos.length > 0">
+                <ul>
+                  <li *ngFor="let file of photos"><a href="javascript:void(0)" title = "Download document" (click)="download(file)">{{file.fileName}}</a><nb-icon icon="close-outline" class="cursor-pointer" status="danger" (click)="delete(file)"></nb-icon></li>
+                </ul>
               </div>
             </div>
           </div>
-          <div class="form-group col-sm-8 row" *ngIf="property?.status == 1 || property?.status == 5">
-            <label for="status" class="col-sm-2 col-form-label">Property Status</label>
-            <div class="col-sm-4">
-              <select class="form-control" [(ngModel)]="property.status" id="status" name="status">
-                <option>Choose</option>
-                <option value="1">Verified</option>
-                <option value="5">Not Listed</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group col-sm-8 row">
-            <label for="streetNumber" class="col-sm-2 col-form-label">Street Number</label>
-            <div class="col-sm-4">
-              <input type="input" class="form-control" [(ngModel)]="property.streetNumber" id="streetNumber"
-                     name="streetNumber" placeholder="Street Number" required>
-            </div>
-            <label for="streetName" class="col-sm-2 col-form-label">Street Name</label>
-            <div class="col-sm-4">
-              <input type="input" class="form-control" [(ngModel)]="property.streetName" id="streetName"
-                     name="streetName" placeholder="Street Name" required>
-            </div>
-          </div>
-          <div class="form-group col-sm-8 row">
-            <label for="suburb" class="col-sm-2 col-form-label">Suburb</label>
-            <div class="col-sm-4">
-              <input type="input" class="form-control" [(ngModel)]="property.suburb" id="suburb" name="suburb"
-                     placeholder="Suburb" required>
-            </div>
-            <label for="postcode" class="col-sm-2 col-form-label">Postcode</label>
-            <div class="col-sm-4">
-              <input type="number" class="form-control" [(ngModel)]="property.postcode" id="postcode" name="postcode"
-                     placeholder="Postcode" required>
-            </div>
-          </div>
-          <div class="form-group col-sm-8 row">
-            <label for="state" class="col-sm-2 col-form-label">State</label>
-            <div class="col-sm-4">
-              <select class="form-control" [(ngModel)]="property.state" id="state" name="state">
-                <option>Choose</option>
-                <option>ACT</option>
-                <option>NSW</option>
-                <option>NT</option>
-                <option>QLD</option>
-                <option>SA</option>
-                <option>VIC</option>
-                <option>TAS</option>
-                <option>WA</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-group col-sm-8 row">
-            <label for="bedroom" class="col-sm-2 col-form-label">No. of Bedroom</label>
-            <div class="col-sm-4">
-              <input type="number" class="form-control" [(ngModel)]="property.bedroom" id="bedroom" name="bedroom"
-                     placeholder="No. of Bedroom" required>
-            </div>
-          </div>
-          <div class="form-group col-sm-8 row">
-            <label for="bathroom" class="col-sm-2 col-form-label">No. of Bathroom</label>
-            <div class="col-sm-4">
-              <input type="number" class="form-control" [(ngModel)]="property.bathroom" id="bathroom"
-                     name="bathroom" placeholder="No. of Bathroom" required>
-            </div>
-          </div>
-          <div class="form-group col-sm-8 row">
-            <label for="noOfParking" class="col-sm-2 col-form-label">No. of Parking</label>
-            <div class="col-sm-4">
-              <input type="number" class="form-control" [(ngModel)]="property.carport" id="noOfParking"
-                     name="noOfParking" placeholder="No. of Parking" required>
-            </div>
-          </div>
-          <div class="form-group col-sm-8 row">
-            <label for="desc" class="col-sm-2 col-form-label">Description</label>
-            <div class="col-sm-10">
-              <textarea class="form-control" [(ngModel)]="property.description" id="desc" name="desc"
-                        rows="3"></textarea>
-            </div>
-          </div>
-          <div class="form-group col-sm-8 row">
-            <div class="col-sm-12 text-sm-right">
-              <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
-              <button type="submit" class="btn btn-primary ml-3" (click)="cancel()">Cancel</button>
-            </div>
-          </div>
-        </form>
+        </div>
       </nb-card-body>
     </nb-card>
   </nb-layout-column>
