@@ -15,6 +15,7 @@ import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +33,12 @@ public class PropertyController {
     private final UserService userService;
 
     private final AuctionService auctionService;
+
+    @Value( "${server.file.upload.path}" )
+    private String uploadPath;
+
+    @Value( "${server.file.access.path}" )
+    private String accessPath;
 
     @Autowired
     public PropertyController(PropertyService propertyService, UserService userService, AuctionService auctionService) {
@@ -59,7 +66,7 @@ public class PropertyController {
     //@ApiIgnore
     public List<Property> getAllProperty(@RequestBody SearchPropertyRequest searchRequest) {
 
-        return PagingUtil.afterPaging(FileUtil.generatePropertyPic(propertyService.getAllProperty()), searchRequest.getPage(), searchRequest.getDataNum());
+        return PagingUtil.afterPaging(FileUtil.generatePropertyPic(propertyService.getAllProperty(), uploadPath, accessPath), searchRequest.getPage(), searchRequest.getDataNum());
     }
 
     @RequestMapping(value = "/my-property", method = RequestMethod.POST)
@@ -67,7 +74,7 @@ public class PropertyController {
     public List<PropertyAuction> getMyProperty(HttpServletRequest request) {
         List<PropertyAuction> propertyAuctions = new ArrayList<>();
         int uid = JWTUtil.getUid(request.getHeader("Authorization"), userService);
-        List<Property> properties = FileUtil.generatePropertyPic(propertyService.getPropertyByUid(uid));
+        List<Property> properties = FileUtil.generatePropertyPic(propertyService.getPropertyByUid(uid), uploadPath, accessPath);
         for(Property p : properties){
             PropertyAuction propertyAuction = new PropertyAuction();
             propertyAuction.setProperty(p);
@@ -85,14 +92,14 @@ public class PropertyController {
     public List<Property> getOthersProperty(@RequestBody SearchPropertyRequest request) {
 
         int uid = request.getUid();
-        return FileUtil.generatePropertyPic(propertyService.getPropertyByUid(uid));
+        return FileUtil.generatePropertyPic(propertyService.getPropertyByUid(uid), uploadPath, accessPath);
     }
 
     @RequestMapping(value = "/view-property-pid", method = RequestMethod.POST)
     @RequiresAuthentication
     public List<Property> viewPropertyByPid(@RequestBody SearchPropertyRequest request) {
 
-        return FileUtil.generatePropertyPic(propertyService.getPropertyByPid(request.getPid()));
+        return FileUtil.generatePropertyPic(propertyService.getPropertyByPid(request.getPid()), uploadPath, accessPath);
     }
 
     @RequestMapping(value = "/update-property", method = RequestMethod.POST)
@@ -117,7 +124,7 @@ public class PropertyController {
     //@RequiresAuthentication
     public List<Property> searchPropertyFilter(@RequestBody SearchPropertyRequest searchRequest) {
 
-        List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyFilter(searchRequest.getProperty()));
+        List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyFilter(searchRequest.getProperty()), uploadPath, accessPath);
         return PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
     }
 
@@ -125,7 +132,7 @@ public class PropertyController {
     //@RequiresAuthentication
     public List<Property> searchPropertyPosition(@RequestBody SearchPropertyRequest searchRequest) {
 
-        List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyPosition(searchRequest.getNortheast(), searchRequest.getSouthwest()));
+        List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyPosition(searchRequest.getNortheast(), searchRequest.getSouthwest()), uploadPath, accessPath);
         return PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
     }
 
@@ -133,7 +140,7 @@ public class PropertyController {
     //@RequiresAuthentication
     public List<Property> searchPropertyVague(@RequestBody SearchPropertyRequest searchRequest) {
 
-        List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyVague(searchRequest.getKeyword()));
+        List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyVague(searchRequest.getKeyword()), uploadPath, accessPath);
         return PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
     }
 
