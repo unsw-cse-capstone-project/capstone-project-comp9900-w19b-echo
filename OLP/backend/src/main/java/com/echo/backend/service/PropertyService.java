@@ -153,6 +153,8 @@ public class PropertyService {
             exist.setStatus(property.getStatus());
         }
 
+        exist.setPropertyType(property.getPropertyType());
+
         propertyMapper.updateProperty(exist);
     }
 

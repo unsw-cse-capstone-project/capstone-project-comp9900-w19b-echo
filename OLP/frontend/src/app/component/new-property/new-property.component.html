@@ -13,18 +13,18 @@
               <div class="form-group col-sm-12 row">
                 <label for="streetNumber" class="col-sm-2 col-form-label">Property Type</label>
                 <div class="col-sm-10">
-                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <div class="btn-group btn-group-toggle" data-toggle="buttons" *ngIf="property">
                     <label class="btn btn-outline-primary" [class.active]="property.propertyType == 0">
                       <input type="radio" name="propertyType" id="house" autocomplete="off"
-                             [checked]="property.propertyType == 0" (change)="onPropertyTypeChange(0)">House
+                             [checked]="property.propertyType == 0" (click)="onPropertyTypeChange(0)">House
                     </label>
                     <label class="btn btn-outline-primary" [class.active]="property.propertyType == 1">
                       <input type="radio" name="propertyType" id="Unit" autocomplete="off"
-                             [checked]="property.propertyType == 1" (change)="onPropertyTypeChange(1)"> Unit
+                             [checked]="property.propertyType == 1" (click)="onPropertyTypeChange(1)"> Unit
                     </label>
                     <label class="btn btn-outline-primary" [class.active]="property.propertyType == 2">
                       <input type="radio" name="propertyType" id="Store" autocomplete="off"
-                             [checked]="property.propertyType == 2" (change)="onPropertyTypeChange(2)"> Store
+                             [checked]="property.propertyType == 2" (click)="onPropertyTypeChange(2)"> Store
                     </label>
                   </div>
                 </div>
