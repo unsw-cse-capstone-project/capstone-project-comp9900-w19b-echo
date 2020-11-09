@@ -8,6 +8,7 @@ export class Property {
   bedroom: number;
   bathroom: number;
   carport: number;
+  area: number;
   description: string;
   owner: number;
   propertyType: number;
@@ -17,4 +18,5 @@ export class Property {
   city: string;
   pid: number;
   address: string;
+  picUrl: string[];
 }

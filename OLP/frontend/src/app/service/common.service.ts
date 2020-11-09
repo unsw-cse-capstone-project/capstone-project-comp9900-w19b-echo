@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Property} from "../model/property.model";
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +43,26 @@ export class CommonService {
     }
     if(status == 4) {
       return 'Success';
+    }
+    return '';
+  }
+
+  getPropertyType(propertyType: number) {
+    if(propertyType == 0){
+      return 'House';
+    }
+    if(propertyType == 1){
+      return 'Unit';
+    }
+    if(propertyType == 2) {
+      return 'Store';
+    }
+    return '';
+  }
+
+  getAddress (p: Property) {
+    if(p) {
+      return p.streetNumber + ' ' + p.streetName + ', ' + p.suburb + ' ' + p.state + ' ' + p.postcode;
     }
     return '';
   }

@@ -64,17 +64,22 @@ public class PropertyController {
     @RequestMapping(value = "/listAllProperty", method = RequestMethod.POST)
     //@RequiresAuthentication
     //@ApiIgnore
-    public List<Property> getAllProperty(@RequestBody SearchPropertyRequest searchRequest) {
+    public List<PropertyAuction> getAllProperty(@RequestBody SearchPropertyRequest searchRequest) {
 
-        return PagingUtil.afterPaging(FileUtil.generatePropertyPic(propertyService.getAllProperty(), uploadPath, accessPath), searchRequest.getPage(), searchRequest.getDataNum());
+        List<Property> properties = PagingUtil.afterPaging(FileUtil.generatePropertyPic(propertyService.getAllProperty(), uploadPath, accessPath), searchRequest.getPage(), searchRequest.getDataNum());
+        return getPropertyAuctions(properties);
     }
 
     @RequestMapping(value = "/my-property", method = RequestMethod.POST)
     @RequiresAuthentication
     public List<PropertyAuction> getMyProperty(HttpServletRequest request) {
-        List<PropertyAuction> propertyAuctions = new ArrayList<>();
         int uid = JWTUtil.getUid(request.getHeader("Authorization"), userService);
         List<Property> properties = FileUtil.generatePropertyPic(propertyService.getPropertyByUid(uid), uploadPath, accessPath);
+        return getPropertyAuctions(properties);
+    }
+
+    private List<PropertyAuction> getPropertyAuctions(List<Property> properties) {
+        List<PropertyAuction> propertyAuctions = new ArrayList<>();
         for(Property p : properties){
             PropertyAuction propertyAuction = new PropertyAuction();
             propertyAuction.setProperty(p);
@@ -138,10 +143,11 @@ public class PropertyController {
 
     @RequestMapping(value = "/search-property-like", method = RequestMethod.POST)
     //@RequiresAuthentication
-    public List<Property> searchPropertyVague(@RequestBody SearchPropertyRequest searchRequest) {
+    public List<PropertyAuction> searchPropertyVague(@RequestBody SearchPropertyRequest searchRequest) {
 
         List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyVague(searchRequest.getKeyword()), uploadPath, accessPath);
-        return PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
+        List<Property> properties = PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
+        return getPropertyAuctions(properties);
     }
 
 }

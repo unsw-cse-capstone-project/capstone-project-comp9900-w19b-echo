@@ -39,6 +39,7 @@
     "rxjs": "^6.6.3",
     "rxjs-compat": "^6.6.3",
     "rxjs-observable": "0.0.7",
+    "terser": "^3.14.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

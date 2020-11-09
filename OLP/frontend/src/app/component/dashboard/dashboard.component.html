@@ -14,11 +14,13 @@
       </div>
     </div>
     <app-search-bar (search)="searchProperty($event)"></app-search-bar>
-    <nb-card  [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success" size="large" *ngIf="properties && properties.length > 0">
-      <nb-card-body>
-        <app-all-property-list [properties]="properties"></app-all-property-list>
-      </nb-card-body>
-    </nb-card>
+    <div *ngIf="properties && properties.length > 0">
+      <nb-card  [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success" size="large">
+        <nb-card-body>
+          <app-all-property-list [properties]="properties"></app-all-property-list>
+        </nb-card-body>
+      </nb-card>
+    </div>
   </nb-layout-column>
 
   <nb-layout-footer fixed>

@@ -1,0 +1,13 @@
+<div class="card">
+  <img src="{{this.getPicUrl(propertyAuction.property)}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text h6">Current Bid: {{propertyAuction.auction?.basePrice | currency}}</p>
+    <p class="card-text">{{this.getAddress(propertyAuction.property)}} | {{this.getPropertyType(propertyAuction.property.propertyType)}}</p>
+    <p class="card-text">
+      <img class="icon" src="assets/resources/bed.svg"/>&nbsp;{{propertyAuction.property.bedroom}}&nbsp;
+      <img class="icon" src="assets/resources/bath.svg"/>&nbsp;{{propertyAuction.property.bathroom}}&nbsp;
+      <img class="icon" src="assets/resources/car.svg"/>&nbsp;{{propertyAuction.property.carport}}&nbsp;
+      <img class="icon" src="assets/resources/area.svg"/>&nbsp;{{propertyAuction.property.area}}
+    </p>
+  </div>
+</div>

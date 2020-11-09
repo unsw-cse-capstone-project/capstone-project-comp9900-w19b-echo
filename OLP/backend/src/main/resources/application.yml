@@ -33,6 +33,6 @@ spring:
 server:
   file:
     upload:
-      path: /home/ubuntu/tomcat/apache-tomcat/webapps/resources
+      path: /Users/yang/Documents/apache-tomcat-9.0.39/webapps/resources #/home/ubuntu/tomcat/apache-tomcat/webapps/resources
     access:
       path: /resources/property/
