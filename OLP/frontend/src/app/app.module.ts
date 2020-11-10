@@ -69,6 +69,8 @@ import { PropertyDetailComponent } from './component/property-detail/property-de
 import { UploadComponent } from './component/upload/upload.component';
 import { PropertyCardComponent } from './component/property-card/property-card.component';
 
+import { AgmCoreModule } from '@agm/core';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -116,6 +118,9 @@ import { PropertyCardComponent } from './component/property-card/property-card.c
     NbLayoutModule,
     NbInputModule,
     NbEvaIconsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyACpbsx-Xm4re7zghBNqaZ1zoTfLCeD1i8'
+    }),
     NbAuthModule.forRoot({
       strategies: [
         NbPasswordAuthStrategy.setup({

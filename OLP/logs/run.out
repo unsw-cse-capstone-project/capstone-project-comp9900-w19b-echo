@@ -68,3 +68,59 @@
 2020-11-03 14:00:47.747  INFO 23804 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'schedulerTaskPool'
 2020-11-03 14:00:47.770  INFO 23804 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2020-11-03 14:00:52.139  INFO 23804 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-11-11 00:46:26.517  INFO 82328 --- [main] com.echo.backend.BackendApplication      : Starting BackendApplication on leedeMacBook-Pro.local with PID 82328 (/Users/lee/Desktop/temp/capstone-project-comp9900-w19b-echo/OLP/backend/target/classes started by lee in /Users/lee/Desktop/temp/capstone-project-comp9900-w19b-echo/OLP/backend)
+2020-11-11 00:46:26.519 DEBUG 82328 --- [main] com.echo.backend.BackendApplication      : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-11-11 00:46:26.520  INFO 82328 --- [main] com.echo.backend.BackendApplication      : No active profile set, falling back to default profiles: default
+2020-11-11 00:46:27.589  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.echo.backend.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$6933ace8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:27.690  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:27.698  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$20af8853] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:27.700  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:27.710  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:27.751  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.111  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.119  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.121  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.123  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.130  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'paymentDetailMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.132  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'paymentDetailMapper' of type [com.sun.proxy.$Proxy61] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.134  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userFavoriteMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.135  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userFavoriteMapper' of type [com.sun.proxy.$Proxy62] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.138  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'propertyMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.139  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'propertyMapper' of type [com.sun.proxy.$Proxy63] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.140  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userService' of type [com.echo.backend.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.141  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myRealm' of type [com.echo.backend.config.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.206  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.233  INFO 82328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-11 00:46:28.575  INFO 82328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-11-11 00:46:28.593  INFO 82328 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-11 00:46:28.594  INFO 82328 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-11 00:46:28.743  INFO 82328 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2020-11-11 00:46:28.743  INFO 82328 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2162 ms
+2020-11-11 00:46:29.407  INFO 82328 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'schedulerTaskPool'
+2020-11-11 00:46:29.415  INFO 82328 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-11-11 00:46:29.416  INFO 82328 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
+2020-11-11 00:46:29.961  INFO 82328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-11-11 00:46:29.962  INFO 82328 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-11-11 00:46:29.985  INFO 82328 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-11-11 00:46:30.003  INFO 82328 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-11-11 00:46:30.518  INFO 82328 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addPaymentUsingPOST_1
+2020-11-11 00:46:30.640  INFO 82328 --- [main] com.echo.backend.BackendApplication      : Started BackendApplication in 4.659 seconds (JVM running for 5.109)
+2020-11-11 00:46:30.657  INFO 82328 --- [main] c.echo.backend.config.BeanConfiguration  : dataSource: HikariDataSource (null)
+2020-11-11 00:46:30.660  INFO 82328 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-11 00:46:32.816  INFO 82328 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-11 00:46:32.818  INFO 82328 --- [main] c.echo.backend.config.BeanConfiguration  : connection: HikariProxyConnection@255996780 wrapping com.mysql.cj.jdbc.ConnectionImpl@6b3b4f37
+2020-11-11 00:50:00.007  INFO 82328 --- [schedulerTaskPool-3] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-11 00:51:45.958  INFO 82328 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-11 00:51:45.959  INFO 82328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-11-11 00:51:46.041  INFO 82328 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 82 ms
+2020-11-11 00:55:00.009  INFO 82328 --- [schedulerTaskPool-1] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-11 01:00:00.009  INFO 82328 --- [schedulerTaskPool-5] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-11 01:05:00.011  INFO 82328 --- [schedulerTaskPool-3] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-11 01:10:00.011  INFO 82328 --- [schedulerTaskPool-2] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-11 01:15:00.009  INFO 82328 --- [schedulerTaskPool-3] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-11 01:20:00.009  INFO 82328 --- [schedulerTaskPool-9] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-11 01:25:00.010  INFO 82328 --- [schedulerTaskPool-8] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-11 01:30:00.010  INFO 82328 --- [schedulerTaskPool-10] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-11 01:35:00.010  INFO 82328 --- [schedulerTaskPool-4] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-11 01:40:00.011  INFO 82328 --- [schedulerTaskPool-4] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-11 01:45:00.011  INFO 82328 --- [schedulerTaskPool-3] c.e.backend.service.AuctionCheckTimer    : ---checking auction---

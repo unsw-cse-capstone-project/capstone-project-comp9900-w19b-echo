@@ -35,6 +35,11 @@
               </div>
             </div>
             <div class="card">
+              <agm-map [zoom]="16" [latitude]="propertyAuction.property.latitude" [longitude]="propertyAuction.property.longitude">
+                <agm-marker [latitude]="propertyAuction.property.latitude" [longitude]="propertyAuction.property.longitude"></agm-marker>
+              </agm-map>
+            </div>
+            <div class="card">
               <div class="card-body card-min-height">
                 <p class="card-text h6">Description</p>
                 <p class="card-text">{{propertyAuction.property.description}}</p>
@@ -44,6 +49,7 @@
           <div class ="col-sm-7">
             <div class="card">
               <img src="{{this.getPicUrl(propertyAuction.property)}}" class="card-img-top" alt="...">
+
             </div>
           </div>
         </div>
@@ -52,7 +58,7 @@
     </nb-card>
   </nb-layout-column>
   <nb-layout-footer fixed>
-    <!-- Insert footer here -->
+
   </nb-layout-footer>
 
 </nb-layout>

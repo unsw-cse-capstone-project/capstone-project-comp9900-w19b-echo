@@ -14,7 +14,12 @@ import {CommonService} from "../../service/common.service";
 @Component({
   selector: 'app-property-detail',
   templateUrl: './property-detail.component.html',
-  styleUrls: ['./property-detail.component.scss']
+  styleUrls: ['./property-detail.component.scss'],
+  styles: [`
+    agm-map {
+      height: 300px;
+    }
+  `]
 })
 export class PropertyDetailComponent implements OnInit {
   propertyAuction: PropertyAuction;
