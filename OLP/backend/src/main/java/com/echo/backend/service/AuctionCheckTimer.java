@@ -109,12 +109,12 @@ public class AuctionCheckTimer {
 
                 Auction auction = entry.getValue();
                 if (auction.getWinner() == auction.getUid()){
-                    auction.setStatus(3);
-                    propertyMapper.updateAuctionSuccess(auction.getPid());
-                }
-                else {
                     auction.setStatus(4);
                     propertyMapper.updateAuctionFail(auction.getPid());
+                }
+                else {
+                    auction.setStatus(3);
+                    propertyMapper.updateAuctionSuccess(auction.getPid());
                 }
                 auctionMapper.updateWinnerPrice(auction);
 
