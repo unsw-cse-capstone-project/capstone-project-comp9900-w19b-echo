@@ -7,6 +7,7 @@ import com.echo.backend.domain.Property;
 import com.echo.backend.dto.*;
 import com.echo.backend.service.AuctionService;
 import com.echo.backend.service.PropertyService;
+import com.echo.backend.utils.PagingUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.time.DateUtils;

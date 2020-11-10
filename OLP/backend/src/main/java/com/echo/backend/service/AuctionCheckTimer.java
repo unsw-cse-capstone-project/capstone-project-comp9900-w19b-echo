@@ -3,12 +3,12 @@ package com.echo.backend.service;
 import com.echo.backend.dao.AuctionBidMapper;
 import com.echo.backend.dao.AuctionMapper;
 import com.echo.backend.dao.AuctionRegisterMapper;
+import com.echo.backend.dao.PropertyMapper;
 import com.echo.backend.domain.Auction;
 import com.echo.backend.domain.AuctionRegister;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
@@ -26,15 +26,18 @@ public class AuctionCheckTimer {
 
     private final AuctionBidMapper auctionBidMapper;
 
+    private final PropertyMapper propertyMapper;
+
     private final Map<Integer, Auction> onAuctionMap;
 
     private final Map<Integer, Auction> auctioningMap;
 
     @Autowired
-    public AuctionCheckTimer(AuctionMapper auctionMapper, AuctionRegisterMapper auctionRegisterMapper, AuctionBidMapper auctionBidMapper, Map<Integer, Auction> onAuctionMap, Map<Integer, Auction> auctioningMap) {
+    public AuctionCheckTimer(AuctionMapper auctionMapper, AuctionRegisterMapper auctionRegisterMapper, AuctionBidMapper auctionBidMapper, PropertyMapper propertyMapper, Map<Integer, Auction> onAuctionMap, Map<Integer, Auction> auctioningMap) {
         this.auctionMapper = auctionMapper;
         this.auctionRegisterMapper = auctionRegisterMapper;
         this.auctionBidMapper = auctionBidMapper;
+        this.propertyMapper = propertyMapper;
         this.onAuctionMap = onAuctionMap;
         this.auctioningMap = auctioningMap;
     }
@@ -71,6 +74,7 @@ public class AuctionCheckTimer {
             if (entry.getValue().getBeginTime().before(new Date())){
 
                 auctionMapper.startAuction(entry.getKey());
+                propertyMapper.startAuction(entry.getValue().getPid());
                 List<AuctionRegister> registers = auctionRegisterMapper.getRegisterBidderByAid(entry.getValue().getAid());
                 double max = entry.getValue().getBasePrice();
                 int winner = entry.getValue().getUid();
@@ -104,11 +108,16 @@ public class AuctionCheckTimer {
             if (entry.getValue().getEndTime().before(new Date())){
 
                 Auction auction = entry.getValue();
-                if (auction.getWinner() == auction.getUid())
-                    auction.setStatus(3);
-                else
+                if (auction.getWinner() == auction.getUid()){
                     auction.setStatus(4);
+                    propertyMapper.updateAuctionFail(auction.getPid());
+                }
+                else {
+                    auction.setStatus(3);
+                    propertyMapper.updateAuctionSuccess(auction.getPid());
+                }
                 auctionMapper.updateWinnerPrice(auction);
+
 
                 logger.debug("Found auction will end on " + entry.getValue().getEndTime() + " - " + entry.getValue().toString());
                 it.remove();

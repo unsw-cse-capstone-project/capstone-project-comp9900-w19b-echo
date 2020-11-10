@@ -68,6 +68,7 @@ public class AuctionService {
                 auction.setWinner(uid);
                 if (DateUtils.addMinutes(new Date(), 5).after(auction.getEndTime())){
                     auction.setEndTime(DateUtils.addMinutes(auction.getEndTime(), 2));
+                    auctionMapper.updateEndTime(auction);
                 }
 
                 AuctionBid bid = new AuctionBid();

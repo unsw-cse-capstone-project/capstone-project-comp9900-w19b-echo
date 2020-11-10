@@ -132,4 +132,16 @@
     <select id="getMyFavorite" resultMap="PropertyMap" parameterType="java.lang.Integer">
         select b.* from user_favorite a join t_property b on a.pid=b.pid where a.uid=#{uid};
     </select>
+
+    <update id="startAuction" parameterType="java.lang.Integer">
+        update t_property set status=2 where pid=#{key}
+    </update>
+
+    <update id="updateAuctionSuccess" parameterType="java.lang.Integer">
+        update t_property set status=3 where pid=#{key}
+    </update>
+
+    <update id="updateAuctionFail" parameterType="java.lang.Integer">
+        update t_property set status=4 where pid=#{key}
+    </update>
 </mapper>

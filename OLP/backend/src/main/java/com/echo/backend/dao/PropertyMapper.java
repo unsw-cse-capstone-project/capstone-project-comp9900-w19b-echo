@@ -35,4 +35,10 @@ public interface PropertyMapper {
     void deleteProperty(int pid);
 
     List<Property> getMyFavorite(int uid);
+
+    void startAuction(Integer key);
+
+    void updateAuctionSuccess(Integer key);
+
+    void updateAuctionFail(Integer key);
 }
