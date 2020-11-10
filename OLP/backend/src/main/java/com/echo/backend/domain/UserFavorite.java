@@ -10,6 +10,8 @@ public class UserFavorite {
 
     private Date addTime;
 
+    private int serial;
+
     public int getUid() {
         return uid;
     }
@@ -32,5 +34,13 @@ public class UserFavorite {
 
     public void setAddTime(Date addTime) {
         this.addTime = addTime;
+    }
+
+    public int getSerial() {
+        return serial;
+    }
+
+    public void setSerial(int serial) {
+        this.serial = serial;
     }
 }

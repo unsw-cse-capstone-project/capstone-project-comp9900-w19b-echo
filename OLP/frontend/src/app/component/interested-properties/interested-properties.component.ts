@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 import {PropertyAuction} from "../../model/property-auction.model";
 import {HttpClient} from "@angular/common/http";
 import {UserService} from "../../service/user.service";
-import {NbDialogService, NbToastrService} from "@nebular/theme";
+import {NbComponentStatus, NbDialogService, NbToastrService} from "@nebular/theme";
 import {environment} from "../../../environments/environment";
 import {Property} from "../../model/property.model";
 import {ConfirmationDialogComponent} from "../confirmation-dialog/confirmation-dialog.component";
@@ -24,6 +24,10 @@ export class InterestedPropertiesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getFavouriteList();
+  }
+
+  getFavouriteList() {
     this.isLoading = true;
     this.http.post(environment.baseEndpoint + '/view-favorite', {uid: this.userService.user?.uid})
       .subscribe( (data : PropertyAuction[])=> {
@@ -54,7 +58,18 @@ export class InterestedPropertiesComponent implements OnInit {
     })
       .onClose.subscribe(data => {
       if(data == true) {
-        this.properties = this.properties.filter(p1 => p1.property.pid != p.pid);
+        this.isLoading = true;
+        let uri = '/cancel-favorite';
+        this.http.post(environment.baseEndpoint + uri, {uid: this.userService.user?.uid, pid: p.pid})
+          .subscribe( (data)=> {
+              if(data) {
+                this.getFavouriteList();
+                let title = 'Property - Removed from favourite.';
+                this.showToast('success', title);
+                this.isLoading = false;
+              }
+            }
+          );
       }
     });
   }
@@ -63,5 +78,9 @@ export class InterestedPropertiesComponent implements OnInit {
     this.userService.currentProperty = p;
     this.userService.currentAuction = auction;
     this.router.navigate(['/join-bid']);
+  }
+
+  showToast(status: NbComponentStatus, title: string) {
+    this.toastrService.show(status, title, { status });
   }
 }

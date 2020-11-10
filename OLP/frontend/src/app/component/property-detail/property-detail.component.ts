@@ -19,8 +19,9 @@ import {CommonService} from "../../service/common.service";
 export class PropertyDetailComponent implements OnInit {
   propertyAuction: PropertyAuction;
   isLoading: boolean = false;
+  isLiked: boolean = false;
 
-  constructor(private router: Router, private commonService: CommonService, public userService: UserService) { }
+  constructor(private router: Router, private commonService: CommonService, public userService: UserService, private http: HttpClient, private toastrService: NbToastrService) { }
 
   ngOnInit(): void {
     this.propertyAuction = this.userService.currentPropertyAuction;
@@ -52,5 +53,28 @@ export class PropertyDetailComponent implements OnInit {
 
   login(propertyAuction: PropertyAuction) {
     this.router.navigate(['/auth/login', {}]);
+  }
+
+  addToFav(propertyAuction: PropertyAuction, add: boolean) {
+    if(!this.userService.authenticated) {
+      this.router.navigate(['/auth/login', {}]);
+    }else{
+      this.isLoading = true;
+      let uri = add ? '/add-favorite' : '/cancel-favorite';
+      this.http.post(environment.baseEndpoint + uri, {uid: this.userService.user?.uid, pid: propertyAuction.property.pid})
+        .subscribe( (data)=> {
+            if(data) {
+              let title = add ? 'Property - Added to favourite.' : 'Property - Removed from favourite.';
+              this.showToast('success', title);
+              this.isLiked = !this.isLiked;
+              this.isLoading = false;
+            }
+          }
+        );
+    }
+  }
+
+  showToast(status: NbComponentStatus, title: string) {
+    this.toastrService.show(status, title, { status });
   }
 }
