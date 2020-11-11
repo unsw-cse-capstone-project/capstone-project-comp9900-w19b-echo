@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Component
@@ -16,6 +17,7 @@ public class FileUtil {
             try {
                 File file = new File(uploadPath + "/property/" + pro.getPid() + "/photo");
                 File[] files = file.listFiles();
+                Arrays.sort(files);
                 List<String> picUrl = new ArrayList<>();
                 for (File f : files) {
                     picUrl.add(accessPath + pro.getPid() + "/photo/" + f.getName());

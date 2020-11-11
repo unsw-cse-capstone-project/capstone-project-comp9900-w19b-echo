@@ -48,8 +48,7 @@
           </div>
           <div class ="col-sm-7">
             <div class="card">
-              <img src="{{this.getPicUrl(propertyAuction.property)}}" class="card-img-top" alt="...">
-
+              <img [src]="this.currentImage" (click)="this.loadPicUrl(propertyAuction.property)" class="card-img-top cursor-pointer" alt="...">
             </div>
           </div>
         </div>
