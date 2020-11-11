@@ -147,11 +147,10 @@ public class UserController {
     }
 
     @RequestMapping(value = "/request-verify-code", method = RequestMethod.POST)
-    @RequiresAuthentication
     public UpdatePasswordResponse getVerifyCode(@RequestBody UpdatePasswordRequest request, HttpServletRequest hRequest){
 
-        Integer uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), null);
-        String email = JWTUtil.getEmail(hRequest.getHeader("Authorization"));
+        String email = request.getUser().getEmail();
+        Integer uid = userService.getUserByEmail(email).getUid();
         Random rand = new Random();
         int code = (rand.nextInt(9)+1)*1000 + rand.nextInt(1000);
         verifyCode.put(uid, code);
@@ -162,10 +161,10 @@ public class UserController {
     }
 
     @RequestMapping(value = "/update-password", method = RequestMethod.POST)
-    @RequiresAuthentication
     public UpdatePasswordResponse updatePassword(@RequestBody UpdatePasswordRequest request, HttpServletRequest hRequest){
 
-        Integer uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), null);
+        String email = request.getUser().getEmail();
+        Integer uid = userService.getUserByEmail(email).getUid();
 
         if (!verifyCode.containsKey(uid))
             return new UpdatePasswordResponse(501, "Please send verify code first", null);
@@ -174,7 +173,6 @@ public class UserController {
             return new UpdatePasswordResponse(501, "Your verify code is not right", null);
         }
 
-        String email = JWTUtil.getEmail(hRequest.getHeader("Authorization"));
         User user = request.getUser();
         User exist = userService.getUserByName(email);
 
