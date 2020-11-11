@@ -24,9 +24,8 @@ export class AllPropertyListComponent implements OnInit {
   }
 
 
-  detail(p: Property): void {
-    this.userService.currentProperty = p;
-    this.router.navigate(['/detail']);
+  detail(p: PropertyAuction): void {
+    this.userService.currentPropertyAuction = p;
+    this.router.navigate(['/property-detail']);
   }
-
 }

@@ -19,4 +19,6 @@ export class Property {
   pid: number;
   address: string;
   picUrl: string[];
+  latitude: number;
+  longitude: number;
 }

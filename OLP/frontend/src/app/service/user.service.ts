@@ -3,6 +3,7 @@ import {NbAuthJWTToken, NbAuthService} from "@nebular/auth";
 import {User} from "../model/user.model";
 import {Property} from "../model/property.model";
 import {Auction} from "../model/auction.model";
+import {PropertyAuction} from "../model/property-auction.model";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class UserService {
   currentProperty : Property;
   currentAuction: Auction;
   currentUser: User;
+  currentPropertyAuction : PropertyAuction;
 
   constructor(private authService: NbAuthService) {
     this.authService.onTokenChange()

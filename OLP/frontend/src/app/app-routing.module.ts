@@ -126,7 +126,7 @@ const routes: Routes = [
     component: PlaceBidComponent,
   },
   {
-    path: 'detail',
+    path: 'property-detail',
     component: PropertyDetailComponent,
   },
 ];

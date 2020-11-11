@@ -14,7 +14,7 @@
     </insert>
 
     <delete id="removeFavorite" parameterType="com.echo.backend.domain.UserFavorite">
-        delete user_favorite where uid=#{uid} and pid=#{pid}
+        delete from user_favorite where uid=#{uid} and pid=#{pid}
     </delete>
 
     <select id="viewMyFavorite" resultMap="UserFavoriteMap" parameterType="java.lang.Integer" >

@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm col-sm-4" *ngFor="let p of properties">
-      <app-property-card [propertyAuction]="p"></app-property-card>
+      <app-property-card [propertyAuction]="p" (click)="detail(p)" class="cursor-pointer"></app-property-card>
     </div>
   </div>
 </div>
