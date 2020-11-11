@@ -1,13 +1,7 @@
 package com.echo.backend.service;
 
-import com.echo.backend.dao.AuctionBidMapper;
-import com.echo.backend.dao.AuctionMapper;
-import com.echo.backend.dao.AuctionRegisterMapper;
-import com.echo.backend.dao.PropertyMapper;
-import com.echo.backend.domain.Auction;
-import com.echo.backend.domain.AuctionRegister;
-import com.echo.backend.domain.Property;
-import com.echo.backend.domain.User;
+import com.echo.backend.dao.*;
+import com.echo.backend.domain.*;
 import com.echo.backend.utils.MailUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,6 +25,8 @@ public class AuctionCheckTimer {
 
     private final PropertyMapper propertyMapper;
 
+    private final UserMessageMapper userMessageMapper;
+
     private final Map<Integer, Auction> onAuctionMap;
 
     private final Map<Integer, Auction> auctioningMap;
@@ -42,11 +38,12 @@ public class AuctionCheckTimer {
     private final UserService userService;
 
     @Autowired
-    public AuctionCheckTimer(AuctionMapper auctionMapper, AuctionRegisterMapper auctionRegisterMapper, AuctionBidMapper auctionBidMapper, PropertyMapper propertyMapper, Map<Integer, Auction> onAuctionMap, Map<Integer, Auction> auctioningMap, Map<String, String> mailTemplate, MailUtil mailUtil, UserService userService) {
+    public AuctionCheckTimer(AuctionMapper auctionMapper, AuctionRegisterMapper auctionRegisterMapper, AuctionBidMapper auctionBidMapper, PropertyMapper propertyMapper, UserMessageMapper userMessageMapper, Map<Integer, Auction> onAuctionMap, Map<Integer, Auction> auctioningMap, Map<String, String> mailTemplate, MailUtil mailUtil, UserService userService) {
         this.auctionMapper = auctionMapper;
         this.auctionRegisterMapper = auctionRegisterMapper;
         this.auctionBidMapper = auctionBidMapper;
         this.propertyMapper = propertyMapper;
+        this.userMessageMapper = userMessageMapper;
         this.onAuctionMap = onAuctionMap;
         this.auctioningMap = auctioningMap;
         this.mailTemplate = mailTemplate;
@@ -123,6 +120,16 @@ public class AuctionCheckTimer {
                 if (auction.getWinner() == auction.getUid()){
                     auction.setStatus(4);
                     propertyMapper.updateAuctionFail(auction.getPid());
+
+                    UserMessage userMessage = new UserMessage();
+                    userMessage.setUid(auction.getUid());
+                    userMessage.setSender("admin");
+                    userMessage.setSendTime(new Date());
+                    userMessage.setContent("Sorry, one of your property passed in auction");
+                    userMessage.setSubject("Official notification");
+                    userMessage.setAid(auction.getAid());
+                    userMessage.setPid(auction.getPid());
+                    userMessageMapper.sendMessage(userMessage);
                 }
                 else {
                     auction.setStatus(3);
@@ -143,6 +150,26 @@ public class AuctionCheckTimer {
 
                     mailUtil.sendSimpleMail(winner.getEmail(), "Auction Win", winTemp);
                     mailUtil.sendSimpleMail(winner.getEmail(), "Property Sold", ownTemp);
+
+                    UserMessage userMessage1 = new UserMessage();
+                    userMessage1.setUid(auction.getUid());
+                    userMessage1.setSender("admin");
+                    userMessage1.setSendTime(new Date());
+                    userMessage1.setContent("Congrats! Your property is sold!");
+                    userMessage1.setSubject("Official notification");
+                    userMessage1.setAid(auction.getAid());
+                    userMessage1.setPid(auction.getPid());
+                    userMessageMapper.sendMessage(userMessage1);
+
+                    UserMessage userMessage2 = new UserMessage();
+                    userMessage2.setUid(auction.getWinner());
+                    userMessage2.setSender("admin");
+                    userMessage2.setSendTime(new Date());
+                    userMessage2.setContent("Congrats! Your win a auction!");
+                    userMessage2.setSubject("Official notification");
+                    userMessage2.setAid(auction.getAid());
+                    userMessage2.setPid(auction.getPid());
+                    userMessageMapper.sendMessage(userMessage2);
                 }
                 auctionMapper.updateWinnerPrice(auction);
 

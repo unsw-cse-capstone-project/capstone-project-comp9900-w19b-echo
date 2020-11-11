@@ -53,6 +53,19 @@ create table t_auction(
 auto_increment=1000000;
 create index tap_index on t_auction(pid);
 
+create table user_message(
+    uid int not null,
+    pid int,
+    aid int,
+    sender varchar(30) not null,
+    send_time datetime,
+    subject varchar(50) not null,
+    content varchar(300) not null,
+    read_flag int default 0,
+    serial int auto_increment primary key
+);
+create index um_index on user_message(uid);
+
 create table user_favorite(
     uid int not null,
     pid int not null,

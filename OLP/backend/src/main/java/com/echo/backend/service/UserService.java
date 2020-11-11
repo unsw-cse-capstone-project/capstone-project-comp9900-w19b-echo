@@ -1,13 +1,7 @@
 package com.echo.backend.service;
 
-import com.echo.backend.dao.PaymentDetailMapper;
-import com.echo.backend.dao.PropertyMapper;
-import com.echo.backend.dao.UserFavoriteMapper;
-import com.echo.backend.dao.UserMapper;
-import com.echo.backend.domain.PaymentDetail;
-import com.echo.backend.domain.Property;
-import com.echo.backend.domain.User;
-import com.echo.backend.domain.UserFavorite;
+import com.echo.backend.dao.*;
+import com.echo.backend.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,12 +19,15 @@ public class UserService {
 
     private final PropertyMapper propertyMapper;
 
+    private final UserMessageMapper userMessageMapper;
+
     @Autowired
-    public UserService(UserMapper userMapper, PaymentDetailMapper paymentDetailMapper, UserFavoriteMapper userFavoriteMapper, PropertyMapper propertyMapper) {
+    public UserService(UserMapper userMapper, PaymentDetailMapper paymentDetailMapper, UserFavoriteMapper userFavoriteMapper, PropertyMapper propertyMapper, UserMessageMapper userMessageMapper) {
         this.userMapper = userMapper;
         this.paymentDetailMapper = paymentDetailMapper;
         this.userFavoriteMapper = userFavoriteMapper;
         this.propertyMapper = propertyMapper;
+        this.userMessageMapper = userMessageMapper;
     }
 
     public User getUserByEmail(String email){
@@ -116,5 +113,13 @@ public class UserService {
             return retList.get(0);
         }
         return null;
+    }
+
+    public void deleteMessage(int serial) {
+        userMessageMapper.deleteMessage(serial);
+    }
+
+    public List<UserMessage> viewMyMessage(int uid) {
+        return userMessageMapper.viewMyMessage(uid);
     }
 }

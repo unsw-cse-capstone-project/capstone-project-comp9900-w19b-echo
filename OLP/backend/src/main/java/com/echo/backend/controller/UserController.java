@@ -264,6 +264,22 @@ public class UserController {
         return new SendEmailResponse(200, "send email success", null);
     }
 
+    @RequestMapping(value = "/delete-message", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public MessageResponse deleteMessage(@RequestBody MessageRequest request, HttpServletRequest hRequest){
+
+        userService.deleteMessage(request.getSerial());
+        return new MessageResponse(200, "delete message success", null);
+    }
+
+    @RequestMapping(value = "/view-message", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public List<UserMessage> viewMessage(@RequestBody MessageRequest request, HttpServletRequest hRequest){
+
+        int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
+        return userService.viewMyMessage(uid);
+    }
+
     @GetMapping("/require_auth")
     @RequiresAuthentication
     @ApiIgnore
