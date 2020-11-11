@@ -11,6 +11,7 @@ import com.echo.backend.utils.MailUtil;
 import com.echo.backend.utils.PagingUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.*;
 
 @RestController
@@ -228,6 +230,7 @@ public class UserController {
     public AddUserFavoriteResponse addFavorite(@RequestBody AddUserFavoriteRequest request, HttpServletRequest hRequest){
 
         userService.addFavorite(request.getUid(), request.getPid());
+        userService.collectHabitFromFavorite(request.getUid(), request.getPid());
 
         return new AddUserFavoriteResponse(200, "Add favorite success", null);
     }
@@ -239,6 +242,14 @@ public class UserController {
         userService.cancelFavorite(request.getUid(), request.getPid());
 
         return new CancelUserFavoriteResponse(200, "Cancel favorite success", null);
+    }
+
+    @RequestMapping(value = "/get-recommendation", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public List<Property> recommendation(@RequestBody SearchPropertyRequest request, HttpServletRequest hRequest) throws IOException, ParseException {
+
+        int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
+        return userService.getRecommandProperty(uid);
     }
 
     @RequestMapping(value = "/view-favorite", method = RequestMethod.POST)

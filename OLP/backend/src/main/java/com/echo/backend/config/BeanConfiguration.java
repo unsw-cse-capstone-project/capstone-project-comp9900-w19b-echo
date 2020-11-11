@@ -1,8 +1,20 @@
 package com.echo.backend.config;
 
+import com.echo.backend.dao.PropertyMapper;
 import com.echo.backend.domain.Auction;
+import com.echo.backend.domain.Property;
+import org.apache.lucene.analysis.core.StopAnalyzer;
+import org.apache.lucene.document.Document;
+import org.apache.lucene.document.Field;
+import org.apache.lucene.document.TextField;
+import org.apache.lucene.index.IndexWriter;
+import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.store.Directory;
+import org.apache.lucene.store.RAMDirectory;
+import org.apache.lucene.util.Version;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,8 +24,10 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
 import javax.sql.DataSource;
+import java.io.IOException;
 import java.sql.Connection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
@@ -24,6 +38,12 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class BeanConfiguration {
 
     private Logger log = LoggerFactory.getLogger(BeanConfiguration.class);
+
+    private final PropertyMapper propertyMapper;
+
+    public BeanConfiguration(PropertyMapper propertyMapper) {
+        this.propertyMapper = propertyMapper;
+    }
 
     @Bean
     public ApplicationRunner runner(DataSource dataSource) {
@@ -99,5 +119,36 @@ public class BeanConfiguration {
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.DiscardPolicy());
         executor.initialize();
         return executor;
+    }
+
+    @Bean
+    public Directory ramDirectory() {
+
+        try {
+
+            List<Property> properties = propertyMapper.getAllProperty();
+
+            Directory dic = new RAMDirectory();
+            IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_4_10_2, new StopAnalyzer());
+
+            IndexWriter writer = new IndexWriter(dic, config);
+            writer.deleteAll();
+            properties.forEach(t->{
+                Document doc = new Document();
+                doc.add(new Field("pid", String.valueOf(t.getPid()), TextField.TYPE_STORED));
+                doc.add(new Field("address", t.getAddress(), TextField.TYPE_STORED));
+                try {
+                    writer.addDocument(doc);
+                } catch (IOException ignored) {}
+            });
+
+            writer.commit();
+            writer.close();
+            return dic;
+
+        }
+        catch (IOException ignored){}
+
+        return null;
     }
 }

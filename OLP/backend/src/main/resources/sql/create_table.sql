@@ -136,3 +136,10 @@ create table user_payment(
     serial int auto_increment primary key
 );
 create index up_index on user_payment(uid);
+
+create table user_habit(
+    uid int not null,
+    term varchar(20) not null,
+    term_hot int default 1,
+    primary key (uid, term)
+);

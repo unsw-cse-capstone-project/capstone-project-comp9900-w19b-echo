@@ -7,7 +7,8 @@ import com.echo.backend.domain.Property;
 import com.echo.backend.dto.*;
 import com.echo.backend.service.AuctionService;
 import com.echo.backend.service.PropertyService;
-import com.echo.backend.utils.PagingUtil;
+import com.echo.backend.service.UserService;
+import com.echo.backend.utils.JWTUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang.time.DateUtils;
@@ -29,10 +30,13 @@ public class AuctionController {
 
     private final PropertyService propertyService;
 
+    private final UserService userService;
+
     @Autowired
-    public AuctionController(AuctionService auctionService, PropertyService propertyService) {
+    public AuctionController(AuctionService auctionService, PropertyService propertyService, UserService userService) {
         this.auctionService = auctionService;
         this.propertyService = propertyService;
+        this.userService = userService;
     }
 
     @ApiOperation(value="Create auction", notes="Create auction")
@@ -129,7 +133,13 @@ public class AuctionController {
     @ApiOperation(value="register auction", notes="register auction")
     @RequestMapping(value = "/register-auction", method = RequestMethod.POST)
     @RequiresAuthentication
-    public RegisterAuctionResponse registerAuction(@RequestBody RegisterAuctionRequest request) {
+    public RegisterAuctionResponse registerAuction(@RequestBody RegisterAuctionRequest request, HttpServletRequest hRequest) {
+
+        try {
+            int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), null);
+            userService.collectHabitFromRegisterAuction(uid, request.getAuctionRegister().getPid());
+        }
+        catch (Exception ignored){}
 
         AuctionRegister register = request.getAuctionRegister();
 

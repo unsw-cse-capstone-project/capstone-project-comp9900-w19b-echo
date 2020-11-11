@@ -101,8 +101,14 @@ public class PropertyController {
     }
 
     @RequestMapping(value = "/view-property-pid", method = RequestMethod.POST)
-    @RequiresAuthentication
-    public List<Property> viewPropertyByPid(@RequestBody SearchPropertyRequest request) {
+    //@RequiresAuthentication
+    public List<Property> viewPropertyByPid(@RequestBody SearchPropertyRequest request, HttpServletRequest hRequest) {
+
+        try {
+            int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
+            userService.collectHabitFromViewProperty(uid, request.getPid());
+        }
+        catch (Exception ignored){}
 
         return FileUtil.generatePropertyPic(propertyService.getPropertyByPid(request.getPid()), uploadPath, accessPath);
     }
@@ -127,7 +133,13 @@ public class PropertyController {
 
     @RequestMapping(value = "/search-property-address", method = RequestMethod.POST)
     //@RequiresAuthentication
-    public List<Property> searchPropertyFilter(@RequestBody SearchPropertyRequest searchRequest) {
+    public List<Property> searchPropertyFilter(@RequestBody SearchPropertyRequest searchRequest, HttpServletRequest hRequest) {
+
+        try {
+            int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
+            userService.collectHabitFromSearchPropertyAddress(uid, searchRequest.getProperty());
+        }
+        catch (Exception ignored){}
 
         List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyFilter(searchRequest.getProperty()), uploadPath, accessPath);
         return PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
@@ -143,7 +155,13 @@ public class PropertyController {
 
     @RequestMapping(value = "/search-property-like", method = RequestMethod.POST)
     //@RequiresAuthentication
-    public List<PropertyAuction> searchPropertyVague(@RequestBody SearchPropertyRequest searchRequest) {
+    public List<PropertyAuction> searchPropertyVague(@RequestBody SearchPropertyRequest searchRequest, HttpServletRequest hRequest) {
+
+        try {
+            int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
+            userService.collectHabitFromSearchPropertyKeyword(uid, searchRequest.getKeyword());
+        }
+        catch (Exception ignored){}
 
         List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyVague(searchRequest.getKeyword()), uploadPath, accessPath);
         List<Property> properties = PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
