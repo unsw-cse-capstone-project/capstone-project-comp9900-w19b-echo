@@ -7,6 +7,7 @@ import com.echo.backend.exception.UnauthorizedException;
 import com.echo.backend.service.AuctionService;
 import com.echo.backend.service.UserService;
 import com.echo.backend.utils.JWTUtil;
+import com.echo.backend.utils.MailUtil;
 import com.echo.backend.utils.PagingUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -20,23 +21,27 @@ import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 @Api(tags = "User management apis")
 public class UserController {
     private Logger logger = LoggerFactory.getLogger(UserController.class);
-    private UserService userService;
 
+    private UserService userService;
     private AuctionService auctionService;
+    private MailUtil mailUtil;
+    private Map<String, String> mailTemplate;
+    private Map<Integer, Integer> verifyCode;
 
     @Autowired
-    public void setService(UserService userService, AuctionService auctionService) {
+    public void setService(UserService userService, AuctionService auctionService, MailUtil mailUtil, Map<String, String> mailTemplate, Map<Integer, Integer> verifyCode) {
         this.userService = userService;
         this.auctionService = auctionService;
+        this.mailUtil = mailUtil;
+        this.mailTemplate = mailTemplate;
+        this.verifyCode = verifyCode;
     }
 
     @ApiOperation(value="User login", notes="Login with email")
@@ -77,6 +82,7 @@ public class UserController {
         user.setPhone(request.getPhoneNumber());
 
         userService.addNewUser(user);
+        user = userService.getUserByEmail(request.getEmail());
         return new SignUpResponse(200, "Login success", JWTUtil.sign(user.getEmail(), user.getUserName(), user.getPassword(), user.getUid()));
     }
 
@@ -140,9 +146,33 @@ public class UserController {
         return new UpdateInfoResponse(200, "Update success", null);
     }
 
+    @RequestMapping(value = "/request-verify-code", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public UpdatePasswordResponse getVerifyCode(@RequestBody UpdatePasswordRequest request, HttpServletRequest hRequest){
+
+        Integer uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), null);
+        String email = JWTUtil.getEmail(hRequest.getHeader("Authorization"));
+        Random rand = new Random();
+        int code = (rand.nextInt(9)+1)*1000 + rand.nextInt(1000);
+        verifyCode.put(uid, code);
+
+        String template = mailTemplate.get("ResetPassword").replace("${code}", String.valueOf(code));
+        mailUtil.sendSimpleMail(email, "ResetPassword", template);
+        return new UpdatePasswordResponse(200, "Request verify code success", null);
+    }
+
     @RequestMapping(value = "/update-password", method = RequestMethod.POST)
     @RequiresAuthentication
     public UpdatePasswordResponse updatePassword(@RequestBody UpdatePasswordRequest request, HttpServletRequest hRequest){
+
+        Integer uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), null);
+
+        if (!verifyCode.containsKey(uid))
+            return new UpdatePasswordResponse(501, "Please send verify code first", null);
+
+        if (verifyCode.get(uid) != request.getCode()){
+            return new UpdatePasswordResponse(501, "Your verify code is not right", null);
+        }
 
         String email = JWTUtil.getEmail(hRequest.getHeader("Authorization"));
         User user = request.getUser();
@@ -228,6 +258,12 @@ public class UserController {
             propertyAuctions.add(propertyAuction);
         }
         return propertyAuctions;
+    }
+
+    @RequestMapping(value = "/send-email", method = RequestMethod.POST)
+    public SendEmailResponse sendTestEmail(@RequestBody SendEmailRequest request, HttpServletRequest hRequest){
+        mailUtil.sendSimpleMail(request.getTo(), request.getSubject(), request.getContent());
+        return new SendEmailResponse(200, "send email success", null);
     }
 
     @GetMapping("/require_auth")

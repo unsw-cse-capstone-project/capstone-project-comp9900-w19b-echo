@@ -109,4 +109,12 @@ public class UserService {
 
         return propertyMapper.getMyFavorite(uid);
     }
+
+    public User getUserByUid(int uid) {
+        List<User> retList = userMapper.selectUserByUid(uid);
+        if (retList != null && retList.size()>0){
+            return retList.get(0);
+        }
+        return null;
+    }
 }
