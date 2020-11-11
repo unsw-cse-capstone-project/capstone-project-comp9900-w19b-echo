@@ -7,8 +7,8 @@
   <nb-layout-column>
     <nb-card [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success" size="large">
       <nb-card-body>
-        <div class="text-lg-right">
-          <button class="btn btn-outline-primary btn-sm" (click)="addProperty()">Add Property</button>
+        <div class="text-lg-left">
+          <button class="btn btn-primary btn-sm" (click)="addProperty()">Add Property</button>
         </div>
         <app-property-list [properties]="properties" (delete)="deleteProperty($event)"></app-property-list>
       </nb-card-body>

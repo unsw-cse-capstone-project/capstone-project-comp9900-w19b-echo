@@ -8,6 +8,8 @@ import { EventEmitter } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
   text: string = '';
+  checked: boolean = false;
+
   @Output() search: EventEmitter<any> = new EventEmitter();
 
   constructor() { }

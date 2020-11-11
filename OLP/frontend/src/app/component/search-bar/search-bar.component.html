@@ -1,4 +1,6 @@
 <form class="form-inline justify-content-center align-items-center margin-top" (ngSubmit)="searchProperty()">
-  <input class="form-control mr-sm-2 w-50 form-rounded" type="search" placeholder="Search" aria-label="Search" id="searchText" name="searchText" [(ngModel)]="text">
-  <nb-icon icon="search-outline" class="font-size-lg" (click)="searchProperty()"></nb-icon>
+    <input class="form-control mr-sm-2 w-50 form-rounded" type="search" placeholder="Search" aria-label="Search" id="searchText" name="searchText" [(ngModel)]="text">
+    <nb-icon icon="search-outline" class="font-size-lg" (click)="searchProperty()"></nb-icon>
+    <input type="checkbox" class="form-check-input ml-2" id="advanceSearch" [checked]="checked">
+    <label class="form-check-label" for="advanceSearch">Advance Search</label>
 </form>
