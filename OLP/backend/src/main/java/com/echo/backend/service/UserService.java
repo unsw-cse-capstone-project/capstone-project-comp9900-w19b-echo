@@ -152,7 +152,11 @@ public class UserService {
 
         List<UserHabit> habits = userHabitMapper.listUserHabit(uid);
         String terms = habits.stream().map(UserHabit::getTerm).collect(Collectors.joining(" "));
+        return luceneSearch(terms);
 
+    }
+
+    public List<Property> luceneSearch(String terms) throws IOException, ParseException {
         Analyzer analyzer = new StandardAnalyzer();
         DirectoryReader reader = DirectoryReader.open(ramDirectory);
         IndexSearcher searcher = new IndexSearcher(reader);

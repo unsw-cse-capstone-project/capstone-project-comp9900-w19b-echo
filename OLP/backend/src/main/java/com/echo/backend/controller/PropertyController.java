@@ -11,6 +11,7 @@ import com.echo.backend.utils.JWTUtil;
 import com.echo.backend.utils.PagingUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +20,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -155,7 +157,7 @@ public class PropertyController {
 
     @RequestMapping(value = "/search-property-like", method = RequestMethod.POST)
     //@RequiresAuthentication
-    public List<PropertyAuction> searchPropertyVague(@RequestBody SearchPropertyRequest searchRequest, HttpServletRequest hRequest) {
+    public List<PropertyAuction> searchPropertyVague(@RequestBody SearchPropertyRequest searchRequest, HttpServletRequest hRequest) throws IOException, ParseException {
 
         try {
             int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
@@ -163,7 +165,10 @@ public class PropertyController {
         }
         catch (Exception ignored){}
 
-        List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyVague(searchRequest.getKeyword()), uploadPath, accessPath);
+        List<Property> fromLucene = userService.luceneSearch(searchRequest.getKeyword());
+        List<Property> fromDB = propertyService.searchPropertyVague(searchRequest.getKeyword());
+        fromDB.addAll(fromLucene);
+        List<Property> result = FileUtil.generatePropertyPic(fromDB, uploadPath, accessPath);
         List<Property> properties = PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
         return getPropertyAuctions(properties);
     }
