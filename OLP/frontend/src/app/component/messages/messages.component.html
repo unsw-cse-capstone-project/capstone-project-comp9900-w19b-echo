@@ -1,15 +1,23 @@
 <nb-layout>
 
-  <nb-layout-header fixed>
-    <app-header></app-header>
-  </nb-layout-header>
+    <nb-layout-header fixed>
+        <app-header></app-header>
+    </nb-layout-header>
 
-  <nb-layout-column>
+    <nb-layout-column>
+        <div class="container-fluid">
+            <button (click)="sendEmail()">Send Email</button>
+            <div class="row">
+                <div class="col-sm col-sm-4" *ngFor="let m of messages">
+                    <app-message-card [message]="m" class="cursor-pointer"></app-message-card>
+                </div>
+            </div>
+        </div>
 
-  </nb-layout-column>
+    </nb-layout-column>
 
-  <nb-layout-footer fixed>
-    <!-- Insert footer here -->
-  </nb-layout-footer>
+    <nb-layout-footer fixed>
+        <!-- Insert footer here -->
+    </nb-layout-footer>
 
 </nb-layout>

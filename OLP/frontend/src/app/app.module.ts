@@ -42,7 +42,7 @@ import { UserAccountComponent } from './component/user-account/user-account.comp
 import { ProfileComponent } from './component/profile/profile.component';
 import { AddressComponent } from './component/address/address.component';
 import { PaymentComponent } from './component/payment/payment.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { MyPropertiesComponent } from './component/my-properties/my-properties.component';
 import { ActiveAuctionsComponent } from './component/active-auctions/active-auctions.component';
@@ -70,6 +70,7 @@ import { UploadComponent } from './component/upload/upload.component';
 import { PropertyCardComponent } from './component/property-card/property-card.component';
 
 import { AgmCoreModule } from '@agm/core';
+import { EmailFormComponent } from './component/email-form/email-form.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import { AgmCoreModule } from '@agm/core';
     PlaceBidComponent,
     PropertyDetailComponent,
     UploadComponent,
-    PropertyCardComponent
+    PropertyCardComponent,
+    EmailFormComponent
   ],
   imports: [
     BrowserModule,
@@ -174,6 +176,7 @@ import { AgmCoreModule } from '@agm/core';
     NbToastrModule.forRoot(),
     NbTabsetModule,
     FormsModule,
+    ReactiveFormsModule,
     NbSpinnerModule,
     AgGridModule.withComponents([]),
     MatTableModule,

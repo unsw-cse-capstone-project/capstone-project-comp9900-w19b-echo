@@ -1,0 +1,27 @@
+<nb-layout>
+
+    <nb-layout-header fixed>
+        <app-header></app-header>
+    </nb-layout-header>
+
+    <nb-layout-column>
+        <form class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+            <p class="h4 mb-4">Email</p>
+            <label>Subject</label>
+            <input type="text" formControlName="subject" id="defaultContactFormSubject" mdbInput class="form-control mb-4" placeholder="Subject">
+
+            <div class="form-group">
+                <textarea formControlName="content" class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+            </div>
+
+            <button mdbBtn color="info" outline="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect type="submit">Send</button>
+
+        </form>
+
+    </nb-layout-column>
+
+    <nb-layout-footer fixed>
+    </nb-layout-footer>
+
+</nb-layout>

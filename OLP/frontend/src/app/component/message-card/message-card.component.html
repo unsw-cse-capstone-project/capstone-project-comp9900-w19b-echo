@@ -1,4 +1,4 @@
-<nb-card status="danger">
+<!-- <nb-card status="danger">
   <nb-card-header class="text-center">Messages</nb-card-header>
   <nb-card-body>
     <div class="container-fluid">
@@ -11,4 +11,12 @@
       </div>
     </div>
   </nb-card-body>
+</nb-card> -->
+
+<nb-card status="danger">
+    <nb-card-header class="text-center">{{message.subject}}<button class="close" mat-button (click)="onDelete(message)">x</button></nb-card-header>
+    <nb-card-body>
+        <p>Sender: {{message.sender}}</p>
+        <p>{{message.content}}</p>
+    </nb-card-body>
 </nb-card>
