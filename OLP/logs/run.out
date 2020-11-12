@@ -3,3 +3,190 @@
 2020-11-13 00:10:00.011  INFO 82328 --- [schedulerTaskPool-4] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
 2020-11-13 00:15:00.009  INFO 82328 --- [schedulerTaskPool-3] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
 2020-11-13 00:20:00.010  INFO 82328 --- [schedulerTaskPool-10] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 00:24:32.654  INFO 82328 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'taskExecutor'
+2020-11-13 00:24:32.654  INFO 82328 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'schedulerTaskPool'
+2020-11-13 00:24:32.660  INFO 82328 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-13 00:24:42.669  INFO 82328 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-11-13 00:27:19.680  INFO 77973 --- [main] com.echo.backend.BackendApplication      : Starting BackendApplication on 192-168-1-106.tpgi.com.au with PID 77973 (/Users/shizukahayashi/Desktop/capstone-project-comp9900-w19b-echo/OLP/backend/target/classes started by shizukahayashi in /Users/shizukahayashi/Desktop/capstone-project-comp9900-w19b-echo/OLP/backend)
+2020-11-13 00:27:19.681 DEBUG 77973 --- [main] com.echo.backend.BackendApplication      : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-11-13 00:27:19.682  INFO 77973 --- [main] com.echo.backend.BackendApplication      : No active profile set, falling back to default profiles: default
+2020-11-13 00:27:20.566  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.echo.backend.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$53572ada] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.639  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.645  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$ad30645] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.646  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.653  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.676  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.901  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.911  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.911  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.913  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy61] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.914  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'paymentDetailMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.915  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'paymentDetailMapper' of type [com.sun.proxy.$Proxy62] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.916  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userFavoriteMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.917  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userFavoriteMapper' of type [com.sun.proxy.$Proxy63] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.918  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'propertyMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.919  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'propertyMapper' of type [com.sun.proxy.$Proxy64] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.920  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMessageMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.921  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMessageMapper' of type [com.sun.proxy.$Proxy65] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.922  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userHabitMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.922  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userHabitMapper' of type [com.sun.proxy.$Proxy66] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.924  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'beanConfiguration' of type [com.echo.backend.config.BeanConfiguration$$EnhancerBySpringCGLIB$$9a9e3bea] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:20.946  INFO 77973 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-13 00:27:25.409  INFO 77973 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-13 00:27:26.049  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'ramDirectory' of type [org.apache.lucene.store.RAMDirectory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:26.050  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userService' of type [com.echo.backend.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:26.051  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myRealm' of type [com.echo.backend.config.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:26.072  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:26.113  INFO 77973 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 00:27:26.327  INFO 77973 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-11-13 00:27:26.334  INFO 77973 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-13 00:27:26.334  INFO 77973 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-13 00:27:26.405  INFO 77973 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2020-11-13 00:27:26.405  INFO 77973 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6680 ms
+2020-11-13 00:27:26.895  INFO 77973 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'schedulerTaskPool'
+2020-11-13 00:27:26.900  INFO 77973 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-11-13 00:27:26.900  INFO 77973 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
+2020-11-13 00:27:27.125  INFO 77973 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-11-13 00:27:27.136  INFO 77973 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-11-13 00:27:27.136  INFO 77973 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.0 created.
+2020-11-13 00:27:27.136  INFO 77973 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-11-13 00:27:27.137  INFO 77973 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-11-13 00:27:27.137  INFO 77973 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-11-13 00:27:27.137  INFO 77973 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.0
+2020-11-13 00:27:27.137  INFO 77973 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@5100c143
+2020-11-13 00:27:27.187  INFO 77973 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-11-13 00:27:27.188  INFO 77973 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-11-13 00:27:27.203  INFO 77973 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-11-13 00:27:27.210  INFO 77973 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-11-13 00:27:27.509  INFO 77973 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addPaymentUsingPOST_1
+2020-11-13 00:27:27.575  INFO 77973 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2020-11-13 00:27:27.575  INFO 77973 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-11-13 00:27:27.588  INFO 77973 --- [main] com.echo.backend.BackendApplication      : Started BackendApplication in 8.346 seconds (JVM running for 8.632)
+2020-11-13 00:27:27.590  INFO 77973 --- [main] c.echo.backend.config.BeanConfiguration  : dataSource: HikariDataSource (HikariPool-1)
+2020-11-13 00:27:27.927  INFO 77973 --- [main] c.echo.backend.config.BeanConfiguration  : connection: HikariProxyConnection@403542410 wrapping com.mysql.cj.jdbc.ConnectionImpl@587c5c1
+2020-11-13 00:30:00.001  INFO 77973 --- [schedulerTaskPool-3] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 00:30:28.621  INFO 77973 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-13 00:30:28.621  INFO 77973 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-11-13 00:30:28.628  INFO 77973 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-11-13 00:35:00.019  INFO 77973 --- [schedulerTaskPool-3] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 00:40:00.002  INFO 77973 --- [schedulerTaskPool-3] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 00:45:00.005  INFO 77973 --- [schedulerTaskPool-4] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 00:50:00.005  INFO 77973 --- [schedulerTaskPool-7] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 00:55:00.004  INFO 77973 --- [schedulerTaskPool-4] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 01:00:00.006  INFO 77973 --- [schedulerTaskPool-8] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 01:05:00.003  INFO 77973 --- [schedulerTaskPool-7] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 01:10:00.005  INFO 77973 --- [schedulerTaskPool-3] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 01:15:00.006  INFO 77973 --- [schedulerTaskPool-8] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 01:20:00.006  INFO 77973 --- [schedulerTaskPool-4] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 01:25:00.005  INFO 77973 --- [schedulerTaskPool-6] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 01:30:00.006  INFO 77973 --- [schedulerTaskPool-9] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 01:35:00.005  INFO 77973 --- [schedulerTaskPool-4] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 01:40:00.006  INFO 77973 --- [schedulerTaskPool-10] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 01:45:00.006  INFO 77973 --- [schedulerTaskPool-10] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 01:49:59.990  INFO 77973 --- [schedulerTaskPool-10] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 01:55:00.005  INFO 77973 --- [schedulerTaskPool-9] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 02:00:00.004  INFO 77973 --- [schedulerTaskPool-6] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 02:05:00.003  INFO 77973 --- [schedulerTaskPool-3] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 02:10:00.003  INFO 77973 --- [schedulerTaskPool-10] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 02:15:00.004  INFO 77973 --- [schedulerTaskPool-5] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 02:20:00.004  INFO 77973 --- [schedulerTaskPool-7] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 02:25:00.004  INFO 77973 --- [schedulerTaskPool-10] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 02:29:59.994  INFO 77973 --- [schedulerTaskPool-2] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 02:35:00.004  INFO 77973 --- [schedulerTaskPool-2] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 02:40:00.005  INFO 77973 --- [schedulerTaskPool-4] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 02:45:00.005  INFO 77973 --- [schedulerTaskPool-9] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 02:50:00.005  INFO 77973 --- [schedulerTaskPool-1] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 02:55:00.004  INFO 77973 --- [schedulerTaskPool-10] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 03:00:00.005  INFO 77973 --- [schedulerTaskPool-8] c.e.backend.service.AuctionCheckTimer    : ---checking auction---
+2020-11-13 03:01:47.286  INFO 77973 --- [SpringContextShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-11-13 03:01:47.354  INFO 77973 --- [SpringContextShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2020-11-13 03:01:47.355  INFO 77973 --- [SpringContextShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-11-13 03:01:47.355  INFO 77973 --- [SpringContextShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-11-13 03:01:47.355  INFO 77973 --- [SpringContextShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-11-13 03:01:47.357  INFO 77973 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'taskExecutor'
+2020-11-13 03:01:47.358  INFO 77973 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'schedulerTaskPool'
+2020-11-13 03:01:47.361  INFO 77973 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-13 03:01:50.393  INFO 77973 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-11-13 03:05:26.509  INFO 93531 --- [main] com.echo.backend.BackendApplication      : Starting BackendApplication on 192-168-1-124.tpgi.com.au with PID 93531 (/Users/lee/Desktop/temp/capstone-project-comp9900-w19b-echo/OLP/backend/target/classes started by lee in /Users/lee/Desktop/temp/capstone-project-comp9900-w19b-echo/OLP/backend)
+2020-11-13 03:05:26.515 DEBUG 93531 --- [main] com.echo.backend.BackendApplication      : Running with Spring Boot v2.3.4.RELEASE, Spring v5.2.9.RELEASE
+2020-11-13 03:05:26.529  INFO 93531 --- [main] com.echo.backend.BackendApplication      : No active profile set, falling back to default profiles: default
+2020-11-13 03:05:28.447  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.echo.backend.config.shiro.ShiroConfig$$EnhancerBySpringCGLIB$$77827149] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:28.619  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties' of type [org.mybatis.spring.boot.autoconfigure.MybatisProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:28.634  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration' of type [org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$2efe4cb4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:28.638  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:28.654  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:28.717  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.398  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.407  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.409  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.411  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy61] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.415  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'paymentDetailMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.417  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'paymentDetailMapper' of type [com.sun.proxy.$Proxy62] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.420  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userFavoriteMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.424  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userFavoriteMapper' of type [com.sun.proxy.$Proxy63] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.428  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'propertyMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.430  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'propertyMapper' of type [com.sun.proxy.$Proxy64] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.432  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMessageMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.433  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userMessageMapper' of type [com.sun.proxy.$Proxy65] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.437  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userHabitMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.438  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userHabitMapper' of type [com.sun.proxy.$Proxy66] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.443  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'beanConfiguration' of type [com.echo.backend.config.BeanConfiguration$$EnhancerBySpringCGLIB$$bec98259] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:29.483  INFO 93531 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-13 03:05:34.631  INFO 93531 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-13 03:05:35.307  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'ramDirectory' of type [org.apache.lucene.store.RAMDirectory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:35.309  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'userService' of type [com.echo.backend.service.UserService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:35.310  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'myRealm' of type [com.echo.backend.config.shiro.MyRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:35.360  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:35.484  INFO 93531 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-13 03:05:36.026  INFO 93531 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-11-13 03:05:36.060  INFO 93531 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-13 03:05:36.061  INFO 93531 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-13 03:05:36.242  INFO 93531 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2020-11-13 03:05:36.243  INFO 93531 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9405 ms
+2020-11-13 03:05:37.090  INFO 93531 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'schedulerTaskPool'
+2020-11-13 03:05:37.095  INFO 93531 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService
+2020-11-13 03:05:37.097  INFO 93531 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'taskExecutor'
+2020-11-13 03:05:37.573  INFO 93531 --- [main] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-11-13 03:05:37.596  INFO 93531 --- [main] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-11-13 03:05:37.596  INFO 93531 --- [main] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.0 created.
+2020-11-13 03:05:37.597  INFO 93531 --- [main] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2020-11-13 03:05:37.598  INFO 93531 --- [main] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.0) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-11-13 03:05:37.598  INFO 93531 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-11-13 03:05:37.598  INFO 93531 --- [main] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.0
+2020-11-13 03:05:37.598  INFO 93531 --- [main] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@24b38e8f
+2020-11-13 03:05:37.706  INFO 93531 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-11-13 03:05:37.707  INFO 93531 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-11-13 03:05:37.755  INFO 93531 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-11-13 03:05:37.765  INFO 93531 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-11-13 03:05:38.379  INFO 93531 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addPaymentUsingPOST_1
+2020-11-13 03:05:38.559  INFO 93531 --- [main] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2020-11-13 03:05:38.560  INFO 93531 --- [main] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-11-13 03:05:38.579  INFO 93531 --- [main] com.echo.backend.BackendApplication      : Started BackendApplication in 13.646 seconds (JVM running for 14.409)
+2020-11-13 03:05:38.582  INFO 93531 --- [main] c.echo.backend.config.BeanConfiguration  : dataSource: HikariDataSource (HikariPool-1)
+2020-11-13 03:05:38.910  INFO 93531 --- [main] c.echo.backend.config.BeanConfiguration  : connection: HikariProxyConnection@809729692 wrapping com.mysql.cj.jdbc.ConnectionImpl@480cbe2e
+2020-11-13 03:06:14.199  INFO 93531 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-13 03:06:14.200  INFO 93531 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-11-13 03:06:14.216  INFO 93531 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2020-11-13 03:06:53.425  INFO 93531 --- [SpringContextShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-11-13 03:06:53.499  INFO 93531 --- [SpringContextShutdownHook] o.s.s.quartz.SchedulerFactoryBean        : Shutting down Quartz Scheduler
+2020-11-13 03:06:53.501  INFO 93531 --- [SpringContextShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-11-13 03:06:53.502  INFO 93531 --- [SpringContextShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-11-13 03:06:53.505  INFO 93531 --- [SpringContextShutdownHook] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-11-13 03:06:53.507  INFO 93531 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'taskExecutor'
+2020-11-13 03:06:53.508  INFO 93531 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'schedulerTaskPool'
+2020-11-13 03:06:53.513  INFO 93531 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-13 03:06:56.753  INFO 93531 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

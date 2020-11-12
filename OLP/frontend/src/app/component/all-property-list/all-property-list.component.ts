@@ -26,6 +26,7 @@ export class AllPropertyListComponent implements OnInit {
 
   detail(p: PropertyAuction): void {
     this.userService.currentPropertyAuction = p;
-    this.router.navigate(['/property-detail']);
+    console.log('?id='+p.property.pid)
+    this.router.navigate(['/property-detail'], { queryParams: {id: p.property.pid}});
   }
 }
