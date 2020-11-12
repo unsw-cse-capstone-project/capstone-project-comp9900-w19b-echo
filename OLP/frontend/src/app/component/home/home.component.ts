@@ -27,7 +27,8 @@ export class HomeComponent implements OnInit {
 
   getRecommendProperties() {
     this.isLoading = true;
-    this.http.post(environment.baseEndpoint + '/listAllProperty', {})
+    let uri = this.userService.authenticated ? '/listAllProperty' : '/listAllProperty';
+    this.http.post(environment.baseEndpoint + uri, {})
       .subscribe( (p : PropertyAuction[])=> {
           this.properties = p;
           this.isLoading = false;
@@ -38,7 +39,7 @@ export class HomeComponent implements OnInit {
   searchProperty($event: any) {
     this.isLoading = true;
     let uri = $event ? '/search-property-like' : '/listAllProperty';
-    this.http.post(environment.baseEndpoint + '/search-property-like', {keyword: $event})
+    this.http.post(environment.baseEndpoint + '/search-property', $event)
       .subscribe( (p : PropertyAuction[])=> {
           this.properties = p;
           this.isLoading = false;

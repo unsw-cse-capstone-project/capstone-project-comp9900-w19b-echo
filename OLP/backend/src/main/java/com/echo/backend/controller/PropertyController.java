@@ -11,6 +11,7 @@ import com.echo.backend.utils.JWTUtil;
 import com.echo.backend.utils.PagingUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.commons.lang.StringUtils;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.slf4j.Logger;
@@ -23,6 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -173,4 +175,46 @@ public class PropertyController {
         return getPropertyAuctions(properties);
     }
 
+    @RequestMapping(value = "/search-property", method = RequestMethod.POST)
+    //@RequiresAuthentication
+    public List<PropertyAuction> searchProperty(@RequestBody AdvanceSearchRequest searchRequest, HttpServletRequest hRequest) throws IOException, ParseException {
+
+        try {
+            int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
+            userService.collectHabitFromSearchPropertyKeyword(uid, searchRequest.getText());
+        }
+        catch (Exception ignored){}
+
+        List<Property> fromLucene = userService.luceneSearch(searchRequest.getText());
+        List<Property> fromDB = propertyService.searchPropertyVague(searchRequest.getText());
+        fromDB.addAll(fromLucene);
+        fromDB = fromDB.stream().filter(p -> compareSearch(p, searchRequest)).collect(Collectors.toList());
+        List<Property> result = FileUtil.generatePropertyPic(fromDB, uploadPath, accessPath);
+        List<Property> properties = PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
+        return getPropertyAuctions(properties);
+    }
+
+    private boolean compareSearch(Property p, AdvanceSearchRequest searchRequest) {
+        String state = searchRequest.getState();
+        String suburb = searchRequest.getSuburb();
+        int propertyType = searchRequest.getPropertyType();
+        if(StringUtils.isNotEmpty(state) && !StringUtils.equalsIgnoreCase(p.getState(), state)) {
+            return false;
+        }
+        if(StringUtils.isNotEmpty(suburb) && !StringUtils.equalsIgnoreCase(p.getSuburb(), suburb)) {
+            return false;
+        }
+        if(propertyType != -1 && p.getPropertyType() != propertyType)
+        {
+            return false;
+        }
+        if((searchRequest.getBedroom() != 0 && p.getBedroom() != searchRequest.getBedroom())
+          || (searchRequest.getBathroom() != 0 && p.getBathroom() != searchRequest.getBathroom())
+                || (searchRequest.getCarport() != 0 && p.getCarport() != searchRequest.getCarport())
+        )
+        {
+            return false;
+        }
+        return true;
+    }
 }
