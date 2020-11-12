@@ -18,6 +18,7 @@ import org.apache.lucene.store.Directory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -151,6 +152,11 @@ public class UserService {
     public List<Property> getRecommandProperty(int uid) throws IOException, ParseException {
 
         List<UserHabit> habits = userHabitMapper.listUserHabit(uid);
+
+        if (CollectionUtils.isEmpty(habits)) {
+            return null;
+        }
+
         String terms = habits.stream().map(UserHabit::getTerm).collect(Collectors.joining(" "));
         return luceneSearch(terms);
 
