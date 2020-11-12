@@ -30,6 +30,12 @@ export class PropertyDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.propertyAuction = this.userService.currentPropertyAuction;
+    // if(this.propertyAuction===null){
+      this.http.post(environment.baseEndpoint + "/view-property-pid", {pid: this.propertyAuction.property.pid})
+      .subscribe(prop=>{
+        console.log(prop)
+      })
+    // }
   }
 
   getPicUrl(p: Property) {
