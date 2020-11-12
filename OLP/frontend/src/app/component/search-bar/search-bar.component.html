@@ -1,4 +1,73 @@
 <form class="form-inline justify-content-center align-items-center margin-top" (ngSubmit)="searchProperty()">
-  <input class="form-control mr-sm-2 w-50 form-rounded" type="search" placeholder="Search" aria-label="Search" id="searchText" name="searchText" [(ngModel)]="text">
-  <nb-icon icon="search-outline" class="font-size-lg" (click)="searchProperty()"></nb-icon>
+  <div class="text-center">
+    <div class="container">
+    <div class="row align-items-center">
+      <div class="w-95">
+        <input class="form-control mr-sm-2 w-100 form-rounded" type="search" placeholder="Search" aria-label="Search" id="searchText" name="searchText" [(ngModel)]="searchCriteria.text">
+      </div>
+      <div class="w-5">
+        <img class="icon cursor-pointer" src="assets/resources/loupe.svg" (click)="searchProperty()"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2">
+        <select class="form-control custom-select custom-select-sm" id="propertyType" name="propertyType" [(ngModel)]="searchCriteria.propertyType">
+          <option value="-1">Property Type</option>
+          <option value="0">House</option>
+          <option value="1">Unit</option>
+          <option value="2">Store</option>
+        </select>
+      </div>
+      <div class="col-xs-2">
+        <select class="form-control custom-select custom-select-sm" id="state" name="state" [(ngModel)]="searchCriteria.state">
+          <option value="">State</option>
+          <option>ACT</option>
+          <option>NSW</option>
+          <option>NT</option>
+          <option>QLD</option>
+          <option>SA</option>
+          <option>VIC</option>
+          <option>TAS</option>
+          <option>WA</option>
+        </select>
+      </div>
+      <div class="col-xs-2">
+        <input type="input" class="form-control form-control-sm" id="suburb" name="suburb" [(ngModel)]="searchCriteria.suburb" placeholder="Suburb" required>
+      </div>
+      <div class="col-xs-2">
+        <select class="form-control custom-select custom-select-sm" id="bedroom" name="bedroom" [(ngModel)]="searchCriteria.bedroom">
+          <option value="0">Bedrooms</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+      <div class="col-xs-2">
+        <select class="form-control custom-select custom-select-sm" id="bathroom" name="bathroom" [(ngModel)]="searchCriteria.bathroom">
+          <option value="0">Bathrooms</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+      <div class="col-xs-2">
+        <select class="form-control custom-select custom-select-sm" id="noOfParking" name="noOfParking" [(ngModel)]="searchCriteria.carport">
+          <option value="0">Car Parking</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  </div>
 </form>

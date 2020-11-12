@@ -36,6 +36,10 @@
         select * from t_user where username = #{userName}
     </select>
 
+    <select id="selectUserByUid" resultMap="UserMap" parameterType="java.lang.Integer" >
+        select * from t_user where uid = #{uid}
+    </select>
+
     <select id="selectUserByEmail" resultMap="UserMap" parameterType="java.lang.String" >
         select * from t_user where email = #{email}
     </select>

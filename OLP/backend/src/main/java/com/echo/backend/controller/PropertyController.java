@@ -11,6 +11,8 @@ import com.echo.backend.utils.JWTUtil;
 import com.echo.backend.utils.PagingUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.commons.lang.StringUtils;
+import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,8 +21,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -101,8 +105,14 @@ public class PropertyController {
     }
 
     @RequestMapping(value = "/view-property-pid", method = RequestMethod.POST)
-    @RequiresAuthentication
-    public List<Property> viewPropertyByPid(@RequestBody SearchPropertyRequest request) {
+    //@RequiresAuthentication
+    public List<Property> viewPropertyByPid(@RequestBody SearchPropertyRequest request, HttpServletRequest hRequest) {
+
+        try {
+            int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
+            userService.collectHabitFromViewProperty(uid, request.getPid());
+        }
+        catch (Exception ignored){}
 
         return FileUtil.generatePropertyPic(propertyService.getPropertyByPid(request.getPid()), uploadPath, accessPath);
     }
@@ -127,7 +137,13 @@ public class PropertyController {
 
     @RequestMapping(value = "/search-property-address", method = RequestMethod.POST)
     //@RequiresAuthentication
-    public List<Property> searchPropertyFilter(@RequestBody SearchPropertyRequest searchRequest) {
+    public List<Property> searchPropertyFilter(@RequestBody SearchPropertyRequest searchRequest, HttpServletRequest hRequest) {
+
+        try {
+            int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
+            userService.collectHabitFromSearchPropertyAddress(uid, searchRequest.getProperty());
+        }
+        catch (Exception ignored){}
 
         List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyFilter(searchRequest.getProperty()), uploadPath, accessPath);
         return PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
@@ -143,11 +159,62 @@ public class PropertyController {
 
     @RequestMapping(value = "/search-property-like", method = RequestMethod.POST)
     //@RequiresAuthentication
-    public List<PropertyAuction> searchPropertyVague(@RequestBody SearchPropertyRequest searchRequest) {
+    public List<PropertyAuction> searchPropertyVague(@RequestBody SearchPropertyRequest searchRequest, HttpServletRequest hRequest) throws IOException, ParseException {
 
-        List<Property> result = FileUtil.generatePropertyPic(propertyService.searchPropertyVague(searchRequest.getKeyword()), uploadPath, accessPath);
+        try {
+            int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
+            userService.collectHabitFromSearchPropertyKeyword(uid, searchRequest.getKeyword());
+        }
+        catch (Exception ignored){}
+
+        List<Property> fromLucene = userService.luceneSearch(searchRequest.getKeyword());
+        List<Property> fromDB = propertyService.searchPropertyVague(searchRequest.getKeyword());
+        fromDB.addAll(fromLucene);
+        List<Property> result = FileUtil.generatePropertyPic(fromDB, uploadPath, accessPath);
         List<Property> properties = PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
         return getPropertyAuctions(properties);
     }
 
+    @RequestMapping(value = "/search-property", method = RequestMethod.POST)
+    //@RequiresAuthentication
+    public List<PropertyAuction> searchProperty(@RequestBody AdvanceSearchRequest searchRequest, HttpServletRequest hRequest) throws IOException, ParseException {
+
+        try {
+            int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
+            userService.collectHabitFromSearchPropertyKeyword(uid, searchRequest.getText());
+        }
+        catch (Exception ignored){}
+
+        List<Property> fromLucene = userService.luceneSearch(searchRequest.getText());
+        List<Property> fromDB = propertyService.searchPropertyVague(searchRequest.getText());
+        fromDB.addAll(fromLucene);
+        fromDB = fromDB.stream().filter(p -> compareSearch(p, searchRequest)).collect(Collectors.toList());
+        List<Property> result = FileUtil.generatePropertyPic(fromDB, uploadPath, accessPath);
+        List<Property> properties = PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
+        return getPropertyAuctions(properties);
+    }
+
+    private boolean compareSearch(Property p, AdvanceSearchRequest searchRequest) {
+        String state = searchRequest.getState();
+        String suburb = searchRequest.getSuburb();
+        int propertyType = searchRequest.getPropertyType();
+        if(StringUtils.isNotEmpty(state) && !StringUtils.equalsIgnoreCase(p.getState(), state)) {
+            return false;
+        }
+        if(StringUtils.isNotEmpty(suburb) && !StringUtils.equalsIgnoreCase(p.getSuburb(), suburb)) {
+            return false;
+        }
+        if(propertyType != -1 && p.getPropertyType() != propertyType)
+        {
+            return false;
+        }
+        if((searchRequest.getBedroom() != 0 && p.getBedroom() != searchRequest.getBedroom())
+          || (searchRequest.getBathroom() != 0 && p.getBathroom() != searchRequest.getBathroom())
+                || (searchRequest.getCarport() != 0 && p.getCarport() != searchRequest.getCarport())
+        )
+        {
+            return false;
+        }
+        return true;
+    }
 }

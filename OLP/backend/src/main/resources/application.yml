@@ -19,7 +19,7 @@ spring:
   jackson:
     time-zone: GMT+11
   datasource:
-    url: jdbc:mysql://18.166.66.215:3306/onpro?characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://18.166.66.215:3306/onpro?characterEncoding=utf8&serverTimezone=Australia/Sydney
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root9900
@@ -29,6 +29,22 @@ spring:
     multipart:
       max-file-size: 5MB
       max-request-size: 5MB
+  mail:
+    host: smtp.live.com
+    port: 587
+    username: online_property9900@hotmail.com
+    password: property9900
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            enable: false
+
+
 
 server:
   file:

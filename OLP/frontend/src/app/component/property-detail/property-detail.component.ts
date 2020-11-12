@@ -25,22 +25,27 @@ export class PropertyDetailComponent implements OnInit {
   propertyAuction: PropertyAuction;
   isLoading: boolean = false;
   isLiked: boolean = false;
+  currentImage: string;
+  index: number = 0;
 
   constructor(private router: Router, private commonService: CommonService, public userService: UserService, private http: HttpClient, private toastrService: NbToastrService) { }
 
   ngOnInit(): void {
     this.propertyAuction = this.userService.currentPropertyAuction;
-    // if(this.propertyAuction===null){
-      this.http.post(environment.baseEndpoint + "/view-property-pid", {pid: this.propertyAuction.property.pid})
-      .subscribe(prop=>{
-        console.log(prop)
-      })
-    // }
+    this.http.post(environment.baseEndpoint + "/view-property-pid", {pid: this.propertyAuction.property.pid})
+    .subscribe(prop=>{
+      console.log(prop)
+    })
+    this.loadPicUrl(this.propertyAuction.property);
   }
 
-  getPicUrl(p: Property) {
+  loadPicUrl(p: Property) {
     if(p && p.picUrl && p.picUrl.length > 0){
-      return environment.baseResourceEndpoint + p.picUrl[0];
+      this.currentImage = environment.baseResourceEndpoint + p.picUrl[this.index];
+      this.index++;
+      if(this.index >= p.picUrl.length){
+        this.index = 0;
+      }
     }
   }
 

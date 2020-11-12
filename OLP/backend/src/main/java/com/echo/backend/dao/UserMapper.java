@@ -18,4 +18,6 @@ public interface UserMapper {
     List<User> selectUserByEmail(String email);
 
     List<User> getAllUser();
+
+    List<User> selectUserByUid(int uid);
 }

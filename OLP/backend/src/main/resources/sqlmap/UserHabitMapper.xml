@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.echo.backend.dao.UserHabitMapper" >
+    <resultMap id="UserHabitMap" type="com.echo.backend.domain.UserHabit" >
+        <result column="uid" property="uid" jdbcType="INTEGER" />
+        <result column="term" property="term" jdbcType="VARCHAR" />
+        <result column="term_hot" property="termHot" jdbcType="INTEGER" />
+    </resultMap>
+
+    <insert id="updateUserHabit" parameterType="com.echo.backend.domain.UserHabit">
+        insert into user_habit(uid, term, term_hot) values(#{uid}, #{term}, #{termHot})
+        on duplicate key update term_hot=term_hot+#{termHot}
+    </insert>
+
+    <select id="listUserHabit" parameterType="java.lang.Integer">
+        select * from user_habit where uid=#{uid} order by term_hot desc limit 5
+    </select>
+</mapper>

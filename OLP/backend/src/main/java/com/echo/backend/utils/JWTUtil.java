@@ -55,8 +55,12 @@ public class JWTUtil {
      * @return
      */
     public static int getUid(String token, UserService userService){
-        String email = JWTUtil.getEmail(token);
-        return userService.getUserByEmail(email).getUid();
+        try {
+            DecodedJWT jwt = JWT.decode(token);
+            return jwt.getClaim("uid").asInt();
+        } catch (JWTDecodeException e) {
+            return 0;
+        }
     }
 
     /**
