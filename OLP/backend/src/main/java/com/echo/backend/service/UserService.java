@@ -2,6 +2,7 @@ package com.echo.backend.service;
 
 import com.echo.backend.dao.*;
 import com.echo.backend.domain.*;
+import com.echo.backend.dto.ReadMessageRequest;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -141,6 +142,9 @@ public class UserService {
         return null;
     }
 
+    public void sendMessage(UserMessage userMessage){
+        userMessageMapper.sendMessage(userMessage);
+    }
     public void deleteMessage(int serial) {
         userMessageMapper.deleteMessage(serial);
     }
@@ -248,5 +252,9 @@ public class UserService {
             terms.forEach(userHabitMapper::updateUserHabit);
         }
         catch (Exception ignored){}
+    }
+
+    public void readMessage(ReadMessageRequest request) {
+        userMessageMapper.readMessage(request);
     }
 }

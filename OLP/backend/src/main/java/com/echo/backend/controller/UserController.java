@@ -275,6 +275,28 @@ public class UserController {
         return new SendEmailResponse(200, "send email success", null);
     }
 
+    @RequestMapping(value = "/send-message", method = RequestMethod.POST)
+    public SendMessageResponse sendTestMessage(@RequestBody SendMessageRequest request, HttpServletRequest hRequest){
+
+        UserMessage userMessage = new UserMessage();
+        userMessage.setUid(request.getTo());
+        userMessage.setSender(request.getFrom());
+        userMessage.setSendTime(new Date());
+        userMessage.setContent(request.getContent());
+        userMessage.setSubject(request.getSubject());
+        userMessage.setAid(request.getAid());
+        userMessage.setPid(request.getPid());
+        userService.sendMessage(userMessage);
+        return new SendMessageResponse(200, "send message success", null);
+    }
+
+    @RequestMapping(value = "/read-message", method = RequestMethod.POST)
+    public ReadMessageResponse readMessage(@RequestBody ReadMessageRequest request, HttpServletRequest hRequest){
+
+        userService.readMessage(request);
+        return new ReadMessageResponse(200, "read message success", null);
+    }
+
     @RequestMapping(value = "/delete-message", method = RequestMethod.POST)
     @RequiresAuthentication
     public MessageResponse deleteMessage(@RequestBody MessageRequest request, HttpServletRequest hRequest){

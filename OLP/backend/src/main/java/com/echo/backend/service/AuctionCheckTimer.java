@@ -6,6 +6,7 @@ import com.echo.backend.utils.MailUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
@@ -66,9 +67,28 @@ public class AuctionCheckTimer {
             if (!onAuctionMap.containsKey(auction.getAid())){
                 logger.debug("Found auction: " + auction.toString() + ", start at" + auction.getBeginTime());
                 onAuctionMap.put(auction.getAid(), auction);
-
+                sendMessageToBider(auction.getAid(), auction.getPid(), auction.getBeginTime());
             }
         }
+    }
+
+    @Async
+    void sendMessageToBider(int aid, int pid,  Date date) {
+        List<AuctionRegister> list = auctionRegisterMapper.getRegisterBidderByAid(aid);
+        UserMessage message = new UserMessage();
+
+        UserMessage userMessage = new UserMessage();
+        userMessage.setSender("admin");
+        userMessage.setSendTime(new Date());
+        userMessage.setContent("Hi, an auction that you have registered will start soon at " + date.toString());
+        userMessage.setSubject("Auction begin notification");
+        userMessage.setAid(aid);
+        userMessage.setPid(pid);
+
+        list.forEach(k ->{
+            userMessage.setUid(k.getUid());
+            userMessageMapper.sendMessage(userMessage);
+        });
     }
 
     // 每10秒检查一次，将开始的竞拍开始
