@@ -1,0 +1,21 @@
+Week 1
+Created Jira accounts and invited all other team members to join. Joined team discussion, selected Online Property Sales project and discussed API, database and front/back end designs in general.
+
+Week2 
+Joined team discussion about the proposal format, project objectives, user stories, team roles, front/back end system architectures in general. Developed project proposal template and wrote some user stories.  
+
+Week3 Joined team discussion about project proposal and wrote allocated sections of project proposal report, created GitHub account; discussed Jira sprint planning and development tasks; installed and set up development environment
+
+Week4 Joined team discussion about front end designs using AngulaJS framework. Did research of AngulaJS framework and libraries
+
+Week5 Joined team works about designs of General Home Page, User Profile Account Details, Dashboard, My Properties,Interested Properties, Active Auctions, and Completed Auctions web pages; tested user register, login and logout functions
+
+Week6 Joined team discussion about project progress and wrote allocated sections of Retrospective A report; joined team works about design and development of Search function, Dashboard Cards and My Properties List; tested add new property function 
+
+Week7 Joined team works about design and development of Active Auctions, Completed Auctions and Interested Properties functions 
+
+Week8 Joined team discussion about project progress and wrote allocated sections of Retrospective B report; Joined team works about design and development of Participate in Bid and Join in Bid functions
+
+Week9 Joined team discussion about final report and wrote allocated sections of final report;Joined team works about integrations of both front end and back end development works and finalise the project 
+
+
