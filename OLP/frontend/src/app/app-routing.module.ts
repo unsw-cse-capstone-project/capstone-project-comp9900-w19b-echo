@@ -26,6 +26,7 @@ import {SellPropertyComponent} from "./component/sell-property/sell-property.com
 import {JoinBidComponent} from "./component/join-bid/join-bid.component";
 import {PlaceBidComponent} from "./component/place-bid/place-bid.component";
 import {PropertyDetailComponent} from "./component/property-detail/property-detail.component";
+import { EmailFormComponent } from './component/email-form/email-form.component';
 const routes: Routes = [
   {
     path: 'auth',
@@ -129,6 +130,10 @@ const routes: Routes = [
     path: 'property-detail',
     component: PropertyDetailComponent,
   },
+  {
+    path: 'send-email',
+    component: EmailFormComponent,
+  }
 ];
 
 @NgModule({

@@ -26,4 +26,8 @@
         select * from user_message where uid = #{uid}
     </select>
 
+    <update id="readMessage" parameterType="com.echo.backend.dto.ReadMessageRequest">
+        update user_message set read_flag=1 where uid=#{uid} and serial=#{serial}
+    </update>
+
 </mapper>

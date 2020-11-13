@@ -38,7 +38,7 @@
         select * from t_property where owner=#{uid}
     </select>
 
-    <select id="getPropertyByPid" resultType="com.echo.backend.domain.Property" parameterType="java.lang.Integer">
+    <select id="getPropertyByPid" resultMap="PropertyMap" parameterType="java.lang.Integer">
         select * from t_property where pid=#{pid}
     </select>
 

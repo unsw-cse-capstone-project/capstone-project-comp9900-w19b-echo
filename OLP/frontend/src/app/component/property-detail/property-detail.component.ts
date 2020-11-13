@@ -32,6 +32,25 @@ export class PropertyDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.propertyAuction = this.userService.currentPropertyAuction;
+    if(this.propertyAuction==null){
+      this.propertyAuction = new PropertyAuction();
+      this.router.routerState.root.queryParams.subscribe(params => {
+        this.http.post(environment.baseEndpoint + "/view-property-pid", {pid: params['id']})
+          .subscribe(prop=>{
+            console.log(prop)
+            this.propertyAuction.property=prop[0];
+          })
+      });
+      this.router.routerState.root.queryParams.subscribe(params => {
+        this.http.post(environment.baseEndpoint + "/auction-pid", {pid: params['id']})
+          .subscribe(auc=>{
+            console.log(auc)
+            this.propertyAuction.auction=auc[0];
+          })
+      });
+      
+    }
+
     this.loadPicUrl(this.propertyAuction.property);
   }
 

@@ -2,6 +2,7 @@ package com.echo.backend.service;
 
 import com.echo.backend.dao.*;
 import com.echo.backend.domain.*;
+import com.echo.backend.dto.ReadMessageRequest;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -18,6 +19,7 @@ import org.apache.lucene.store.Directory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -140,6 +142,9 @@ public class UserService {
         return null;
     }
 
+    public void sendMessage(UserMessage userMessage){
+        userMessageMapper.sendMessage(userMessage);
+    }
     public void deleteMessage(int serial) {
         userMessageMapper.deleteMessage(serial);
     }
@@ -151,6 +156,11 @@ public class UserService {
     public List<Property> getRecommandProperty(int uid) throws IOException, ParseException {
 
         List<UserHabit> habits = userHabitMapper.listUserHabit(uid);
+
+        if (CollectionUtils.isEmpty(habits)) {
+            return null;
+        }
+
         String terms = habits.stream().map(UserHabit::getTerm).collect(Collectors.joining(" "));
         return luceneSearch(terms);
 
@@ -242,5 +252,9 @@ public class UserService {
             terms.forEach(userHabitMapper::updateUserHabit);
         }
         catch (Exception ignored){}
+    }
+
+    public void readMessage(ReadMessageRequest request) {
+        userMessageMapper.readMessage(request);
     }
 }
