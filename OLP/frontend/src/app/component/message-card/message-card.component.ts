@@ -10,7 +10,12 @@ import {environment} from "../../../environments/environment";
 })
 export class MessageCardComponent implements OnInit {
   @Input() message: Message;
-  constructor(private router: Router, private http: HttpClient) { }
+  color: string;
+
+  constructor(private router: Router, private http: HttpClient) {
+    this.color = "danger";
+  }
+
 
   ngOnInit(): void {
   }
@@ -20,6 +25,13 @@ export class MessageCardComponent implements OnInit {
     this.http.post(environment.baseEndpoint+uri, {serial: m.serial})
     .subscribe(response=>{
       console.log(response)
+    })
+  }
+  read(m: Message){
+    let uri = '/read-message';
+    this.http.post(environment.baseEndpoint+uri, {serial: m.serial})
+    .subscribe(response=>{
+        this.color = "success";
     })
   }
 }

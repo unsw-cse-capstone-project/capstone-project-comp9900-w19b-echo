@@ -4,6 +4,8 @@ export class Auction {
   pid: number;
   status: number;
   basePrice: number;
+  currentPrice: number;
   beginTime: Date;
   endTime: Date;
+  winner: number;
 }

@@ -70,6 +70,7 @@ import { PropertyCardComponent } from './component/property-card/property-card.c
 import { AgmCoreModule } from '@agm/core';
 import { EmailFormComponent } from './component/email-form/email-form.component';
 import { BidHistoryComponent } from './component/bid-history/bid-history.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -183,6 +184,7 @@ import { BidHistoryComponent } from './component/bid-history/bid-history.compone
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    DatePipe,
   ],
   bootstrap: [AppComponent],
 })

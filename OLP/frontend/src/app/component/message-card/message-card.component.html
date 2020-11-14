@@ -13,8 +13,12 @@
   </nb-card-body>
 </nb-card> -->
 
-<nb-card status="danger">
-    <nb-card-header class="text-center">{{message.subject}}<button class="close" mat-button (click)="onDelete(message)">x</button></nb-card-header>
+<nb-card id="readme" status={{color}}>
+    <nb-card-header class="text-center">
+      {{message.subject}}
+      <button class = "read" nbButton left status="success" (click)="read(message)"><nb-icon icon="star"></nb-icon></button>
+      <button class= "close" mat-button (click)="onDelete(message)">X</button>
+    </nb-card-header>
     <nb-card-body>
         <p>Sender: {{message.sender}}</p>
         <p>{{message.content}}</p>

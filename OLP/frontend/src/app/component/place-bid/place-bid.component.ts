@@ -10,6 +10,7 @@ import {Bid} from "../../model/bid.model";
 import {Timer} from "../../model/timer.model";
 import {AuctionBid} from "../../model/auction-bid.model";
 import {PropertyAuction} from "../../model/property-auction.model";
+import { DatePipe } from '@angular/common';
 
 @Component({
     selector: 'app-place-bid',
@@ -26,10 +27,12 @@ export class PlaceBidComponent implements OnInit {
     auctionBids: AuctionBid[] = [];
     updatedDate: Date = new Date();
     currentHighestBid: number;
+    currentEndTime: Date;
+    isAuctionCompleted: boolean = false;
 
     constructor(private route: ActivatedRoute, private router: Router,
                 private http: HttpClient, private userService: UserService,
-                private toastrService: NbToastrService) {
+                private toastrService: NbToastrService, public datePipe: DatePipe) {
     }
 
     ngOnInit(): void {
@@ -40,6 +43,7 @@ export class PlaceBidComponent implements OnInit {
                 .subscribe((data: PropertyAuction[]) => {
                         if (data && data.length > 0) {
                             this.loadPropertyAuction(data);
+                            this.currentEndTime =  this.auction.endTime;
                             this.time = this.getTimeRemaining(this.auction.endTime);
                             this.setupAcutionTimer();
                             this.getBidHistory();
@@ -54,15 +58,19 @@ export class PlaceBidComponent implements OnInit {
     private setLoadBidHistoryTimer() {
         const bidHistInterval = setInterval(() => {
             this.getBidHistory();
+            this.getHighestBid();
             this.updatedDate = new Date();
+            if (this.isAuctionCompleted) {
+              clearInterval(bidHistInterval);
+            }
         }, 3000);
     }
 
     private setupAcutionTimer() {
-        const timeinterval = setInterval(() => {
-            this.time = this.getTimeRemaining(this.auction.endTime);
-            if (this.time.total <= 0) {
-                clearInterval(timeinterval);
+        const timeInterval = setInterval(() => {
+            this.time = this.getTimeRemaining(this.currentEndTime);
+            if (this.isAuctionCompleted) {
+                clearInterval(timeInterval);
             }
         }, 1000);
     }
@@ -70,7 +78,7 @@ export class PlaceBidComponent implements OnInit {
     private loadPropertyAuction(data: PropertyAuction[]) {
         this.property = data[0].property;
         this.auction = data[0].auction ? data[0].auction : new Auction();
-        this.currentHighestBid = this.auction.basePrice;
+        this.currentHighestBid = this.auction.currentPrice;
         this.bid = new Bid();
         this.bid.pid = this.auction.pid;
         this.bid.uid = this.auction.uid;
@@ -84,11 +92,40 @@ export class PlaceBidComponent implements OnInit {
                         if (data && data.length > 0) {
                             this.property = data[0].property;
                             this.auction = data[0].auction ? data[0].auction : new Auction();
-                            this.currentHighestBid = this.auction.basePrice
+                            if(this.auction.currentPrice > this.currentHighestBid){
+                              this.currentHighestBid = this.auction.currentPrice
+                              this.showToast('success', 'Current highest bid is increased to $' + this.formatCurrency(this.currentHighestBid) + '.');
+                            }
+                            if(this.currentEndTime != this.auction.endTime) {
+                              this.currentEndTime = this.auction.endTime;
+                              this.showToast('success', 'Current bid end time has been extended to ' + this.formatDate(this.currentEndTime) + '.');
+                            }
+                          this.checkIfAuctionCompleted();
                         }
                     }
                 );
         }
+    }
+
+  private checkIfAuctionCompleted() {
+    if (this.auction.status == 3 || this.auction.status == 4) {
+      this.isAuctionCompleted = true;
+      if (this.auction.status == 3) {
+        if (this.userService.user.uid === this.auction.winner) {
+          this.showToast('success', 'Congratulations, you are the winner of this auction!');
+        } else {
+          this.showToast('info', 'Sorry, the action is won by other buyer.');
+        }
+      }
+      if (this.auction.status == 4) {
+        this.showToast('info', 'Sorry, this property passed in.');
+      }AuctionMapper.xml
+    }
+  }
+
+  formatDate(t)
+    {
+      return this.datePipe.transform(t, 'dd/MM/yyyy hh:mm:ss a');
     }
 
     getBidHistory() {
@@ -105,14 +142,14 @@ export class PlaceBidComponent implements OnInit {
         this.isLoading = true;
         this.http.post(environment.baseEndpoint + '/place-bid', this.bid)
             .subscribe((p: Property) => {
-                    this.showToast('success');
+                    this.showToast('success', `Auction - New bid has been placed.`);
                     this.isLoading = false;
                 }
             );
     }
 
-    showToast(status: NbComponentStatus) {
-        this.toastrService.show(status, `Auction - New bid has been placed.`, {status});
+    showToast(status: NbComponentStatus, title: string) {
+        this.toastrService.show(status, title, {status});
     }
 
     cancel() {
@@ -143,5 +180,13 @@ export class PlaceBidComponent implements OnInit {
 
     format(num: number) {
         return num < 10 ? '0' + num : num;
+    }
+
+    invalidate() {
+      return this.bid.newPrice <= this.currentHighestBid || this.isAuctionCompleted;
+    }
+
+    formatCurrency(num: number){
+     return num.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
     }
 }
