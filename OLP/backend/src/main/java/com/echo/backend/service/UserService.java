@@ -158,7 +158,8 @@ public class UserService {
         List<UserHabit> habits = userHabitMapper.listUserHabit(uid);
 
         if (CollectionUtils.isEmpty(habits)) {
-            return null;
+            //return null;
+            return luceneSearch("australia");
         }
 
         String terms = habits.stream().map(UserHabit::getTerm).collect(Collectors.joining(" "));

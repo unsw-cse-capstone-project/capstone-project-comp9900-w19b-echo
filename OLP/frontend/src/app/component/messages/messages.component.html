@@ -6,7 +6,7 @@
 
     <nb-layout-column>
         <div class="container-fluid">
-            <button (click)="sendEmail()">Send Email</button>
+            <button class = "btn btn-primary btn-sm" (click)="sendEmail()">Send Email</button>
             <div class="row">
                 <div class="col-sm col-sm-4" *ngFor="let m of messages">
                     <app-message-card [message]="m" class="cursor-pointer"></app-message-card>
