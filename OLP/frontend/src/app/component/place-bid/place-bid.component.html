@@ -48,12 +48,12 @@
                 </div>
               </div>
               <div class="form-group col-sm-12 row" *ngIf="this.auction">
-                <label for="reservePrice" class="col-sm-2 col-form-label font-weight-bold">New Bid</label>
+                <label for="newPrice" class="col-sm-2 col-form-label font-weight-bold">New Bid</label>
                 <div class="col-sm-8 input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                   </div>
-                  <input id="newPrice" type="number" name="newPrice" [disabled]="this.isAuctionCompleted" [(ngModel)]="this.bid.newPrice" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  <input id="newPrice" type="number" name="newPrice" [disabled]="this.isAuctionCompleted || this.time.total <= 0" [(ngModel)]="this.bid.newPrice" class="form-control" aria-label="Amount (to the nearest dollar)">
                   <div class="input-group-append">
                     <span class="input-group-text">.00</span>
                   </div>
