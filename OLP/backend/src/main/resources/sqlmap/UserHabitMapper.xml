@@ -12,7 +12,7 @@
         on duplicate key update term_hot=term_hot+#{termHot}
     </insert>
 
-    <select id="listUserHabit" parameterType="java.lang.Integer">
+    <select id="listUserHabit" resultMap="UserHabitMap" parameterType="java.lang.Integer">
         select * from user_habit where uid=#{uid} order by term_hot desc limit 5
     </select>
 </mapper>
