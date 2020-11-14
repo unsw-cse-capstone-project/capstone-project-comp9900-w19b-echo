@@ -22,9 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3be2abb8-c5a7-4fa1-8144-7efb71aeb50c" name="Default Changelist" comment="add upload property picture function">
+    <list default="true" id="3be2abb8-c5a7-4fa1-8144-7efb71aeb50c" name="Default Changelist" comment="add ramdom number as property pictures' id">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,20 +60,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
-    <option name="width" value="1610" />
-    <option name="height" value="1688" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1joLoshjsIJQLTyhE4JO9ZlbNq4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ChangesTree.GroupingKeys" value="module&#10;directory" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -107,7 +115,7 @@
       <recent name="C:\Users\cxy_n\IdeaProjects\capstone-project-comp9900-w19b-echo\OLP\backend\src\main\java\com\echo\backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication (1)">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration name="TestJson" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.echo.backend.TestJson" />
       <module name="backend (1)" />
@@ -130,17 +138,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,8 +171,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.echo.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.echo.backend.BackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.BackendApplication" />
         <item itemvalue="Spring Boot.BackendApplication (1)" />
         <item itemvalue="JUnit.BackendApplicationTests.testGoogld" />
         <item itemvalue="Application.TestTime" />
@@ -183,6 +194,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -203,6 +215,12 @@
       <workItem from="1603126091076" duration="3840000" />
       <workItem from="1603428632780" duration="5454000" />
       <workItem from="1604222294926" duration="9513000" />
+      <workItem from="1604465683382" duration="5943000" />
+      <workItem from="1604711646866" duration="712000" />
+      <workItem from="1604995361517" duration="2247000" />
+      <workItem from="1605083662330" duration="1679000" />
+      <workItem from="1605153683106" duration="6778000" />
+      <workItem from="1605317939557" duration="2279000" />
     </task>
     <task id="LOCAL-00001" summary="Construct basic frame of backend.">
       <created>1600929787117</created>
@@ -372,22 +390,15 @@
       <option name="project" value="LOCAL" />
       <updated>1604306294833</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="add ramdom number as property pictures' id">
+      <created>1604334287806</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1604334287806</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="BackendApplicationTests_testGoogld - 2020.10.20 at 01h 25m 59s.xml">
-      <configuration name="BackendApplicationTests.testGoogld" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BackendApplicationTests_testGoogld - 2020.10.20 at 01h 29m 45s.xml">
-      <configuration name="BackendApplicationTests.testGoogld" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BackendApplicationTests_testGoogld - 2020.10.20 at 01h 34m 52s.xml">
-      <configuration name="BackendApplicationTests.testGoogld" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BackendApplicationTests_testGoogld - 2020.10.20 at 01h 35m 11s.xml">
-      <configuration name="BackendApplicationTests.testGoogld" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -399,7 +410,7 @@
     </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -462,24 +473,58 @@
     <MESSAGE value="1. Modify payment management function and database structure" />
     <MESSAGE value="1. add property search api: keyword search from address" />
     <MESSAGE value="add upload property picture function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add upload property picture function" />
+    <MESSAGE value="add ramdom number as property pictures' id" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ramdom number as property pictures' id" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="553" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604306323027">
+    <state x="416" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605004237431">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="553" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604306323027" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/PropertyService.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="416" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605004237431" />
+    <state width="1878" height="101" key="GridCell.Tab.0.bottom" timestamp="1604497501105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="101" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604497501105" />
+    <state width="1878" height="101" key="GridCell.Tab.0.center" timestamp="1604497501105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="101" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604497501105" />
+    <state width="1878" height="101" key="GridCell.Tab.0.left" timestamp="1604497501105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="101" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604497501105" />
+    <state width="1878" height="101" key="GridCell.Tab.0.right" timestamp="1604497501105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="101" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604497501105" />
+    <state width="1878" height="101" key="GridCell.Tab.1.bottom" timestamp="1604497501105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="101" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604497501105" />
+    <state width="1878" height="101" key="GridCell.Tab.1.center" timestamp="1604497501105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="101" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604497501105" />
+    <state width="1878" height="101" key="GridCell.Tab.1.left" timestamp="1604497501105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="101" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604497501105" />
+    <state width="1878" height="101" key="GridCell.Tab.1.right" timestamp="1604497501105">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="101" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604497501105" />
+    <state x="553" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604334315198">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="553" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604334315198" />
+    <state x="768" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605319318108">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="768" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605319318108" />
+    <state x="662" y="251" width="594" height="536" key="find.popup" timestamp="1604486858483">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="662" y="251" width="594" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604486858483" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
