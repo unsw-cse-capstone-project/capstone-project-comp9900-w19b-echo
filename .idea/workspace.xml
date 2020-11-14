@@ -22,9 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3be2abb8-c5a7-4fa1-8144-7efb71aeb50c" name="Default Changelist" comment="add ramdom number as property pictures' id">
+    <list default="true" id="3be2abb8-c5a7-4fa1-8144-7efb71aeb50c" name="Default Changelist" comment="add default australia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/java/com/echo/backend/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/UserHabitMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/OLP/backend/src/main/resources/sqlmap/UserHabitMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +142,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BackendApplicationTests.testGoogld" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend (1)" />
       <extension name="coverage">
@@ -220,7 +231,7 @@
       <workItem from="1604995361517" duration="2247000" />
       <workItem from="1605083662330" duration="1679000" />
       <workItem from="1605153683106" duration="6778000" />
-      <workItem from="1605317939557" duration="2279000" />
+      <workItem from="1605317939557" duration="4328000" />
     </task>
     <task id="LOCAL-00001" summary="Construct basic frame of backend.">
       <created>1600929787117</created>
@@ -397,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604334287806</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="add default australia">
+      <created>1605321054309</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1605321054309</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView">
@@ -449,7 +467,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Construct basic frame of backend." />
     <MESSAGE value="Upload requirements documents" />
     <MESSAGE value="Upload Database documents" />
     <MESSAGE value="Upload File system documents" />
@@ -474,7 +491,8 @@
     <MESSAGE value="1. add property search api: keyword search from address" />
     <MESSAGE value="add upload property picture function" />
     <MESSAGE value="add ramdom number as property pictures' id" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ramdom number as property pictures' id" />
+    <MESSAGE value="add default australia" />
+    <option name="LAST_COMMIT_MESSAGE" value="add default australia" />
   </component>
   <component name="WindowStateProjectService">
     <state x="416" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605004237431">
@@ -513,18 +531,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1878" height="101" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604497501105" />
-    <state x="553" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604334315198">
+    <state x="553" y="253" key="Vcs.Push.Dialog.v2" timestamp="1605321088026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="553" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604334315198" />
-    <state x="768" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605319318108">
+    <state x="553" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605321088026" />
+    <state x="768" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605337138307">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="768" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605319318108" />
-    <state x="662" y="251" width="594" height="536" key="find.popup" timestamp="1604486858483">
+    <state x="768" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605337138307" />
+    <state x="662" y="251" width="594" height="536" key="find.popup" timestamp="1605321438530">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="251" width="594" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604486858483" />
+    <state x="662" y="251" width="594" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1605321438530" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
