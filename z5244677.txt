@@ -1,0 +1,56 @@
+Week 1
+1.Discussed about team work assignment and each task
+2.Start being familiar with AngularJS and Java Sprint Boost
+3.Start doing proposal and join in Jira.
+
+Week 2
+1. Created user stories, add new features in JIRA
+2. Have a meeting with team about project proposal
+3. Write my part about user stories
+
+week 3
+1. Join github and push the initial frontend version
+2. Start searching website about auction
+3. Start UI design and frontend structure design
+4. Complete the whole proposal and I did user stories part
+
+week 4
+1. Push the first home version
+2. Push the list of property
+3. Push the choose filter
+4. Install the api and database
+5. Discussed frontend develop task assignment
+
+week 5
+1. Try to connect the backend from local and AWS EC sever
+2. Update the home page and add details
+3. Check user login and do authority of users
+4. Add property details Page
+
+week 6
+1. Prepare data test and create some base information on website
+2. Create show all property and design the interface of each property box
+3. Help Jacky to complete the Dashboard card
+
+week 7
+1. Implemented user can update their information;
+2. Help Jacky to implement bid page;
+3. Help Jacky to implment auction function;
+
+
+week 8
+1. Connect to google map api
+2. Complete the details of property Page
+3. Complete users can add property in home page
+4. Implement display all the messages from backend
+
+week 9
+1. Implement message box
+2. Implement send email interface
+3. Implement the function of id fetch
+4. Check JS bug and some connection issue
+
+Week 10
+1. Complete report
+2. Check the process of demo show
+3. Team discussion about presentation demo
