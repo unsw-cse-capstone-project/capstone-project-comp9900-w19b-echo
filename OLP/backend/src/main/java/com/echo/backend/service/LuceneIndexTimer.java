@@ -45,7 +45,7 @@ public class LuceneIndexTimer {
     public void generateIndex() {
         try {
 
-            List<Property> properties = propertyMapper.getAllProperty();
+            List<Property> properties = propertyMapper.getAllLegalProperty();
 
             IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_4_10_2, new StopAnalyzer());
 

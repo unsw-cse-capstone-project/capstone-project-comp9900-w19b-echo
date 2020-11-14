@@ -34,6 +34,10 @@
         select * from t_property
     </select>
 
+    <select id="getAllLegalProperty" resultMap="PropertyMap">
+        select * from t_property where status=1 or status=2
+    </select>
+
     <select id="getPropertyByUid" resultMap="PropertyMap" parameterType="java.lang.Integer">
         select * from t_property where owner=#{uid}
     </select>

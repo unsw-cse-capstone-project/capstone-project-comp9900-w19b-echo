@@ -126,7 +126,7 @@ public class BeanConfiguration {
 
         try {
 
-            List<Property> properties = propertyMapper.getAllProperty();
+            List<Property> properties = propertyMapper.getAllLegalProperty();
 
             Directory dic = new RAMDirectory();
             IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_4_10_2, new StopAnalyzer());

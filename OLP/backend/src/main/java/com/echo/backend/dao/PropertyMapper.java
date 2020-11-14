@@ -16,6 +16,8 @@ public interface PropertyMapper {
 
     List<Property> getAllProperty();
 
+    List<Property> getAllLegalProperty();
+
     List<Property> getPropertyByUid(int uid);
 
     List<Property> searchByStreet(Property property);

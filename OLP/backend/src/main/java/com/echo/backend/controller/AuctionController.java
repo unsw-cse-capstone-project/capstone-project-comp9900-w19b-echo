@@ -103,6 +103,9 @@ public class AuctionController {
     @RequestMapping(value = "/my-active-auction", method = RequestMethod.POST)
     @RequiresAuthentication
     public List<PropertyAuction> viewMyActiveAuction(@RequestBody SearchAuctionRequest request) {
+
+
+
         List<Auction> auctions = auctionService.getActiveAuctionByUid(request.getUid());
         return getPropertyAuctions(auctions);
     }
@@ -129,7 +132,6 @@ public class AuctionController {
         return propertyAuctions;
     }
 
-
     @ApiOperation(value="register auction", notes="register auction")
     @RequestMapping(value = "/register-auction", method = RequestMethod.POST)
     @RequiresAuthentication
@@ -153,12 +155,15 @@ public class AuctionController {
     @RequiresAuthentication
     public PlaceBidResponse placeNewBid(@RequestBody PlaceBidRequest request, HttpServletRequest hRequest) {
 
-        boolean result = auctionService.placeNewBid(request.getNewPrice(), request.getAid(), request.getUid());
+        double result = auctionService.placeNewBid(request.getNewPrice(), request.getAid(), request.getUid());
 
-        if (result)
-            return new PlaceBidResponse(200, "place new bid success", null);
-        else
-            return new PlaceBidResponse(500, "place new bid fail", null);
+        if (result > 0) {
+            if (result == request.getNewPrice())
+                return new PlaceBidResponse(200, "place new bid success", null, result, true);
+            else
+                return new PlaceBidResponse(200, "place new bid fail", null, result, false);
+        } else
+            return new PlaceBidResponse(200, "place new bid fail", null, result, false);
     }
 
     @ApiOperation(value="view bid history", notes="view bid history")

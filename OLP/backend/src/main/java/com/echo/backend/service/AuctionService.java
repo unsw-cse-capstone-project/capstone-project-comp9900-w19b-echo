@@ -53,14 +53,14 @@ public class AuctionService {
         auctionMapper.createAuction(auction);
     }
 
-    public boolean placeNewBid(double newPrice, int aid, int uid) {
+    public double placeNewBid(double newPrice, int aid, int uid) {
 
         if (auctioningMap.containsKey(aid))
         {
             Auction auction = auctioningMap.get(aid);
 
             if (new Date().after(auction.getEndTime())){
-                return false;
+                return -1;
             }
 
             if (newPrice > auction.getCurrentPrice()) {
@@ -71,6 +71,7 @@ public class AuctionService {
                     auctionMapper.updateEndTime(auction);
                 }
 
+                auctionMapper.updateWinnerPrice(auction);
                 AuctionBid bid = new AuctionBid();
                 bid.setUid(auction.getWinner());
                 bid.setAid(auction.getAid());
@@ -79,11 +80,12 @@ public class AuctionService {
                 bid.setBidTime(new Date());
                 auctionBidMapper.newBid(bid);
                 logger.info("---- new bid ----/n" + auction.toString());
-                return true;
+                return newPrice;
             }
+            return auction.getCurrentPrice();
         }
 
-        return false;
+        return -1;
     }
 
     public List<Auction> getAuctionByPid(int pid){
