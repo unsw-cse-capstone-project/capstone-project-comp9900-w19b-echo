@@ -1,0 +1,27 @@
+<nb-card  [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success" size="large">
+  <nb-card-body>
+    <div class="form-group col-sm-12 row">
+      <h6>Bid History</h6>
+    </div>
+    <div class="form-group col-sm-12 row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11 text-right">Updated on <font class="text-primary font-weight-bold">{{this.updatedDate | date:'dd/MM/yyyy hh:mm:ss a'}}</font></div>
+    </div>
+    <table class="table table-hover" *ngIf="auctionBids">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Bid Time</th>
+        <th scope="col">Bid Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let a of auctionBids; index as i;" >
+        <th scope="row">{{i+1}}</th>
+        <td>{{a.bidTime | date:'dd/MM/yyyy hh:mm:ss a'}}</td>
+        <td>{{a.bidValue | currency}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </nb-card-body>
+</nb-card>

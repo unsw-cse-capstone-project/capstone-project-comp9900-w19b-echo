@@ -106,7 +106,7 @@ public class PropertyController {
 
     @RequestMapping(value = "/view-property-pid", method = RequestMethod.POST)
     //@RequiresAuthentication
-    public List<Property> viewPropertyByPid(@RequestBody SearchPropertyRequest request, HttpServletRequest hRequest) {
+    public List<PropertyAuction> viewPropertyByPid(@RequestBody SearchPropertyRequest request, HttpServletRequest hRequest) {
 
         try {
             int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
@@ -114,7 +114,8 @@ public class PropertyController {
         }
         catch (Exception ignored){}
 
-        return FileUtil.generatePropertyPic(propertyService.getPropertyByPid(request.getPid()), uploadPath, accessPath);
+        List<Property> properties = FileUtil.generatePropertyPic(propertyService.getPropertyByPid(request.getPid()), uploadPath, accessPath);
+        return getPropertyAuctions(properties);
     }
 
     @RequestMapping(value = "/update-property", method = RequestMethod.POST)

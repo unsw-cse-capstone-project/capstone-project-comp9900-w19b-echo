@@ -10,11 +10,8 @@ import {
 } from '@nebular/auth';
 import {AboutUsComponent} from "./component/about-us/about-us.component";
 import {HomeComponent} from "./component/home/home.component";
-import {BuyerInfoComponent} from "./component/buyer-info/buyer-info.component";
-import {SellerInfoComponent} from "./component/seller-info/seller-info.component";
 import {ContactUsComponent} from "./component/contact-us/contact-us.component";
 import {UserAccountComponent} from "./component/user-account/user-account.component";
-import {DASH} from "@angular/cdk/keycodes";
 import {DashboardComponent} from "./component/dashboard/dashboard.component";
 import {MyPropertiesComponent} from "./component/my-properties/my-properties.component";
 import {ActiveAuctionsComponent} from "./component/active-auctions/active-auctions.component";
@@ -69,14 +66,6 @@ const routes: Routes = [
   {
     path: 'about-us',
     component: AboutUsComponent,
-  },
-  {
-    path: 'buyer-info',
-    component: BuyerInfoComponent,
-  },
-  {
-    path: 'seller-info',
-    component: SellerInfoComponent,
   },
   {
     path: 'contact-us',

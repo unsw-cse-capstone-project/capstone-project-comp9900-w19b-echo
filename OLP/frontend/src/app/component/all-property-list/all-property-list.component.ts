@@ -17,12 +17,12 @@ export class AllPropertyListComponent implements OnInit {
   @Input() properties: PropertyAuction[] = [];
   isLoading: boolean = false;
   auction: Auction = null;
-  constructor(private router: Router, private http: HttpClient, private toastrService: NbToastrService, private userService: UserService, private modalService: NgbModal) {}
+  constructor(private router: Router, private http: HttpClient, private toastrService: NbToastrService,
+              private userService: UserService, private modalService: NgbModal) {}
 
 
   ngOnInit(): void {
   }
-
 
   detail(p: PropertyAuction): void {
     this.userService.currentPropertyAuction = p;

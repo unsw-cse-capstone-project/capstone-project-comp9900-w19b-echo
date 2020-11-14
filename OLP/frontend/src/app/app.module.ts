@@ -32,8 +32,6 @@ import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
 import {environment} from "../environments/environment";
 import { AboutUsComponent } from './component/about-us/about-us.component';
 import { HomeComponent } from './component/home/home.component';
-import { BuyerInfoComponent } from './component/buyer-info/buyer-info.component';
-import { SellerInfoComponent } from './component/seller-info/seller-info.component';
 import { ContactUsComponent } from './component/contact-us/contact-us.component';
 import { HeaderComponent } from './component/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -71,14 +69,13 @@ import { PropertyCardComponent } from './component/property-card/property-card.c
 
 import { AgmCoreModule } from '@agm/core';
 import { EmailFormComponent } from './component/email-form/email-form.component';
+import { BidHistoryComponent } from './component/bid-history/bid-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutUsComponent,
     HomeComponent,
-    BuyerInfoComponent,
-    SellerInfoComponent,
     ContactUsComponent,
     HeaderComponent,
     UserAccountComponent,
@@ -107,7 +104,8 @@ import { EmailFormComponent } from './component/email-form/email-form.component'
     PropertyDetailComponent,
     UploadComponent,
     PropertyCardComponent,
-    EmailFormComponent
+    EmailFormComponent,
+    BidHistoryComponent
   ],
   imports: [
     BrowserModule,

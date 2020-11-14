@@ -6,13 +6,12 @@
 
   <nb-layout-column>
     <app-search-bar (search)="searchProperty($event)"></app-search-bar>
-    <nb-card  [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success" size="large">
+    <nb-card [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success" size="large">
       <nb-card-body>
         <app-all-property-list [properties]="properties"></app-all-property-list>
       </nb-card-body>
     </nb-card>
   </nb-layout-column>
-
 
   <nb-layout-footer fixed>
     <!-- Insert footer here -->

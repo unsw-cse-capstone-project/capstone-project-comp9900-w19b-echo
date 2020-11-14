@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NbAuthJWTToken, NbAuthService } from '@nebular/auth';
+import {Component, OnInit} from '@angular/core';
+import {NbAuthJWTToken, NbAuthService} from '@nebular/auth';
 import {environment} from "../../../environments/environment";
 import {Property} from "../../model/property.model";
 import {Router} from "@angular/router";
@@ -27,9 +27,9 @@ export class HomeComponent implements OnInit {
 
   getRecommendProperties() {
     this.isLoading = true;
-    let uri = this.userService.authenticated ? '/listAllProperty' : '/listAllProperty';
+    let uri = this.userService.authenticated ? '/get-recommendation' : '/listAllProperty';
     this.http.post(environment.baseEndpoint + uri, {})
-      .subscribe( (p : PropertyAuction[])=> {
+      .subscribe((p: PropertyAuction[]) => {
           this.properties = p;
           this.isLoading = false;
         }
@@ -38,9 +38,8 @@ export class HomeComponent implements OnInit {
 
   searchProperty($event: any) {
     this.isLoading = true;
-    let uri = $event ? '/search-property-like' : '/listAllProperty';
     this.http.post(environment.baseEndpoint + '/search-property', $event)
-      .subscribe( (p : PropertyAuction[])=> {
+      .subscribe((p: PropertyAuction[]) => {
           this.properties = p;
           this.isLoading = false;
         }

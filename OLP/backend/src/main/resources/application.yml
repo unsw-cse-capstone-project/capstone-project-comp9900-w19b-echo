@@ -19,7 +19,7 @@ spring:
   jackson:
     time-zone: GMT+11
   datasource:
-    url: jdbc:mysql://18.166.66.215:3306/onpro?characterEncoding=utf8&serverTimezone=Australia/Sydney
+    url: jdbc:mysql://18.162.169.130:3306/onpro?characterEncoding=utf8&serverTimezone=Australia/Sydney
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root9900

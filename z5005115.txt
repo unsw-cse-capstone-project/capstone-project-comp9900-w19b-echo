@@ -59,3 +59,19 @@ Week 8
 4. Implemented setting up auctions;
 5. Integrated backend API for dashboard
 
+Week 9
+
+1. Implemented document uploaded for user account;
+2. Implemented document and photo uploaded for property;
+3. Implemented home page;
+4. Implemented property details screen;
+5. Implemented advance search;
+6. Team discussion
+7. Prepared final report;
+
+Week 10
+1. Finalised report
+2. Prepared demo
+3. Team discussion
+
+

@@ -4,9 +4,9 @@
     <app-header></app-header>
   </nb-layout-header>
   <nb-layout-column>
-    <nb-card [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success">
+    <nb-card [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success" size="large">
       <nb-card-body>
-        <div class ="row">
+        <div class ="row" *ngIf="this.propertyAuction?.property">
           <div class ="col-sm-5">
             <div class="card">
               <div class="card-body">
@@ -18,7 +18,8 @@
                   <img class="icon" src="assets/resources/car.svg"/>&nbsp;{{propertyAuction.property.carport}}&nbsp;
                   <img class="icon" src="assets/resources/area.svg"/>&nbsp;{{propertyAuction.property.area}}
                 </p>
-                <p class="card-text">Auction Date: {{propertyAuction.auction?.beginTime | date:'dd/MM/yyyy hh:mm a'}}</p>
+                <p class="card-text">Auction Start Date: {{propertyAuction.auction?.beginTime | date:'dd/MM/yyyy hh:mm a'}}</p>
+                <p class="card-text">Auction End Date: &nbsp;{{propertyAuction.auction?.endTime | date:'dd/MM/yyyy hh:mm a'}}</p>
               </div>
             </div>
             <div class ="row mt-4 mb-4 text-center">
@@ -52,7 +53,6 @@
             </div>
           </div>
         </div>
-
       </nb-card-body>
     </nb-card>
   </nb-layout-column>

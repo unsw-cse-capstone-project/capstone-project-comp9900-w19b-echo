@@ -62,6 +62,6 @@ export class ActiveAuctionsComponent implements OnInit {
   placeBid(p: Property, auction: Auction) {
     this.userService.currentProperty = p;
     this.userService.currentAuction = auction;
-    this.router.navigate(['/place-bid']);
+    this.router.navigate(['/place-bid', {pid: p.pid}]);
   }
 }
