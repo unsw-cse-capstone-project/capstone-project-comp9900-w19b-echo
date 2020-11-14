@@ -12,7 +12,7 @@ import {Router} from "@angular/router";
 export class EmailFormComponent implements OnInit {
   contactForm: FormGroup;
 
-  constructor(private router: Router, private http: HttpClient) { 
+  constructor(private router: Router, private http: HttpClient) {
     this.contactForm = new FormGroup({
       subject: new FormControl(),
       content: new FormControl(),

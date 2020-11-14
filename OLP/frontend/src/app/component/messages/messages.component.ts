@@ -23,32 +23,32 @@ export class MessagesComponent implements OnInit {
 
   messages = [
     {aid: 0, content: "test", pid: 0, readFlag: 0,
-      sender: "test", serial: 0, subject: "test", 
+      sender: "test", serial: 0, subject: "test",
       uid: 0},
     {aid: 0, content: "test", pid: 0, readFlag: 0,
-      sender: "test", serial: 0, subject: "test", 
+      sender: "test", serial: 0, subject: "test",
       uid: 0},
       {aid: 0, content: "test", pid: 0, readFlag: 0,
-      sender: "test", serial: 0, subject: "test", 
+      sender: "test", serial: 0, subject: "test",
       uid: 0},
       {aid: 0, content: "test", pid: 0, readFlag: 0,
-      sender: "test", serial: 0, subject: "test", 
+      sender: "test", serial: 0, subject: "test",
       uid: 0},
       {aid: 0, content: "test", pid: 0, readFlag: 0,
-      sender: "test", serial: 0, subject: "test", 
+      sender: "test", serial: 0, subject: "test",
       uid: 0},
       {aid: 0, content: "test", pid: 0, readFlag: 0,
-      sender: "test", serial: 0, subject: "test", 
+      sender: "test", serial: 0, subject: "test",
       uid: 0},
       {aid: 0, content: "test", pid: 0, readFlag: 0,
-      sender: "test", serial: 0, subject: "test", 
+      sender: "test", serial: 0, subject: "test",
       uid: 0}
   ]
   constructor(private router: Router, private http: HttpClient, private userService: UserService) {
     let uri = '/view-message';
     this.http.post(environment.baseEndpoint+uri, {uid: this.userService.user.uid})
     .subscribe((prop:Message[])=>{
-      // this.messages=prop;
+      this.messages=prop;
     })
   }
 
