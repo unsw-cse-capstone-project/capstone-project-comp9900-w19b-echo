@@ -1,0 +1,68 @@
+Week 1
+1. Team form;
+2. Register to Github;
+3. Register to Gira;
+4. Discuss projects and make choice;
+
+Week 2
+1. Discuss project proposal;
+2. Determine project requirements;
+3. Determine software architecture of backend;
+4. Generate backend project structure in Github;
+5. Link github to Atlassian JIRA;
+
+Week 3
+1. Draw software structure via Photo Shop;
+2. Create maven project using spring-boot, add relevant dependencies;
+3. Register Amazon AWS account and create VM - EC2(1u2g, ubuntu18) with 30gb ssd EBS;
+4. Install software in AWS VM, include open-jre, mysql and tomcat.
+5. Using open-ssl to generate public/private keys for ssh login
+6. Design database structures and database documents.
+
+Week 4
+1. Switch JWT authentiation to Shiro;
+2. Write sql script to create tables;
+3. Make backend project successfully running in tomcat server;
+4. Finish user sign-up/login function in backend end allow api authentication with token.
+5. Finish other user management functions, like update basic information/update password
+
+Week 5
+1. Add swagger2 to backend project to support auto-generated api documents;
+2. Implement property management functions: allow user to create new property
+3. Register to Google Cloud Platform, generate api-key for google map api.
+4. Using google map api to generate formal address and Longitude/Latitude for new property; Allow front-end using google map.
+5. Add auction management functions, include: create auction; auto-start and close auction by 2-levels cache; place new bid on an auction and allow extending end time.
+
+Week 6
+1. Add auction management functions, include: register to an auction; view auction details; view bid history; update auction status while auction end.
+2. Add paging function for query results.
+3. Allow user to set their payment details
+
+Week 7
+1. Allow user update their properties
+2. Modify user payment parameters and apis
+3. Add three ways of searching property in mysql: (a). using keyword, vague search. (b). using specific criteria as filters (c) using Longitude/Latitude range
+4. Add auction update/delete/view apis.
+
+Week 8
+1. Add file upload apis, for property pics/certifications and user avatar/certification
+2. Add apis for view some specific auctions(like onging-auction or complete-auction)
+3. Add bill address to user payment details, add apis to update these information
+4. Fixed timezone problem: force spring/ubuntu/mysql using "GMT+11:00"
+5. Add user-favorite function, user can collect some properties and view or delete in his "favorite list"
+6. Add email-send function, sending verify code for reset-password and result email for auction;
+7. Register an email account online_property9900@hotmail.com for email sending, and test.
+
+Week 9
+1. Function test and bug fixed
+2. Due to AWS always crash while using Tomcat, I create a new VM on Google Cloud Platform(4u16g), and transfer tomcat8 to new server;
+3. Add in-site message function allow send/receive/delete messages, system will auto send message in some situation
+4. Add user habit collect function, it can collect user operation to "term" and "term hot index"
+5. Generate IN-RAM inverted index(lucene) for property daily, by tokenization formal address with some specific stop words.
+6. Add property recommendation function using inverted index and user habit terms, return a ranking result.
+7. Replace vague search by lucene search engine, now allow user to use any query sentence. 
+
+Week 10
+1. Finalised report
+2. Prepared demo
+3. Team discussion
