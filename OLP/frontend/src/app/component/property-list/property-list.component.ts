@@ -20,7 +20,8 @@ export class PropertyListComponent implements OnInit {
   @Input() properties: PropertyAuction[];
   @Output() delete: EventEmitter<any> = new EventEmitter();
 
-  constructor(private router: Router, private http: HttpClient, private userService: UserService, private dialogService: NbDialogService, private commonService: CommonService) { }
+  constructor(private router: Router, private http: HttpClient, private userService: UserService,
+              private dialogService: NbDialogService, private commonService: CommonService) { }
 
   ngOnInit(): void {
   }
@@ -52,6 +53,4 @@ export class PropertyListComponent implements OnInit {
     this.userService.currentAuction = auction;
     this.router.navigate(['/sell-property']);
   }
-
-
 }

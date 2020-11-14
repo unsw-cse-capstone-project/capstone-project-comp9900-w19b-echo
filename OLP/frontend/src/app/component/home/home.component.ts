@@ -17,8 +17,9 @@ export class HomeComponent implements OnInit {
   isLoading: boolean = false;
   properties: PropertyAuction[] = [];
 
-  constructor(private router: Router, private http: HttpClient, private toastrService: NbToastrService, private userService: UserService) {
-
+  constructor(private router: Router, private http: HttpClient,
+              private toastrService: NbToastrService,
+              private userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -30,8 +31,10 @@ export class HomeComponent implements OnInit {
     let uri = this.userService.authenticated ? '/get-recommendation' : '/listAllProperty';
     this.http.post(environment.baseEndpoint + uri, {})
       .subscribe((p: PropertyAuction[]) => {
-          this.properties = p;
-          this.isLoading = false;
+        if(p) {
+          this.properties = p.sort((a,b) => a.property.pid < b.property.pid ? 1 : -1);
+        }
+        this.isLoading = false;
         }
       );
   }
