@@ -186,8 +186,8 @@ public class FileController {
             return new FileUploadResponse(500, "File is empty", null);
         }
 
-        String fileName = file.getOriginalFilename();  // 文件名
-        String suffixName = fileName.substring(fileName.lastIndexOf("."));  // 后缀名
+        String fileName = file.getOriginalFilename();  // file name
+        String suffixName = fileName.substring(fileName.lastIndexOf("."));  // suffix
 
         String fileDir = uploadPath + "/property/"+pid + "/document";
         File path = new File(fileDir);

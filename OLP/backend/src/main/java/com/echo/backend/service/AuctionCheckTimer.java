@@ -52,7 +52,7 @@ public class AuctionCheckTimer {
         this.userService = userService;
     }
 
-    // 每5分钟检查一次，是否有即将开始竞拍的property
+    // check per 5 mins for auctions will start in 10 mins
     @Scheduled(cron = "0 0/5 * * * ?")
     public void checkAuction10mins() {
 
@@ -91,7 +91,7 @@ public class AuctionCheckTimer {
         });
     }
 
-    // 每10秒检查一次，将开始的竞拍开始
+    // check per 10 sec, to start auction
     @Scheduled(cron = "0/10 * * * * ?")
     public void checkOnAuction() {
 
@@ -125,7 +125,7 @@ public class AuctionCheckTimer {
         }
     }
 
-    // 每10秒检查一次，将结束的竞拍结束
+    // check per 10 sec, to end auction
     @Scheduled(cron = "0/10 * * * * ?")
     public void checkEndAuction() {
 
@@ -175,7 +175,7 @@ public class AuctionCheckTimer {
                     userMessage1.setUid(auction.getUid());
                     userMessage1.setSender("admin");
                     userMessage1.setSendTime(new Date());
-                    userMessage1.setContent("Congrats! Your property is sold!");
+                    userMessage1.setContent("Congrats! Your property is sold! Buyer's contact is: " + winner.getEmail());
                     userMessage1.setSubject("Official notification");
                     userMessage1.setAid(auction.getAid());
                     userMessage1.setPid(auction.getPid());
@@ -185,7 +185,7 @@ public class AuctionCheckTimer {
                     userMessage2.setUid(auction.getWinner());
                     userMessage2.setSender("admin");
                     userMessage2.setSendTime(new Date());
-                    userMessage2.setContent("Congrats! Your win a auction!");
+                    userMessage2.setContent("Congrats! Your win a auction! Owner's contact is: " + owner.getEmail());
                     userMessage2.setSubject("Official notification");
                     userMessage2.setAid(auction.getAid());
                     userMessage2.setPid(auction.getPid());

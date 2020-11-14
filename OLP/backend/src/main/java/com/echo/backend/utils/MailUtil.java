@@ -23,14 +23,17 @@ public class MailUtil {
     @Value("${spring.mail.username}")
     private String from;
 
-    @Autowired
-    private JavaMailSender mailSender;
+    private final JavaMailSender mailSender;
+
+    public MailUtil(JavaMailSender mailSender) {
+        this.mailSender = mailSender;
+    }
 
     /**
-     * 简单文本邮件
-     * @param to 接收者邮件
-     * @param subject 邮件主题
-     * @param contnet 邮件内容
+     * text message
+     * @param to target email address
+     * @param subject subject
+     * @param contnet content
      */
     @Async("taskExecutor")
     public void sendSimpleMail(String to, String subject, String contnet){
@@ -44,13 +47,6 @@ public class MailUtil {
         mailSender.send(message);
     }
 
-    /**
-     * HTML 文本邮件
-     * @param to 接收者邮件
-     * @param subject 邮件主题
-     * @param contnet HTML内容
-     * @throws MessagingException
-     */
     public void sendHtmlMail(String to, String subject, String contnet) throws MessagingException {
         MimeMessage message = mailSender.createMimeMessage();
 
@@ -63,14 +59,6 @@ public class MailUtil {
         mailSender.send(message);
     }
 
-    /**
-     * 附件邮件
-     * @param to 接收者邮件
-     * @param subject 邮件主题
-     * @param contnet HTML内容
-     * @param filePath 附件路径
-     * @throws MessagingException
-     */
     public void sendAttachmentsMail(String to, String subject, String contnet,
                                     String filePath) throws MessagingException {
         MimeMessage message = mailSender.createMimeMessage();
@@ -88,18 +76,8 @@ public class MailUtil {
         mailSender.send(message);
     }
 
-    /**
-     * 图片邮件
-     * @param to 接收者邮件
-     * @param subject 邮件主题
-     * @param contnet HTML内容
-     * @param rscPath 图片路径
-     * @param rscId 图片ID
-     * @throws MessagingException
-     */
     public void sendInlinkResourceMail(String to, String subject, String contnet,
                                        String rscPath, String rscId) {
-        logger.info("发送静态邮件开始: {},{},{},{},{}", to, subject, contnet, rscPath, rscId);
 
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = null;
@@ -115,10 +93,8 @@ public class MailUtil {
             FileSystemResource res = new FileSystemResource(new File(rscPath));
             helper.addInline(rscId, res);
             mailSender.send(message);
-            logger.info("发送静态邮件成功!");
 
         } catch (MessagingException e) {
-            logger.info("发送静态邮件失败: ", e);
         }
 
     }

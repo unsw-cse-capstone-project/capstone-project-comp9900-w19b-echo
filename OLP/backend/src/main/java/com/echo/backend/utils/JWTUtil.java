@@ -13,15 +13,8 @@ import java.util.Date;
 
 public class JWTUtil {
 
-    // 过期时间5分钟
     private static final long EXPIRE_TIME = 5*60*1000;
 
-    /**
-     * 校验token是否正确
-     * @param token 密钥
-     * @param secret 用户的密码
-     * @return 是否正确
-     */
     public static boolean verify(String token, String email, String secret) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
@@ -35,10 +28,6 @@ public class JWTUtil {
         }
     }
 
-    /**
-     * 获得token中的信息无需secret解密也能获得
-     * @return token中包含的用户名
-     */
     public static String getEmail(String token) {
         try {
             DecodedJWT jwt = JWT.decode(token);
@@ -48,12 +37,6 @@ public class JWTUtil {
         }
     }
 
-    /**
-     * 根据token获取uid
-     * @param token
-     * @param userService
-     * @return
-     */
     public static int getUid(String token, UserService userService){
         try {
             DecodedJWT jwt = JWT.decode(token);
@@ -63,18 +46,11 @@ public class JWTUtil {
         }
     }
 
-    /**
-     * 生成签名,2小时后过期
-     * @param email 用户名
-     * @param secret 用户的密码
-     * @param uid
-     * @return 加密的token
-     */
     public static String sign(String email, String fullName, String secret, int uid) {
         try {
             //Date date = new Date(2099,1,1);
             Algorithm algorithm = Algorithm.HMAC256(secret);
-            // 附带username信息
+            // attach username
             return JWT.create()
                     .withSubject(fullName)
                     .withClaim("email", email)

@@ -29,7 +29,7 @@ public class MyRealm extends AuthorizingRealm {
     }
 
     /**
-     * 大坑！，必须重写此方法，不然Shiro会报错
+     * Has to overwrite this method
      */
     @Override
     public boolean supports(AuthenticationToken token) {
@@ -37,7 +37,7 @@ public class MyRealm extends AuthorizingRealm {
     }
 
     /**
-     * 只有当需要检测用户权限的时候才会调用此方法，例如checkRole,checkPermission之类的
+     * for checkRole,checkPermission
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
@@ -49,12 +49,12 @@ public class MyRealm extends AuthorizingRealm {
     }
 
     /**
-     * 默认使用此方法进行用户名正确与否验证，错误抛出异常即可。
+     *
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken auth) throws AuthenticationException {
         String token = (String) auth.getCredentials();
-        // 解密获得username，用于和数据库进行对比
+
         String email = JWTUtil.getEmail(token);
         if (email == null) {
             throw new AuthenticationException("token invalid");

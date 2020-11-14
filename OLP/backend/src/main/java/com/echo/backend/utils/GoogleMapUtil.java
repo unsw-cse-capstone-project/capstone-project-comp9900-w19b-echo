@@ -18,7 +18,7 @@ public class GoogleMapUtil {
     private static String apiKey = "AIzaSyACpbsx-Xm4re7zghBNqaZ1zoTfLCeD1i8";
 
     public static String getLocation(String addr) {
-        // 返回输入地址address的经纬度信息, 格式是 经度,纬度
+        // get address
         String queryUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+addr+"&key=" + apiKey + "&language=en";
 
         System.out.println(queryUrl);

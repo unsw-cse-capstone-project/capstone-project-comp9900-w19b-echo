@@ -40,7 +40,7 @@ public class LuceneIndexTimer {
     }
 
 
-    // 每天凌晨3点，重新生成索引
+    // re-generate lucene at 03:00 am
     @Scheduled(cron = "0 0 3 ? * *")
     public void generateIndex() {
         try {

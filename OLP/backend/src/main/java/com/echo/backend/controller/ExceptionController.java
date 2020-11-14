@@ -15,21 +15,18 @@ import javax.servlet.http.HttpServletRequest;
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class ExceptionController {
 
-    // 捕捉shiro的异常
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(ShiroException.class)
     public SignInResponse handle401(ShiroException e) {
         return new SignInResponse(401, e.getMessage(), null);
     }
 
-    // 捕捉UnauthorizedException
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler(UnauthorizedException.class)
     public SignInResponse handle401() {
         return new SignInResponse(401, "Unauthorized", null);
     }
 
-    // 捕捉其他所有异常
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public SignInResponse globalException(HttpServletRequest request, Throwable ex) {
