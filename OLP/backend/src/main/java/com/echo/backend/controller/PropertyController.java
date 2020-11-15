@@ -23,7 +23,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -171,6 +173,11 @@ public class PropertyController {
         List<Property> fromLucene = userService.luceneSearch(searchRequest.getKeyword());
         List<Property> fromDB = propertyService.searchPropertyVague(searchRequest.getKeyword());
         fromDB.addAll(fromLucene);
+
+        Map<Integer, Property> retMap = new HashMap<>();
+        fromDB.forEach(t -> retMap.put(t.getPid(), t));
+        fromDB = new ArrayList<>(retMap.values());
+
         List<Property> result = FileUtil.generatePropertyPic(fromDB, uploadPath, accessPath);
         List<Property> properties = PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
         return getPropertyAuctions(properties);
