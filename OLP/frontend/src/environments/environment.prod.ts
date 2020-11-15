@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  baseEndpoint: "http://34.87.217.163/api",
-  baseResourceEndpoint: "http://34.87.217.163"
+  baseEndpoint: "http://localhost:8080/api",
+  baseResourceEndpoint: "http://localhost:8080"
 };
