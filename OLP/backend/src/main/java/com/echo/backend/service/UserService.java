@@ -5,6 +5,7 @@ import com.echo.backend.domain.*;
 import com.echo.backend.dto.ReadMessageRequest;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
+import org.apache.lucene.analysis.core.StopAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
 import org.apache.lucene.document.Document;
@@ -167,12 +168,13 @@ public class UserService {
         }
 
         String terms = habits.stream().map(UserHabit::getTerm).collect(Collectors.joining(" "));
+
         return luceneSearch(terms);
 
     }
 
     public List<Property> luceneSearch(String terms) throws IOException, ParseException {
-        Analyzer analyzer = new StandardAnalyzer();
+        Analyzer analyzer = new StopAnalyzer();
         DirectoryReader reader = DirectoryReader.open(ramDirectory);
         IndexSearcher searcher = new IndexSearcher(reader);
         QueryParser parser = new QueryParser("address", analyzer);
