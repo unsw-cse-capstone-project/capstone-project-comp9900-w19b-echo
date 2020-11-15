@@ -155,6 +155,10 @@ public class UserService {
 
     public List<Property> getRecommandProperty(int uid) throws IOException, ParseException {
 
+        if (uid < 0){
+            return luceneSearch("australia");
+        }
+
         List<UserHabit> habits = userHabitMapper.listUserHabit(uid);
 
         if (CollectionUtils.isEmpty(habits)) {

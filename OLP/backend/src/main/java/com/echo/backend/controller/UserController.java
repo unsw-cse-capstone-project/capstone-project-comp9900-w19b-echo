@@ -245,11 +245,16 @@ public class UserController {
     }
 
     @RequestMapping(value = "/get-recommendation", method = RequestMethod.POST)
-    @RequiresAuthentication
+    //@RequiresAuthentication
     public List<Property> recommendation(@RequestBody SearchPropertyRequest request, HttpServletRequest hRequest) throws IOException, ParseException {
 
-        int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
-        return userService.getRecommandProperty(uid);
+        try {
+            int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
+            return userService.getRecommandProperty(uid);
+        }
+        catch (Exception e){
+            return userService.getRecommandProperty(-1);
+        }
     }
 
     @RequestMapping(value = "/view-favorite", method = RequestMethod.POST)
