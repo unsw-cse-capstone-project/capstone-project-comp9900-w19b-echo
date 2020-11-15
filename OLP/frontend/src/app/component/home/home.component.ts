@@ -31,21 +31,35 @@ export class HomeComponent implements OnInit {
     let uri = this.userService.authenticated ? '/get-recommendation' : '/listAllProperty';
     this.http.post(environment.baseEndpoint + uri, {})
       .subscribe((p: PropertyAuction[]) => {
-        if(p) {
-          this.properties = p.sort((a,b) => a.property.pid < b.property.pid ? 1 : -1);
-        }
-        this.isLoading = false;
+          if (p) {
+            this.properties = p;
+          }
+          this.isLoading = false;
         }
       );
   }
 
   searchProperty($event: any) {
     this.isLoading = true;
-    this.http.post(environment.baseEndpoint + '/search-property', $event)
-      .subscribe((p: PropertyAuction[]) => {
-          this.properties = p;
-          this.isLoading = false;
-        }
-      );
+    if ($event.propertyType > -1 || $event.state || $event.suburb
+      || $event.bedroom > 0 || $event.bathroom > 0 || $event.carport > 0) {
+      this.http.post(environment.baseEndpoint + '/search-property', $event)
+        .subscribe((p: PropertyAuction[]) => {
+            if (p) {
+              this.properties = p;
+            }
+            this.isLoading = false;
+          }
+        );
+    } else {
+      this.http.post(environment.baseEndpoint + '/search-property-like', {keyword: $event.text})
+        .subscribe((p: PropertyAuction[]) => {
+            if (p) {
+              this.properties = p;
+            }
+            this.isLoading = false;
+          }
+        );
+    }
   }
 }

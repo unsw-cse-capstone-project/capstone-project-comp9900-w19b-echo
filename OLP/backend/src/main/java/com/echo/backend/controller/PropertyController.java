@@ -186,19 +186,9 @@ public class PropertyController {
     @RequestMapping(value = "/search-property", method = RequestMethod.POST)
     //@RequiresAuthentication
     public List<PropertyAuction> searchProperty(@RequestBody AdvanceSearchRequest searchRequest, HttpServletRequest hRequest) throws IOException, ParseException {
-
-        try {
-            int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
-            userService.collectHabitFromSearchPropertyKeyword(uid, searchRequest.getText());
-        }
-        catch (Exception ignored){}
-
-        List<Property> fromLucene = userService.luceneSearch(searchRequest.getText());
-        List<Property> fromDB = propertyService.searchPropertyVague(searchRequest.getText());
-        fromDB.addAll(fromLucene);
-        fromDB = fromDB.stream().filter(p -> compareSearch(p, searchRequest)).collect(Collectors.toList());
-        List<Property> result = FileUtil.generatePropertyPic(fromDB, uploadPath, accessPath);
-        List<Property> properties = PagingUtil.afterPaging(result, searchRequest.getPage(), searchRequest.getDataNum());
+        List<Property> properties = propertyService.searchPropertyVague(searchRequest.getText());;
+        properties = properties.stream().filter(p -> compareSearch(p, searchRequest)).collect(Collectors.toList());
+        properties = PagingUtil.afterPaging(FileUtil.generatePropertyPic(properties, uploadPath, accessPath), searchRequest.getPage(), searchRequest.getDataNum());
         return getPropertyAuctions(properties);
     }
 

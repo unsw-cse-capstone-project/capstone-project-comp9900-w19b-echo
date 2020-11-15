@@ -30,7 +30,7 @@ export class JoinBidComponent implements OnInit {
     this.auction = this.userService.currentAuction ? this.userService.currentAuction : new Auction();
     this.auctionRegister = new AuctionRegister();
     this.auctionRegister.pid = this.auction.pid;
-    this.auctionRegister.uid = this.auction.uid;
+    this.auctionRegister.uid = this.userService.user?.uid;
     this.auctionRegister.aid = this.auction.aid;
     this.auctionRegister.userType = 1;
     const email = this.userService.user?.email;

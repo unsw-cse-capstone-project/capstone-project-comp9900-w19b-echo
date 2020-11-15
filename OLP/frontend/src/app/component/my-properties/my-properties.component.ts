@@ -1,11 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {AgGridAngular} from "ag-grid-angular";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {UserService} from "../../service/user.service";
 import {NbToastrService} from "@nebular/theme";
 import {environment} from "../../../environments/environment";
-import {Property} from "../../model/property.model";
 import {PropertyAuction} from "../../model/property-auction.model";
 import {NbComponentStatus} from "@nebular/theme/components/component-status";
 

@@ -1,13 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Property} from "../../model/property.model";
-import {Auction} from "../../model/auction.model";
 import {User} from "../../model/user.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {UserService} from "../../service/user.service";
 import {NbComponentStatus, NbToastrService} from "@nebular/theme";
 import {environment} from "../../../environments/environment";
-import {AuctionRegister} from "../../model/auction-register.model";
 import {PropertyAuction} from "../../model/property-auction.model";
 import {CommonService} from "../../service/common.service";
 
@@ -27,6 +25,7 @@ export class PropertyDetailComponent implements OnInit {
     isLiked: boolean = false;
     currentImage: string;
     index: number = 0;
+    owner: User = new User();
 
     constructor(private router: Router, private commonService: CommonService, public userService: UserService, private http: HttpClient, private toastrService: NbToastrService) {
     }
@@ -39,6 +38,7 @@ export class PropertyDetailComponent implements OnInit {
                         if (data && data.length > 0) {
                             this.propertyAuction = data[0] ? data[0] : new PropertyAuction();
                             this.loadPicUrl(this.propertyAuction.property);
+                            this.loadOwnerInfo();
                             this.isLoading = false;
                         }
                     }
@@ -54,6 +54,16 @@ export class PropertyDetailComponent implements OnInit {
                 this.index = 0;
             }
         }
+    }
+
+    loadOwnerInfo() {
+      if(this.propertyAuction.property.owner) {
+        this.http.get(environment.baseEndpoint + '/user/' + this.propertyAuction.property.owner)
+          .subscribe((u: User) => {
+              this.owner = u;
+            }
+          );
+      }
     }
 
     getAddress(p: Property) {
@@ -102,5 +112,9 @@ export class PropertyDetailComponent implements OnInit {
 
     showToast(status: NbComponentStatus, title: string) {
         this.toastrService.show(status, title, {status});
+    }
+
+    isShowLike() {
+      return !this.userService.authenticated || (this.userService.authenticated && this.userService.user?.uid !== this.propertyAuction?.property?.owner);
     }
 }

@@ -6,6 +6,7 @@ import com.echo.backend.dto.*;
 import com.echo.backend.exception.UnauthorizedException;
 import com.echo.backend.service.AuctionService;
 import com.echo.backend.service.UserService;
+import com.echo.backend.utils.FileUtil;
 import com.echo.backend.utils.JWTUtil;
 import com.echo.backend.utils.MailUtil;
 import com.echo.backend.utils.PagingUtil;
@@ -17,6 +18,7 @@ import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
@@ -36,6 +38,12 @@ public class UserController {
     private MailUtil mailUtil;
     private Map<String, String> mailTemplate;
     private Map<Integer, Integer> verifyCode;
+
+    @Value( "${server.file.upload.path}" )
+    private String uploadPath;
+
+    @Value( "${server.file.access.path}" )
+    private String accessPath;
 
     @Autowired
     public void setService(UserService userService, AuctionService auctionService, MailUtil mailUtil, Map<String, String> mailTemplate, Map<Integer, Integer> verifyCode) {
@@ -89,8 +97,14 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public UserInfo updateUser(@RequestParam String email) {
+    public UserInfo getUserByEmail(@RequestParam String email) {
         User user = userService.getUserByEmail(email);
+        return getUserInfo(user);
+    }
+
+    @RequestMapping(value = "/user/{uid}", method = RequestMethod.GET)
+    public UserInfo getUserById(@PathVariable int uid) {
+        User user = userService.getUserByUid(uid);
         return getUserInfo(user);
     }
 
@@ -246,15 +260,29 @@ public class UserController {
 
     @RequestMapping(value = "/get-recommendation", method = RequestMethod.POST)
     //@RequiresAuthentication
-    public List<Property> recommendation(@RequestBody SearchPropertyRequest request, HttpServletRequest hRequest) throws IOException, ParseException {
+    public List<PropertyAuction> recommendation(@RequestBody SearchPropertyRequest request, HttpServletRequest hRequest) throws IOException, ParseException {
 
         try {
             int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), userService);
-            return userService.getRecommandProperty(uid);
+            return getPropertyAuctions(FileUtil.generatePropertyPic(userService.getRecommandProperty(uid), uploadPath, accessPath));
         }
         catch (Exception e){
-            return userService.getRecommandProperty(-1);
+            return getPropertyAuctions(FileUtil.generatePropertyPic(userService.getRecommandProperty(-1), uploadPath, accessPath));
         }
+    }
+
+    private List<PropertyAuction> getPropertyAuctions(List<Property> properties) {
+        List<PropertyAuction> propertyAuctions = new ArrayList<>();
+        for(Property p : properties){
+            PropertyAuction propertyAuction = new PropertyAuction();
+            propertyAuction.setProperty(p);
+            List<Auction> auctions = auctionService.getAuctionByPid(p.getPid());
+            if(auctions != null && auctions.size() > 0) {
+                propertyAuction.setAuction(auctions.get(0));
+            }
+            propertyAuctions.add(propertyAuction);
+        }
+        return propertyAuctions;
     }
 
     @RequestMapping(value = "/view-favorite", method = RequestMethod.POST)

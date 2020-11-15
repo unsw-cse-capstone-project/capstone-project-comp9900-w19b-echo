@@ -1,0 +1,14 @@
+<nb-card status="danger">
+  <nb-card-header class="text-center">Messages</nb-card-header>
+  <nb-card-body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col"><app-card-item [heading]="'Total'" [value]="this.messages?.length" [styleClass]="'text-info'"></app-card-item></div>
+      </div>
+      <div class="row">
+        <div class="col"><app-card-item [heading]="'Read'"  [value]="getCount(1)" [styleClass]="'text-success'"></app-card-item></div>
+        <div class="col"><app-card-item [heading]="'Unread'" [value]="getCount(0)"  [styleClass]="'text-warning'"></app-card-item></div>
+      </div>
+    </div>
+  </nb-card-body>
+</nb-card>

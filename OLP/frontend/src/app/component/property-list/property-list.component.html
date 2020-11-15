@@ -27,7 +27,8 @@
         <nb-icon class="ml-3 cursor-pointer" icon="trash-outline" status="primary" (click)="deleteProperty(p.property)" nbTooltip="Delete Property"></nb-icon>
       </ng-container>
       <ng-container *ngIf="p.property.status == 0">
-        <nb-icon class="cursor-pointer" icon="trash-outline" status="primary" (click)="deleteProperty(p.property)" nbTooltip="Delete Property"></nb-icon>
+        <nb-icon class="cursor-pointer" icon="edit-outline" status="primary" (click)="edit(p.property)" nbTooltip="Edit Property"></nb-icon>
+        <nb-icon class="ml-3 cursor-pointer" icon="trash-outline" status="primary" (click)="deleteProperty(p.property)" nbTooltip="Delete Property"></nb-icon>
       </ng-container>
     </td>
   </tr>
