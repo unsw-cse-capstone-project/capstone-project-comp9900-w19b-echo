@@ -29,7 +29,7 @@
                   </div>
                 </div>
               </div>
-              <div class="form-group col-sm-12 row" *ngIf="property?.status == 1 || property?.status == 5">
+              <div class="form-group col-sm-12 row" *ngIf="property?.status == 0 || property?.status == 1 || property?.status == 5">
                 <label for="status" class="col-sm-2 col-form-label">Property Status</label>
                 <div class="col-sm-4">
                   <select class="form-control" [(ngModel)]="property.status" id="status" name="status">

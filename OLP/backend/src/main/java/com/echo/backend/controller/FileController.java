@@ -24,6 +24,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -82,7 +83,11 @@ public class FileController {
     }
 
     private List<FileDto> getFileDtoList(String fileDir, String folderName) throws IOException {
-        List<FileDto> fileDtos = Files.walk(Paths.get(fileDir)).filter(Files::isRegularFile).map(f -> new FileDto(f.getFileName().toString(), folderName)).collect(Collectors.toList());
+        List<FileDto> fileDtos = new ArrayList<>();
+        File dir = new File(fileDir);
+        if (dir.exists()) {
+            fileDtos = Files.walk(Paths.get(fileDir)).filter(Files::isRegularFile).map(f -> new FileDto(f.getFileName().toString(), folderName)).collect(Collectors.toList());
+        }
         return fileDtos;
     }
 
