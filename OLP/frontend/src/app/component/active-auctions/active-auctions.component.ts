@@ -54,7 +54,13 @@ export class ActiveAuctionsComponent implements OnInit {
     })
       .onClose.subscribe(data => {
       if(data == true) {
-        this.properties = this.properties.filter(p1 => p1.property.pid != p.pid);
+        this.isLoading = true;
+        this.http.post(environment.baseEndpoint + '/quit-auction',{})
+          .subscribe( ()=> {
+            this.properties = this.properties.filter(p1 => p1.property.pid != p.pid);
+            this.isLoading = false;
+            }
+          );
       }
     });
   }

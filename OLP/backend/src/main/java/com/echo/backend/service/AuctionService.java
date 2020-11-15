@@ -42,6 +42,10 @@ public class AuctionService {
         auctionRegisterMapper.register(register);
     }
 
+    public void quitAuction(int uid) {
+        auctionRegisterMapper.deleteRegisterBidderByUid(uid);
+    }
+
     public void addAuction(Auction auction) {
 
         if (null == auction.getEndTime())

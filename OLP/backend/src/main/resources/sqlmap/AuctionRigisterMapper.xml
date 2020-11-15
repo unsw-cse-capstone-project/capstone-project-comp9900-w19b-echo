@@ -22,4 +22,8 @@
     <select id="getRegisterBidderByUid" resultMap="AuctionRegisterMap" parameterType="java.lang.Integer">
         select * from auction_register where uid=#{uid}
     </select>
+
+    <select id="deleteRegisterBidderByUid" parameterType="java.lang.Integer">
+        delete from auction_register where uid=#{uid}
+    </select>
 </mapper>

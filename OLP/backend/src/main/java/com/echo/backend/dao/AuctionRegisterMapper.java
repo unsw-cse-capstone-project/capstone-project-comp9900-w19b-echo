@@ -10,4 +10,6 @@ public interface AuctionRegisterMapper {
     void register(AuctionRegister register);
 
     List<AuctionRegister> getRegisterBidderByUid(int uid);
+
+    void deleteRegisterBidderByUid(int uid);
 }

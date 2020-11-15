@@ -150,6 +150,16 @@ public class AuctionController {
         return new RegisterAuctionResponse(200, "Register auction success", null);
     }
 
+    @RequestMapping(value = "/quit-auction", method = RequestMethod.POST)
+    @RequiresAuthentication
+    public void quitAuction(@RequestBody RegisterAuctionRequest request, HttpServletRequest hRequest) {
+        try {
+            int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), null);
+            auctionService.quitAuction(uid);
+        }
+        catch (Exception ignored){}
+    }
+
     @ApiOperation(value="Place new bid", notes="Place new bid")
     @RequestMapping(value = "/place-bid", method = RequestMethod.POST)
     @RequiresAuthentication
