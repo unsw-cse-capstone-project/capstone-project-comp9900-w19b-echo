@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     this.http.post(environment.baseEndpoint + uri, {})
       .subscribe((p: PropertyAuction[]) => {
         if(p) {
-          this.properties = p.sort((a,b) => a.property.pid < b.property.pid ? 1 : -1);
+          this.properties = p;
         }
         this.isLoading = false;
         }

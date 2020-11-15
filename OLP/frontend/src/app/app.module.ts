@@ -71,6 +71,7 @@ import { AgmCoreModule } from '@agm/core';
 import { EmailFormComponent } from './component/email-form/email-form.component';
 import { BidHistoryComponent } from './component/bid-history/bid-history.component';
 import { DatePipe } from '@angular/common';
+import { MessagesCardComponent } from './component/messages-card/messages-card.component';
 
 @NgModule({
   declarations: [
@@ -106,7 +107,8 @@ import { DatePipe } from '@angular/common';
     UploadComponent,
     PropertyCardComponent,
     EmailFormComponent,
-    BidHistoryComponent
+    BidHistoryComponent,
+    MessagesCardComponent
   ],
   imports: [
     BrowserModule,
