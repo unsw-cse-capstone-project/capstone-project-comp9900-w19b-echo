@@ -140,6 +140,7 @@ public class AuctionController {
         try {
             int uid = JWTUtil.getUid(hRequest.getHeader("Authorization"), null);
             userService.collectHabitFromRegisterAuction(uid, request.getAuctionRegister().getPid());
+            auctionService.quitAuction(uid); // Remove existing one if available.
         }
         catch (Exception ignored){}
 
