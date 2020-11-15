@@ -11,7 +11,7 @@ import {Message} from "../../model/message.model";
   styleUrls: ['./messages-card.component.scss']
 })
 export class MessagesCardComponent implements OnInit {
-  messages: Message[];
+  messages: Message[] = [];
 
   constructor(private router: Router, private http: HttpClient, private userService: UserService) {
     this.http.post(environment.baseEndpoint+'/view-message', {uid: this.userService.user.uid})

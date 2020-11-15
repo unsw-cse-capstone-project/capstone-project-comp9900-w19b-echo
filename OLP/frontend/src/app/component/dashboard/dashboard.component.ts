@@ -24,10 +24,11 @@ export class DashboardComponent implements OnInit {
 
   searchProperty($event: any) {
     this.isLoading = true;
-    let uri = $event ? '/search-property-like' : '/listAllProperty';
-    this.http.post(environment.baseEndpoint + '/search-property-like', {keyword: $event})
-      .subscribe( (p : PropertyAuction[])=> {
-          this.properties = p;
+    this.http.post(environment.baseEndpoint + '/search-property', $event)
+      .subscribe((p: PropertyAuction[]) => {
+          if(p){
+            this.properties = p;
+          }
           this.isLoading = false;
         }
       );

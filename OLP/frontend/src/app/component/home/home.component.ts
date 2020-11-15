@@ -43,7 +43,9 @@ export class HomeComponent implements OnInit {
     this.isLoading = true;
     this.http.post(environment.baseEndpoint + '/search-property', $event)
       .subscribe((p: PropertyAuction[]) => {
-          this.properties = p;
+          if(p){
+            this.properties = p;
+          }
           this.isLoading = false;
         }
       );
