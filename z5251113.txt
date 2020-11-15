@@ -1,0 +1,56 @@
+week 1:
+1. Looking for team members for echo.
+2. Following instruction of COMP9900 to register in github class room.
+3. Join in our team in jira.
+4. Discuss the project details with teammates and pick one.
+
+week 2:
+1. Learning how to write a proposal.
+2. Discuss content of proposal with teammates.
+3. Discuss and assign tasks to each member.
+4. Discuss the technology stack of backend and frontend.
+
+week 3:
+1. Complete the part of proposal and submit it.
+2. Help to initialize the backend project.
+3. Help teammates to set up the environment of development.
+
+week 4:
+1. Design the backend apis and form a interface standard to help frontend development.
+2. Finish user management APIs.
+3. Discuss with teammates of the progress of our project.
+4. Make the next week's plan.
+
+week 5:
+1. Help to implement the user management functions includes sign up, sign in, log out, find password.
+2. Discuss with team of the following tasks needed to be done, such as biding auction and property management.
+3. Discuss the design of user's payment detail.
+
+week 6:
+1. In flexible week, the main work is to develop our system.
+2. Add property management functions.
+3. Fixed some issues of user management functions.
+4. Add some auction management functions and finished unit tests.
+
+week 7:
+1. Make presentation of progressive demo.
+2. Continuing to finish the functions of auction management.
+3. Fixed property management issues approved by front end.
+
+week 8:
+1. Add property photos management functions, including upload photos, edit photos, delete photos.
+2. Help to develp user favorite functions.
+3. Collect the feedback of frontend team and fix the issues.
+4. Change the bill address as the part of payment details.
+5. Fixed remote server crash issue and restart it.
+
+week 9:
+1. Make a presentation of progressive demo and fix some issue that tutor points out.
+2. Finish any function details which have not been completed, such as message functions and recommendation system.
+3. Fixed a bug in recommendation system when uid not exists.
+4. add a default recommendation status in case of the first time user log in.
+
+week 10:
+1. Finished the backend details of final report.
+2. Make a whole process function test of auction process.
+3. Submit final report and project.
