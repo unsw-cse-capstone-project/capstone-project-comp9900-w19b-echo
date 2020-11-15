@@ -179,7 +179,7 @@ public class PropertyController {
     @RequestMapping(value = "/search-property", method = RequestMethod.POST)
     //@RequiresAuthentication
     public List<PropertyAuction> searchProperty(@RequestBody AdvanceSearchRequest searchRequest, HttpServletRequest hRequest) throws IOException, ParseException {
-        List<Property> properties = propertyService.getAllProperty();
+        List<Property> properties = propertyService.searchPropertyVague(searchRequest.getText());;
         properties = properties.stream().filter(p -> compareSearch(p, searchRequest)).collect(Collectors.toList());
         properties = PagingUtil.afterPaging(FileUtil.generatePropertyPic(properties, uploadPath, accessPath), searchRequest.getPage(), searchRequest.getDataNum());
         return getPropertyAuctions(properties);

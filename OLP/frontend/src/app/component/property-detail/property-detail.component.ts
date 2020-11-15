@@ -1,13 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Property} from "../../model/property.model";
-import {Auction} from "../../model/auction.model";
 import {User} from "../../model/user.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {UserService} from "../../service/user.service";
 import {NbComponentStatus, NbToastrService} from "@nebular/theme";
 import {environment} from "../../../environments/environment";
-import {AuctionRegister} from "../../model/auction-register.model";
 import {PropertyAuction} from "../../model/property-auction.model";
 import {CommonService} from "../../service/common.service";
 
@@ -114,5 +112,9 @@ export class PropertyDetailComponent implements OnInit {
 
     showToast(status: NbComponentStatus, title: string) {
         this.toastrService.show(status, title, {status});
+    }
+
+    isShowLike() {
+      return !this.userService.authenticated || (this.userService.authenticated && this.userService.user?.uid !== this.propertyAuction?.property?.owner);
     }
 }

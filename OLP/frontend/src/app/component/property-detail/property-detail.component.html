@@ -28,7 +28,7 @@
                 <button *ngIf="this.userService.authenticated" type="button" class="btn btn-outline-primary btn-sm cursor-pointer" (click)="joinBid(propertyAuction)">Join Bid</button>
                 <button *ngIf="!this.userService.authenticated" type="button" class="btn btn-outline-primary btn-sm cursor-pointer" (click)="login(propertyAuction)">Login to Bid</button>
               </div>
-              <div class ="col-sm-4 align-items-center text-center">
+              <div class ="col-sm-4 align-items-center text-center" *ngIf="isShowLike()">
                 <nb-icon *ngIf="!isLiked" class="font-size-lg cursor-pointer" icon="heart-outline" status="primary" nbTooltip="Add to favourite" (click)="addToFav(propertyAuction, true)"></nb-icon>
                 <nb-icon *ngIf="isLiked" class="font-size-lg cursor-pointer" icon="heart" status="danger" nbTooltip="Remove from favourite" (click)="addToFav(propertyAuction, false)"></nb-icon>
               </div>
