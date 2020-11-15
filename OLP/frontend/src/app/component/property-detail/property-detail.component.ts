@@ -27,6 +27,7 @@ export class PropertyDetailComponent implements OnInit {
     isLiked: boolean = false;
     currentImage: string;
     index: number = 0;
+    owner: User = new User();
 
     constructor(private router: Router, private commonService: CommonService, public userService: UserService, private http: HttpClient, private toastrService: NbToastrService) {
     }
@@ -39,6 +40,7 @@ export class PropertyDetailComponent implements OnInit {
                         if (data && data.length > 0) {
                             this.propertyAuction = data[0] ? data[0] : new PropertyAuction();
                             this.loadPicUrl(this.propertyAuction.property);
+                            this.loadOwnerInfo();
                             this.isLoading = false;
                         }
                     }
@@ -54,6 +56,16 @@ export class PropertyDetailComponent implements OnInit {
                 this.index = 0;
             }
         }
+    }
+
+    loadOwnerInfo() {
+      if(this.propertyAuction.property.owner) {
+        this.http.get(environment.baseEndpoint + '/user/' + this.propertyAuction.property.owner)
+          .subscribe((u: User) => {
+              this.owner = u;
+            }
+          );
+      }
     }
 
     getAddress(p: Property) {

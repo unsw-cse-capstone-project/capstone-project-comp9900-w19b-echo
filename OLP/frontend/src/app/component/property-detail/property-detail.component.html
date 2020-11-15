@@ -3,6 +3,7 @@
   <nb-layout-header fixed>
     <app-header></app-header>
   </nb-layout-header>
+
   <nb-layout-column>
     <nb-card [nbSpinner]="isLoading" nbSpinnerSize="giant" nbSpinnerStatus="success" size="large">
       <nb-card-body>
@@ -32,7 +33,7 @@
                 <nb-icon *ngIf="isLiked" class="font-size-lg cursor-pointer" icon="heart" status="danger" nbTooltip="Remove from favourite" (click)="addToFav(propertyAuction, false)"></nb-icon>
               </div>
               <div class ="col-sm-4 align-items-center text-center">
-                <nb-icon class="font-size-lg cursor-pointer" icon="email-outline" status="primary" nbTooltip="Email to Seller"></nb-icon>
+                <a href="mailto:{{owner?.email}}"><nb-icon class="font-size-lg cursor-pointer" icon="email-outline" status="primary" nbTooltip="Emailto:{{owner?.email}}"></nb-icon></a>
               </div>
             </div>
             <div class="card">
@@ -56,8 +57,9 @@
       </nb-card-body>
     </nb-card>
   </nb-layout-column>
-  <nb-layout-footer fixed>
 
+  <nb-layout-footer fixed>
+    <app-footer></app-footer>
   </nb-layout-footer>
 
 </nb-layout>

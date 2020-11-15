@@ -97,8 +97,14 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public UserInfo updateUser(@RequestParam String email) {
+    public UserInfo getUserByEmail(@RequestParam String email) {
         User user = userService.getUserByEmail(email);
+        return getUserInfo(user);
+    }
+
+    @RequestMapping(value = "/user/{uid}", method = RequestMethod.GET)
+    public UserInfo getUserById(@PathVariable int uid) {
+        User user = userService.getUserByUid(uid);
         return getUserInfo(user);
     }
 
