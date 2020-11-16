@@ -138,7 +138,7 @@ public class AuctionCheckTimer {
 
                 Auction auction = entry.getValue();
                 if (auction.getWinner() == auction.getUid()){
-                    auction.setStatus(4);
+                    auction.setStatus(3);
                     propertyMapper.updateAuctionFail(auction.getPid());
 
                     UserMessage userMessage = new UserMessage();
@@ -152,7 +152,7 @@ public class AuctionCheckTimer {
                     userMessageMapper.sendMessage(userMessage);
                 }
                 else {
-                    auction.setStatus(3);
+                    auction.setStatus(4);
                     propertyMapper.updateAuctionSuccess(auction.getPid());
                     User winner = userService.getUserByUid(auction.getWinner());
                     User owner = userService.getUserByUid(auction.getUid());
