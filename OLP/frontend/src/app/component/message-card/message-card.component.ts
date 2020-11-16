@@ -14,6 +14,7 @@ export class MessageCardComponent implements OnInit {
 
   constructor(private router: Router, private http: HttpClient) {
     this.color = "danger";
+
   }
 
 
@@ -28,6 +29,7 @@ export class MessageCardComponent implements OnInit {
     })
   }
   read(m: Message){
+    // let url = '/view-message';
     let uri = '/read-message';
     this.http.post(environment.baseEndpoint+uri, {serial: m.serial})
     .subscribe(response=>{
