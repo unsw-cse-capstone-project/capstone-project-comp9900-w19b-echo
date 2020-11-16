@@ -38,10 +38,6 @@ export class NewPropertyComponent implements OnInit {
     }
   }
 
-  getProperty(pid) {
-
-  }
-
   save() {
     this.isLoading = true;
     this.property.owner = this.userService.user.uid;

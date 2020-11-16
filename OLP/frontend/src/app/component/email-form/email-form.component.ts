@@ -16,6 +16,7 @@ export class EmailFormComponent implements OnInit {
     this.contactForm = new FormGroup({
       subject: new FormControl(),
       content: new FormControl(),
+      to: new FormControl(),
    });
   }
 
@@ -24,7 +25,7 @@ export class EmailFormComponent implements OnInit {
 
   onSubmit(): void {
     let uri = '/send-email';
-    this.http.post(environment.baseEndpoint+uri, {content: this.contactForm.value.content, subject: this.contactForm.value.subject, to: "jason.lee@gmail.com"})
+    this.http.post(environment.baseEndpoint+uri, {content: this.contactForm.value.content, subject: this.contactForm.value.subject, to: this.contactForm.value.to})
     .subscribe(res=>{
       console.log(res)
     })

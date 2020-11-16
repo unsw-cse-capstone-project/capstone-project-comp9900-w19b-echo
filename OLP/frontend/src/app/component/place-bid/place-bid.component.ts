@@ -141,7 +141,7 @@ export class PlaceBidComponent implements OnInit {
     this.isLoading = true;
     this.http.post(environment.baseEndpoint + '/place-bid', this.bid)
       .subscribe((data: any) => {
-          if(!data.success) {
+          if(data.success) {
             this.showToast('success', `New bid has been placed.`);
           }else{
             this.showToast('danger', `Bid is not placed successfully because of other higher bid price.`);
