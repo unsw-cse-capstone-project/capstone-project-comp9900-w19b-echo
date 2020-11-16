@@ -81,7 +81,7 @@ export class PlaceBidComponent implements OnInit {
     this.currentHighestBid = this.auction.currentPrice;
     this.bid = new Bid();
     this.bid.pid = this.auction.pid;
-    this.bid.uid = this.auction.uid;
+    this.bid.uid = this.userService.user?.uid;
     this.bid.aid = this.auction.aid;
   }
 
@@ -146,6 +146,7 @@ export class PlaceBidComponent implements OnInit {
           }else{
             this.showToast('danger', `Bid is not placed successfully because of other higher bid price.`);
           }
+
           this.isLoading = false;
         }
       );
