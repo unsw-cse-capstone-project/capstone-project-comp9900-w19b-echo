@@ -23,10 +23,10 @@
                 <p class="card-text">Auction End Date: &nbsp;{{propertyAuction.auction?.endTime | date:'dd/MM/yyyy hh:mm a'}}</p>
               </div>
             </div>
-            <div class ="row mt-4 mb-4 text-center">
+            <div class ="row mt-4 mb-4 text-center" *ngIf="(propertyAuction.property.status == 1 || propertyAuction.property.status == 2) && propertyAuction.property.owner != this.userService.user?.uid">
               <div class ="col-sm-4">
-                <button *ngIf="this.userService.authenticated" type="button" class="btn btn-outline-primary btn-sm cursor-pointer" (click)="joinBid(propertyAuction)">Join Bid</button>
-                <button *ngIf="!this.userService.authenticated" type="button" class="btn btn-outline-primary btn-sm cursor-pointer" (click)="login(propertyAuction)">Login to Bid</button>
+                <button *ngIf="this.userService.authenticated && propertyAuction.auction" type="button" class="btn btn-outline-primary btn-sm cursor-pointer" (click)="joinBid(propertyAuction)">Join Bid</button>
+                <button *ngIf="!this.userService.authenticated && propertyAuction.auction" type="button" class="btn btn-outline-primary btn-sm cursor-pointer" (click)="login(propertyAuction)">Login to Bid</button>
               </div>
               <div class ="col-sm-4 align-items-center text-center" *ngIf="isShowLike()">
                 <nb-icon *ngIf="!isLiked" class="font-size-lg cursor-pointer" icon="heart-outline" status="primary" nbTooltip="Add to favourite" (click)="addToFav(propertyAuction, true)"></nb-icon>
