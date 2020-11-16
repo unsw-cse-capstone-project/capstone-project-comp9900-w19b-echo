@@ -117,6 +117,7 @@ public class AuctionCheckTimer {
 
                 entry.getValue().setCurrentPrice(max);
                 entry.getValue().setWinner(winner);
+                entry.getValue().setStatus(2);
 
                 auctioningMap.put(entry.getKey(), entry.getValue());
                 logger.debug("Found auction will start at : "+ entry.getValue().getBeginTime() + " - " + entry.getValue().toString());
