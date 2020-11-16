@@ -46,6 +46,8 @@ public class AuctionController {
 
         Auction auction = request.getAuction();
 
+        auctionService.cancelAuctionByPid(request.getAuction().getPid());
+
         Date oneDay = DateUtils.addDays(new Date(), 1);
         if (oneDay.after(request.getAuction().getBeginTime())){
             return new AddAuctionResponse(501, "Begin time must one day after current time", null);

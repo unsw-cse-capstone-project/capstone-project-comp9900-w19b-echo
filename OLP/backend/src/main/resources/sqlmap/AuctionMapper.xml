@@ -57,6 +57,10 @@
         delete from t_auction where aid=#{aid}
     </delete>
 
+    <delete id="cancelAuctionByPid" parameterType="java.lang.Integer">
+        delete from t_auction where pid=#{pid}
+    </delete>
+
     <update id="updateEndTime" parameterType="com.echo.backend.domain.Auction">
         update t_auction set end_time=#{endTime} where aid=#{aid}
     </update>

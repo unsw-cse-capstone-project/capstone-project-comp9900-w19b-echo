@@ -135,4 +135,8 @@ public class AuctionService {
     public List<Auction> getCompleteAuction(int uid) {
         return auctionMapper.getCompleteAuction(uid);
     }
+
+    public void cancelAuctionByPid(int pid) {
+        auctionMapper.cancelAuctionByPid(pid);
+    }
 }

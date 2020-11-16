@@ -27,4 +27,6 @@ public interface AuctionMapper {
     List<Auction> getCompleteAuction(int uid);
 
     void updateEndTime(Auction auction);
+
+    void cancelAuctionByPid(int pid);
 }
