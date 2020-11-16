@@ -60,7 +60,7 @@ export class PlaceBidComponent implements OnInit {
       this.getBidHistory();
       this.getHighestBid();
       this.updatedDate = new Date();
-      if (this.isAuctionCompleted || this.time.total < 0) {
+      if (this.isAuctionCompleted) {
         clearInterval(bidHistInterval);
       }
     }, 3000);
@@ -108,16 +108,16 @@ export class PlaceBidComponent implements OnInit {
   }
 
   private checkIfAuctionCompleted() {
-    if (this.auction.status == 3 || this.auction.status == 4) {
+    if (this.property.status == 3 || this.property.status == 4) {
       this.isAuctionCompleted = true;
-      if (this.auction.status == 3) {
+      if (this.property.status == 3) {
         if (this.userService.user.uid === this.auction.winner) {
           this.showToast('success', 'Congratulations, you are the winner of this auction!');
         } else {
           this.showToast('info', 'Sorry, the action is won by other buyer.');
         }
       }
-      if (this.auction.status == 4) {
+      if (this.property.status == 4) {
         this.showToast('info', 'Sorry, this property passed in.');
       }
     }
